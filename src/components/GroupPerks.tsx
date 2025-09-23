@@ -5,32 +5,32 @@ const GroupPerks = () => {
   const perks = [
     {
       icon: Users,
-      title: '[Shared Experiences]',
+      title: 'Shared Experiences',
       description: '[Perk description placeholder for group activities and bonding]'
     },
     {
       icon: MapPin,
-      title: '[Stadium Seating]',
+      title: 'Stadium Seating',
       description: '[Perk description placeholder for preferred stadium locations]'
     },
     {
       icon: FileText,
-      title: '[Visa Support]',
+      title: 'Visa Support',
       description: '[Perk description placeholder for visa assistance and documentation]'
     },
     {
       icon: Camera,
-      title: '[Photo Opportunities]',
+      title: 'Photo Opportunities',
       description: '[Perk description placeholder for exclusive photo sessions]'
     },
     {
       icon: Utensils,
-      title: '[Group Dining]',
+      title: 'Group Dining',
       description: '[Perk description placeholder for authentic Moroccan cuisine experiences]'
     },
     {
       icon: Shield,
-      title: '[Travel Insurance]',
+      title: 'Travel Insurance',
       description: '[Perk description placeholder for comprehensive coverage]'
     }
   ];
@@ -41,11 +41,11 @@ const GroupPerks = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-burgundy-900 mb-4">
-            [Group Travel Perks Title]
+            Group Travel Perks
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            [Group perks section description placeholder - Why traveling with Dunia Safari groups enhances your experience]
+            Why traveling with Dunia Safari groups enhances your experience
           </p>
         </div>
 
@@ -78,17 +78,17 @@ const GroupPerks = () => {
         {/* Bottom Section */}
         <div className="mt-16 bg-gradient-to-r from-burgundy-900 to-burgundy-800 rounded-3xl p-8 md:p-12 text-center text-white">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            [Join Our Travel Community Title]
+            Join Our Travel Community
           </h3>
           <p className="text-xl mb-8 opacity-90">
-            [Community description placeholder - Connect with fellow travelers and create lasting memories]
+            Connect with fellow travelers and create lasting memories
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
-              [Join Community CTA]
+              Join Community
             </button>
             <button className="border-2 border-white text-white hover:bg-white hover:text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
-              [Learn More CTA]
+              Learn More
             </button>
           </div>
         </div>

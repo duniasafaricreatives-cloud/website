@@ -67,33 +67,7 @@ const Newsletter = () => {
           We respect your privacy and will never share your information
         </p>
 
-        {/* Newsletter Benefits */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-white mb-2">
-              [Exclusive Deals]
-            </h3>
-            <p className="text-gray-300 text-sm">
-              [Benefit description placeholder]
-            </p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-white mb-2">
-              [Travel Tips]
-            </h3>
-            <p className="text-gray-300 text-sm">
-              [Benefit description placeholder]
-            </p>
-          </div>
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-white mb-2">
-              [Early Access]
-            </h3>
-            <p className="text-gray-300 text-sm">
-              [Benefit description placeholder]
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   );

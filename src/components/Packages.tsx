@@ -113,10 +113,10 @@ const Packages = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-300 mb-6">
-            [Need a custom package? Contact us for personalized options]
+            Need a custom package? Contact us for personalized options
           </p>
           <button className="bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300">
-            [Custom Package Inquiry]
+            Custom Package Inquiry
           </button>
         </div>
       </div>

@@ -64,7 +64,7 @@ const Newsletter = () => {
 
         {/* Privacy Note */}
         <p className="text-sm text-gray-400 mt-6">
-          [Privacy notice placeholder - We respect your privacy and will never share your information]
+          We respect your privacy and will never share your information
         </p>
 
         {/* Newsletter Benefits */}

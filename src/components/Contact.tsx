@@ -91,7 +91,7 @@ const Contact = () => {
                     [WhatsApp QR code description placeholder]
                   </p>
                   <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300">
-                    [Chat on WhatsApp]
+                    Chat on WhatsApp
                   </button>
                 </div>
               </div>
@@ -100,7 +100,7 @@ const Contact = () => {
             {/* Business Hours */}
             <div className="bg-burgundy-50 p-6 rounded-2xl">
               <h4 className="text-lg font-semibold text-burgundy-900 mb-4">
-                [Business Hours Title]
+                Business Hours Title
               </h4>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">

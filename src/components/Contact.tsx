@@ -73,17 +73,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                    [Address Title]
-                  </h4>
-                  <p className="text-gray-600">[Office address placeholder]</p>
-                </div>
-              </div>
+              
             </div>
 
             {/* WhatsApp QR Code */}

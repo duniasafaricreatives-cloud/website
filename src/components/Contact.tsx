@@ -79,10 +79,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                    [Address Title]
-                  </h4>
-                  <p className="text-gray-600">[Office address placeholder]</p>
-                </div>
+
               </div>
             </div>
 

@@ -9,6 +9,7 @@ import FAQ from './components/FAQ';
 import Newsletter from './components/Newsletter';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Blog from "./components/Blog";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <FAQ />
         <Newsletter />
         <Contact />
+        <Blog />
       </main>
       <Footer />
     </div>

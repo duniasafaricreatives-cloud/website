@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Globe } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -18,27 +21,29 @@ const Header = () => {
     { name: "Packages", href: "#packages" },
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
-    { name: "Blog", href: "/blog", isPage: true }, // 👈 blog is a page
+    { name: "Blog", href: "/blog", isPage: true }, // ✅ Blog is a separate page
     { name: "Contact", href: "#contact" },
   ];
 
-  const handleNavClick = (href: string, isPage?: boolean) => {
-    if (isPage) {
-      // if it's a full page (like Blog)
+  const handleNavClick = (href: string) => {
+    if (href.startsWith("#")) {
+      // Section link
+      if (location.pathname !== "/") {
+        // If not on homepage → navigate home first
+        navigate("/");
+
+        // Delay to allow homepage to load before scrolling
+        setTimeout(() => {
+          const el = document.querySelector(href);
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      } else {
+        // Already on homepage → just scroll
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
       setIsMenuOpen(false);
-      return;
     }
-
-    if (location.pathname === "/") {
-      // already on homepage → smooth scroll
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // not on homepage → send user to homepage + section
-      window.location.href = `/${href}`;
-    }
-
-    setIsMenuOpen(false);
   };
 
   return (
@@ -64,6 +69,7 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) =>
               item.isPage ? (
+                // ✅ Blog → goes to /blog
                 <Link
                   key={item.name}
                   to={item.href}
@@ -74,6 +80,7 @@ const Header = () => {
                   {item.name}
                 </Link>
               ) : (
+                // ✅ Scroll sections (Home, About, etc.)
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
@@ -105,18 +112,14 @@ const Header = () => {
               </select>
             </div>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`md:hidden p-2 ${
                 isScrolled ? "text-gray-900" : "text-white"
               }`}
             >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -131,6 +134,7 @@ const Header = () => {
                     key={item.name}
                     to={item.href}
                     className="block w-full text-left px-3 py-2 text-gray-900 font-medium hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
                   </Link>

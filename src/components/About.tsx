@@ -26,7 +26,6 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-8 pt-6">
                 <div className="text-sm text-gray-600 uppercase tracking-wide">Years Experience</div>
               </div>
                 <div className="text-sm text-gray-600 uppercase tracking-wide">Happy Travelers</div>

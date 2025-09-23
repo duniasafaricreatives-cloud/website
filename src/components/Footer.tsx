@@ -29,9 +29,6 @@ const Footer = () => {
                 <Instagram className="w-6 h-6" />
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                <MessageCircle className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
                 <Facebook className="w-6 h-6" />
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">

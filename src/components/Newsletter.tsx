@@ -25,10 +25,10 @@ const Newsletter = () => {
             <Mail className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            [Newsletter Signup Title]
+            Signup to our Newsletter
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            [Newsletter description placeholder - Stay updated with latest AFCON 2025 packages, Morocco travel tips, and exclusive offers]
+            Stay updated with latest AFCON 2025 packages, Morocco travel tips, and exclusive offers
           </p>
         </div>
 

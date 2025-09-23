@@ -22,7 +22,7 @@ const Footer = () => {
               className="h-16 w-auto mb-6"
             />
             <p className="text-gray-300 leading-relaxed mb-6">
-              [Company description placeholder - Authentic travels, for less. Creating unforgettable AFCON 2025 experiences in Morocco]
+              Authentic travels, for less. Creating unforgettable AFCON 2025 experiences in Morocco
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
@@ -124,7 +124,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Contact Info</h3>
             <div className="space-y-3">
               <p className="text-gray-300">
-                [Phone: +XX XXX XXX XXXX]
+                [Phone: +233 XXX XXX XXXX]
               </p>
               <p className="text-gray-300">
                 [Email: info@duniasafari.com]

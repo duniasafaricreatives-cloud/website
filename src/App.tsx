@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,14 +11,16 @@ import FAQ from "./components/FAQ";
 import Newsletter from "./components/Newsletter";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Blog from "./components/Blog";
+
+import BlogListingPage from "./pages/BlogListingPage"; // ✅ new
+import BlogPostPage from "./pages/BlogPostPage";       // ✅ new
 
 function App() {
   const location = useLocation();
 
+  // Smooth scroll when hash links are clicked
   useEffect(() => {
     if (location.hash) {
-      // Wait a tick so DOM is ready
       setTimeout(() => {
         const el = document.querySelector(location.hash);
         if (el) {
@@ -31,15 +34,30 @@ function App() {
     <div className="min-h-screen">
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Packages />
-        <GroupPerks />
-        <Testimonials />
-        <FAQ />
-        <Blog />
-        <Newsletter />
-        <Contact />
+        <Routes>
+          {/* Home Page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <About />
+                <Packages />
+                <GroupPerks />
+                <Testimonials />
+                <FAQ />
+                <Newsletter />
+                <Contact />
+              </>
+            }
+          />
+
+          {/* Blog Listing Page */}
+          <Route path="/blog" element={<BlogListingPage />} />
+
+          {/* Individual Blog Post Page */}
+          <Route path="/blog/:id" element={<BlogPostPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>

@@ -1,0 +1,123 @@
+import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const slides = [
+    {
+      id: 1,
+      title: "AFCON 2025: Which Team Are You Supporting?",
+      subtitle: "Super Eagles or Elephants — Your Morocco Adventure Awaits",
+      image: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg" // stadium crowd
+    },
+    {
+      id: 2,
+      title: "Experience Morocco Beyond Football",
+      subtitle: "From Sahara dunes to Atlas peaks, adventure meets culture.",
+      image: "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg" // desert sunset
+    },
+    {
+      id: 3,
+      title: "Dive Into Moroccan Culture",
+      subtitle: "Souks, lanterns, and flavors you’ll never forget.",
+      image: "https://images.pexels.com/photos/3185482/pexels-photo-3185482.jpeg" // Marrakech souk
+    },
+    {
+      id: 4,
+      title: "Nature Awaits You",
+      subtitle: "Hike the Atlas mountains and explore Morocco’s beauty.",
+      image: "https://images.pexels.com/photos/240040/pexels-photo-240040.jpeg" // Atlas peaks
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  return (
+    <section id="home" className="relative h-screen overflow-hidden">
+      {/* Slideshow */}
+      <div className="relative w-full h-full">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <div
+              className="w-full h-full bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            />
+            {/* Gradient overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-60" />
+          </div>
+        ))}
+      </div>
+
+      {/* Content Overlay */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="text-center text-white px-4 max-w-4xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+            {slides[currentSlide].title}
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
+            {slides[currentSlide].subtitle}
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {/* Primary CTA */}
+            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Download Itinerary
+            </button>
+            {/* Secondary CTA */}
+            <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 flex items-center gap-2">
+              Chat with Us on WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all duration-300"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all duration-300"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide ? 'bg-white' : 'bg-white bg-opacity-40'
+            }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

@@ -81,24 +81,25 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-  {/* Primary CTA */}
-  <button className="bg-amber-600 hover:bg-amber-700 text-white 
-                     px-4 py-2 sm:px-6 sm:py-3 
-                     rounded-full font-semibold 
-                     text-sm sm:text-base 
-                     transition-all duration-300 transform hover:scale-105 shadow-md">
-    Download Itinerary
-  </button>
-
-  {/* Secondary CTA */}
-  <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 
-                     px-4 py-2 sm:px-6 sm:py-3 
-                     rounded-full font-semibold 
-                     text-sm sm:text-base 
-                     transition-all duration-300 flex items-center gap-2 shadow-md">
-    Chat with Us on WhatsApp
-  </button>
-</div>
+            {/* Primary CTA */}
+            <button className="bg-amber-600 hover:bg-amber-700 text-white 
+                               px-6 py-3 sm:px-8 sm:py-4 
+                               rounded-full font-semibold 
+                               text-sm sm:text-lg 
+                               transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Download Itinerary
+            </button>
+            {/* Secondary CTA */}
+            <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 
+                               px-6 py-3 sm:px-8 sm:py-4 
+                               rounded-full font-semibold 
+                               text-sm sm:text-lg 
+                               transition-all duration-300 flex items-center gap-2">
+              Chat with Us on WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
 
       {/* Navigation Arrows (hidden on mobile) */}
       <button

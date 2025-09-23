@@ -22,9 +22,9 @@ function App() {
         <GroupPerks />
         <Testimonials />
         <FAQ />
+        <Blog />
         <Newsletter />
         <Contact />
-        <Blog />
       </main>
       <Footer />
     </div>

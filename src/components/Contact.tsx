@@ -122,13 +122,13 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-white p-8 rounded-2xl shadow-lg">
             <h3 className="text-2xl font-bold text-burgundy-900 mb-6">
-              [Send Us a Message]
+              Send Us a Message
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                  [Name Label] *
+                  Name Label *
                 </label>
                 <input
                   type="text"

@@ -8,38 +8,21 @@ const Header = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Packages", href: "#packages" },
-    { name: "About", href: "#about" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Blog", href: "/blog", isPage: true }, // 👈 blog is a page
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "Packages", href: "/#packages" },
+    { name: "About", href: "/#about" },
+    { name: "FAQ", href: "/#faq" },
+    { name: "Blog", href: "/blog" }, // ✅ Blog is a full page
+    { name: "Contact", href: "/#contact" },
   ];
-
-  const handleNavClick = (href: string, isPage?: boolean) => {
-    if (isPage) {
-      // if it's a full page (like Blog)
-      setIsMenuOpen(false);
-      return;
-    }
-
-    if (location.pathname === "/") {
-      // already on homepage → smooth scroll
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
-    } else {
-      // not on homepage → send user to homepage + section
-      window.location.href = `/${href}`;
-    }
-
-    setIsMenuOpen(false);
-  };
 
   return (
     <header
@@ -62,33 +45,23 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) =>
-              item.isPage ? (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-medium transition-colors duration-200 hover:text-amber-600 ${
-                    isScrolled ? "text-gray-900" : "text-white"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ) : (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item.href)}
-                  className={`font-medium transition-colors duration-200 hover:text-amber-600 ${
-                    isScrolled ? "text-gray-900" : "text-white"
-                  }`}
-                >
-                  {item.name}
-                </button>
-              )
-            )}
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`font-medium transition-colors duration-200 hover:text-amber-600 ${
+                  isScrolled ? "text-gray-900" : "text-white"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
           </nav>
 
           {/* Language Toggle & Mobile Menu */}
           <div className="flex items-center space-x-4">
+            {/* Language Toggle */}
             <div className="flex items-center space-x-2">
               <Globe
                 className={`w-4 h-4 ${
@@ -105,18 +78,14 @@ const Header = () => {
               </select>
             </div>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`md:hidden p-2 ${
                 isScrolled ? "text-gray-900" : "text-white"
               }`}
             >
-              {isMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -125,25 +94,16 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) =>
-                item.isPage ? (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block w-full text-left px-3 py-2 text-gray-900 font-medium hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </Link>
-                ) : (
-                  <button
-                    key={item.name}
-                    onClick={() => handleNavClick(item.href)}
-                    className="block w-full text-left px-3 py-2 text-gray-900 font-medium hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </button>
-                )
-              )}
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block w-full text-left px-3 py-2 text-gray-900 font-medium hover:bg-gray-50"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
           </div>
         )}

@@ -26,10 +26,17 @@ const About = () => {
               </p>
             </div>
 
+            <div className="flex flex-wrap gap-8 pt-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-burgundy-900">2</div>
                 <div className="text-sm text-gray-600 uppercase tracking-wide">Years Experience</div>
               </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-burgundy-900">200</div>
                 <div className="text-sm text-gray-600 uppercase tracking-wide">Happy Travelers</div>
               </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-burgundy-900">12</div>
                 <div className="text-sm text-gray-600 uppercase tracking-wide">Destinations</div>
               </div>
             </div>

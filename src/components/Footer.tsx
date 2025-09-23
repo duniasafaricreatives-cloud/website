@@ -17,7 +17,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <img 
-              src="/duniasafaritourslogo.png" 
+              src="/favicon.png" 
               alt="Dunia Safari Tours" 
               className="h-12 w-auto mb-6"
             />

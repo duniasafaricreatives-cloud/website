@@ -42,14 +42,14 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6">[Quick Links]</h3>
+            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
                 <button 
                   onClick={() => scrollToSection('#home')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  [Home]
+                  Home
                 </button>
               </li>
               <li>
@@ -57,7 +57,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('#packages')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  [Packages]
+                  Packages
                 </button>
               </li>
               <li>
@@ -65,7 +65,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('#about')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  [About]
+                  About
                 </button>
               </li>
               <li>
@@ -73,7 +73,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('#faq')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  [FAQ]
+                  FAQ
                 </button>
               </li>
               <li>
@@ -81,7 +81,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('#contact')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  [Contact]
+                  Contact
                 </button>
               </li>
             </ul>
@@ -89,31 +89,31 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-bold mb-6">[Services]</h3>
+            <h3 className="text-xl font-bold mb-6">Services</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  [AFCON 2025 Packages]
+                  AFCON 2025 Packages
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  [Morocco Travel]
+                  Morocco Travel
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  [Group Tours]
+                  Group Tours
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  [Visa Support]
+                  Visa Support
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  [Custom Packages]
+                  Custom Packages
                 </a>
               </li>
             </ul>
@@ -121,10 +121,8 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-6">[Contact Info]</h3>
+            <h3 className="text-xl font-bold mb-6">Contact Info</h3>
             <div className="space-y-3">
-              <p className="text-gray-300">
-                [Address placeholder]
               </p>
               <p className="text-gray-300">
                 [Phone: +XX XXX XXX XXXX]

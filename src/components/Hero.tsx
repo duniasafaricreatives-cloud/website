@@ -93,7 +93,7 @@ const Hero = () => {
             <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 
                                px-4 py-2 sm:px-6 sm:py-3 
                                rounded-full font-semibold 
-                               text-sm sm:text-lg 
+                               text-sm sm:text-base 
                                transition-all duration-300 flex items-center gap-2">
               Chat with Us on WhatsApp
             </button>

@@ -9,7 +9,7 @@ const Hero = () => {
       id: 1,
       title: "AFCON 2025: Which Team Are You Supporting?",
       subtitle: "Super Eagles or Elephants — Your Morocco Adventure Awaits",
-      image: "https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg" // stadium crowd
+      image: "https://images.pexels.com/photos/34014860/pexels-photo-34014860.jpeg" // stadium crowd
     },
     {
       id: 2,

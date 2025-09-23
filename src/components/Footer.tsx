@@ -19,7 +19,7 @@ const Footer = () => {
             <img 
               src="/favicon.png" 
               alt="Dunia Safari Tours" 
-              className="h-12 w-auto mb-6"
+              className="h-16 w-auto mb-6"
             />
             <p className="text-gray-300 leading-relaxed mb-6">
               [Company description placeholder - Authentic travels, for less. Creating unforgettable AFCON 2025 experiences in Morocco]

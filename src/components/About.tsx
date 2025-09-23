@@ -26,7 +26,6 @@ const About = () => {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-8 pt-6">
 
           {/* Image */}
           <div className="relative">

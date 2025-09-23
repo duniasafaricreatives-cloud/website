@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
+import { Instagram, Facebook, Tiktok, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const scrollToSection = (href: string) => {

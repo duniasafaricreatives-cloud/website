@@ -124,9 +124,6 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Contact Info</h3>
             <div className="space-y-3">
               <p className="text-gray-300">
-                [Address placeholder]
-              </p>
-              <p className="text-gray-300">
                 [Phone: +XX XXX XXX XXXX]
               </p>
               <p className="text-gray-300">

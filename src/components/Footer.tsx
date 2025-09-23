@@ -124,10 +124,10 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Contact Info</h3>
             <div className="space-y-3">
               <p className="text-gray-300">
-                [Phone: +233 XXX XXX XXXX]
+                Phone: +233 53 808 7709
               </p>
               <p className="text-gray-300">
-                [Email: info@duniasafari.com]
+                Email: info@duniasafari.com
               </p>
             </div>
           </div>
@@ -138,18 +138,18 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-gray-300 text-sm">
-                © 2025 Dunia Safari Tours. [All rights reserved.]
+                © 2025 Dunia Safari Tours. All rights reserved.
               </p>
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                [Privacy Policy]
+                Privacy Policy
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                [Terms of Service]
+                Terms of Service
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                [Cookie Policy]
+                Cookie Policy
               </a>
             </div>
           </div>

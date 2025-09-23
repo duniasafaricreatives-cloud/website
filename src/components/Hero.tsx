@@ -48,9 +48,9 @@ const Hero = () => {
 
   return (
     <section 
-  id="home" 
-  className="relative h-[70vh] md:h-screen overflow-hidden"
->
+      id="home" 
+      className="relative h-[65vh] sm:h-[75vh] md:h-screen overflow-hidden"
+    >
       {/* Slideshow */}
       <div className="relative w-full h-full">
         {slides.map((slide, index) => (
@@ -64,7 +64,7 @@ const Hero = () => {
               className="w-full h-full bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url(${slide.image})` }}
             />
-            {/* Gradient overlay for readability */}
+            {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-60" />
           </div>
         ))}
@@ -72,37 +72,45 @@ const Hero = () => {
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center text-white px-4 max-w-4xl">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
+        <div className="text-center text-white px-4 max-w-4xl mt-8 md:mt-0">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight drop-shadow-lg">
             {slides[currentSlide].title}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-2xl mb-8 opacity-90 leading-relaxed">
             {slides[currentSlide].subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Primary CTA */}
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <button className="bg-amber-600 hover:bg-amber-700 text-white 
+                               px-6 py-3 sm:px-8 sm:py-4 
+                               rounded-full font-semibold 
+                               text-sm sm:text-lg 
+                               transition-all duration-300 transform hover:scale-105 shadow-lg">
               Download Itinerary
             </button>
             {/* Secondary CTA */}
-            <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 flex items-center gap-2">
+            <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 
+                               px-6 py-3 sm:px-8 sm:py-4 
+                               rounded-full font-semibold 
+                               text-sm sm:text-lg 
+                               transition-all duration-300 flex items-center gap-2">
               Chat with Us on WhatsApp
             </button>
           </div>
         </div>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows (hidden on mobile) */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all duration-300"
+        className="hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all duration-300"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all duration-300"
+        className="hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full transition-all duration-300"
       >
         <ChevronRight className="w-6 h-6" />
       </button>

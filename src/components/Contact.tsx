@@ -84,7 +84,7 @@ const Contact = () => {
                   <p className="text-gray-600">[Office address placeholder]</p>
                 </div>
               </div>
-            </div
+            </div>
 
             {/* WhatsApp QR Code */}
             <div className="bg-white p-6 rounded-2xl shadow-lg">

@@ -128,7 +128,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Name Label *
+                  Enter your name *
                 </label>
                 <input
                   type="text"
@@ -137,14 +137,14 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:outline-none transition-colors duration-300"
-                  placeholder="[Your name placeholder]"
+                  placeholder="Your name"
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                  [Email Label] *
+                  Email *
                 </label>
                 <input
                   type="email"
@@ -153,14 +153,14 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:outline-none transition-colors duration-300"
-                  placeholder="[Your email placeholder]"
+                  placeholder="Your email"
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  [Message Label] *
+                  Message*
                 </label>
                 <textarea
                   id="message"
@@ -169,7 +169,7 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={6}
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:outline-none transition-colors duration-300 resize-vertical"
-                  placeholder="[Your message placeholder]"
+                  placeholder="Your message"
                   required
                 ></textarea>
               </div>
@@ -184,7 +184,7 @@ const Contact = () => {
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    [Send Message Button]
+                    Send Message Button
                   </>
                 )}
               </button>

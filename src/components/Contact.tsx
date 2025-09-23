@@ -184,7 +184,7 @@ const Contact = () => {
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    Send Message Button
+                    Send Message
                   </>
                 )}
               </button>

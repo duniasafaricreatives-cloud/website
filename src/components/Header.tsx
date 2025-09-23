@@ -58,9 +58,9 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link to="/">
               <img
-                src="/duniasafaritourslogo.png"
+                src="/favicon.png"
                 alt="Dunia Safari Tours"
-                className="h-10 md:h-12 w-auto"
+                className="h-16 md:h-16 w-auto"
               />
             </Link>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Instagram, Facebook, Tiktok, } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
+import { FaTiktok } from 'react-icons/fa';
 
 const Footer = () => {
   const scrollToSection = (href: string) => {
@@ -32,7 +33,7 @@ const Footer = () => {
                 <Facebook className="w-6 h-6" />
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                <Tiktok className="w-6 h-6" />
+                <FaTiktok className="w-6 h-6" /> {/* ✅ Now TikTok works */}
               </a>
             </div>
           </div>

@@ -76,27 +76,7 @@ const Contact = () => {
               
             </div>
 
-            {/* WhatsApp QR Code */}
-            <div className="bg-white p-6 rounded-2xl shadow-lg">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                <MessageCircle className="w-5 h-5 text-green-500" />
-                [WhatsApp Contact Title]
-              </h4>
-              <div className="flex items-center gap-4">
-                <div className="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
-                  [QR Code Placeholder]
-                </div>
-                <div>
-                  <p className="text-gray-600 text-sm mb-2">
-                    [WhatsApp QR code description placeholder]
-                  </p>
-                  <button className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300">
-                    Chat on WhatsApp
-                  </button>
-                </div>
-              </div>
-            </div>
-
+            
             
           </div>
 

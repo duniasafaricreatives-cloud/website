@@ -102,7 +102,6 @@ const Hero = () => {
 >
   Chat with Us on WhatsApp
 </a>
-            </button>
           </div>
         </div>
       </div>

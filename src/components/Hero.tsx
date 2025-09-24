@@ -21,7 +21,7 @@ const Hero = () => {
       id: 3,
       title: "Dive Into Moroccan Culture",
       subtitle: "Souks, lanterns, and flavors you’ll never forget.",
-      image: "https://images.pexels.com/photos/3185482/pexels-photo-3185482.jpeg" // Marrakech souk
+      image: "https://images.pexels.com/photos/15157857/pexels-photo-15157857.jpeg" // Marrakech souk
     },
     {
       id: 4,

@@ -91,7 +91,12 @@ const FAQ = () => {
             Still have questions? We're here to help!
           </p>
           <button className="bg-burgundy-900 hover:bg-burgundy-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
-            Contact Support
+          <a
+  href="tel:+233538087709"
+  className="bg-burgundy-900 hover:bg-burgundy-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+>
+  Contact Support
+</a>
           </button>
         </div>
       </div>

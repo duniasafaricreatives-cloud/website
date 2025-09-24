@@ -15,7 +15,7 @@ const Hero = () => {
       id: 2,
       title: "Experience Morocco Beyond Football",
       subtitle: "From Sahara dunes to Atlas peaks, adventure meets culture.",
-      image: "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg" // desert sunset
+      image: "https://images.pexels.com/photos/31653067/pexels-photo-31653067.jpeg" // desert sunset
     },
     {
       id: 3,

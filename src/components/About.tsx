@@ -33,7 +33,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://drive.google.com/file/d/1aHhc-v7zCGSVG47Oi5mx9G7pjhCnXhSq/view?usp=sharing.jpeg"
+                src="https://images.pexels.com/photos/2649403/pexels-photo-2649403.jpeg"
                 alt="About Dunia Safari"
                 className="w-full h-full object-cover"
               />

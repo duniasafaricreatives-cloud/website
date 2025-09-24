@@ -2,7 +2,7 @@ import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
 
-const Footer = () => {
+export default function Footer() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -175,6 +175,3 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
-
-export default Footer;

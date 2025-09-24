@@ -1,6 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa';
+import { FaTiktok } from 'react-icons/fa'; // ✅ TikTok from react-icons
 
 const Footer = () => {
   const scrollToSection = (href: string) => {

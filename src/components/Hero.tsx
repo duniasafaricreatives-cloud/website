@@ -27,7 +27,7 @@ const Hero = () => {
       id: 4,
       title: "Nature Awaits You",
       subtitle: "Hike the Atlas mountains and explore Morocco’s beauty.",
-      image: "https://images.pexels.com/photos/27065006/pexels-photo-27065006.jpeg" // Atlas peaks
+      image: "https://images.pexels.com/photos/33792512/pexels-photo-33792512.jpeg" // Atlas peaks
     }
   ];
 

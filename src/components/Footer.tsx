@@ -1,6 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa'; // ✅ TikTok from react-icons
+import { FaTiktok } from 'react-icons/fa';
 
 const Footer = () => {
   const scrollToSection = (href: string) => {
@@ -26,14 +26,34 @@ const Footer = () => {
               Authentic travels, for less. Creating unforgettable AFCON 2025 experiences in Morocco
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
+              {/* Instagram */}
+              <a 
+                href="https://www.instagram.com/travelduniasafari?igsh=bGVnZ3R3Y2o5emF1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+              >
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
+
+              {/* Facebook */}
+              <a 
+                href="https://web.facebook.com/travelduniasafari/?_rdc=1&_rdr#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+              >
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                <FaTiktok className="w-6 h-6" /> {/* ✅ Now TikTok works */}
+
+              {/* TikTok */}
+              <a 
+                href="https://www.tiktok.com/@travelduniasafari?_t=ZM-8zyr8tWB4B9&_r=1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+              >
+                <FaTiktok className="w-6 h-6" />
               </a>
             </div>
           </div>

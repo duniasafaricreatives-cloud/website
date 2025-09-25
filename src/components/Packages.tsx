@@ -121,7 +121,6 @@ const Packages = () => {
     rel="noopener noreferrer"
     className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
   >
-          <button className="bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300">
             Custom Package Inquiry
           </button>
         </div>

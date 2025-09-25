@@ -22,10 +22,13 @@ const About = () => {
                 Our journeys blend cultural immersion with comfort and affordability, giving you more than just a trip. We create stories you’ll carry for a lifetime.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
+  From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
+  <br />
+  <Link to="/about-founder" className="text-amber-600 hover:underline font-semibold">
+    About Founder
+  </Link>
+</p>
 
-                About Founder
-              </p>
             </div>
 
 

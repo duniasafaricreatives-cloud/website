@@ -76,21 +76,6 @@ const GroupPerks = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-16 bg-gradient-to-r from-burgundy-900 to-burgundy-800 rounded-3xl p-8 md:p-12 text-center text-white">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Join Our Travel Community
-          </h3>
-          <p className="text-xl mb-8 opacity-90">
-            Connect with fellow travelers and create lasting memories
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
-              Join Community
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
-              Learn More
-            </button>
-          </div>
         </div>
       </div>
     </section>

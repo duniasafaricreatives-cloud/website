@@ -55,7 +55,9 @@ function App() {
 
           {/* Blog Listing Page */}
           <Route path="/blog" element={<BlogListingPage />} />
-
+          {/* About Founder Page ✅ */}
+  <Route path="/about-founder" element={<AboutFounderPage />} />
+</Routes>
           {/* Individual Blog Post Page */}
           <Route path="/blog/:id" element={<BlogPostPage />} />
         </Routes>

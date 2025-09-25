@@ -12,18 +12,15 @@ const AboutFounderPage = () => {
         {/* Founder Image + Intro */}
         <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
           <img
-            src="/founder.png
-          " // 👈 replace with actual founder image in your public/ folder
+            src="/founder.png" // 👈 replace with actual founder image in your public/ folder
             alt="Founder of Dunia Safari"
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />
           <p className="text-lg text-gray-700 leading-relaxed">
-            Hi, I’m [Founder’s Name], the visionary behind Dunia Safari Tours.
-            My passion for connecting people through authentic travel 
-            experiences inspired me to create journeys that celebrate Morocco’s
-            culture, beauty, and spirit. With years of experience in [tourism /
-            travel / hospitality], I believe travel is more than movement — 
-            it’s a way to bond, learn, and grow.
+           Mimi Babs is an avid solo traveler who has explored over 20 countries across the globe, from Dubai to the United States to South Korea. With more than a decade of experience in sales, marketing and business development, she has consistently acted as an intrapreneur, raising hundreds of thousand to multi-million-dollar financing for the organizations she has worked with. She also holds an EMBA in Entrepreneurial Management from the University of Ghana Business School (UGBS).
+
+Travel is more than a passion for Mimi — it’s a way of life. She has journeyed across nearly every country in West Africa, mostly by road and always on a budget. This hands-on experience taught her how to make travel both affordable and deeply rewarding. A lover of nature and outdoor adventure. She often says her only regret is not beginning her adventures in her early twenties.
+
           </p>
         </div>
 
@@ -33,11 +30,10 @@ const AboutFounderPage = () => {
             The Journey
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            Dunia Safari was founded with a simple belief: travel should be
-            authentic, affordable, and unforgettable. From the busy souks of
-            Marrakech to the quiet dunes of the Sahara, I wanted to curate
-            experiences that immerse visitors in the real Morocco. Every package
-            is designed with care, balancing adventure, culture, and comfort.
+            In August 2025, Mimi founded Dunia Safari with a bold vision: to make travel accessible, to create a movement that demystifies traveling within Africa, and to inspire young people to explore their continent. She believes that for Africa to progress, its youth must see, experience, and advocate for the continent they call home. 
+
+“Why should a one-hour flight within West Africa cost $250 and Euros50 in Western Europe, when we are the richest continent in the world?” Mimi asks. Her mission through Dunia Safari is to break those barriers, unite Africa through travel, and spark a generation of young explorers.
+
           </p>
         </section>
 

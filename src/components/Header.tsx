@@ -22,6 +22,7 @@ const Header = () => {
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
     { name: "Blog", href: "/blog", isPage: true }, // ✅ Blog is a separate page
+    { name: "About Founder", href: "/aboutfounder", isPage: true }, // ✅ Blog is a separate page
     { name: "Contact", href: "#contact" },
   ];
 

@@ -48,6 +48,8 @@ Travel is more than a passion for Mimi — it’s a way of life. She has journey
             a group looking for a tailored experience. Dunia Safari is not just
             about tours, it’s about creating lifelong memories and building
             connections between cultures.
+
+            Mimi invites collaborations, partnerships, and sponsorships to help realize this dream within her lifetime.
           </p>
         </section>
       </div>

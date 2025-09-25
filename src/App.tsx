@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 
 import BlogListingPage from "./pages/BlogListingPage"; // ✅ new
 import BlogPostPage from "./pages/BlogPostPage";       // ✅ new
+import AboutFounderPage from "./pages/AboutFounderPage";
 
 function App() {
   const location = useLocation();

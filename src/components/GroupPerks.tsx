@@ -6,32 +6,32 @@ const GroupPerks = () => {
     {
       icon: Users,
       title: 'Shared Experiences',
-      description: '[Perk description placeholder for group activities and bonding]'
+      description: 'Traveling as a group makes every moment richer — from cheering together at AFCON stadiums to bonding over desert sunsets and city adventures.'
     },
     {
       icon: MapPin,
       title: 'Stadium Seating',
-      description: '[Perk description placeholder for preferred stadium locations]'
+      description: 'Enjoy guaranteed seating arrangements so your group stays together in prime locations, making every match more exciting and unforgettable.'
     },
     {
       icon: FileText,
       title: 'Visa Support',
-      description: '[Perk description placeholder for visa assistance and documentation]'
+      description: 'Skip the stress — our team guides your group through the entire visa application process with clear steps and reliable documentation support.'
     },
     {
       icon: Camera,
       title: 'Photo Opportunities',
-      description: '[Perk description placeholder for exclusive photo sessions]'
+      description: 'Capture memories with exclusive group photo sessions at iconic Moroccan landmarks, stadiums, and cultural spots.'
     },
     {
       icon: Utensils,
       title: 'Group Dining',
-      description: '[Perk description placeholder for authentic Moroccan cuisine experiences]'
+      description: 'Savor Morocco’s authentic cuisine with curated group meals — from fragrant tajines to rooftop dinners under lantern-lit skies.'
     },
     {
       icon: Shield,
       title: 'Travel Insurance',
-      description: '[Perk description placeholder for comprehensive coverage]'
+      description: 'Peace of mind for the whole group with comprehensive travel insurance, covering health, luggage, and emergencies throughout your trip.'
     }
   ];
 

@@ -29,7 +29,7 @@ const BlogListingPage = () => {
         <h1 className="text-4xl font-bold mb-12 text-center text-burgundy-900">
           The Safari Journal
         </h1>
-        <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
+        <div className="w-24 h-1 bg-amber-600 mb-6"></div>
         <div className="grid md:grid-cols-3 gap-8">
           {posts.map((post) => (
             <div

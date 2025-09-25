@@ -23,6 +23,8 @@ const About = () => {
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
+
+                About Founder
               </p>
             </div>
 

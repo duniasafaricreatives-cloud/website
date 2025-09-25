@@ -12,7 +12,8 @@ const AboutFounderPage = () => {
         {/* Founder Image + Intro */}
         <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
           <img
-            src="/founder.jpg" // 👈 replace with actual founder image in your public/ folder
+            src="/founder.png
+          " // 👈 replace with actual founder image in your public/ folder
             alt="Founder of Dunia Safari"
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />

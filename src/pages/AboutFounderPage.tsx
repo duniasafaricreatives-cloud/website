@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlogListingPage = () => {
+const Blog = () => {
   const posts = [
     {
       id: 1,
@@ -24,7 +24,7 @@ const BlogListingPage = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section id="blog" className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-bold text-center mb-12">
           The Safari Journal
@@ -44,7 +44,7 @@ const BlogListingPage = () => {
                 <h3 className="text-xl font-semibold mb-3">{post.title}</h3>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
                 <Link
-                  to={`/blog/${post.id}`}
+                  to="/blog"
                   className="text-amber-600 font-semibold hover:underline"
                 >
                   Read More →
@@ -58,4 +58,4 @@ const BlogListingPage = () => {
   );
 };
 
-export default BlogListingPage;
+export default Blog;

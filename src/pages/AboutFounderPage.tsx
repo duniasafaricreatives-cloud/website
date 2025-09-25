@@ -7,7 +7,8 @@ const AboutFounderPage = () => {
         {/* Page Title */}
         <h1 className="text-4xl font-bold mb-12 text-center text-burgundy-900">
           About the Founder
-       </h1>
+        </h1>
+        <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
 
         {/* Founder Image + Intro */}
         <div className="flex flex-col md:flex-row items-center gap-8 mb-12">

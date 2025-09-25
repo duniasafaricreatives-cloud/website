@@ -29,8 +29,6 @@ const About = () => {
   </Link>
 </p>
 
-            </div>
-
 
           </div>
 

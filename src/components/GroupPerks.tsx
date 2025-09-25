@@ -74,9 +74,6 @@ const GroupPerks = () => {
             </div>
           ))}
         </div>
-
-        {/* Bottom Section */}
-        </div>
       </div>
     </section>
   );

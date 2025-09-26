@@ -105,21 +105,7 @@ const Hero = () => {
                          rounded-full font-semibold 
                          text-sm sm:text-lg 
                          transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Download Itinerary
-            </a>
-
-            {/* Secondary CTA - WhatsApp */}
-            <a 
-              href="https://wa.me/233538087709?text=Hi%20Dunia%20Safari%20Tours!%20I%20am%20interested%20in%20the%20AFCON%202025%20packages.%20Can%20you%20share%20more%20details%3F" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 
-                         px-4 py-2 sm:px-6 sm:py-3 
-                         rounded-full font-semibold 
-                         text-sm sm:text-base 
-                         transition-all duration-300 flex items-center gap-2"
-            >
+            > 
               Chat with Us on WhatsApp
             </a>
           </div>

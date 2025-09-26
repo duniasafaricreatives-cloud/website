@@ -6,27 +6,27 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: '[FAQ Question 1 - About AFCON 2025 packages]',
+      question: 'About AFCON 2025 packages',
       answer: '[FAQ Answer 1 placeholder - Detailed information about our Morocco AFCON travel packages and what they include]'
     },
     {
-      question: '[FAQ Question 2 - About booking process]',
+      question: 'About booking process',
       answer: '[FAQ Answer 2 placeholder - Step-by-step guide on how to book your travel package with Dunia Safari]'
     },
     {
-      question: '[FAQ Question 3 - About visa requirements]',
+      question: 'About visa requirements',
       answer: '[FAQ Answer 3 placeholder - Information about visa requirements for Morocco and our support services]'
     },
     {
-      question: '[FAQ Question 4 - About group travel]',
+      question: 'About group travel',
       answer: '[FAQ Answer 4 placeholder - Benefits and details of traveling with Dunia Safari groups]'
     },
     {
-      question: '[FAQ Question 5 - About payment options]',
+      question: 'About payment options',
       answer: '[FAQ Answer 5 placeholder - Available payment methods and payment schedule information]'
     },
     {
-      question: '[FAQ Question 6 - About cancellation policy]',
+      question: 'About cancellation policy',
       answer: '[FAQ Answer 6 placeholder - Our cancellation and refund policy details]'
     }
   ];

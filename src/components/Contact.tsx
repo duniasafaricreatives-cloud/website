@@ -40,7 +40,6 @@ const Contact = () => {
   setIsSubmitting(false);
 };
 
-
   return (
     <section id="contact" className="py-16 md:py-24 bg-cream-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

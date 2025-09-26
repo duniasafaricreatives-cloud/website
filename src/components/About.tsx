@@ -38,7 +38,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/2649403/pexels-photo-2649403.jpeg"
+                src="/tourist.png"
                 alt="About Dunia Safari"
                 className="w-full h-full object-cover"
               />

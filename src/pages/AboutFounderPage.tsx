@@ -18,7 +18,10 @@ const AboutFounderPage = () => {
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />
           <p className="text-lg text-gray-700 leading-relaxed">
-           Mimi Babs is an avid solo traveler who has explored over 20 countries across the globe, from Dubai to the United States to South Korea. With more than a decade of experience in sales, marketing and business development, she has consistently acted as an intrapreneur, raising hundreds of thousand to multi-million-dollar financing for the organizations she has worked with. Travel is more than a passion for Mimi, it’s a way of life. She has journeyed across nearly every country in West Africa, mostly by road and always on a budget. A lover of nature and outdoor adventure. She often says her only regret is not beginning her adventures in her early twenties.
+           Mimi Babs is an avid solo traveler who has explored over 20 countries across the globe, from Dubai to the United States to South Korea. With more than a decade of experience in sales, marketing and business development, she has consistently acted as an intrapreneur, raising hundreds of thousand to multi-million-dollar financing for the organizations she has worked with. 
+            </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+            Travel is more than a passion for Mimi, it’s a way of life. She has journeyed across nearly every country in West Africa, mostly by road and always on a budget. A lover of nature and outdoor adventure. She often says her only regret is not beginning her adventures in her early twenties.
 
           </p>
         </div>

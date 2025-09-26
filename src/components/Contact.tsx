@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, MessageCircle, Send } from 'lucide-react';
+import { Phone, Mail, Send } from 'lucide-react';
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbzO2yLSEYKY19ZhQE3YyzkdwQR_y9F1nciPO2TP4PJTcmu0YASfcrXpEYBMWV_iLlllfw/exec";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,36 +12,47 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbzoFUhppQX5f_JB5M7CpltethRSH9pHXfofvFsBxOw7LKV3H2LqQeJNJVPce8zokDi-mg/exec", {
-      method: "POST",
-      body: new FormData(Object.entries(formData).reduce((fd, [key, value]) => {
-        fd.append(key, value);
-        return fd;
-      }, new FormData()))
-    });
+    try {
+      const res = await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    if (response.ok) {
-      alert("✅ Message sent successfully!");
-      setFormData({ name: '', email: '', message: '' });
-    } else {
-      alert("❌ Failed to send message. Try again later.");
+      const text = await res.text();
+      let data: any = {};
+      try {
+        data = JSON.parse(text || "{}");
+      } catch {
+        data = {};
+      }
+
+      if (res.ok && data.status === "success") {
+        alert("✅ Message sent! We’ll get back to you soon.");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        console.error("Error response:", text);
+        alert("❌ Failed to send message. Try again later.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("⚠️ Something went wrong. Please try again.");
     }
-  } catch (error) {
-    console.error(error);
-    alert("⚠️ Something went wrong. Please try again.");
-  }
 
-  setIsSubmitting(false);
-};
+    setIsSubmitting(false);
+  };
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-cream-50">
@@ -50,9 +64,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Ready to start your AFCON 2025 Morocco adventure?
-            
-            Contact us today
+            Ready to start your AFCON 2025 Morocco adventure? Contact us today
           </p>
         </div>
 
@@ -63,7 +75,6 @@ const Contact = () => {
               Contact Us
             </h3>
 
-            {/* Contact Methods */}
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center">
@@ -88,12 +99,7 @@ const Contact = () => {
                   <p className="text-gray-600">inquire@duniasafari.com</p>
                 </div>
               </div>
-
-              
             </div>
-
-            
-            
           </div>
 
           {/* Contact Form */}
@@ -104,7 +110,10 @@ const Contact = () => {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Enter your name *
                 </label>
                 <input
@@ -120,7 +129,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Email *
                 </label>
                 <input
@@ -136,8 +148,11 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Message*
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
+                  Message *
                 </label>
                 <textarea
                   id="message"

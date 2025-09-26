@@ -1,27 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { blogPosts } from "../data/blogPosts";
 
 const Blog = () => {
-  const posts = [
-    {
-      id: 1,
-      title: "Top 5 Things to Do in Marrakech During AFCON 2025",
-      excerpt: "From stadium roars to desert nights, here’s your guide to the best experiences…",
-      image: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg"
-    },
-    {
-      id: 2,
-      title: "Why Morocco is Africa’s Ultimate Holiday Destination",
-      excerpt: "Culture, cuisine, and coastlines — discover why Morocco should be on your bucket list.",
-      image: "https://images.pexels.com/photos/1309596/pexels-photo-1309596.jpeg"
-    },
-    {
-      id: 3,
-      title: "Group Travel Hacks for AFCON Fans",
-      excerpt: "Save more, bond more, and experience AFCON together with these travel hacks.",
-      image: "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg"
-    }
-  ];
+  // Show only the first 3 posts on the homepage
+  const featuredPosts = blogPosts.slice(0, 3);
 
   return (
     <section id="blog" className="py-20 bg-gray-50">
@@ -30,7 +13,7 @@ const Blog = () => {
           The Safari Journal
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {featuredPosts.map((post) => (
             <div
               key={post.id}
               className="bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden"
@@ -42,6 +25,13 @@ const Blog = () => {
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">{post.title}</h3>
+                <div className="flex items-center text-sm text-gray-500 mb-2">
+                  <span>{post.author}</span>
+                  <span className="mx-2">•</span>
+                  <span>{new Date(post.publishDate).toLocaleDateString()}</span>
+                  <span className="mx-2">•</span>
+                  <span>{post.readTime}</span>
+                </div>
                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
                 <Link
                   to="/blog"

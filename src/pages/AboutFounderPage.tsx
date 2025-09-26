@@ -33,9 +33,6 @@ const AboutFounderPage = () => {
           </h2>
           <p className="text-gray-700 leading-relaxed">
             In August 2025, Mimi founded Dunia Safari with a bold vision: to make travel accessible, to create a movement that demystifies traveling within Africa, and to inspire young people to explore their continent. She believes that for Africa to progress, its youth must see, experience, and advocate for the continent they call home. 
-
-“Why should a one-hour flight within West Africa cost $250 and Euros50 in Western Europe, when we are the richest continent in the world?” Mimi asks. Her mission through Dunia Safari is to break those barriers, unite Africa through travel, and spark a generation of young explorers.
-
           </p>
         </section>
 
@@ -45,13 +42,11 @@ const AboutFounderPage = () => {
             My Vision
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            My vision is to make Morocco accessible to everyone — whether
+            My vision is to make Morocco accessible to everyone, whether
             you’re a football fan traveling for AFCON 2025, a solo explorer, or
             a group looking for a tailored experience. Dunia Safari is not just
             about tours, it’s about creating lifelong memories and building
             connections between cultures.
-
-            Mimi invites collaborations, partnerships, and sponsorships to help realize this dream within her lifetime.
           </p>
         </section>
       </div>

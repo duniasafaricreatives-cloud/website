@@ -13,16 +13,33 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Placeholder for form submission logic
-    setTimeout(() => {
-      setIsSubmitting(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbzoFUhppQX5f_JB5M7CpltethRSH9pHXfofvFsBxOw7LKV3H2LqQeJNJVPce8zokDi-mg/exec", {
+      method: "POST",
+      body: new FormData(Object.entries(formData).reduce((fd, [key, value]) => {
+        fd.append(key, value);
+        return fd;
+      }, new FormData()))
+    });
+
+    if (response.ok) {
+      alert("✅ Message sent successfully!");
       setFormData({ name: '', email: '', message: '' });
-      // Show success message
-    }, 2000);
-  };
+    } else {
+      alert("❌ Failed to send message. Try again later.");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("⚠️ Something went wrong. Please try again.");
+  }
+
+  setIsSubmitting(false);
+};
+
 
   return (
     <section id="contact" className="py-16 md:py-24 bg-cream-50">

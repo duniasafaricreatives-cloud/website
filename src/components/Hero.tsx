@@ -81,27 +81,47 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            {/* Primary CTA */}
-            <button className="bg-amber-600 hover:bg-amber-700 text-white 
-                               px-4 py-2 sm:px-6 sm:py-3 
-                               rounded-full font-semibold 
-                               text-sm sm:text-lg 
-                               transition-all duration-300 transform hover:scale-105 shadow-lg">
+            {/* Primary CTA - View Itinerary */}
+            <a 
+              href="https://drive.google.com/file/d/16juZlYybK7AqhTozipKZxYfvDtVxq4-u/view?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-amber-600 hover:bg-amber-700 text-white 
+                         px-4 py-2 sm:px-6 sm:py-3 
+                         rounded-full font-semibold 
+                         text-sm sm:text-lg 
+                         transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              View Itinerary
+            </a>
+
+            {/* Optional - Direct Download */}
+            <a 
+              href="https://drive.google.com/uc?export=download&id=16juZlYybK7AqhTozipKZxYfvDtVxq4-u" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-white text-gray-900 hover:bg-gray-200 
+                         px-4 py-2 sm:px-6 sm:py-3 
+                         rounded-full font-semibold 
+                         text-sm sm:text-lg 
+                         transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
               Download Itinerary
-            </button>
-           {/* Secondary CTA */}
-<a 
-  href="https://wa.me/233538087709?text=Hi%20Dunia%20Safari%20Tours!%20I%20am%20interested%20in%20the%20AFCON%202025%20packages.%20Can%20you%20share%20more%20details%3F" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="border-2 border-white text-white hover:bg-white hover:text-gray-900 
-             px-4 py-2 sm:px-6 sm:py-3 
-             rounded-full font-semibold 
-             text-sm sm:text-base 
-             transition-all duration-300 flex items-center gap-2"
->
-  Chat with Us on WhatsApp
-</a>
+            </a>
+
+            {/* Secondary CTA - WhatsApp */}
+            <a 
+              href="https://wa.me/233538087709?text=Hi%20Dunia%20Safari%20Tours!%20I%20am%20interested%20in%20the%20AFCON%202025%20packages.%20Can%20you%20share%20more%20details%3F" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 
+                         px-4 py-2 sm:px-6 sm:py-3 
+                         rounded-full font-semibold 
+                         text-sm sm:text-base 
+                         transition-all duration-300 flex items-center gap-2"
+            >
+              Chat with Us on WhatsApp
+            </a>
           </div>
         </div>
       </div>

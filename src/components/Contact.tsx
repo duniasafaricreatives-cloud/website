@@ -1,59 +1,7 @@
 import React, { useState } from 'react';
-import { Phone, Mail, Send } from 'lucide-react';
-
-const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzO2yLSEYKY19ZhQE3YyzkdwQR_y9F1nciPO2TP4PJTcmu0YASfcrXpEYBMWV_iLlllfw/exec";
+import { Phone, Mail } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const res = await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const text = await res.text();
-      let data: any = {};
-      try {
-        data = JSON.parse(text || "{}");
-      } catch {
-        data = {};
-      }
-
-      if (res.ok && data.status === "success") {
-        alert("✅ Message sent! We’ll get back to you soon.");
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        console.error("Error response:", text);
-        alert("❌ Failed to send message. Try again later.");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("⚠️ Something went wrong. Please try again.");
-    }
-
-    setIsSubmitting(false);
-  };
-
   return (
     <section id="contact" className="py-16 md:py-24 bg-cream-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +16,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-2xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
             <h3 className="text-2xl font-bold text-burgundy-900 mb-8">
@@ -100,87 +48,6 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg">
-            <h3 className="text-2xl font-bold text-burgundy-900 mb-6">
-              Send Us a Message
-            </h3>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Enter your name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:outline-none transition-colors duration-300"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:outline-none transition-colors duration-300"
-                  placeholder="Your email"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-semibold text-gray-700 mb-2"
-                >
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={6}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-amber-500 focus:outline-none transition-colors duration-300 resize-vertical"
-                  placeholder="Your message"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-burgundy-900 hover:bg-burgundy-800 disabled:bg-burgundy-400 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-              >
-                {isSubmitting ? (
-                  <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></div>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </>
-                )}
-              </button>
-            </form>
           </div>
         </div>
       </div>

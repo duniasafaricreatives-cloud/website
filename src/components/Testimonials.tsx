@@ -46,7 +46,7 @@ const Testimonials = () => {
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            What our travelers say about their Dunia Safari experiences
+            What our travelers say about their travel experiences with Mimi Babs
           </p>
         </div>
 

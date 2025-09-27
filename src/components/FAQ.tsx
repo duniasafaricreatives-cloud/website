@@ -49,7 +49,7 @@ answer: `
   <p><strong>A:</strong> — Yes. Reciept are issued within 24hours after each payment, and a final confirmation pack (flights/rooms/match tickets) is sent once the balance is paid.</p>
   <p><strong>Q:</strong> — What if I miss a payment deadline?.</p>
   <p><strong>A:</strong> — Contact us immediately—our agent will advise on the best next step.</p>
-'
+`
     },
     {
       question: 'About cancellation policy',

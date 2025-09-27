@@ -23,6 +23,9 @@ const About = () => {
                 Our journeys blend cultural immersion with comfort and affordability, giving you more than just a trip. We create stories you’ll carry for a lifetime.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
+                Our Vision is to unite Africa by making authentic travel easy and affordable through curated bespoke journeys that connect people, cultures, and local businesses across the continent.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
   From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
   <br />
   <Link to="/about-founder" className="text-amber-600 hover:underline font-semibold">

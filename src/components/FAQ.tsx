@@ -52,12 +52,12 @@ answer: `
 `
     },
     {
-      question: 'About cancellation policy',
-      answer: '[FAQ Answer 6 placeholder - Our cancellation and refund policy details]'
-    },
-    {
       question: 'What is the difference between the Bronze, Silver, and Gold packages?',
       answer: 'The Bronze Package offers room sharing in a riad or hostel and the essential AFCON travel experience. The Silver and Gold Packages upgrade you to private rooms in 2-star and 3-star hotels, respectively, and include added experiences such as a hammam spa and visa application support. For full details, please refer to the individual package descriptions.'
+    },
+    {
+      question: 'Do you only operate in Morocco?',
+      answer: 'Our launch focus is Morocco — especially trips aligned with AFCON 2025 and holiday packages — but our long-term vision includes Egypt, Cape Verde, Turkey, and other exciting destinations across the world'
     },
     {
       question: 'About cancellation policy',

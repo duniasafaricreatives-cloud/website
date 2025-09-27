@@ -26,7 +26,7 @@ const itineraries = {
       { name: "Official Match Tickets", bronze: true, silver: true, gold: true },
       { name: "Transfers (stadium/hotel)", bronze: true, silver: true, gold: true },
       { name: "Marrakech Souk Tour", bronze: false, silver: true, gold: true },
-      { name: "Atlas Mountains Day Trip", bronze: false, false, gold: true },
+      { name: "Atlas Mountains Day Trip", bronze: false, silver: false, gold: true },
     ],
   },
   "morocco-hat-trick-circuit": {

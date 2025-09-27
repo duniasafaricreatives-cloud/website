@@ -21,9 +21,6 @@ const About = () => {
                 At Dunia Safari, we believe travel should be accessible, authentic, value packed and transformative.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our journeys blend cultural immersion with comfort and affordability, giving you more than just a trip. We create stories you’ll carry for a lifetime.
-              </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
                 Our Vision is to unite Africa by making authentic travel easy and affordable through curated bespoke journeys that connect people, cultures, and local businesses across the continent.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">

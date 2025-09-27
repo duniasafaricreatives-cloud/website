@@ -6,8 +6,8 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'About AFCON 2025 packages',
-      answer: '[FAQ Answer 1 placeholder - Detailed information about our Morocco AFCON travel packages and what they include]'
+      question: 'What games do the AFCON packages cover?',
+      answer: 'Our packages include 2 games in Fes or Marrakech for Nigerian and Ivorian fans respectively, blending football with culture and exploration. Want 3 games plus New Year in Morocco? Contact our travel agent for the extended itinerary. We also have a 3 city-3 game package (Casa, Fes, Marrakech circuit)'
     },
     {
       question: 'About booking process',

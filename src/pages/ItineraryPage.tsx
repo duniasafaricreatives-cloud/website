@@ -128,7 +128,7 @@ const ItineraryPage = () => {
                 {packages.map((pkg, idx) => (
                   <td key={idx} className="px-6 py-6 text-center">
                     <a
-                      href="https://forms.gle/5eCVqkXjoKoorqBQ9"
+                      href="https://wa.me/233538087709"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-block w-full bg-gradient-to-r ${pkg.color} text-white py-3 rounded-full font-semibold text-lg hover:shadow-md transition`}

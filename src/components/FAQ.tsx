@@ -24,7 +24,20 @@ const FAQ = () => {
     },
     {
       question: 'Visa Requirements (Ghana, Côte d’Ivoire, Nigeria)',
-      answer: '<p><strong>Q:</strong> — For Ghanaian passport holders.</p><p><strong>A:</strong> — No visa required. You must complete Morocco’s Electronic Travel Authorization (Accès Maroc) online before travel (typically processed within ~24 hours).</p> <p><strong>Q:</strong> — For Ivorian & Nigerian passport holders.</p><p><strong>A:</strong> — Yes. If you hold a valid Schengen/US/UK/Canada visa or residence permit, you can usually apply online for a Morocco eVisa.</p></p>Otherwise, apply at the Moroccan consulate in Abidjan</p></p>Typical Visa processing is around 10 business days, but you need to secure your visa appointment at least 3 weeks in advance'
+answer: `
+  <p><strong>Q:</strong> — For Ghanaian passport holders.</p>
+  <p><strong>A:</strong> — No visa required. You must complete Morocco’s Electronic Travel Authorization 
+  (<a href="https://rabat.ghanagovernmentmission.com/portal/" target="_blank" rel="noopener noreferrer">
+  Accès Maroc</a>) online before travel (typically processed within ~24 hours).</p>
+
+  <p><strong>Q:</strong> — For Ivorian & Nigerian passport holders.</p>
+  <p><strong>A:</strong> — Yes. If you hold a valid Schengen/US/UK/Canada visa or residence permit, you can 
+  usually apply online for a Morocco eVisa.</p>
+
+  <p>Otherwise, apply at the Moroccan consulate in Abidjan</p>
+  <p>Typical Visa processing is around 10 business days, but you need to secure your visa appointment 
+  at least 3 weeks in advance</p>
+`
       
     },
     {

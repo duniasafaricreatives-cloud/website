@@ -7,21 +7,21 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: '[Rudy]',
+      name: '[Rudy from Belgium]',
       rating: 5,
       text: 'Traveling with Mimi Babs felt like I was being spoiled. From Marrakech to Ourika and Essaouira, she took care of every detail. From transport, activities, and those hidden gems you wouldn’t find on your own. All I had to do was enjoy the journey. I’m so proud of what she is building with Dunia Safari and excited to see more people experience travel this way.',
       image: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg'
     },
     {
       id: 2,
-      name: '[Sarah]',
+      name: '[Sarah from Canada]',
       rating: 5,
       text: 'I had the pleasure of meeting Mimi through a mutual Couchsurfing friend while traveling in Sierra Leone, and she quickly became an indispensable part of my journey. Mimi is a true sweetheart, easygoing, adventurous, intelligent, and adaptable to all situations. Our conversations flowed effortlessly, and she has a remarkable ability to make those around her feel comfortable. We connected so well that we decided to continue our travels together into Guinea. I couldn’t have asked for a better travel companion; our time together was an absolute blast. I wholeheartedly recommend Mimi to anyone considering hosting or traveling with her.',
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg'
     },
     {
       id: 3,
-      name: '[Anthea]',
+      name: '[Adolf from Ecuador]',
       rating: 5,
       text: 'Mimi and I met in Morocco and spent a glorious few days together hiking and exploring ancient kasbahs. We later reconnected in Essaouira, where we shared a wonderful afternoon enjoying fresh seafood by the sea. She’s pure good vibes, the kind of travel companion who makes every experience memorable',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg'

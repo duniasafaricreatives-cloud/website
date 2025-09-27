@@ -34,7 +34,7 @@ answer: `
   <p><strong>A:</strong> — Yes. If you hold a valid Schengen/US/UK/Canada visa or residence permit, you can 
   usually apply online for a Morocco eVisa.</p>
 
-  <p>Otherwise, apply at the Moroccan consulate in Abidjan</p>
+  <p>Otherwise, apply at the Moroccan consulate in Abidjan & Abuja</p>
   <p>Typical Visa processing is around 10 business days, but you need to secure your visa appointment 
   at least 3 weeks in advance</p>
 `

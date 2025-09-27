@@ -11,7 +11,7 @@ const Packages = () => {
       features: [
         'Bed and Breakfast',
         'Match tickets and transfers',
-        'Tour activities in FES and tranfers'
+        'Tour activities and tranfers in FES, Morocco'
       ],
       color: 'from-amber-600 to-amber-700',
       bgColor: 'bg-white'

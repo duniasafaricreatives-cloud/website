@@ -110,7 +110,7 @@ const Packages = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-300 mb-6">
-            Need a custom package? Contact us for personalized options
+            Prefer to skip AFCON but still want to experience Morocco?
           </p>
           <a
     href="https://forms.gle/5eCVqkXjoKoorqBQ9"

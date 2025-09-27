@@ -23,8 +23,9 @@ const FAQ = () => {
       `
     },
     {
-      question: 'About visa requirements',
-      answer: '[FAQ Answer 3 placeholder - Information about visa requirements for Morocco and our support services]'
+      question: 'Visa Requirements (Ghana, Côte d’Ivoire, Nigeria)',
+      answer: '<p><strong>Q:</strong> — For Ghanaian passport holders.</p>'
+      
     },
     {
       question: 'About payment options',

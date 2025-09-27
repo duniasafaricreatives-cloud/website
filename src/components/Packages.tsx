@@ -10,7 +10,7 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Match tickets and transfers',
+        'Official match tickets and transfers to cheer on the Super Eagles of Nigeria',
         'Tour activities and tranfers in FES, Morocco'
       ],
       color: 'from-amber-600 to-amber-700',
@@ -23,7 +23,7 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Match tickets and transfers',
+        'Official match tickets and transfers to cheer on the Super éléphants of Ivory Coast',
         'Tour activities in Marrakech and tranfers'
       ],
       color: 'from-gray-400 to-gray-600',

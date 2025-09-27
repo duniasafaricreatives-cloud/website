@@ -9,7 +9,7 @@ const Hero = () => {
       id: 1,
       title: "AFCON 2025: Which Team Are You Supporting?",
       subtitle: "Your Morocco Adventure Awaits",
-      image: "https://images.pexels.com/photos/34014860/pexels-photo-34014860.jpeg" // stadium crowd
+      image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.moroccoworldnews.com%2F2025%2F07%2F233999%2Ffifa-president-tours-moroccos-renovated-prince-moulay-abdellah-stadium%2F&psig=AOvVaw1ph-WOSIwOa3mmIem1MmwM&ust=1759057941879000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIDd-c_n-I8DFQAAAAAdAAAAABAE.jpeg" // stadium crowd
     },
     {
       id: 2,

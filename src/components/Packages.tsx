@@ -115,7 +115,7 @@ const Packages = () => {
             rel="noopener noreferrer"
             className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mb-8"
           >
-            📥 Download Itinerary
+            Download Itinerary
           </a>
         </div>
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Check, Star } from 'lucide-react';
-import { Link } from 'react-router-dom'; // ✅ Import Link
+import { Link } from 'react-router-dom';
 
 const Packages = () => {
   const packages = [
     {
+      id: 'eagles-over-the-atlas', // ✅ slug for itinerary
       name: 'Eagles over the Atlas',
       popular: false,
       price: 'Starting from $760',
@@ -18,6 +19,7 @@ const Packages = () => {
       bgColor: 'bg-white'
     },
     {
+      id: 'elephants-in-the-atlas',
       name: 'Elephants in the Atlas',
       popular: true,
       price: 'Starting from $815',
@@ -31,14 +33,15 @@ const Packages = () => {
       bgColor: 'bg-gray-50'
     },
     {
+      id: 'morocco-hat-trick-circuit',
       name: 'Morocco hat trick circuit',
       popular: false,
       price: 'Starting from $1,190',
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Official match tickets to see three games in three different cities',
-        'Tour activities and transfers in Casablanca, Fes and Marrakech'
+        'Official match tickets to see three games in three different cities',
+        'Tour activities and transfers in Casablanca, Fes and Marrakech'
       ],
       color: 'from-yellow-400 to-yellow-600',
       bgColor: 'bg-white'
@@ -63,7 +66,7 @@ const Packages = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {packages.map((pkg) => (
             <div
-              key={pkg.name}
+              key={pkg.id}
               className={`relative ${pkg.bgColor} rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-105 ${
                 pkg.popular ? 'ring-4 ring-amber-500' : ''
               }`}
@@ -96,12 +99,12 @@ const Packages = () => {
                   ))}
                 </div>
 
-                {/* CTA Button → Now links to itinerary page */}
+                {/* CTA Button → now says "See Packages" */}
                 <Link
-                  to="/itinerary"
+                  to={`/itinerary/${pkg.id}`}
                   className={`block text-center bg-gradient-to-r ${pkg.color} text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105`}
                 >
-                  View {pkg.name} itinerary
+                  See Packages
                 </Link>
               </div>
             </div>

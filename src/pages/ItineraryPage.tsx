@@ -4,7 +4,7 @@ import { Check, X, Star } from "lucide-react";
 const ItineraryPage = () => {
   const packages = [
     {
-      name: "Eagles over the Atlas",
+      name: "Bronze",
       price: "Starting from $760",
       description: "This package excludes return flights",
       features: {
@@ -20,7 +20,7 @@ const ItineraryPage = () => {
       popular: false,
     },
     {
-      name: "Elephants in the Atlas",
+      name: "Silver",
       price: "Starting from $815",
       description: "This package excludes return flights",
       features: {
@@ -36,7 +36,7 @@ const ItineraryPage = () => {
       popular: true,
     },
     {
-      name: "Morocco Hat Trick Circuit",
+      name: "Gold",
       price: "Starting from $1,190",
       description: "This package excludes return flights",
       features: {

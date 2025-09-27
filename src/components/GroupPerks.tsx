@@ -15,8 +15,8 @@ const GroupPerks = () => {
     },
     {
       icon: FileText,
-      title: 'Visa Support',
-      description: 'Skip the stress — our team guides your group through the entire visa application process with clear steps and reliable documentation support.'
+      title: 'Hassle-Free Planning',
+      description: 'We handle the logistics (flights, transfers, tours, tickets), so your group can simply relax and enjoy'
     },
   ];
 

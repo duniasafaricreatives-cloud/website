@@ -9,10 +9,10 @@ const Packages = () => {
       price: '[Price]',
       description: '[Bronze package description placeholder]',
       features: [
-        '[Bronze feature 1]',
-        '[Bronze feature 2]',
-        '[Bronze feature 3]',
-        '[Bronze feature 4]'
+        'Bed and Breakfast',
+        'Match tickets and transfers',
+        'All Local transfers',
+        'Tour activities and tranfers'
       ],
       color: 'from-amber-600 to-amber-700',
       bgColor: 'bg-white'

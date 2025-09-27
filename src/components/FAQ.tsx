@@ -15,10 +15,10 @@ const FAQ = () => {
         <p><strong>Book early</strong> — Christmas/New Year has high demand and higher rates.</p>
         <p><strong>Steps:</strong></p>
         <ol>
-          <li>Select your package on the website & pay 40% deposit.</li>
-          <li>A travel agent will contact you via WhatsApp within 24 hours for flights, insurance & visa support.</li>
-          <li>Pay the remaining 60% before the deadline to receive flight, hotel & stadium ticket confirmations.</li>
-          <li>Be added to our WhatsApp broadcast group for updates.</li>
+          <li>1. Select your package on the website & pay 40% deposit.</li>
+          <li>2. A travel agent will contact you via WhatsApp within 24 hours for flights, insurance & visa support.</li>
+          <li>3. Pay the remaining 60% before the deadline to receive flight, hotel & stadium ticket confirmations.</li>
+          <li>4. Be added to our WhatsApp broadcast group for updates.</li>
         </ol>
       `
     },
@@ -31,7 +31,7 @@ answer: `
   Accès Maroc</a>) online before travel (typically processed within ~24 hours).</p>
 
   <p><strong>Q:</strong> — For Ivorian & Nigerian passport holders.</p>
-  <p><strong>A:</strong> — Yes. If you hold a valid Schengen/US/UK/Canada visa or residence permit, you can 
+  <p><strong>A:</strong> — Yes, Visa required. If you hold a valid Schengen/US/UK/Canada visa or residence permit, you can 
   usually apply online for a Morocco eVisa.</p>
 
   <p>Otherwise, apply at the Moroccan consulate in Abidjan & Abuja</p>
@@ -57,7 +57,7 @@ answer: `
     },
     {
       question: 'Do you only operate in Morocco?',
-      answer: 'Our launch focus is Morocco — especially trips aligned with AFCON 2025 and holiday packages — but our long-term vision includes Egypt, Cape Verde, Turkey, and other exciting destinations across the world'
+      answer: 'Our launch focus is Morocco. Especially trips aligned with AFCON 2025 and holiday packages, but our long-term vision includes Egypt, Cape Verde, Turkey, and other exciting destinations across the world'
     },
     {
       question: 'What is Dunia Safari’s refund policy?',

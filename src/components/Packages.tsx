@@ -4,10 +4,10 @@ import { Check, Star } from 'lucide-react';
 const Packages = () => {
   const packages = [
     {
-      name: 'Bronze',
+      name: 'Eagles over the Atlas',
       popular: false,
       price: 'Starting from $760',
-      description: '[Bronze package description placeholder]',
+      description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
         'Match tickets and transfers',

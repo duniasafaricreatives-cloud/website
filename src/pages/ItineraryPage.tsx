@@ -1,5 +1,5 @@
-import React from "react";
-import { Check, X, Star } from "lucide-react";
+import React, { useState } from "react";
+import { Check, X, Star, ChevronDown, ChevronUp } from "lucide-react";
 
 const ItineraryPage = () => {
   const packages = [
@@ -63,6 +63,8 @@ const ItineraryPage = () => {
     { key: "casablancaTours", label: "Tour activities in Casablanca" },
   ];
 
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className="py-20 bg-burgundy-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -77,8 +79,8 @@ const ItineraryPage = () => {
           </p>
         </div>
 
-        {/* Comparison Table */}
-        <div className="overflow-x-auto">
+        {/* ===== Desktop / Tablet View (Comparison Table) ===== */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full border-collapse bg-white rounded-lg shadow-lg overflow-hidden">
             <thead>
               <tr>
@@ -96,7 +98,9 @@ const ItineraryPage = () => {
                       {pkg.name}
                     </div>
                     <div className="text-lg font-bold">{pkg.price}</div>
-                    <div className="text-sm text-gray-500">{pkg.description}</div>
+                    <div className="text-sm text-gray-500">
+                      {pkg.description}
+                    </div>
                     {pkg.popular && (
                       <div className="mt-2 inline-flex items-center bg-amber-500 text-white text-xs px-2 py-1 rounded-full">
                         <Star className="w-3 h-3 mr-1" /> Most Popular
@@ -140,6 +144,71 @@ const ItineraryPage = () => {
               </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* ===== Mobile View (Accordion) ===== */}
+        <div className="block md:hidden space-y-6">
+          {packages.map((pkg, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-xl shadow-md overflow-hidden border"
+            >
+              <button
+                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+                className="w-full flex justify-between items-center px-6 py-4 text-left"
+              >
+                <div>
+                  <div
+                    className={`inline-block px-3 py-1 rounded-full bg-gradient-to-r ${pkg.color} text-white text-sm mb-1`}
+                  >
+                    {pkg.name}
+                  </div>
+                  <div className="text-lg font-bold text-gray-900">
+                    {pkg.price}
+                  </div>
+                  <p className="text-sm text-gray-500">{pkg.description}</p>
+                  {pkg.popular && (
+                    <div className="mt-1 inline-flex items-center bg-amber-500 text-white text-xs px-2 py-1 rounded-full">
+                      <Star className="w-3 h-3 mr-1" /> Most Popular
+                    </div>
+                  )}
+                </div>
+                {openIndex === idx ? (
+                  <ChevronUp className="w-5 h-5 text-gray-600" />
+                ) : (
+                  <ChevronDown className="w-5 h-5 text-gray-600" />
+                )}
+              </button>
+
+              {openIndex === idx && (
+                <div className="px-6 pb-4 space-y-3">
+                  {featuresList.map((feature, fIdx) => (
+                    <div
+                      key={fIdx}
+                      className="flex items-center justify-between border-b py-2"
+                    >
+                      <span className="text-gray-700">{feature.label}</span>
+                      {pkg.features[feature.key as keyof typeof pkg.features] ? (
+                        <Check className="w-5 h-5 text-green-600" />
+                      ) : (
+                        <X className="w-5 h-5 text-red-400" />
+                      )}
+                    </div>
+                  ))}
+                  <div className="pt-4">
+                    <a
+                      href="https://wa.me/233538087709"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block w-full text-center bg-gradient-to-r ${pkg.color} text-white py-3 rounded-full font-semibold text-lg hover:shadow-md transition`}
+                    >
+                      Book Now
+                    </a>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Download CTA */}

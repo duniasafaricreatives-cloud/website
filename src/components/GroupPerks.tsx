@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, MapPin, FileText, Camera, Utensils, Shield } from 'lucide-react';
+import { Users, BadgePercent, FileText, Shield } from 'lucide-react';
 
 const GroupPerks = () => {
   const perks = [

@@ -12,7 +12,7 @@ const Packages = () => {
         'Bed and Breakfast',
         'Match tickets and transfers',
         'All Local transfers',
-        'Tour activities and tranfers'
+        'Tour activities in FES and tranfers'
       ],
       color: 'from-amber-600 to-amber-700',
       bgColor: 'bg-white'

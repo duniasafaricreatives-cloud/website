@@ -90,22 +90,22 @@ const Packages = () => {
                 </div>
 
                 {/* Features */}
-                <div className="space-y-4 mb-8">
-                  {pkg.features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+<div className="space-y-4 mb-8">
+  {pkg.features.map((feature, index) => (
+    <div key={index} className="flex items-start gap-3">
+      <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+      <span className="text-gray-700">{feature}</span>
+    </div>
+  ))}
+</div>
 
-                {/* CTA Button → now says "See Packages" */}
-                <Link
-                  to={`/itinerary/${pkg.id}`}
-                  className={`block text-center bg-gradient-to-r ${pkg.color} text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105`}
-                >
-                  See Packages
-                </Link>
+{/* CTA Button → now says "See Packages" */}
+<Link
+  to="/itinerary"
+  className={`block text-center bg-gradient-to-r ${pkg.color} text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105`}
+>
+  See Packages
+</Link>
               </div>
             </div>
           ))}

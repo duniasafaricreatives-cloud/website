@@ -41,7 +41,15 @@ answer: `
     },
     {
       question: 'What payment methods do you accept?',
-      answer: '[FAQ Answer 5 placeholder - Available payment methods and payment schedule information]'
+      answer:`
+  <p><strong>A:</strong> — We accept debit/credit cards (Visa/Mastercard), bank transfer, and mobile money (for Ghana only). If your preferred method isn’t listed, contact our travel agent for alternatives.</p>
+  <p><strong>Q:</strong> —How are exchange rates handled?</p>
+  <p><strong>A:</strong> — For cross-currency payments, we use the prevailing market rate at the time of invoicing/checkout. Your bank or provider may apply a small FX margin.</p>
+  <p><strong>Q:</strong> — Will I receive a receipt?</p>
+  <p><strong>A:</strong> — Yes. Reciept are issued within 24hours after each payment, and a final confirmation pack (flights/rooms/match tickets) is sent once the balance is paid.</p>
+  <p><strong>Q:</strong> — What if I miss a payment deadline?.</p>
+  <p><strong>A:</strong> — Contact us immediately—our agent will advise on the best next step.</p>
+'
     },
     {
       question: 'About cancellation policy',

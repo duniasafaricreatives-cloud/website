@@ -12,9 +12,10 @@ import Newsletter from "./components/Newsletter";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-import BlogListingPage from "./pages/BlogListingPage"; // ✅ new
-import BlogPostPage from "./pages/BlogPostPage";       // ✅ new
+import BlogListingPage from "./pages/BlogListingPage"; 
+import BlogPostPage from "./pages/BlogPostPage";       
 import AboutFounderPage from "./pages/AboutFounderPage";
+import ItineraryPage from "./pages/ItineraryPage";   // ✅ new import
 
 function App() {
   const location = useLocation();
@@ -55,10 +56,15 @@ function App() {
 
           {/* Blog Listing Page */}
           <Route path="/blog" element={<BlogListingPage />} />
-          {/* About Founder Page ✅ */}
-  <Route path="/about-founder" element={<AboutFounderPage />} />
+
+          {/* About Founder Page */}
+          <Route path="/about-founder" element={<AboutFounderPage />} />
+
           {/* Individual Blog Post Page */}
           <Route path="/blog/:id" element={<BlogPostPage />} />
+
+          {/* Itinerary Page ✅ */}
+          <Route path="/itinerary" element={<ItineraryPage />} />
         </Routes>
       </main>
       <Footer />

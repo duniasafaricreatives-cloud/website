@@ -24,7 +24,7 @@ const FAQ = () => {
     },
     {
       question: 'Visa Requirements (Ghana, Côte d’Ivoire, Nigeria)',
-      answer: '<p><strong>Q:</strong> — For Ghanaian passport holders.</p>'
+      answer: '<p><strong>Q:</strong> — For Ghanaian passport holders.</p><p><strong>A:</strong> — No visa required for short visits. You must complete Morocco’s Electronic Travel Authorization (Accès Maroc) online before travel (typically processed within ~24 hours).</p>'
       
     },
     {

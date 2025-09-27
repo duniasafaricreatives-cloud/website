@@ -100,7 +100,7 @@ const Packages = () => {
 
                 {/* CTA Button */}
                 <button className={`w-full bg-gradient-to-r ${pkg.color} text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105`}>
-                  {pkg.name}
+                  {start the journey}
                 </button>
               </div>
             </div>

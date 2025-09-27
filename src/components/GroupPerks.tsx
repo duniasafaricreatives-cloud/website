@@ -9,7 +9,7 @@ const GroupPerks = () => {
       description: 'Traveling as a group makes every moment richer — from cheering together at AFCON stadiums to bonding over desert sunsets and city adventures.'
     },
     {
-      icon: MapPin,
+      icon: BadgePercent,
       title: 'Exclusive Discounts',
       description: ' Enjoy lower rates on flights, hotels, and experiences when you travel as part of a group.'
     },

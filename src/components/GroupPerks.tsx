@@ -18,7 +18,6 @@ const GroupPerks = () => {
       title: 'Visa Support',
       description: 'Skip the stress — our team guides your group through the entire visa application process with clear steps and reliable documentation support.'
     },
-    {
   ];
 
   return (

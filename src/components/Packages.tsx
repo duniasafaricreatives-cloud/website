@@ -35,7 +35,7 @@ const Packages = () => {
       name: 'Morocco hat trick circuit',
       popular: false,
       price: 'Starting from $1,190',
-      description: '[Gold package description placeholder]',
+      description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
         'Match tickets and transfers',

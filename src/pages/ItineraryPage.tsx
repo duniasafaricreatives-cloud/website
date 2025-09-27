@@ -1,89 +1,84 @@
+// src/pages/ItineraryPage.tsx
 import React from "react";
-import { Check } from "lucide-react";
 
-const tiers = [
-  { name: "Bronze", price: 760, color: "bg-gray-100" },
-  { name: "Silver", price: 950, color: "bg-gray-200" },
-  { name: "Gold", price: 1200, color: "bg-gray-300" },
-];
-
-const activities = [
-  { name: "Bed & Breakfast", bronze: true, silver: true, gold: true },
-  { name: "Official Match Tickets", bronze: true, silver: true, gold: true },
-  { name: "Transfers (stadium/hotel)", bronze: true, silver: true, gold: true },
-  { name: "Guided City Tour (FES / Marrakech)", bronze: false, silver: true, gold: true },
-  { name: "Desert Safari", bronze: false, silver: false, gold: true },
-  { name: "Atlas Mountains Day Trip", bronze: false, silver: false, gold: true },
-  { name: "Multi-city Tours (Casablanca, FES, Marrakech)", bronze: false, silver: true, gold: true },
-];
-
-const ItineraryPage = () => {
+const ItineraryPage: React.FC = () => {
   return (
-    <main className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Title */}
-        <h1 className="text-4xl font-bold mb-6 text-center text-burgundy-900">
-          AFCON 2025 Itinerary Packages
-        </h1>
-        <div className="w-24 h-1 bg-amber-600 mx-auto mb-12"></div>
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <h2 className="text-4xl font-bold text-gray-800 mb-6">
+          Our Sahara Itinerary Packages
+        </h2>
+        <p className="text-lg text-gray-600 mb-12">
+          Choose the perfect adventure for your trip. Compare our packages below:
+        </p>
 
         {/* Pricing Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse bg-white shadow-lg rounded-xl overflow-hidden">
-            <thead className="bg-burgundy-900 text-white">
-              <tr>
-                <th className="py-4 px-6 text-left text-lg">Activities</th>
-                {tiers.map((tier) => (
-                  <th
-                    key={tier.name}
-                    className="py-4 px-6 text-center text-lg"
-                  >
-                    {tier.name} <br />
-                    <span className="text-amber-400 text-base font-semibold">
-                      ${tier.price}+
-                    </span>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {activities.map((activity, index) => (
-                <tr key={index} className="border-t">
-                  <td className="py-4 px-6 text-gray-800">{activity.name}</td>
-                  <td className="py-4 px-6 text-center">
-                    {activity.bronze && (
-                      <Check className="w-5 h-5 text-green-600 mx-auto" />
-                    )}
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    {activity.silver && (
-                      <Check className="w-5 h-5 text-green-600 mx-auto" />
-                    )}
-                  </td>
-                  <td className="py-4 px-6 text-center">
-                    {activity.gold && (
-                      <Check className="w-5 h-5 text-green-600 mx-auto" />
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Basic */}
+          <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              Basic Explorer
+            </h3>
+            <p className="text-gray-600 mb-6">
+              Perfect for solo travelers or quick visits.
+            </p>
+            <p className="text-4xl font-bold text-blue-600 mb-6">$299</p>
+            <ul className="text-gray-600 space-y-3 flex-1">
+              <li>✅ 2 Days Sahara Experience</li>
+              <li>✅ Desert camp stay</li>
+              <li>✅ Guided camel ride</li>
+              <li>❌ No meals included</li>
+              <li>❌ No cultural tour</li>
+            </ul>
+            <button className="mt-8 bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+              Choose Basic
+            </button>
+          </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-12">
-          <a
-            href="https://forms.gle/5eCVqkXjoKoorqBQ9"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300"
-          >
-            Book Your Package
-          </a>
+          {/* Standard */}
+          <div className="bg-white rounded-2xl shadow-lg border-2 border-blue-600 p-8 flex flex-col scale-105">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              Standard Adventure
+            </h3>
+            <p className="text-gray-600 mb-6">
+              A balanced mix of culture and desert fun.
+            </p>
+            <p className="text-4xl font-bold text-blue-600 mb-6">$599</p>
+            <ul className="text-gray-600 space-y-3 flex-1">
+              <li>✅ 4 Days Sahara Adventure</li>
+              <li>✅ Desert camp & hotel stays</li>
+              <li>✅ Guided camel & 4x4 rides</li>
+              <li>✅ Traditional meals included</li>
+              <li>❌ No city tour</li>
+            </ul>
+            <button className="mt-8 bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+              Choose Standard
+            </button>
+          </div>
+
+          {/* Premium */}
+          <div className="bg-white rounded-2xl shadow-md p-8 flex flex-col">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              Premium Journey
+            </h3>
+            <p className="text-gray-600 mb-6">
+              The full Moroccan Sahara experience.
+            </p>
+            <p className="text-4xl font-bold text-blue-600 mb-6">$999</p>
+            <ul className="text-gray-600 space-y-3 flex-1">
+              <li>✅ 7 Days Sahara Luxury Tour</li>
+              <li>✅ Desert camp & luxury hotels</li>
+              <li>✅ Camel, 4x4 & sandboarding</li>
+              <li>✅ All meals included</li>
+              <li>✅ City & cultural tours</li>
+            </ul>
+            <button className="mt-8 bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition">
+              Choose Premium
+            </button>
+          </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

@@ -40,7 +40,7 @@ answer: `
 `    
     },
     {
-      question: 'About payment options',
+      question: 'What payment methods do you accept?',
       answer: '[FAQ Answer 5 placeholder - Available payment methods and payment schedule information]'
     },
     {

@@ -10,7 +10,7 @@ const Testimonials = () => {
       name: '[Rudy]',
       rating: 5,
       text: 'Traveling with Mimi Babs felt like I was being spoiled. From Marrakech to Ourika and Essaouira, she took care of every detail. From transport, activities, and those hidden gems you wouldn’t find on your own. All I had to do was enjoy the journey. I’m so proud of what she is building with Dunia Safari and excited to see more people experience travel this way.',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg'
+      image: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg'
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const Testimonials = () => {
       name: '[Anthea]',
       rating: 5,
       text: 'Mimi and I met in Morocco and spent a glorious few days together hiking and exploring ancient kasbahs. We later reconnected in Essaouira, where we shared a wonderful afternoon enjoying fresh seafood by the sea. She’s pure good vibes, the kind of travel companion who makes every experience memorable',
-      image: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg'
+      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg'
     }
   ];
 

@@ -39,14 +39,14 @@ const itineraries = {
       { name: "Match Tickets", bronze: true, silver: true, gold: true },
       { name: "Transfers (all cities)", bronze: true, silver: true, gold: true },
       { name: "City Tours (Casablanca, FES)", bronze: false, silver: true, gold: true },
-      { name: "Sahara Desert Safari", bronze: false, false, gold: true },
+      { name: "Sahara Desert Safari", bronze: false, silver: false, gold: true }, // ✅ fixed
     ],
   },
 };
 
 const ItineraryPage = () => {
   const { id } = useParams();
-  const itinerary = itineraries[id];
+  const itinerary = itineraries[id as keyof typeof itineraries];
 
   if (!itinerary) {
     return <div className="text-center py-20">Itinerary not found.</div>;

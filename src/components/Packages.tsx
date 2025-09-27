@@ -20,8 +20,8 @@ const Packages = () => {
     {
       name: 'Elephants in the Atlas',
       popular: true,
-      price: '[Price]',
-      description: '[Silver package description placeholder]',
+      price: 'Starting from $815',
+      description: 'This package excludes return flights',
       features: [
         '[Silver feature 1]',
         '[Silver feature 2]',

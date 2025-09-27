@@ -10,10 +10,11 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Official match tickets and transfers to cheer on the Super Eagles of Nigeria',
+        'Official match tickets and transfers to cheer on the Super Eagles of Nigeria',
         'Tour activities and tranfers in FES, Morocco'
       ],
-      color: 'from-amber-600 to-amber-700',
+      // Nigeria green gradient
+      color: 'from-green-600 to-green-700',
       bgColor: 'bg-white'
     },
     {
@@ -23,10 +24,11 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Official match tickets and transfers to cheer on the Super éléphants of Ivory Coast',
+        'Official match tickets and transfers to cheer on the Super éléphants of Ivory Coast',
         'Tour activities in Marrakech and tranfers'
       ],
-      color: 'from-gray-400 to-gray-600',
+      // Ivory Coast orange gradient
+      color: 'from-orange-500 to-orange-600',
       bgColor: 'bg-gray-50'
     },
     {
@@ -110,11 +112,11 @@ const Packages = () => {
             Prefer to skip AFCON but still want to experience Morocco?
           </p>
           <a
-    href="https://forms.gle/5eCVqkXjoKoorqBQ9"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
-  >
+            href="https://forms.gle/5eCVqkXjoKoorqBQ9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
+          >
             Custom Package Inquiry
           </a>
         </div>

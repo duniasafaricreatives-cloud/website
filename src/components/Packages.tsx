@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check, Star } from 'lucide-react';
+import { Link } from 'react-router-dom'; // ✅ Import Link
 
 const Packages = () => {
   const packages = [
@@ -11,7 +12,7 @@ const Packages = () => {
       features: [
         'Bed and Breakfast',
         'Official match tickets and transfers to cheer on the Super Eagles of Nigeria',
-        'Tour activities and tranfers in FES, Morocco'
+        'Tour activities and transfers in FES, Morocco'
       ],
       color: 'from-green-600 to-green-700', // Nigeria green
       bgColor: 'bg-white'
@@ -24,7 +25,7 @@ const Packages = () => {
       features: [
         'Bed and Breakfast',
         'Official match tickets and transfers to cheer on the Super éléphants of Ivory Coast',
-        'Tour activities in Marrakech and tranfers'
+        'Tour activities in Marrakech and transfers'
       ],
       color: 'from-orange-500 to-orange-600', // Ivory Coast orange
       bgColor: 'bg-gray-50'
@@ -36,8 +37,8 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Official match tickets to see three games in three different cities',
-        'Tour activities and transfers in Casablanca, Fes and Marrakech'
+        'Match tickets and transfers',
+        'Tour activities in Casablanca, FES, Marrakech and transfers'
       ],
       color: 'from-yellow-400 to-yellow-600',
       bgColor: 'bg-white'
@@ -95,10 +96,13 @@ const Packages = () => {
                   ))}
                 </div>
 
-                {/* CTA Button */}
-                <button className={`w-full bg-gradient-to-r ${pkg.color} text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105`}>
-                  {pkg.name} itinerary
-                </button>
+                {/* CTA Button → Now links to itinerary page */}
+                <Link
+                  to="/itinerary"
+                  className={`block text-center bg-gradient-to-r ${pkg.color} text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105`}
+                >
+                  View {pkg.name} itinerary
+                </Link>
               </div>
             </div>
           ))}

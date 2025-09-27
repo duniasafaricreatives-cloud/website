@@ -60,8 +60,8 @@ answer: `
       answer: 'Our launch focus is Morocco — especially trips aligned with AFCON 2025 and holiday packages — but our long-term vision includes Egypt, Cape Verde, Turkey, and other exciting destinations across the world'
     },
     {
-      question: 'About cancellation policy',
-      answer: '[FAQ Answer 6 placeholder - Our cancellation and refund policy details]'
+      question: 'What is Dunia Safari’s refund policy?',
+      answer: 'Deposits are generally non-refundable, as they secure your flight, hotel, and match tickets. Depending on the situation, Dunia Safari may reschedule your booking to a later date or allow you to transfer your package to another traveler if you are unable to travel yourself. Terms & conditions apply.'
     }
   ];
 

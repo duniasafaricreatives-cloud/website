@@ -44,7 +44,7 @@ const Contact = () => {
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">
                     Send us a Mail
                   </h4>
-                  <p className="text-gray-600">inquire@duniasafari.com</p>
+                  <p className="text-gray-600">travelduniasafari@gmail.com</p>
                 </div>
               </div>
             </div>

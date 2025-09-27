@@ -36,8 +36,8 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Match tickets and transfers',
-        'Tour activities in Casablanca, FES, Marrakech and tranfers'
+        'Official match tickets to see three games in three different cities',
+        'Tour activities and transfers in Casablanca, Fes and Marrakech'
       ],
       color: 'from-yellow-400 to-yellow-600',
       bgColor: 'bg-white'

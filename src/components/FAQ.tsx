@@ -11,7 +11,16 @@ const FAQ = () => {
     },
     {
       question: 'About booking process',
-      answer: '[FAQ Answer 2 placeholder - Step-by-step guide on how to book your travel package with Dunia Safari]'
+      answer: `
+        <p><strong>Book early</strong> — Christmas/New Year has high demand and higher rates.</p>
+        <p><strong>Steps:</strong></p>
+        <ol>
+          <li>Select your package on the website & pay 40% deposit.</li>
+          <li>A travel agent will contact you via WhatsApp within 24 hours for flights, insurance & visa support.</li>
+          <li>Pay the remaining 60% before the deadline to receive flight, hotel & stadium ticket confirmations.</li>
+          <li>Be added to our WhatsApp broadcast group for updates.</li>
+        </ol>
+      `
     },
     {
       question: 'About visa requirements',
@@ -76,9 +85,10 @@ const FAQ = () => {
                 openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
               } overflow-hidden`}>
                 <div className="p-6 pt-0 border-t border-gray-100">
-                  <p className="text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
+                  <div 
+                    className="text-gray-600 leading-relaxed prose prose-lg max-w-none prose-ol:pl-4 prose-li:text-gray-600"
+                    dangerouslySetInnerHTML={{ __html: faq.answer }}
+                  />
                 </div>
               </div>
             </div>

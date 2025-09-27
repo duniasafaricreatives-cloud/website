@@ -27,10 +27,6 @@ const FAQ = () => {
       answer: '[FAQ Answer 3 placeholder - Information about visa requirements for Morocco and our support services]'
     },
     {
-      question: 'About group travel',
-      answer: '[FAQ Answer 4 placeholder - Benefits and details of traveling with Dunia Safari groups]'
-    },
-    {
       question: 'About payment options',
       answer: '[FAQ Answer 5 placeholder - Available payment methods and payment schedule information]'
     },

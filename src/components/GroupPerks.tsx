@@ -10,8 +10,8 @@ const GroupPerks = () => {
     },
     {
       icon: MapPin,
-      title: 'Stadium Seating',
-      description: 'Enjoy guaranteed seating arrangements so your group stays together in prime locations, making every match more exciting and unforgettable.'
+      title: 'Exclusive Discounts',
+      description: ' Enjoy lower rates on flights, hotels, and experiences when you travel as part of a group.'
     },
     {
       icon: FileText,
@@ -19,20 +19,6 @@ const GroupPerks = () => {
       description: 'Skip the stress — our team guides your group through the entire visa application process with clear steps and reliable documentation support.'
     },
     {
-      icon: Camera,
-      title: 'Photo Opportunities',
-      description: 'Capture memories with exclusive group photo sessions at iconic Moroccan landmarks, stadiums, and cultural spots.'
-    },
-    {
-      icon: Utensils,
-      title: 'Group Dining',
-      description: 'Savor Morocco’s authentic cuisine with curated group meals — from fragrant tajines to rooftop dinners under lantern-lit skies.'
-    },
-    {
-      icon: Shield,
-      title: 'Travel Insurance',
-      description: 'Peace of mind for the whole group with comprehensive travel insurance, covering health, luggage, and emergencies throughout your trip.'
-    }
   ];
 
   return (

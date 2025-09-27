@@ -37,12 +37,10 @@ const Packages = () => {
       price: 'Starting from $1,190',
       description: '[Gold package description placeholder]',
       features: [
-        '[Gold feature 1]',
-        '[Gold feature 2]',
-        '[Gold feature 3]',
-        '[Gold feature 4]',
-        '[Gold feature 5]',
-        '[Gold feature 6]'
+        'Bed and Breakfast',
+        'Match tickets and transfers',
+        'All Local transfers',
+        'Tour activities in Casablanca, FES, Marrakech and tranfers'
       ],
       color: 'from-yellow-400 to-yellow-600',
       bgColor: 'bg-white'

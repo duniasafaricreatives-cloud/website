@@ -11,19 +11,20 @@ const AboutFounderPage = () => {
         <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
 
         {/* Founder Image + Intro */}
-        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+        <div className="flex flex-col items-center gap-8 mb-12">
           <img
             src="/founder.png"
             alt="Founder of Dunia Safari"
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />
-          <p className="text-lg text-gray-700 leading-relaxed">
-           Mimi Babs is an avid solo traveler who has explored over 20 countries across the globe, from Dubai to the United States to South Korea. With more than a decade of experience in sales, marketing and business development, she has consistently acted as an intrapreneur, raising hundreds of thousand to multi-million-dollar financing for the organizations she has worked with. 
+          <div className="space-y-6">
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Mimi Babs is an avid solo traveler who has explored over 20 countries across the globe, from Dubai to the United States to South Korea. With more than a decade of experience in sales, marketing and business development, she has consistently acted as an intrapreneur, raising hundreds of thousand to multi-million-dollar financing for the organizations she has worked with. 
             </p>
-              <p className="text-lg text-gray-700 leading-relaxed">
-            Travel is more than a passion for Mimi, it’s a way of life. She has journeyed across nearly every country in West Africa, mostly by road and always on a budget. A lover of nature and outdoor adventure. She often says her only regret is not beginning her adventures in her early twenties.
-
-          </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Travel is more than a passion for Mimi, it’s a way of life. She has journeyed across nearly every country in West Africa, mostly by road and always on a budget. A lover of nature and outdoor adventure. She often says her only regret is not beginning her adventures in her early twenties.
+            </p>
+          </div>
         </div>
 
         {/* Story Section */}
@@ -35,8 +36,6 @@ const AboutFounderPage = () => {
             In August 2025, Mimi founded Dunia Safari with a bold vision: to make travel accessible, to create a movement that demystifies traveling within Africa, and to inspire young people to explore their continent. She believes that for Africa to progress, its youth must see, experience, and advocate for the continent they call home. 
           </p>
         </section>
-
-        
 
         {/* Vision Section */}
         <section className="mb-12">

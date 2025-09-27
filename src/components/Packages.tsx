@@ -11,7 +11,6 @@ const Packages = () => {
       features: [
         'Bed and Breakfast',
         'Match tickets and transfers',
-        'All Local transfers',
         'Tour activities in FES and tranfers'
       ],
       color: 'from-amber-600 to-amber-700',
@@ -25,7 +24,6 @@ const Packages = () => {
       features: [
         'Bed and Breakfast',
         'Match tickets and transfers',
-        'All Local transfers',
         'Tour activities in Marrakech and tranfers'
       ],
       color: 'from-gray-400 to-gray-600',
@@ -39,7 +37,6 @@ const Packages = () => {
       features: [
         'Bed and Breakfast',
         'Match tickets and transfers',
-        'All Local transfers',
         'Tour activities in Casablanca, FES, Marrakech and tranfers'
       ],
       color: 'from-yellow-400 to-yellow-600',

@@ -13,8 +13,7 @@ const Packages = () => {
         'Official match tickets and transfers to cheer on the Super Eagles of Nigeria',
         'Tour activities and tranfers in FES, Morocco'
       ],
-      // Nigeria green gradient
-      color: 'from-green-600 to-green-700',
+      color: 'from-green-600 to-green-700', // Nigeria green
       bgColor: 'bg-white'
     },
     {
@@ -27,8 +26,7 @@ const Packages = () => {
         'Official match tickets and transfers to cheer on the Super éléphants of Ivory Coast',
         'Tour activities in Marrakech and tranfers'
       ],
-      // Ivory Coast orange gradient
-      color: 'from-orange-500 to-orange-600',
+      color: 'from-orange-500 to-orange-600', // Ivory Coast orange
       bgColor: 'bg-gray-50'
     },
     {
@@ -106,8 +104,23 @@ const Packages = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
+        {/* New Download Itinerary CTA */}
         <div className="text-center mt-12">
+          <p className="text-gray-100 text-lg mb-4">
+            Still undecided? Download the AFCON 2025 itinerary and share with your squad.
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1CM7mLCJlxGaSwL-wMGuwtGBe8YRVHWkV/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mb-8"
+          >
+            📥 Download Itinerary
+          </a>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-8">
           <p className="text-gray-300 mb-6">
             Prefer to skip AFCON but still want to experience Morocco?
           </p>

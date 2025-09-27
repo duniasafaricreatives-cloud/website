@@ -6,7 +6,7 @@ const Packages = () => {
     {
       name: 'Bronze',
       popular: false,
-      price: '[Price]',
+      price: 'Starting from $760',
       description: '[Bronze package description placeholder]',
       features: [
         'Bed and Breakfast',

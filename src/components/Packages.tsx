@@ -32,9 +32,9 @@ const Packages = () => {
       bgColor: 'bg-gray-50'
     },
     {
-      name: 'Gold',
+      name: 'Morocco hat trick circuit',
       popular: false,
-      price: '[Price]',
+      price: 'Starting from $1,190',
       description: '[Gold package description placeholder]',
       features: [
         '[Gold feature 1]',

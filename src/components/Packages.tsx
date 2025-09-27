@@ -23,11 +23,10 @@ const Packages = () => {
       price: 'Starting from $815',
       description: 'This package excludes return flights',
       features: [
-        '[Silver feature 1]',
-        '[Silver feature 2]',
-        '[Silver feature 3]',
-        '[Silver feature 4]',
-        '[Silver feature 5]'
+        'Bed and Breakfast',
+        'Match tickets and transfers',
+        'All Local transfers',
+        'Tour activities in Marrakech and tranfers'
       ],
       color: 'from-gray-400 to-gray-600',
       bgColor: 'bg-gray-50'

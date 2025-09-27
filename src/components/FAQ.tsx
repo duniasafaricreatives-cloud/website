@@ -37,8 +37,7 @@ answer: `
   <p>Otherwise, apply at the Moroccan consulate in Abidjan & Abuja</p>
   <p>Typical Visa processing is around 10 business days, but you need to secure your visa appointment 
   at least 3 weeks in advance</p>
-`
-      
+`    
     },
     {
       question: 'About payment options',

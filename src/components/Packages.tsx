@@ -18,7 +18,7 @@ const Packages = () => {
       bgColor: 'bg-white'
     },
     {
-      name: 'Silver',
+      name: 'Elephants in the Atlas',
       popular: true,
       price: '[Price]',
       description: '[Silver package description placeholder]',

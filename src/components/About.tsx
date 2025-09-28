@@ -32,12 +32,16 @@ const About = () => {
               </p>
             </div>
 
-            {/* What Makes Us Unique */}
-            <div className="pt-8 space-y-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-burgundy-900">
-                What Makes Us Unique
-              </h3>
-              <div className="space-y-6">
+            {/* Text Content */}
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-burgundy-900 mb-4">
+                Dunia Safari Tours
+              </h2>
+              <div className="w-24 h-1 bg-amber-600 mb-6"></div>
+            </div>
+            
+            <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-amber-600 mt-1" />
                   <p className="text-lg text-gray-700 leading-relaxed">

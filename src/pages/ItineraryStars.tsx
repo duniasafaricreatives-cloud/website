@@ -4,7 +4,7 @@ import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
 const ItineraryStars = () => {
   const packages = [
     { name: "Bronze", price: "Starting from $750", popular: false },
-    { name: "Silver", price: "Starting from $1,250", popular: true }, // ✅ Now Silver is most popular
+    { name: "Silver", price: "Starting from $1,250", popular: true }, // ✅ Silver is most popular
     { name: "Gold", price: "Starting from $2,200", popular: false },
   ];
 
@@ -13,23 +13,14 @@ const ItineraryStars = () => {
       name: "Visa Application (for Tanzanian passport holders only)",
       availability: { Bronze: false, Silver: false, Gold: true },
     },
-    {
-      name: "Return Flights",
-      availability: { Bronze: false, Silver: false, Gold: false },
-    },
+    { name: "Return Flights", availability: { Bronze: false, Silver: false, Gold: false } },
     {
       name: "Round-trip train connections",
       availability: { Bronze: true, Silver: true, Gold: true },
       notes: ["Gold: Train Tickets in Premium First Class"],
     },
-    {
-      name: "Hotel Shuttle Services",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
-    {
-      name: "3-course Moroccan Welcome Dinner",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
+    { name: "Hotel Shuttle Services", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: "3-course Moroccan Welcome Dinner", availability: { Bronze: true, Silver: true, Gold: true } },
     {
       name: "Bed & Breakfast (7 days and 6 nights)",
       availability: { Bronze: true, Silver: true, Gold: true },
@@ -39,10 +30,7 @@ const ItineraryStars = () => {
         "Gold: Private room in a stylish 3-star hotel",
       ],
     },
-    {
-      name: "Covers Mandatory City Taxes",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
+    { name: "Covers Mandatory City Taxes", availability: { Bronze: true, Silver: true, Gold: true } },
     {
       name: "2 Official match tickets and transfers for Tanzania vs Nigeria & Tanzania vs Uganda games",
       availability: { Bronze: true, Silver: true, Gold: true },
@@ -52,34 +40,36 @@ const ItineraryStars = () => {
       availability: { Bronze: true, Silver: true, Gold: true },
       notes: ["Gold: Desert Glamping Experience"],
     },
-    {
-      name: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idris viewpoint",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
-    {
-      name: "Visit Kasbah de Oudayas & discover Hassan, Mohammed V Mausoleum",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
-    {
-      name: "Evening Cocktail at a chic ambiance, Rabat",
-      availability: { Bronze: false, Silver: true, Gold: true },
-    },
+    { name: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idris viewpoint", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: "Visit Kasbah de Oudayas & discover Hassan, Mohammed V Mausoleum", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: "Evening Cocktail at a chic ambiance, Rabat", availability: { Bronze: false, Silver: true, Gold: true } },
     {
       name: "60 Minutes of Wellness: Hammam Retreat",
       availability: { Bronze: false, Silver: true, Gold: true },
       notes: ["Gold: + Massage"],
     },
-    {
-      name: "Exclusive Dunia Safari Memento",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
+    { name: "Exclusive Dunia Safari Memento", availability: { Bronze: true, Silver: true, Gold: true } },
+  ];
+
+  // Sub itinerary section
+  const subFeatures = [
+    { name: "For Extended 12 Days, 11 Nights Stay to see 3 games, Contact Travel Agent" },
+    { name: "Bed and Breakfast (11 Days & 10 Nights)" },
+    { name: "3 Official match tickets and transfers for Tanzania vs Nigeria, Tanzania vs Uganda, Tanzania vs Tunisia games" },
+    { name: "Discover Rabat shopping from local artisans. Visit of Modern Art at Contemporaries" },
+    { name: "Diner at beach restaurant, Rabat" },
+    { name: "Visit Rabat Corniche, photomatons, Chellah historical Roman ruins" },
+    { name: "Diner at gastronomical Moroccan restaurant" },
+    { name: "Discover Sale town, beach, Bab Chaafa and environs" },
+    { name: "Dinner + New Year Eve Dunia Safari Party, Casablanca" },
+    { name: "Hassan II mosque, Corniche Aïn Diab walk, Beach Day, Shopping Day in Casablanca" },
   ];
 
   const [openPackage, setOpenPackage] = useState<string | null>(null);
+  const [openSubPackage, setOpenSubPackage] = useState<string | null>(null);
 
-  const toggleAccordion = (pkg: string) => {
-    setOpenPackage(openPackage === pkg ? null : pkg);
-  };
+  const toggleAccordion = (pkg: string) => setOpenPackage(openPackage === pkg ? null : pkg);
+  const toggleSubAccordion = (pkg: string) => setOpenSubPackage(openSubPackage === pkg ? null : pkg);
 
   return (
     <div className="p-6">
@@ -88,6 +78,7 @@ const ItineraryStars = () => {
         Stars Itinerary Packages
       </h1>
 
+      {/* ===== MAIN ITINERARY (unchanged) ===== */}
       {/* Desktop Table View */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
@@ -157,10 +148,7 @@ const ItineraryStars = () => {
       {/* Mobile Accordion View */}
       <div className="md:hidden space-y-4">
         {packages.map((pkg) => (
-          <div
-            key={pkg.name}
-            className="border rounded-lg shadow-md overflow-hidden"
-          >
+          <div key={pkg.name} className="border rounded-lg shadow-md overflow-hidden">
             <button
               onClick={() => toggleAccordion(pkg.name)}
               className={`w-full flex justify-between items-center p-4 ${
@@ -204,6 +192,60 @@ const ItineraryStars = () => {
                 <button className="w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
                   Book Now
                 </button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* ===== SUB ITINERARY SECTION ===== */}
+      <h2 className="text-2xl font-bold text-center mt-16 mb-8">Extended Stay Packages</h2>
+
+      {/* Desktop Table View */}
+      <div className="hidden md:block overflow-x-auto">
+        <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
+          <thead>
+            <tr>
+              <th className="bg-gray-100 p-4 text-left">Features</th>
+              {packages.map((pkg) => (
+                <th key={pkg.name} className="p-4 text-center bg-gray-200">
+                  {pkg.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {subFeatures.map((feature, idx) => (
+              <tr key={idx} className="border-b">
+                <td className="p-4 text-sm">{feature.name}</td>
+                {packages.map((pkg) => (
+                  <td key={pkg.name} className="text-center p-4">—</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile Accordion View */}
+      <div className="md:hidden space-y-4 mt-6">
+        {packages.map((pkg) => (
+          <div key={pkg.name} className="border rounded-lg shadow-md overflow-hidden">
+            <button
+              onClick={() => toggleSubAccordion(pkg.name)}
+              className="w-full flex justify-between items-center p-4 bg-gray-100"
+            >
+              <h3 className="text-lg font-semibold">{pkg.name} (Extended)</h3>
+              {openSubPackage === pkg.name ? <ChevronUp /> : <ChevronDown />}
+            </button>
+            {openSubPackage === pkg.name && (
+              <div className="p-4 bg-white space-y-3">
+                {subFeatures.map((feature, idx) => (
+                  <div key={idx} className="flex justify-between items-center text-sm">
+                    <span>{feature.name}</span>
+                    <span>—</span>
+                  </div>
+                ))}
               </div>
             )}
           </div>

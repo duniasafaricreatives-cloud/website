@@ -54,8 +54,8 @@ const ItineraryPage = () => {
   ];
 
   const featuresList = [
-    { key: "breakfast", label: "Bed & Breakfast (7 days and 6 nights)" },
-    { key: "nigeriaTickets", label: "Super Eagles match tickets + transfers" },
+    { key: "breakfast", label: "Fès ↔ Casablanca: all round-trip train connections" },
+    { key: "nigeriaTickets", label: "Bed & Breakfast (7 days and 6 nights)" },
     { key: "ivoryTickets", label: "Ivory Coast match tickets + transfers" },
     { key: "threeGames", label: "Three games in three cities" },
     { key: "fesTours", label: "Tour activities in Fes" },

@@ -56,7 +56,7 @@ const ItineraryPage = () => {
   const featuresList = [
     { key: "breakfast", label: "Fès ↔ Casablanca: Round-trip train connections" },
     { key: "nigeriaTickets", label: "Bed & Breakfast (7 days and 6 nights)" },
-    { key: "ivoryTickets", label: "Ivory Coast match tickets + transfers" },
+    { key: "ivoryTickets", label: "Welcome Dinner" },
     { key: "threeGames", label: "Three games in three cities" },
     { key: "fesTours", label: "Tour activities in Fes" },
     { key: "marrakechTours", label: "Tour activities in Marrakech" },

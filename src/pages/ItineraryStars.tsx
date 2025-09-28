@@ -83,6 +83,11 @@ const ItineraryStars = () => {
 
   return (
     <div className="p-6">
+      {/* Page Heading */}
+      <h1 className="text-3xl font-bold text-center mb-10">
+        Stars Itinerary Packages
+      </h1>
+
       {/* Desktop Table View */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">

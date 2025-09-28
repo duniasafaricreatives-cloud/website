@@ -89,7 +89,7 @@ const ItineraryPage = () => {
             <thead>
               <tr>
                 <th className="text-left px-6 py-4 bg-gray-100 text-gray-700 font-semibold">
-                  Features
+                  Activities
                 </th>
                 {packages.map((pkg, idx) => (
                   <th

@@ -3,9 +3,9 @@ import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
 
 const ItineraryElephants = () => {
   const packages = [
-    { name: "Bronze", price: "Starting from $760", popular: false },
-    { name: "Silver", price: "Starting from $1,200", popular: false },
-    { name: "Gold", price: "Starting from $2,100", popular: true },
+    { name: "Bronze", price: "Starting from $855", popular: false },
+    { name: "Silver", price: "Starting from $1,235", popular: false },
+    { name: "Gold", price: "Starting from $1,535", popular: true },
   ];
 
   const features = [

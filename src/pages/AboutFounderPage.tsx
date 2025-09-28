@@ -48,7 +48,7 @@ const AboutFounderPage = () => {
             She believes that for Africa to progress, its youth must see,
             experience, and advocate for the continent they call home.
           </p>
-          <p className="text-lg text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed">
             Mimi invites collaborations, partnerships, and sponsorships to help
             realize this dream within her lifetime.
           </p>

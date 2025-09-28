@@ -53,7 +53,6 @@ const ItineraryStars = () => {
 
   // Sub itinerary section
   const subFeatures = [
-    { name: "For Extended 12 Days, 11 Nights Stay to see 3 games, Contact Travel Agent" },
     { name: "Bed and Breakfast (11 Days & 10 Nights)" },
     { name: "3 Official match tickets and transfers for Tanzania vs Nigeria, Tanzania vs Uganda, Tanzania vs Tunisia games" },
     { name: "Discover Rabat shopping from local artisans. Visit of Modern Art at Contemporaries" },

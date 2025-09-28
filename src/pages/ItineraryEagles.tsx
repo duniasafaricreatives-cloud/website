@@ -242,7 +242,7 @@ const ItineraryEagles = () => {
 
       {/* ===== SUB ITINERARY ===== */}
       <h2 className="text-2xl font-bold text-center mt-16 mb-6">
-        Extended Itinerary (Optional)
+        For Extended 12 Days, 11 Nights Stay to see 3 games (Contact Travel Agent)
       </h2>
 
       {/* Desktop Table */}

@@ -4,7 +4,7 @@ import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
 const ItineraryEagles = () => {
   const packages = [
     { name: "Bronze", price: "Starting from $760", popular: false },
-    { name: "Silver", price: "Starting from $1,200", popular: true }, // Now Silver is most popular
+    { name: "Silver", price: "Starting from $1,200", popular: true },
     { name: "Gold", price: "Starting from $2,100", popular: false },
   ];
 
@@ -63,10 +63,46 @@ const ItineraryEagles = () => {
     },
   ];
 
+  // NEW SUB ITINERARY
+  const subFeatures = [
+    {
+      name: "For Extended 12 Days, 11 Nights Stay to see 3 games, Contact Travel Agent",
+    },
+    {
+      name: "Bed and Breakfast (11 Days & 10 Nights)",
+    },
+    {
+      name: "3 Official match tickets and transfers for Nigeria vs Tanzania, Nigeria vs Tunisia & Nigeria vs Uganda games",
+    },
+    {
+      name: "Round-Trip Transfers to Chefchaouen",
+    },
+    {
+      name: "Full-Day Excursion to Akchour Waterfalls",
+    },
+    {
+      name: "Visit to the Hassan II Mosque, Casablanca",
+    },
+    {
+      name: "Visit Corniche d’Aïn Diab, Casablanca",
+    },
+    {
+      name: "Relaxing Beach Day on Casablanca’s Coast",
+    },
+    {
+      name: "Shopping in Casablanca Medina",
+    },
+  ];
+
   const [openPackage, setOpenPackage] = useState<string | null>(null);
+  const [openSubPackage, setOpenSubPackage] = useState<string | null>(null);
 
   const toggleAccordion = (pkg: string) => {
     setOpenPackage(openPackage === pkg ? null : pkg);
+  };
+
+  const toggleSubAccordion = (pkg: string) => {
+    setOpenSubPackage(openSubPackage === pkg ? null : pkg);
   };
 
   return (
@@ -76,7 +112,8 @@ const ItineraryEagles = () => {
         Eagles Itinerary Packages
       </h1>
 
-      {/* Desktop Table View */}
+      {/* ===== MAIN ITINERARY (unchanged) ===== */}
+      {/* Desktop Table */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
           <thead>
@@ -142,7 +179,7 @@ const ItineraryEagles = () => {
         </table>
       </div>
 
-      {/* Mobile Accordion View */}
+      {/* Mobile Accordion */}
       <div className="md:hidden space-y-4 mt-6">
         {packages.map((pkg) => (
           <div
@@ -193,7 +230,73 @@ const ItineraryEagles = () => {
         ))}
       </div>
 
-      {/* Download Itinerary Button */}
+      {/* ===== SUB ITINERARY ===== */}
+      <h2 className="text-2xl font-bold text-center mt-16 mb-6">
+        Extended Itinerary (Optional)
+      </h2>
+
+      {/* Desktop Table */}
+      <div className="hidden md:block overflow-x-auto bg-gray-50 rounded-lg shadow-inner p-4">
+        <table className="w-full border-collapse">
+          <thead>
+            <tr>
+              <th className="bg-gray-200 p-4 text-left">Features</th>
+              {packages.map((pkg) => (
+                <th key={pkg.name} className="bg-gray-100 p-4 text-center">
+                  {pkg.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {subFeatures.map((feature, idx) => (
+              <tr key={idx} className="border-b">
+                <td className="p-4 text-sm">{feature.name}</td>
+                {packages.map((pkg) => (
+                  <td key={pkg.name} className="text-center p-4">
+                    —
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile Accordion */}
+      <div className="md:hidden space-y-4 mt-6 bg-gray-50 rounded-lg p-4 shadow-inner">
+        {packages.map((pkg) => (
+          <div
+            key={pkg.name}
+            className="border rounded-lg shadow-sm overflow-hidden bg-white"
+          >
+            <button
+              onClick={() => toggleSubAccordion(pkg.name)}
+              className="w-full flex justify-between items-center p-4 bg-gray-100"
+            >
+              <div>
+                <h3 className="text-lg font-semibold">{pkg.name}</h3>
+              </div>
+              {openSubPackage === pkg.name ? <ChevronUp /> : <ChevronDown />}
+            </button>
+            {openSubPackage === pkg.name && (
+              <div className="p-4 space-y-3">
+                {subFeatures.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="flex justify-between items-center text-sm"
+                  >
+                    <span>{feature.name}</span>
+                    <span className="text-gray-500">—</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Download Button */}
       <div className="mt-12 text-center">
         <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
           Download Full Itinerary

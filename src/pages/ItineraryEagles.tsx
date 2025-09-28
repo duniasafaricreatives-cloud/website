@@ -8,18 +8,21 @@ const ItineraryEagles = () => {
       price: "Starting from $760",
       description: "This package excludes return flights",
       color: "border-[#cd7f32]", // Bronze
+      bullet: "list-disc text-[#cd7f32]", // Bronze-style bullet
     },
     {
       name: "Silver",
       price: "Starting from $1,290",
       description: "Includes added comforts and wellness",
       color: "border-gray-400", // Silver
+      bullet: "list-decimal text-gray-500", // Silver-style bullet
     },
     {
       name: "Gold",
       price: "Starting from $2,490",
       description: "Premium experience with luxury add-ons",
       color: "border-yellow-500", // Gold
+      bullet: "list-square text-yellow-600", // Gold-style bullet
     },
   ];
 
@@ -80,12 +83,21 @@ const ItineraryEagles = () => {
 
   const [expanded, setExpanded] = useState(false);
 
+  // Helper to style notes according to package type
+  const getBulletStyle = (note) => {
+    if (note.startsWith("Bronze")) return packages[0].bullet;
+    if (note.startsWith("Silver")) return packages[1].bullet;
+    if (note.startsWith("Gold")) return packages[2].bullet;
+    return "list-disc"; // fallback
+  };
+
   return (
     <div className="container mx-auto px-4 py-10">
       <h1 className="text-3xl font-bold text-center mb-6">
         Eagles Itinerary Packages
       </h1>
 
+      {/* Package cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         {packages.map((pkg, idx) => (
           <div
@@ -99,6 +111,7 @@ const ItineraryEagles = () => {
         ))}
       </div>
 
+      {/* Features Table */}
       <div className="overflow-x-auto">
         <table className="w-full border border-gray-300 rounded-lg">
           <thead>
@@ -118,9 +131,16 @@ const ItineraryEagles = () => {
                   <td className="p-3 align-top">
                     <div>{feature.label}</div>
                     {feature.notes && (
-                      <ul className="list-disc pl-5 mt-1 text-sm text-gray-600">
+                      <ul
+                        className="pl-5 mt-1 text-sm space-y-1"
+                      >
                         {feature.notes.map((note, nIdx) => (
-                          <li key={nIdx}>{note}</li>
+                          <li
+                            key={nIdx}
+                            className={getBulletStyle(note)}
+                          >
+                            {note}
+                          </li>
                         ))}
                       </ul>
                     )}
@@ -141,6 +161,7 @@ const ItineraryEagles = () => {
         </table>
       </div>
 
+      {/* Show More / Less Button */}
       <div className="flex justify-center mt-4">
         <button
           onClick={() => setExpanded(!expanded)}

@@ -57,7 +57,7 @@ const About = () => {
                   <p className="text-lg text-gray-700 leading-relaxed">
                     <strong className="text-burgundy-900">CURATED 3 ON 3 ITINERARY —</strong> 
                <br /> 
-                    3 Adventure (e.g. desert safari, waterfalls, Atlas mountains, souk visits). <br />
+                    3 Adventures (e.g. desert safari, waterfalls, Atlas mountains, souk visits). <br />
                    3 Slow moments (e.g. Berber village visit, sunset walks, hammam, sea days).
                   </p>
                 </div>

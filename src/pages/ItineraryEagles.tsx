@@ -1,247 +1,136 @@
-import React, { useState } from "react";
-import { Check, X, Star, ChevronDown, ChevronUp } from "lucide-react";
+import React from "react";
+import { Check, X } from "lucide-react";
 
-const ItineraryPage = () => {
-  const packages = [
-    {
-      name: "Bronze",
-      price: "Starting from $760",
-      description: "This package excludes return flights",
-      features: {
-        breakfast: true,
-        nigeriaTickets: true,
-        ivoryTickets: false,
-        threeGames: false,
-        fesTours: true,
-        marrakechTours: false,
-        casablancaTours: false,
-        accommodationBronze: true,
-        accommodationSilver: false,
-        accommodationGold: false,
-      },
-      color: "from-green-600 to-green-700",
-      popular: false,
+const featuresList = [
+  {
+    key: "visa",
+    label: "Visa Application (for Ghanaian passport holders only)",
+    appliesTo: ["Silver", "Gold"], // ✅ Only Silver & Gold
+  },
+  {
+    key: "train",
+    label: "Fès ↔ Casablanca: Round-trip train connections",
+    appliesTo: ["Bronze", "Silver", "Gold"], // ✅ All
+    notes: {
+      Gold: "(Train Tickets in Premium First Class)",
     },
-    {
-      name: "Silver",
-      price: "Starting from $815",
-      description: "This package excludes return flights",
-      features: {
-        breakfast: true,
-        nigeriaTickets: false,
-        ivoryTickets: true,
-        threeGames: false,
-        fesTours: false,
-        marrakechTours: true,
-        casablancaTours: false,
-        accommodationBronze: false,
-        accommodationSilver: true,
-        accommodationGold: false,
-      },
-      color: "from-orange-500 to-orange-600",
-      popular: true,
+  },
+  {
+    key: "shuttle",
+    label: "Hotel Shuttle services",
+    appliesTo: ["Bronze", "Silver", "Gold"],
+  },
+  {
+    key: "bnb",
+    label: "Bed & Breakfast (7 days and 6 nights)",
+    appliesTo: ["Bronze", "Silver", "Gold"],
+    notes: {
+      Bronze: "(Shared room in a cozy hostel or traditional riad)",
+      Silver: "(Private room in a comfortable 2-star hotel)",
+      Gold: "(Private room in a stylish 3-star hotel)",
     },
-    {
-      name: "Gold",
-      price: "Starting from $1,190",
-      description: "This package excludes return flights",
-      features: {
-        breakfast: true,
-        nigeriaTickets: false,
-        ivoryTickets: false,
-        threeGames: true,
-        fesTours: true,
-        marrakechTours: true,
-        casablancaTours: true,
-        accommodationBronze: false,
-        accommodationSilver: false,
-        accommodationGold: true,
-      },
-      color: "from-yellow-400 to-yellow-600",
-      popular: false,
+  },
+  {
+    key: "tax",
+    label: "Covers Mandatory City Tax",
+    appliesTo: ["Bronze", "Silver", "Gold"],
+  },
+  {
+    key: "dinner",
+    label: "3 course Moroccan Welcome Dinner",
+    appliesTo: ["Bronze", "Silver", "Gold"],
+  },
+  {
+    key: "tickets",
+    label:
+      "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisia games",
+    appliesTo: ["Bronze", "Silver", "Gold"],
+  },
+  {
+    key: "desert",
+    label:
+      "Overnight desert camping safari + breakfast & dinner. Merzouga section - via Ifrane & Azrou cedar forest (coffee/photo stops); Midelt lunch stop; Ziz Valley viewpoint.",
+    appliesTo: ["Bronze", "Silver", "Gold"],
+    notes: {
+      Gold: "(Desert Glamping Experience)",
     },
-  ];
+  },
+  {
+    key: "meknes",
+    label:
+      "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint",
+    appliesTo: ["Bronze", "Silver", "Gold"],
+  },
+  {
+    key: "wellness",
+    label: "60 Minutes of Wellness: Hammam & Massage Retreat",
+    appliesTo: ["Silver", "Gold"], // ✅ Only Silver & Gold
+  },
+  {
+    key: "memento",
+    label: "Exclusive Dunia Safari Memento",
+    appliesTo: ["Bronze", "Silver", "Gold"],
+  },
+];
 
-  const featuresList = [
-    { key: "casablancaTours", label: "Visa Application (for Ghanaian passport holders only)" },
-    { key: "breakfast", label: "Fès ↔ Casablanca: Round-trip train connections" },
-    { key: "nigeriaTickets", label: "Hotel Shuttle services" },
-    { key: "nigeriaTickets", label: "Bed & Breakfast (7 days and 6 nights)<br/>Bronze: Shared room in a cozy hostel or traditional riad<br/>Silver: Private room in a comfortable 2-star hotel<br/>Gold: Private room in a stylish 3-star hotel" },
-    { key: "nigeriaTickets", label: "Covers Mandatory City Tax" },
-    { key: "ivoryTickets", label: "Welcome Dinner" },
-    { key: "threeGames", label: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisa games" },
-    { key: "fesTours", label: "Overnight desert camping safari + breakfast & dinner. Merzouga section - via Ifrane & Azrou cedar forest (coffee/photo stops); Midelt lunch stop; Ziz Valley viewpoint." },
-    { key: "marrakechTours", label: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint" },
-    { key: "breakfast", label: "60 Minutes of Wellness: Hammam & Massage Retreat" },
-    { key: "nigeriaTickets", label: "Exclusive Dunia Safari Memento" },
-  ];
+const packages = [
+  { name: "Bronze", price: "Starting from $760" },
+  { name: "Silver", price: "Starting from $920" },
+  { name: "Gold", price: "Starting from $1150" },
+];
 
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
+const ItineraryElephants: React.FC = () => {
   return (
-    <section className="py-20 bg-burgundy-50 min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-burgundy-900 mb-4">
-            AFCON 2025 Itinerary Packages
-          </h1>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Compare all Morocco AFCON packages side by side. Choose your
-            adventure!
-          </p>
-        </div>
+    <div className="max-w-6xl mx-auto px-4 py-12">
+      <h1 className="text-3xl font-bold text-center mb-8">
+        Elephants in the Atlas
+      </h1>
 
-        {/* ===== Desktop / Tablet View (Comparison Table) ===== */}
-        <div className="hidden md:block overflow-x-auto">
-          <table className="w-full border-collapse bg-white rounded-lg shadow-lg overflow-hidden">
-            <thead>
-              <tr>
-                <th className="text-left px-6 py-4 bg-gray-100 text-gray-700 font-semibold">
-                  Features
+      <div className="overflow-x-auto">
+        <table className="w-full border-collapse border border-gray-200">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="p-4 text-left">Activities</th>
+              {packages.map((pkg) => (
+                <th key={pkg.name} className="p-4 text-center">
+                  <div className="font-semibold">{pkg.name}</div>
+                  <div className="text-sm text-gray-500">{pkg.price}</div>
                 </th>
-                {packages.map((pkg, idx) => (
-                  <th
-                    key={idx}
-                    className="px-6 py-4 text-center bg-gray-100 text-gray-900 font-bold"
-                  >
-                    <div
-                      className={`inline-block px-3 py-1 rounded-full bg-gradient-to-r ${pkg.color} text-white text-sm mb-2`}
-                    >
-                      {pkg.name}
-                    </div>
-                    <div className="text-lg font-bold">{pkg.price}</div>
-                    <div className="text-sm text-gray-500">
-                      {pkg.description}
-                    </div>
-                    {pkg.popular && (
-                      <div className="mt-2 inline-flex items-center bg-amber-500 text-white text-xs px-2 py-1 rounded-full">
-                        <Star className="w-3 h-3 mr-1" /> Most Popular
-                      </div>
-                    )}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {featuresList.map((feature, idx) => (
-                <tr key={idx} className="border-t">
-                  <td className="px-6 py-4 text-gray-700">{feature.label}</td>
-                  {packages.map((pkg, pIdx) => (
-                    <td key={pIdx} className="px-6 py-4 text-center">
-                      {pkg.features[feature.key as keyof typeof pkg.features] ? (
-                        <Check className="w-6 h-6 text-green-600 mx-auto" />
-                      ) : (
-                        <X className="w-6 h-6 text-red-400 mx-auto" />
-                      )}
-                    </td>
-                  ))}
-                </tr>
               ))}
-
-              {/* CTA Row */}
-              <tr className="border-t bg-gray-50">
-                <td></td>
-                {packages.map((pkg, idx) => (
-                  <td key={idx} className="px-6 py-6 text-center">
-                    <a
-                      href="https://wa.me/233538087709"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`inline-block w-full bg-gradient-to-r ${pkg.color} text-white py-3 rounded-full font-semibold text-lg hover:shadow-md transition`}
-                    >
-                      Book Now
-                    </a>
+            </tr>
+          </thead>
+          <tbody>
+            {featuresList.map((feature) => (
+              <tr key={feature.key} className="border-t">
+                <td className="p-4 text-sm">
+                  {feature.label}
+                  {/* Notes / bullet points */}
+                  {feature.notes && (
+                    <ul className="mt-1 text-xs text-gray-600 list-disc pl-5">
+                      {Object.entries(feature.notes).map(([pkg, note]) => (
+                        <li key={pkg}>
+                          {pkg}: {note}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </td>
+                {packages.map((pkg) => (
+                  <td key={pkg.name} className="p-4 text-center">
+                    {feature.appliesTo.includes(pkg.name) ? (
+                      <Check className="text-green-500 inline" />
+                    ) : (
+                      <X className="text-red-500 inline" />
+                    )}
                   </td>
                 ))}
               </tr>
-            </tbody>
-          </table>
-        </div>
-
-        {/* ===== Mobile View (Accordion) ===== */}
-        <div className="block md:hidden space-y-6">
-          {packages.map((pkg, idx) => (
-            <div
-              key={idx}
-              className="bg-white rounded-xl shadow-md overflow-hidden border"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full flex justify-between items-center px-6 py-4 text-left"
-              >
-                <div>
-                  <div
-                    className={`inline-block px-3 py-1 rounded-full bg-gradient-to-r ${pkg.color} text-white text-sm mb-1`}
-                  >
-                    {pkg.name}
-                  </div>
-                  <div className="text-lg font-bold text-gray-900">
-                    {pkg.price}
-                  </div>
-                  <p className="text-sm text-gray-500">{pkg.description}</p>
-                  {pkg.popular && (
-                    <div className="mt-1 inline-flex items-center bg-amber-500 text-white text-xs px-2 py-1 rounded-full">
-                      <Star className="w-3 h-3 mr-1" /> Most Popular
-                    </div>
-                  )}
-                </div>
-                {openIndex === idx ? (
-                  <ChevronUp className="w-5 h-5 text-gray-600" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-gray-600" />
-                )}
-              </button>
-
-              {openIndex === idx && (
-                <div className="px-6 pb-4 space-y-3">
-                  {featuresList.map((feature, fIdx) => (
-                    <div
-                      key={fIdx}
-                      className="flex items-center justify-between border-b py-2"
-                    >
-                      <span className="text-gray-700">{feature.label}</span>
-                      {pkg.features[feature.key as keyof typeof pkg.features] ? (
-                        <Check className="w-5 h-5 text-green-600" />
-                      ) : (
-                        <X className="w-5 h-5 text-red-400" />
-                      )}
-                    </div>
-                  ))}
-                  <div className="pt-4">
-                    <a
-                      href="https://wa.me/233538087709"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`block w-full text-center bg-gradient-to-r ${pkg.color} text-white py-3 rounded-full font-semibold text-lg hover:shadow-md transition`}
-                    >
-                      Book Now
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Download CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-gray-700 mb-4">
-            Still undecided? Download the AFCON 2025 itinerary and share with
-            your squad.
-          </p>
-          <a
-            href="https://drive.google.com/file/d/1CM7mLCJlxGaSwL-wMGuwtGBe8YRVHWkV/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition"
-          >
-            Download Itinerary
-          </a>
-        </div>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default ItineraryPage;
+export default ItineraryElephants;

@@ -4,8 +4,8 @@ import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
 const ItineraryStars = () => {
   const packages = [
     { name: "Bronze", price: "Starting from $750", popular: false },
-    { name: "Silver", price: "Starting from $1,250", popular: false },
-    { name: "Gold", price: "Starting from $2,200", popular: true },
+    { name: "Silver", price: "Starting from $1,250", popular: true }, // ✅ Now Silver is most popular
+    { name: "Gold", price: "Starting from $2,200", popular: false },
   ];
 
   const features = [
@@ -84,7 +84,7 @@ const ItineraryStars = () => {
   return (
     <div className="p-6">
       {/* Page Heading */}
-      <h1 className="text-3xl font-bold text-center mb-10">
+      <h1 className="text-3xl font-bold text-center mt-16 mb-10">
         Stars Itinerary Packages
       </h1>
 
@@ -99,14 +99,14 @@ const ItineraryStars = () => {
                   key={pkg.name}
                   className={`p-4 text-center ${
                     pkg.popular
-                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white relative"
+                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
                       : "bg-gray-200"
                   }`}
                 >
                   {pkg.name}
                   <div className="text-sm font-normal">{pkg.price}</div>
                   {pkg.popular && (
-                    <div className="absolute top-2 right-2 bg-white text-orange-600 px-2 py-1 text-xs font-bold rounded-full flex items-center">
+                    <div className="mt-2 inline-flex items-center bg-orange-100 text-orange-700 px-3 py-1 text-xs font-semibold rounded-full">
                       <Star size={12} className="mr-1" /> Most Popular
                     </div>
                   )}
@@ -172,6 +172,11 @@ const ItineraryStars = () => {
               <div>
                 <h3 className="text-lg font-semibold">{pkg.name}</h3>
                 <p className="text-sm">{pkg.price}</p>
+                {pkg.popular && (
+                  <div className="mt-2 inline-flex items-center bg-orange-100 text-orange-700 px-3 py-1 text-xs font-semibold rounded-full">
+                    <Star size={12} className="mr-1" /> Most Popular
+                  </div>
+                )}
               </div>
               {openPackage === pkg.name ? <ChevronUp /> : <ChevronDown />}
             </button>

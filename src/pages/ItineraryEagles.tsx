@@ -53,8 +53,9 @@ const ItineraryEagles = () => {
       availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      name: "60 Minutes of Wellness: Hammam & Massage Retreat",
+      name: "60 Minutes of Wellness: Hammam Retreat",
       availability: { Bronze: false, Silver: true, Gold: true },
+      notes: ["Gold: Hammam + Massage included"],
     },
     {
       name: "Exclusive Dunia Safari Memento",

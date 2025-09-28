@@ -13,23 +13,14 @@ const ItineraryElephants = () => {
       name: "Visa Application (for Ghanaian passport holders only)",
       availability: { Bronze: false, Silver: false, Gold: true },
     },
-    {
-      name: "Return Flights",
-      availability: { Bronze: false, Silver: false, Gold: false },
-    },
+    { name: "Return Flights", availability: { Bronze: false, Silver: false, Gold: false } },
     {
       name: "Round-trip train connections",
       availability: { Bronze: true, Silver: true, Gold: true },
       notes: ["Gold: Train Tickets in Premium First Class"],
     },
-    {
-      name: "Hotel Shuttle Services",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
-    {
-      name: "3-course Moroccan Welcome Dinner",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
+    { name: "Hotel Shuttle Services", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: "3-course Moroccan Welcome Dinner", availability: { Bronze: true, Silver: true, Gold: true } },
     {
       name: "Bed & Breakfast (7 days and 6 nights)",
       availability: { Bronze: true, Silver: true, Gold: true },
@@ -39,10 +30,7 @@ const ItineraryElephants = () => {
         "Gold: Private room in a stylish 3-star hotel",
       ],
     },
-    {
-      name: "Covers Mandatory City Taxes",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
+    { name: "Covers Mandatory City Taxes", availability: { Bronze: true, Silver: true, Gold: true } },
     {
       name: "2 Official match tickets and transfers for Ivory Coast vs Mozambique & Ivory Coast vs Cameroun games",
       availability: { Bronze: true, Silver: true, Gold: true },
@@ -52,43 +40,33 @@ const ItineraryElephants = () => {
       availability: { Bronze: true, Silver: true, Gold: true },
       notes: ["Gold: Desert Glamping Experience"],
     },
-    {
-      name: "Saadian Tombs + Bahia Palace visit",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
-    {
-      name: "Visit Tinghir & Dades Gorges",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
-    {
-      name: "Visit Hollywood studio location (Game of Thrones & Gladiator)",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
+    { name: "Saadian Tombs + Bahia Palace visit", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: "Visit Tinghir & Dades Gorges", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: "Visit Hollywood studio location (Game of Thrones & Gladiator)", availability: { Bronze: true, Silver: true, Gold: true } },
     {
       name: "60 Minutes of Wellness: Hammam Retreat",
       availability: { Bronze: false, Silver: true, Gold: true },
       notes: ["Gold: Hammam + Massage included"],
     },
-    {
-      name: "Enjoy cocktails at Marrakech Sunset Lounge",
-      availability: { Bronze: false, Silver: false, Gold: true },
-    },
-    {
-      name: "Day Trip to Essaouira",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
-    {
-      name: "Day Trip to Ouzoud Waterfalls",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
-    {
-      name: "Exclusive Dunia Safari Memento",
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
+    { name: "Enjoy cocktails at Marrakech Sunset Lounge", availability: { Bronze: false, Silver: false, Gold: true } },
+    { name: "Day Trip to Essaouira", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: "Day Trip to Ouzoud Waterfalls", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: "Exclusive Dunia Safari Memento", availability: { Bronze: true, Silver: true, Gold: true } },
+  ];
+
+  // 🔹 Sub-itinerary features (with dashes)
+  const subFeatures = [
+    { name: "For Extended 12 Days, 11 Nights Stay to see 3 games, Contact Travel Agent" },
+    { name: "Bed and Breakfast (11 Days & 10 Nights)" },
+    { name: "3 Official match tickets and transfers for Ivory Coast vs Mozambique, Ivory Coast vs Cameroun, Ivory Coast vs Gabon games" },
+    { name: "Return Day trip to Ourika + lunch" },
+    { name: "Hot air balloon experience" },
+    { name: "Visit Marjorelle Garden" },
+    { name: "Visit YSL Berber Museum" },
+    { name: "Dinner + New Year Eve Dunia Safari Party, Casablanca" },
   ];
 
   const [openPackage, setOpenPackage] = useState<string | null>(null);
-
   const toggleAccordion = (pkg: string) => {
     setOpenPackage(openPackage === pkg ? null : pkg);
   };
@@ -100,6 +78,7 @@ const ItineraryElephants = () => {
         Elephants Itinerary Packages
       </h2>
 
+      {/* ==================== MAIN ITINERARY ==================== */}
       {/* Desktop Table View */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
@@ -169,10 +148,7 @@ const ItineraryElephants = () => {
       {/* Mobile Accordion View */}
       <div className="md:hidden space-y-4">
         {packages.map((pkg) => (
-          <div
-            key={pkg.name}
-            className="border rounded-lg shadow-md overflow-hidden"
-          >
+          <div key={pkg.name} className="border rounded-lg shadow-md overflow-hidden">
             <button
               onClick={() => toggleAccordion(pkg.name)}
               className={`w-full flex justify-between items-center p-4 ${
@@ -216,6 +192,66 @@ const ItineraryElephants = () => {
                 <button className="w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
                   Book Now
                 </button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* ==================== SUB-ITINERARY ==================== */}
+      <h3 className="text-xl font-bold text-center mt-12 mb-6">
+        Elephants Sub-Itinerary (Extended Package)
+      </h3>
+
+      {/* Desktop Table View */}
+      <div className="hidden md:block overflow-x-auto">
+        <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
+          <thead>
+            <tr>
+              <th className="bg-gray-100 p-4 text-left">Extra Features</th>
+              {packages.map((pkg) => (
+                <th key={pkg.name} className="p-4 text-center bg-gray-200">
+                  {pkg.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {subFeatures.map((feature, idx) => (
+              <tr key={idx} className="border-b">
+                <td className="p-4 text-sm">{feature.name}</td>
+                {packages.map((pkg) => (
+                  <td key={pkg.name} className="text-center p-4">
+                    —{/* Dash for all */}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mobile Accordion View */}
+      <div className="md:hidden space-y-4 mt-6">
+        {packages.map((pkg) => (
+          <div key={pkg.name} className="border rounded-lg shadow-md overflow-hidden">
+            <button
+              onClick={() => toggleAccordion(`sub-${pkg.name}`)}
+              className="w-full flex justify-between items-center p-4 bg-gray-100"
+            >
+              <div>
+                <h3 className="text-lg font-semibold">{pkg.name} - Extended</h3>
+              </div>
+              {openPackage === `sub-${pkg.name}` ? <ChevronUp /> : <ChevronDown />}
+            </button>
+            {openPackage === `sub-${pkg.name}` && (
+              <div className="p-4 bg-white space-y-3">
+                {subFeatures.map((feature, idx) => (
+                  <div key={idx} className="flex justify-between items-center text-sm">
+                    <span>{feature.name}</span>
+                    <span>—</span>
+                  </div>
+                ))}
               </div>
             )}
           </div>

@@ -38,7 +38,6 @@ const AboutFounderPage = () => {
             <p className="text-gray-700 leading-relaxed">
               Mimi invites collaborations, partnerships, and sponsorships to help realize this dream within her lifetime.
             </p>
-          </div>
 
         {/* Vision Section */}
         <section className="mb-12">

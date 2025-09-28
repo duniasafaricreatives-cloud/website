@@ -210,7 +210,7 @@ const ItineraryElephants = () => {
 
       {/* ==================== SUB-ITINERARY ==================== */}
       <h3 className="text-xl font-bold text-center mt-12 mb-6">
-        Extended Itinerary (Optional)
+        For Extended 12 Days, 11 Nights Stay to see 3 games (Contact Travel Agent)
       </h3>
 
       {/* Desktop Table View */}

@@ -57,7 +57,7 @@ const ItineraryPage = () => {
     { key: "breakfast", label: "Fès ↔ Casablanca: Round-trip train connections" },
     { key: "nigeriaTickets", label: "Bed & Breakfast (7 days and 6 nights)" },
     { key: "ivoryTickets", label: "Welcome Dinner" },
-    { key: "threeGames", label: "Three games in three cities" },
+    { key: "threeGames", label: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisa games" },
     { key: "fesTours", label: "Tour activities in Fes" },
     { key: "marrakechTours", label: "Tour activities in Marrakech" },
     { key: "casablancaTours", label: "Tour activities in Casablanca" },

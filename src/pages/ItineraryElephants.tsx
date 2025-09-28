@@ -56,7 +56,6 @@ const ItineraryElephants = () => {
 
   // 🔹 Sub-itinerary features (with dashes)
   const subFeatures = [
-    { name: "For Extended 12 Days, 11 Nights Stay to see 3 games, Contact Travel Agent" },
     { name: "Bed and Breakfast (11 Days & 10 Nights)" },
     { name: "3 Official match tickets and transfers for Ivory Coast vs Mozambique, Ivory Coast vs Cameroun, Ivory Coast vs Gabon games" },
     { name: "Return Day trip to Ourika + lunch" },

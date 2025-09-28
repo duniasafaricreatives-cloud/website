@@ -13,7 +13,7 @@ const AboutFounderPage = () => {
         {/* Founder Image + Intro */}
         <div className="flex flex-col items-center gap-8 mb-12">
           <img
-            src="/founder.png"
+            src="/Mimi-Babs.jpg"
             alt="Founder of Dunia Safari"
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />

@@ -210,7 +210,7 @@ const ItineraryElephants = () => {
 
       {/* ==================== SUB-ITINERARY ==================== */}
       <h3 className="text-xl font-bold text-center mt-12 mb-6">
-        Elephants Sub-Itinerary (Extended Package)
+        Extended Itinerary (Optional)
       </h3>
 
       {/* Desktop Table View */}

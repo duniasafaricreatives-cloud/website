@@ -24,7 +24,7 @@ const Testimonials = () => {
       name: '[Adolfo from Ecuador]',
       rating: 5,
       text: 'Mimi and I met in Morocco and spent a glorious few days together hiking and exploring ancient kasbahs. We later reconnected in Essaouira, where we shared a wonderful afternoon enjoying fresh seafood by the sea. She’s pure good vibes, the kind of travel companion who makes every experience memorable',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg'
+      image: 'https://images.unsplash.com/photo-1598966739654-5e9a252d8c32?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpeg'
     }
   ];
 

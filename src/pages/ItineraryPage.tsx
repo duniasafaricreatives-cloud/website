@@ -54,7 +54,7 @@ const ItineraryPage = () => {
   ];
 
   const featuresList = [
-    { key: "breakfast", label: "Bed & Breakfast" },
+    { key: "breakfast", label: "Bed & Breakfast (7 days and 6 nights)" },
     { key: "nigeriaTickets", label: "Super Eagles match tickets + transfers" },
     { key: "ivoryTickets", label: "Ivory Coast match tickets + transfers" },
     { key: "threeGames", label: "Three games in three cities" },

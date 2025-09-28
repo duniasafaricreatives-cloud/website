@@ -54,11 +54,12 @@ const ItineraryPage = () => {
   ];
 
   const featuresList = [
-    { key: "breakfast", label: "Bed & Breakfast" },
-    { key: "nigeriaTickets", label: "Super Eagles match tickets + transfers" },
-    { key: "ivoryTickets", label: "Ivory Coast match tickets + transfers" },
-    { key: "threeGames", label: "Three games in three cities" },
-    { key: "fesTours", label: "Tour activities in Fes" },
+    { key: "breakfast", label: "Fès ↔ Casablanca: Round-trip train connections
+hch-ucfi-vin" },
+    { key: "nigeriaTickets", label: "Room sharing Bed & Breakfast for 7 Days, 6 Nights" },
+    { key: "ivoryTickets", label: "Welcome dinner" },
+    { key: "threeGames", label: "Guided Walking Tour of the Old Fes" },
+    { key: "fesTours", label: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint" },
     { key: "marrakechTours", label: "Tour activities in Marrakech" },
     { key: "casablancaTours", label: "Tour activities in Casablanca" },
   ];

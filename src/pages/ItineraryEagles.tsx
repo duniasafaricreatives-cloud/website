@@ -11,7 +11,7 @@ const ItineraryEagles = () => {
   const features = [
     {
       name: "Visa Application (for Ghanaian passport holders only)",
-      availability: { Bronze: false, Silver: true, Gold: true },
+      availability: { Bronze: false, Silver: false, Gold: true },
     },
     {
       name: "Fès ↔ Casablanca: Round-trip train connections",

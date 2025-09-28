@@ -101,11 +101,12 @@ const Packages = () => {
 
 {/* CTA Button → now says "See Packages" */}
 <Link
-  to="/itinerary"
+  to={`/itinerary/${pkg.id}`}
   className={`block text-center bg-gradient-to-r ${pkg.color} text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105`}
 >
   See Packages
 </Link>
+
               </div>
             </div>
           ))}

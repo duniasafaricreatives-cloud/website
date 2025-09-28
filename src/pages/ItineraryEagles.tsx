@@ -66,9 +66,6 @@ const ItineraryEagles = () => {
   // NEW SUB ITINERARY
   const subFeatures = [
     {
-      name: "For Extended 12 Days, 11 Nights Stay to see 3 games, Contact Travel Agent",
-    },
-    {
       name: "Bed and Breakfast (11 Days & 10 Nights)",
     },
     {

@@ -61,7 +61,7 @@ const ItineraryPage = () => {
     { key: "threeGames", label: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisa games" },
     { key: "fesTours", label: "Overnight desert camping safari + breakfast & dinner. Merzouga section - via Ifrane & Azrou cedar forest (coffee/photo stops); Midelt lunch stop; Ziz Valley viewpoint." },
     { key: "marrakechTours", label: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint" },
-    { key: "breakfast", label: "Fès ↔ Casablanca: Round-trip train connections" },
+    { key: "breakfast", label: "60 Minutes of Wellness: Hammam & Massage Retreat" },
     { key: "nigeriaTickets", label: "Bed & Breakfast (7 days and 6 nights)" },
     { key: "ivoryTickets", label: "Welcome Dinner" },
     { key: "threeGames", label: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisa games" },
@@ -89,7 +89,7 @@ const ItineraryPage = () => {
             <thead>
               <tr>
                 <th className="text-left px-6 py-4 bg-gray-100 text-gray-700 font-semibold">
-                  Activities
+                  Features
                 </th>
                 {packages.map((pkg, idx) => (
                   <th

@@ -39,14 +39,10 @@ const AboutFounderPage = () => {
         {/* Story Section */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
-            The Journey
+            Travel Africa, Transform Africa
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            In August 2025, Mimi founded Dunia Safari with a bold vision: to make
-            travel accessible, to create a movement that demystifies traveling
-            within Africa, and to inspire young people to explore their continent.
-            She believes that for Africa to progress, its youth must see,
-            experience, and advocate for the continent they call home.
+            In September 2025, Mimi launched Dunia Safari to make travel accessible and inspire Africa’s youth to explore their own continent. She believes progress begins with seeing and experiencing Africa firsthand and invites collaborations, partnerships, and sponsorships to bring this vision to life. 
           </p>
           <p className="text-gray-700 leading-relaxed">
             Mimi invites collaborations, partnerships, and sponsorships to help

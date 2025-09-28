@@ -22,7 +22,7 @@ const Packages = () => {
       id: 'elephants-in-the-atlas',
       name: 'Elephants in the Atlas',
       popular: true,
-      price: 'Starting from $815',
+      price: 'Starting from $809',
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
@@ -36,7 +36,7 @@ const Packages = () => {
       id: 'stars-in-the-atlas',
       name: 'Stars in the Atlas',
       popular: false,
-      price: 'Starting from $1,190',
+      price: 'Starting from $855',
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',

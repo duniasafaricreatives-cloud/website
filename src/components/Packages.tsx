@@ -8,7 +8,7 @@ const Packages = () => {
       id: 'eagles-over-the-atlas', // ✅ slug for itinerary
       name: 'Eagles over the Atlas',
       popular: false,
-      price: 'Starting from $760',
+      price: 'Starting from $796',
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
@@ -22,7 +22,7 @@ const Packages = () => {
       id: 'elephants-in-the-atlas',
       name: 'Elephants in the Atlas',
       popular: true,
-      price: 'Starting from $809',
+      price: 'Starting from $855',
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
@@ -36,7 +36,7 @@ const Packages = () => {
       id: 'stars-in-the-atlas',
       name: 'Stars in the Atlas',
       popular: false,
-      price: 'Starting from $855',
+      price: 'Starting from $809',
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',

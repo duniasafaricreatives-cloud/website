@@ -56,6 +56,7 @@ const ItineraryPage = () => {
   const featuresList = [
     { key: "casablancaTours", label: "Visa Application (for Ghanaian passport holders only)" },
     { key: "breakfast", label: "Fès ↔ Casablanca: Round-trip train connections" },
+    { key: "nigeriaTickets", label: "Hotel Shuttle services" },
     { key: "nigeriaTickets", label: "Bed & Breakfast (7 days and 6 nights)" },
     { key: "nigeriaTickets", label: "Covers Mandatory City Tax" },
     { key: "ivoryTickets", label: "Welcome Dinner" },

@@ -26,7 +26,7 @@ const AboutFounderPage = () => {
               an intrapreneur, raising hundreds of thousand to multi-million-dollar
               financing for the organizations she has worked with.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               Travel is more than a passion for Mimi, it’s a way of life. She
               has journeyed across nearly every country in West Africa, mostly
               by road and always on a budget. A lover of nature and outdoor

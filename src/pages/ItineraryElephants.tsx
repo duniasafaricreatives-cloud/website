@@ -95,6 +95,11 @@ const ItineraryElephants = () => {
 
   return (
     <div className="p-6">
+      {/* Page Heading */}
+      <h2 className="text-2xl font-bold text-center mb-6 mt-8">
+        Elephants Itinerary Packages
+      </h2>
+
       {/* Desktop Table View */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
@@ -104,16 +109,16 @@ const ItineraryElephants = () => {
               {packages.map((pkg) => (
                 <th
                   key={pkg.name}
-                  className={`p-4 text-center ${
+                  className={`p-4 text-center relative ${
                     pkg.popular
-                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white relative"
+                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
                       : "bg-gray-200"
                   }`}
                 >
                   {pkg.name}
                   <div className="text-sm font-normal">{pkg.price}</div>
                   {pkg.popular && (
-                    <div className="absolute top-2 right-2 bg-white text-orange-600 px-2 py-1 text-xs font-bold rounded-full flex items-center">
+                    <div className="mt-2 bg-white text-orange-600 px-2 py-1 text-xs font-bold rounded-full inline-flex items-center">
                       <Star size={12} className="mr-1" /> Most Popular
                     </div>
                   )}
@@ -179,6 +184,11 @@ const ItineraryElephants = () => {
               <div>
                 <h3 className="text-lg font-semibold">{pkg.name}</h3>
                 <p className="text-sm">{pkg.price}</p>
+                {pkg.popular && (
+                  <div className="mt-1 bg-white text-orange-600 px-2 py-1 text-xs font-bold rounded-full inline-flex items-center">
+                    <Star size={12} className="mr-1" /> Most Popular
+                  </div>
+                )}
               </div>
               {openPackage === pkg.name ? <ChevronUp /> : <ChevronDown />}
             </button>

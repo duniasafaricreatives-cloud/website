@@ -15,7 +15,11 @@ import Footer from "./components/Footer";
 import BlogListingPage from "./pages/BlogListingPage"; 
 import BlogPostPage from "./pages/BlogPostPage";       
 import AboutFounderPage from "./pages/AboutFounderPage";
-import ItineraryPage from "./pages/ItineraryPage";   // ✅ new import
+
+// ✅ Import separate itineraries
+import ItineraryEagles from "./pages/ItineraryEagles";
+import ItineraryElephants from "./pages/ItineraryElephants";
+import ItineraryStars from "./pages/ItineraryStars";
 
 function App() {
   const location = useLocation();
@@ -63,8 +67,10 @@ function App() {
           {/* Individual Blog Post Page */}
           <Route path="/blog/:id" element={<BlogPostPage />} />
 
-          {/* Itinerary Page ✅ */}
-          <Route path="/itinerary" element={<ItineraryPage />} />
+          {/* ✅ Separate Itinerary Pages */}
+          <Route path="/itinerary/eagles-over-the-atlas" element={<ItineraryEagles />} />
+          <Route path="/itinerary/elephants-in-the-atlas" element={<ItineraryElephants />} />
+          <Route path="/itinerary/stars-in-the-atlas" element={<ItineraryStars />} />
         </Routes>
       </main>
       <Footer />

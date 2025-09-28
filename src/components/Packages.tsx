@@ -43,7 +43,7 @@ const Packages = () => {
         'Official match tickets to see three games in three different cities',
         'Tour activities and transfers in Casablanca, Fes and Marrakech'
       ],
-      color: 'from-blue-400 to-blue-600',
+      color: 'from-blue-400 to-blue-600',  // Tanzania blue
       bgColor: 'bg-white'
     }
   ];

@@ -4,8 +4,8 @@ import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
 const ItineraryEagles = () => {
   const packages = [
     { name: "Bronze", price: "Starting from $760", popular: false },
-    { name: "Silver", price: "Starting from $1,200", popular: false },
-    { name: "Gold", price: "Starting from $2,100", popular: true },
+    { name: "Silver", price: "Starting from $1,200", popular: true }, // Now Silver is most popular
+    { name: "Gold", price: "Starting from $2,100", popular: false },
   ];
 
   const features = [
@@ -70,6 +70,11 @@ const ItineraryEagles = () => {
 
   return (
     <div className="p-6">
+      {/* Heading */}
+      <h1 className="text-3xl font-bold text-center mb-8 mt-12">
+        Eagles Itinerary Packages
+      </h1>
+
       {/* Desktop Table View */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
@@ -79,16 +84,16 @@ const ItineraryEagles = () => {
               {packages.map((pkg) => (
                 <th
                   key={pkg.name}
-                  className={`p-4 text-center ${
+                  className={`p-4 text-center relative ${
                     pkg.popular
-                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white relative"
+                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
                       : "bg-gray-200"
                   }`}
                 >
                   {pkg.name}
                   <div className="text-sm font-normal">{pkg.price}</div>
                   {pkg.popular && (
-                    <div className="absolute top-2 right-2 bg-white text-orange-600 px-2 py-1 text-xs font-bold rounded-full flex items-center">
+                    <div className="absolute inset-x-0 -bottom-5 mx-auto w-max bg-white text-orange-600 px-3 py-1 text-xs font-bold rounded-full flex items-center shadow-md">
                       <Star size={12} className="mr-1" /> Most Popular
                     </div>
                   )}
@@ -137,7 +142,7 @@ const ItineraryEagles = () => {
       </div>
 
       {/* Mobile Accordion View */}
-      <div className="md:hidden space-y-4">
+      <div className="md:hidden space-y-4 mt-6">
         {packages.map((pkg) => (
           <div
             key={pkg.name}
@@ -188,7 +193,7 @@ const ItineraryEagles = () => {
       </div>
 
       {/* Download Itinerary Button */}
-      <div className="mt-6 text-center">
+      <div className="mt-12 text-center">
         <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
           Download Full Itinerary
         </button>

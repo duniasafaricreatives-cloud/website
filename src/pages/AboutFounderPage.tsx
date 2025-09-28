@@ -18,7 +18,7 @@ const AboutFounderPage = () => {
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />
           <div className="space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-gray-700 leading-relaxed">
               Mimi Babs is an avid solo traveler who has explored over 20
               countries across the globe, from Dubai to the United States to
               South Korea. With more than a decade of experience in sales,

@@ -1,48 +1,30 @@
 import React, { useState } from "react";
-import { Check, X, ChevronDown, ChevronUp } from "lucide-react";
+import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
 
 const ItineraryEagles = () => {
   const packages = [
-    {
-      name: "Bronze",
-      price: "Starting from $760",
-      description: "This package excludes return flights",
-      color: "border-[#cd7f32]", // Bronze
-      bullet: "list-disc text-[#cd7f32]", // Bronze-style bullet
-    },
-    {
-      name: "Silver",
-      price: "Starting from $1,290",
-      description: "Includes added comforts and wellness",
-      color: "border-gray-400", // Silver
-      bullet: "list-decimal text-gray-500", // Silver-style bullet
-    },
-    {
-      name: "Gold",
-      price: "Starting from $2,490",
-      description: "Premium experience with luxury add-ons",
-      color: "border-yellow-500", // Gold
-      bullet: "list-square text-yellow-600", // Gold-style bullet
-    },
+    { name: "Bronze", price: "Starting from $760", popular: false },
+    { name: "Silver", price: "Starting from $1,200", popular: false },
+    { name: "Gold", price: "Starting from $2,100", popular: true },
   ];
 
-  const featuresList = [
+  const features = [
     {
-      label: "Visa Application (for Ghanaian passport holders only)",
-      appliesTo: ["Silver", "Gold"],
+      name: "Visa Application (for Ghanaian passport holders only)",
+      availability: { Bronze: false, Silver: true, Gold: true },
     },
     {
-      label: "Fès ↔ Casablanca: Round-trip train connections",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "Fès ↔ Casablanca: Round-trip train connections",
+      availability: { Bronze: true, Silver: true, Gold: true },
       notes: ["Gold: Train Tickets in Premium First Class"],
     },
     {
-      label: "Hotel Shuttle services",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "Hotel Shuttle Services",
+      availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      label: "Bed & Breakfast (7 days and 6 nights)",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "Bed & Breakfast (7 days and 6 nights)",
+      availability: { Bronze: true, Silver: true, Gold: true },
       notes: [
         "Bronze: Shared room in a cozy hostel or traditional riad",
         "Silver: Private room in a comfortable 2-star hotel",
@@ -50,132 +32,165 @@ const ItineraryEagles = () => {
       ],
     },
     {
-      label: "Covers Mandatory City Tax",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "Covers Mandatory City Tax",
+      availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      label: "3 course Moroccan Welcome Dinner",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "3-course Moroccan Welcome Dinner",
+      availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      label: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisia games",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisia games",
+      availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      label:
-        "Overnight desert camping safari + breakfast & dinner. Merzouga section - via Ifrane & Azrou cedar forest (coffee/photo stops); Midelt lunch stop; Ziz Valley viewpoint.",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "Overnight desert camping safari + breakfast & dinner (Merzouga section via Ifrane & Azrou cedar forest; Midelt lunch stop; Ziz Valley viewpoint)",
+      availability: { Bronze: true, Silver: true, Gold: true },
       notes: ["Gold: Desert Glamping Experience"],
     },
     {
-      label: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint",
+      availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      label: "60 Minutes of Wellness: Hammam & Massage Retreat",
-      appliesTo: ["Silver", "Gold"],
+      name: "60 Minutes of Wellness: Hammam & Massage Retreat",
+      availability: { Bronze: false, Silver: true, Gold: true },
     },
     {
-      label: "Exclusive Dunia Safari Memento",
-      appliesTo: ["Bronze", "Silver", "Gold"],
+      name: "Exclusive Dunia Safari Memento",
+      availability: { Bronze: true, Silver: true, Gold: true },
     },
   ];
 
-  const [expanded, setExpanded] = useState(false);
+  const [openPackage, setOpenPackage] = useState<string | null>(null);
 
-  // Helper to style notes according to package type
-  const getBulletStyle = (note) => {
-    if (note.startsWith("Bronze")) return packages[0].bullet;
-    if (note.startsWith("Silver")) return packages[1].bullet;
-    if (note.startsWith("Gold")) return packages[2].bullet;
-    return "list-disc"; // fallback
+  const toggleAccordion = (pkg: string) => {
+    setOpenPackage(openPackage === pkg ? null : pkg);
   };
 
   return (
-    <div className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-center mb-6">
-        Eagles Itinerary Packages
-      </h1>
-
-      {/* Package cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        {packages.map((pkg, idx) => (
-          <div
-            key={idx}
-            className={`border-4 ${pkg.color} rounded-lg p-6 shadow-md`}
-          >
-            <h2 className="text-2xl font-semibold mb-2">{pkg.name}</h2>
-            <p className="text-lg mb-2">{pkg.price}</p>
-            <p className="text-sm text-gray-600">{pkg.description}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Features Table */}
-      <div className="overflow-x-auto">
-        <table className="w-full border border-gray-300 rounded-lg">
+    <div className="p-6">
+      {/* Desktop Table View */}
+      <div className="hidden md:block overflow-x-auto">
+        <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
           <thead>
-            <tr className="bg-gray-100">
-              <th className="p-3 text-left">Activities</th>
-              {packages.map((pkg, idx) => (
-                <th key={idx} className="p-3 text-center">
+            <tr>
+              <th className="bg-gray-100 p-4 text-left">Features</th>
+              {packages.map((pkg) => (
+                <th
+                  key={pkg.name}
+                  className={`p-4 text-center ${
+                    pkg.popular
+                      ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white relative"
+                      : "bg-gray-200"
+                  }`}
+                >
                   {pkg.name}
+                  <div className="text-sm font-normal">{pkg.price}</div>
+                  {pkg.popular && (
+                    <div className="absolute top-2 right-2 bg-white text-orange-600 px-2 py-1 text-xs font-bold rounded-full flex items-center">
+                      <Star size={12} className="mr-1" /> Most Popular
+                    </div>
+                  )}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {(expanded ? featuresList : featuresList.slice(0, 5)).map(
-              (feature, idx) => (
-                <tr key={idx} className="border-t">
-                  <td className="p-3 align-top">
-                    <div>{feature.label}</div>
-                    {feature.notes && (
-                      <ul
-                        className="pl-5 mt-1 text-sm space-y-1"
-                      >
-                        {feature.notes.map((note, nIdx) => (
-                          <li
-                            key={nIdx}
-                            className={getBulletStyle(note)}
-                          >
-                            {note}
-                          </li>
-                        ))}
-                      </ul>
+            {features.map((feature, idx) => (
+              <tr key={idx} className="border-b">
+                <td className="p-4 text-sm">
+                  {feature.name}
+                  {feature.notes && (
+                    <ul className="list-disc list-inside mt-1 text-gray-500 text-xs">
+                      {feature.notes.map((note, nIdx) => (
+                        <li key={nIdx}>{note}</li>
+                      ))}
+                    </ul>
+                  )}
+                </td>
+                {packages.map((pkg) => (
+                  <td key={pkg.name} className="text-center p-4">
+                    {feature.availability[pkg.name] ? (
+                      <Check className="text-green-500 inline" />
+                    ) : (
+                      <X className="text-red-500 inline" />
                     )}
                   </td>
-                  {packages.map((pkg, pIdx) => (
-                    <td key={pIdx} className="p-3 text-center">
-                      {feature.appliesTo.includes(pkg.name) ? (
-                        <Check className="text-green-600 inline" />
-                      ) : (
-                        <X className="text-red-500 inline" />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              )
-            )}
+                ))}
+              </tr>
+            ))}
           </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              {packages.map((pkg) => (
+                <td key={pkg.name} className="p-4 text-center">
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                    Book Now
+                  </button>
+                </td>
+              ))}
+            </tr>
+          </tfoot>
         </table>
       </div>
 
-      {/* Show More / Less Button */}
-      <div className="flex justify-center mt-4">
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="flex items-center gap-2 text-blue-600 font-medium"
-        >
-          {expanded ? (
-            <>
-              Show Less <ChevronUp size={18} />
-            </>
-          ) : (
-            <>
-              Show More <ChevronDown size={18} />
-            </>
-          )}
+      {/* Mobile Accordion View */}
+      <div className="md:hidden space-y-4">
+        {packages.map((pkg) => (
+          <div
+            key={pkg.name}
+            className="border rounded-lg shadow-md overflow-hidden"
+          >
+            <button
+              onClick={() => toggleAccordion(pkg.name)}
+              className={`w-full flex justify-between items-center p-4 ${
+                pkg.popular
+                  ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
+                  : "bg-gray-100"
+              }`}
+            >
+              <div>
+                <h3 className="text-lg font-semibold">{pkg.name}</h3>
+                <p className="text-sm">{pkg.price}</p>
+              </div>
+              {openPackage === pkg.name ? <ChevronUp /> : <ChevronDown />}
+            </button>
+            {openPackage === pkg.name && (
+              <div className="p-4 bg-white space-y-3">
+                {features.map((feature, idx) => (
+                  <div key={idx}>
+                    <div className="flex justify-between items-center text-sm">
+                      <span>{feature.name}</span>
+                      {feature.availability[pkg.name] ? (
+                        <Check className="text-green-500" size={16} />
+                      ) : (
+                        <X className="text-red-500" size={16} />
+                      )}
+                    </div>
+                    {feature.notes && (
+                      <ul className="list-disc list-inside mt-1 text-gray-500 text-xs">
+                        {feature.notes.map((note, nIdx) => (
+                          <li key={nIdx}>{note}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+                <button className="w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                  Book Now
+                </button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Download Itinerary Button */}
+      <div className="mt-6 text-center">
+        <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
+          Download Full Itinerary
         </button>
       </div>
     </div>

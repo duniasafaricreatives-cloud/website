@@ -36,7 +36,7 @@ const About = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-burgundy-900 mb-4">
-                What makes un Unique
+                What Makes Us Unique
               </h2>
               <div className="w-24 h-1 bg-amber-600 mb-6"></div>
             </div>

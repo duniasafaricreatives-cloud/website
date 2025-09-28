@@ -58,8 +58,8 @@ const ItineraryPage = () => {
     { key: "nigeriaTickets", label: "Bed & Breakfast (7 days and 6 nights)" },
     { key: "ivoryTickets", label: "Welcome Dinner" },
     { key: "threeGames", label: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisa games" },
-    { key: "fesTours", label: "Overnight desert camping safari + breakfast & dinner Merzouga section - via Ifrane & Azrou cedar forest (coffee/photo stops); Midelt lunch stop; Ziz Valley viewpoint." },
-    { key: "marrakechTours", label: "Tour activities in Marrakech" },
+    { key: "fesTours", label: "Overnight desert camping safari + breakfast & dinner. Merzouga section - via Ifrane & Azrou cedar forest (coffee/photo stops); Midelt lunch stop; Ziz Valley viewpoint." },
+    { key: "marrakechTours", label: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint" },
     { key: "casablancaTours", label: "Tour activities in Casablanca" },
   ];
 

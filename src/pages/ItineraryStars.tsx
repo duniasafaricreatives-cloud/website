@@ -3,9 +3,9 @@ import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
 
 const ItineraryStars = () => {
   const packages = [
-    { name: "Bronze", price: "Starting from $750", popular: false },
+    { name: "Bronze", price: "Starting from $809", popular: false },
     { name: "Silver", price: "Starting from $1,250", popular: true }, // ✅ Silver is most popular
-    { name: "Gold", price: "Starting from $2,200", popular: false },
+    { name: "Gold", price: "Starting from $1,575", popular: false },
   ];
 
   const features = [

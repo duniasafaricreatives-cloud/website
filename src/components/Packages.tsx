@@ -33,8 +33,8 @@ const Packages = () => {
       bgColor: 'bg-gray-50'
     },
     {
-      id: 'morocco-hat-trick-circuit',
-      name: 'Morocco hat trick circuit',
+      id: 'stars-in-the-atlas',
+      name: 'Stars in the Atlas',
       popular: false,
       price: 'Starting from $1,190',
       description: 'This package excludes return flights',
@@ -43,7 +43,7 @@ const Packages = () => {
         'Official match tickets to see three games in three different cities',
         'Tour activities and transfers in Casablanca, Fes and Marrakech'
       ],
-      color: 'from-yellow-400 to-yellow-600',
+      color: 'from-blue-400 to-blue-600',
       bgColor: 'bg-white'
     }
   ];

@@ -209,7 +209,7 @@ const ItineraryStars = () => {
       </div>
 
       {/* ===== SUB ITINERARY SECTION ===== */}
-      <h2 className="text-2xl font-bold text-center mt-16 mb-8">Extended Stay Packages</h2>
+      <h2 className="text-2xl font-bold text-center mt-16 mb-8">For Extended 12 Days, 11 Nights Stay to see 3 games (Contact Travel Agent)</h2>
 
       {/* Desktop Table View */}
       <div className="hidden md:block overflow-x-auto">

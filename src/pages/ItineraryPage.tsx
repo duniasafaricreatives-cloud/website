@@ -57,6 +57,7 @@ const ItineraryPage = () => {
     { key: "casablancaTours", label: "Visa Application (for Ghanaian passport holders only)" },
     { key: "breakfast", label: "Fès ↔ Casablanca: Round-trip train connections" },
     { key: "nigeriaTickets", label: "Bed & Breakfast (7 days and 6 nights)" },
+    { key: "nigeriaTickets", label: "Covers Mandatory City Tax" },
     { key: "ivoryTickets", label: "Welcome Dinner" },
     { key: "threeGames", label: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisa games" },
     { key: "fesTours", label: "Overnight desert camping safari + breakfast & dinner. Merzouga section - via Ifrane & Azrou cedar forest (coffee/photo stops); Midelt lunch stop; Ziz Valley viewpoint." },

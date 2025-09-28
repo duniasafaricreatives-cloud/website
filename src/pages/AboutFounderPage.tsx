@@ -39,7 +39,6 @@ const AboutFounderPage = () => {
               Mimi invites collaborations, partnerships, and sponsorships to help realize this dream within her lifetime.
             </p>
           </div>
-        </div>
 
         {/* Vision Section */}
         <section className="mb-12">

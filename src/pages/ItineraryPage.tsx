@@ -7,7 +7,7 @@ const ItineraryPage = () => {
       name: "Bronze",
       price: "Starting from $760",
       description: "This package excludes return flights",
-      features: {
+      Activities: {
         breakfast: true,
         nigeriaTickets: true,
         ivoryTickets: false,
@@ -23,7 +23,7 @@ const ItineraryPage = () => {
       name: "Silver",
       price: "Starting from $815",
       description: "This package excludes return flights",
-      features: {
+      Acitivities: {
         breakfast: true,
         nigeriaTickets: false,
         ivoryTickets: true,

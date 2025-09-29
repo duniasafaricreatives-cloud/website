@@ -15,7 +15,10 @@ const AboutFounderPage = () => {
   ];
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.Swiper) {
+    if (typeof window === "undefined") return;
+
+    // 1) Initialize Swiper if available
+    if (window.Swiper) {
       new window.Swiper(".swiper-container", {
         loop: true,
         navigation: {
@@ -31,6 +34,37 @@ const AboutFounderPage = () => {
         },
       });
     }
+
+    // 2) Tiny guard to keep page from scrolling on horizontal swipes
+    const el = document.querySelector(".swiper-container");
+    if (!el) return;
+
+    let startX = 0;
+    let startY = 0;
+
+    const onStart = (e) => {
+      const t = e.touches?.[0];
+      if (!t) return;
+      startX = t.clientX;
+      startY = t.clientY;
+    };
+
+    const onMove = (e) => {
+      const t = e.touches?.[0];
+      if (!t) return;
+      const dx = Math.abs(t.clientX - startX);
+      const dy = Math.abs(t.clientY - startY);
+      // If it's a horizontal swipe, prevent page scroll while Swiper handles it
+      if (dx > dy) e.preventDefault();
+    };
+
+    el.addEventListener("touchstart", onStart, { passive: true });
+    el.addEventListener("touchmove", onMove, { passive: false });
+
+    return () => {
+      el.removeEventListener("touchstart", onStart);
+      el.removeEventListener("touchmove", onMove);
+    };
   }, []);
 
   return (

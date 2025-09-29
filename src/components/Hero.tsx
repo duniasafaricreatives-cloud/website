@@ -83,7 +83,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Primary CTA - View Itinerary */}
             <a 
-              href="https://drive.google.com/file/d/1CM7mLCJlxGaSwL-wMGuwtGBe8YRVHWkV/view?usp=sharing"
+              href="https://drive.google.com/file/d/10-3Pc0HBj23eY4CdVyCkr6Z18Z7vFd6Y/view?usp=sharing"
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-amber-600 hover:bg-amber-700 text-white 

@@ -107,7 +107,7 @@ const AboutFounderPage = () => {
           <div className="swiper-container rounded-2xl shadow-lg">
             <div className="swiper-wrapper flex">
               {travelImages.map((img, idx) => (
-                <div className="swiper-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" key={idx}>
+                <div className="swiper-slide flex-shrink-0 w-[calc(100%/1.05)] md:w-[calc(50%-10px)] lg:w-[calc(33.33%-15px)] mx-2" key={idx}>
                   <div className="relative">
                     <img
                       src={img.src}

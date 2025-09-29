@@ -158,7 +158,7 @@ const AboutFounderPage = () => {
             Travel Africa, Transform Africa
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            In September 2025, Mimi launched Dunia Safari to make travel accessible and inspire Africa’s youth to explore their own continent. She believes progress begins with seeing and experiencing Africa firsthand and invites collaborations, partnerships, and sponsorships to bring this vision to life. 
+            In September 2025, Mimi launched Dunia Safari to make travel accessible and inspire Africa’s youth to explore their own continent. She believes progress begins with seeing and experiencing Africa firsthand. 
           </p>
         </section>
 

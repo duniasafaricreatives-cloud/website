@@ -21,7 +21,6 @@ const AboutFounderPage = () => {
       if (!window.Swiper) return;
       new window.Swiper(".swiper-container", {
         loop: true,
-        
         pagination: { el: ".swiper-pagination", clickable: true },
         slidesPerView: 1,
         spaceBetween: 20,
@@ -32,28 +31,27 @@ const AboutFounderPage = () => {
       });
     };
 
-    // If Swiper is already available, init immediately.
     if (window.Swiper) {
       initSwiper();
     } else {
-      // Inject Swiper CSS (once)
       const cssId = "swiper-cdn-css";
       if (!document.getElementById(cssId)) {
         const link = document.createElement("link");
         link.id = cssId;
         link.rel = "stylesheet";
-        link.href = "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css";
+        link.href =
+          "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css";
         document.head.appendChild(link);
       }
 
-      // Inject Swiper JS (once), then init
       const jsId = "swiper-cdn-js";
       const loadJs = () =>
         new Promise((resolve, reject) => {
           if (document.getElementById(jsId)) return resolve();
           const script = document.createElement("script");
           script.id = jsId;
-          script.src = "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js";
+          script.src =
+            "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js";
           script.async = true;
           script.onload = () => resolve();
           script.onerror = () => reject(new Error("Failed to load Swiper"));
@@ -61,12 +59,10 @@ const AboutFounderPage = () => {
         });
 
       loadJs().then(() => {
-        // Wait a tick for the script to register window.Swiper
         requestAnimationFrame(initSwiper);
       });
     }
 
-    // Horizontal-swipe guard to stop page scroll stealing the gesture
     const el = document.querySelector(".swiper-container");
     if (!el) return;
 
@@ -85,7 +81,6 @@ const AboutFounderPage = () => {
       if (!t) return;
       const dx = Math.abs(t.clientX - startX);
       const dy = Math.abs(t.clientY - startY);
-      // Horizontal swipe -> keep page from scrolling
       if (dx > dy) e.preventDefault();
     };
 
@@ -184,9 +179,6 @@ const AboutFounderPage = () => {
 
             {/* Pagination */}
             <div className="swiper-pagination"></div>
-
-            {/* Navigation Arrows */}
->
           </div>
         </section>
       </div>

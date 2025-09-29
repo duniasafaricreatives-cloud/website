@@ -18,8 +18,6 @@ const AboutFounderPage = () => {
     if (typeof window !== "undefined" && window.Swiper) {
       new window.Swiper(".swiper-container", {
         loop: true,
-        effect: "fade",
-        fadeEffect: { crossFade: true },
         autoplay: { delay: 3000, disableOnInteraction: false },
         navigation: {
           nextEl: ".swiper-button-next",

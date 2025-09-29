@@ -175,9 +175,6 @@ const AboutFounderPage = () => {
                 </div>
               ))}
             </div>
-
-            {/* Pagination */}
-            <div className="swiper-pagination"></div>
           </div>
         </section>
       </div>

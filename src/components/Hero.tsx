@@ -21,8 +21,7 @@ const Hero = () => {
 
         {/* Subtitle */}
         <p className="text-lg text-gray-200 mb-8 max-w-xl mx-auto">
-          Choose your team and we’ll show you the perfect AFCON travel package
-          just for you.
+          Choose your team, Choose your package.
         </p>
 
         {/* Buttons */}

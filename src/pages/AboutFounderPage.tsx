@@ -1,11 +1,4 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
+import React, { useEffect } from "react";
 
 const AboutFounderPage = () => {
   const travelImages = [
@@ -20,6 +13,30 @@ const AboutFounderPage = () => {
     { src: "/Tinghir gorge.jpg", caption: "Tinghir Gorge" },
     { src: "/Ziz valley.jpg", caption: "Ziz Valley" },
   ];
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.Swiper) {
+      // Initialize Swiper after the component mounts
+      new window.Swiper(".swiper-container", {
+        loop: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        effect: "fade",
+        fadeEffect: { crossFade: true },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          768: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 30 },
+        },
+      });
+    }
+  }, []);
 
   return (
     <main className="py-20 bg-gray-50">
@@ -89,36 +106,33 @@ const AboutFounderPage = () => {
           <h2 className="text-2xl font-semibold mb-6 text-center text-burgundy-900">
             Travel Memories
           </h2>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay, EffectFade]}
-            effect="fade"
-            fadeEffect={{ crossFade: true }}
-            spaceBetween={20}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            breakpoints={{
-              768: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 30 },
-            }}
-            className="rounded-2xl shadow-lg"
-          >
-            {travelImages.map((img, index) => (
-              <SwiperSlide key={index}>
-                <div className="relative">
-                  <img
-                    src={img.src}
-                    alt={img.caption}
-                    className="w-full h-80 object-cover rounded-2xl"
-                  />
-                  <p className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-4 py-1 rounded-full text-sm">
-                    {img.caption}
-                  </p>
+
+          {/* Slider HTML for CDN Swiper */}
+          <div className="swiper-container rounded-2xl shadow-lg">
+            <div className="swiper-wrapper">
+              {travelImages.map((img, idx) => (
+                <div className="swiper-slide" key={idx}>
+                  <div className="relative">
+                    <img
+                      src={img.src}
+                      alt={img.caption}
+                      className="w-full h-80 object-cover rounded-2xl"
+                    />
+                    <p className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-4 py-1 rounded-full text-sm">
+                      {img.caption}
+                    </p>
+                  </div>
                 </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+              ))}
+            </div>
+
+            {/* Pagination */}
+            <div className="swiper-pagination"></div>
+
+            {/* Navigation */}
+            <div className="swiper-button-next"></div>
+            <div className="swiper-button-prev"></div>
+          </div>
         </section>
       </div>
     </main>

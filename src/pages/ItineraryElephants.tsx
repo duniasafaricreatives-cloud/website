@@ -269,9 +269,14 @@ const ItineraryElephants = () => {
 
       {/* Download Itinerary Button */}
       <div className="mt-6 text-center">
-        <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">
+        <a 
+          href="https://drive.google.com/file/d/10-3Pc0HBj23eY4CdVyCkr6Z18Z7vFd6Y/view?usp=sharing"
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
+        >
           Download Full Itinerary
-        </button>
+        </a>
       </div>
     </div>
   );

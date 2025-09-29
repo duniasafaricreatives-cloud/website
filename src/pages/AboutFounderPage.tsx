@@ -21,10 +21,7 @@ const AboutFounderPage = () => {
       if (!window.Swiper) return;
       new window.Swiper(".swiper-container", {
         loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+        
         pagination: { el: ".swiper-pagination", clickable: true },
         slidesPerView: 1,
         spaceBetween: 20,
@@ -189,8 +186,7 @@ const AboutFounderPage = () => {
             <div className="swiper-pagination"></div>
 
             {/* Navigation Arrows */}
-            <div className="swiper-button-next"></div>
-            <div className="swiper-button-prev"></div>
+>
           </div>
         </section>
       </div>

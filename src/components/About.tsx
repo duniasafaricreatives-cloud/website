@@ -21,7 +21,7 @@ const About = () => {
                 From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Our Vision is to unite Africa by making authentic travel easy and affordable through curated bespoke journeys that connect people, cultures, and local businesses across the continent.
+                We deliver Morocco’s heartbeat—authentic moments, immersive culture, and memories no generic package can match.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 

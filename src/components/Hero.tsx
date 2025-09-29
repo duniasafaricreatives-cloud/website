@@ -5,7 +5,7 @@ const Hero = () => {
     <section
       className="relative h-screen bg-cover bg-center"
       style={{
-        backgroundImage: "url('/hero-bg.jpg')", // 🔹 Replace with your actual image
+        backgroundImage: "https://images.unsplash.com/photo-1587368062478-e804f5e2a55a?q=80&w=1023&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpeg", // 🔹 Replace with your actual image
       }}
     >
       {/* Overlay for contrast */}

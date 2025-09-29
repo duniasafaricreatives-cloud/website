@@ -16,20 +16,18 @@ const AboutFounderPage = () => {
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.Swiper) {
-      // Initialize Swiper after the component mounts
       new window.Swiper(".swiper-container", {
         loop: true,
-        autoplay: { delay: 3000, disableOnInteraction: false },
         effect: "fade",
         fadeEffect: { crossFade: true },
+        autoplay: { delay: 3000, disableOnInteraction: false },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        slidesPerView: 1,
+        spaceBetween: 20,
         breakpoints: {
           768: { slidesPerView: 2, spaceBetween: 20 },
           1024: { slidesPerView: 3, spaceBetween: 30 },
@@ -107,11 +105,11 @@ const AboutFounderPage = () => {
             Travel Memories
           </h2>
 
-          {/* Slider HTML for CDN Swiper */}
+          {/* Horizontal Swiper Slider */}
           <div className="swiper-container rounded-2xl shadow-lg">
-            <div className="swiper-wrapper">
+            <div className="swiper-wrapper flex">
               {travelImages.map((img, idx) => (
-                <div className="swiper-slide" key={idx}>
+                <div className="swiper-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" key={idx}>
                   <div className="relative">
                     <img
                       src={img.src}

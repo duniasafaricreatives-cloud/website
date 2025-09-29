@@ -17,10 +17,9 @@ const AboutFounderPage = () => {
   useEffect(() => {
     if (typeof window !== "undefined" && window.Swiper) {
       new window.Swiper(".swiper-container", {
+        direction: "horizontal", // Ensure horizontal sliding
         loop: true,
         autoplay: { delay: 3000, disableOnInteraction: false },
-        effect: "fade",
-        fadeEffect: { crossFade: true },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
@@ -28,7 +27,7 @@ const AboutFounderPage = () => {
         pagination: { el: ".swiper-pagination", clickable: true },
         slidesPerView: 1,
         spaceBetween: 20,
-        touchReleaseOnEdges: true, // Prevents page scroll while swiping
+        touchReleaseOnEdges: true, // Prevent page scroll while swiping
         breakpoints: {
           768: { slidesPerView: 2, spaceBetween: 20 },
           1024: { slidesPerView: 3, spaceBetween: 30 },
@@ -106,7 +105,6 @@ const AboutFounderPage = () => {
             Travel Memories
           </h2>
 
-          {/* Slider Container */}
           <div className="swiper-container rounded-2xl shadow-lg overflow-hidden">
             <div className="swiper-wrapper">
               {travelImages.map((img, idx) => (

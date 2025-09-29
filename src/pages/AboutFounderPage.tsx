@@ -82,20 +82,6 @@ const AboutFounderPage = () => {
           </p>
         </section>
 
-        {/* Vision Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
-            My Vision
-          </h2>
-          <p className="text-gray-700 leading-relaxed">
-            My vision is to make Morocco accessible to everyone, whether you’re a
-            football fan traveling for AFCON 2025, a solo explorer, or a group
-            looking for a tailored experience. Dunia Safari is not just about
-            tours, it’s about creating lifelong memories and building connections
-            between cultures.
-          </p>
-        </section>
-
         {/* Travel Memories Slider */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6 text-center text-burgundy-900">

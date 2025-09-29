@@ -17,8 +17,8 @@ const AboutFounderPage = () => {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // 1) Initialize Swiper if available
-    if (window.Swiper) {
+    const initSwiper = () => {
+      if (!window.Swiper) return;
       new window.Swiper(".swiper-container", {
         loop: true,
         navigation: {
@@ -33,9 +33,43 @@ const AboutFounderPage = () => {
           1024: { slidesPerView: 3, spaceBetween: 30 },
         },
       });
+    };
+
+    // If Swiper is already available, init immediately.
+    if (window.Swiper) {
+      initSwiper();
+    } else {
+      // Inject Swiper CSS (once)
+      const cssId = "swiper-cdn-css";
+      if (!document.getElementById(cssId)) {
+        const link = document.createElement("link");
+        link.id = cssId;
+        link.rel = "stylesheet";
+        link.href = "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css";
+        document.head.appendChild(link);
+      }
+
+      // Inject Swiper JS (once), then init
+      const jsId = "swiper-cdn-js";
+      const loadJs = () =>
+        new Promise((resolve, reject) => {
+          if (document.getElementById(jsId)) return resolve();
+          const script = document.createElement("script");
+          script.id = jsId;
+          script.src = "https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js";
+          script.async = true;
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error("Failed to load Swiper"));
+          document.body.appendChild(script);
+        });
+
+      loadJs().then(() => {
+        // Wait a tick for the script to register window.Swiper
+        requestAnimationFrame(initSwiper);
+      });
     }
 
-    // 2) Tiny guard to keep page from scrolling on horizontal swipes
+    // Horizontal-swipe guard to stop page scroll stealing the gesture
     const el = document.querySelector(".swiper-container");
     if (!el) return;
 
@@ -54,7 +88,7 @@ const AboutFounderPage = () => {
       if (!t) return;
       const dx = Math.abs(t.clientX - startX);
       const dy = Math.abs(t.clientY - startY);
-      // If it's a horizontal swipe, prevent page scroll while Swiper handles it
+      // Horizontal swipe -> keep page from scrolling
       if (dx > dy) e.preventDefault();
     };
 

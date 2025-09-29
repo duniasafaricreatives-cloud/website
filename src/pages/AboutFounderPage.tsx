@@ -21,7 +21,6 @@ const AboutFounderPage = () => {
       if (!window.Swiper) return;
       new window.Swiper(".swiper-container", {
         loop: true,
-        pagination: { el: ".swiper-pagination", clickable: true },
         slidesPerView: 1,
         spaceBetween: 20,
         breakpoints: {

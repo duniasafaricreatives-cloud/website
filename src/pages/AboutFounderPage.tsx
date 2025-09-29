@@ -82,6 +82,17 @@ const AboutFounderPage = () => {
           </p>
         </section>
 
+        {/* Vision Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
+         
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            Mimi invites collaborations, partnerships, and sponsorships to help
+            realize this dream within her lifetime.
+          </p>
+        </section>
+        
         {/* Travel Memories Slider */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6 text-center text-burgundy-900">

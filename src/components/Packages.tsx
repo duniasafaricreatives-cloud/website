@@ -26,8 +26,8 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Official match tickets and transfers to cheer on the Taifa stars of Tanzania',
-        'Tour activities and transfers in Fes and Casablanca'
+        'Official match tickets to see three games in three different cities',
+        'Tour activities and transfers in Casablanca, Fes and Marrakech'
       ],
       color: 'from-orange-500 to-orange-600', // Ivory Coast orange
       bgColor: 'bg-gray-50'
@@ -40,8 +40,8 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Official match tickets to see three games in three different cities',
-        'Tour activities and transfers in Casablanca, Fes and Marrakech'
+        'Official match tickets and transfers to cheer on the Taifa stars of Tanzania',
+        'Tour activities and transfers in Fes and Casablanca'
       ],
       color: 'from-blue-400 to-blue-600',  // Tanzania blue
       bgColor: 'bg-white'

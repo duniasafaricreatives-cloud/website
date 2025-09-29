@@ -18,13 +18,13 @@ const About = () => {
             
             <div className="space-y-4">
               <p className="text-lg text-gray-700 leading-relaxed">
-                At Dunia Safari, we believe travel should be accessible, authentic, value packed and transformative.
+                From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 Our Vision is to unite Africa by making authentic travel easy and affordable through curated bespoke journeys that connect people, cultures, and local businesses across the continent.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
+                
                 <br />
                 <Link to="/about-founder" className="text-amber-600 hover:underline font-semibold">
                 
@@ -46,7 +46,7 @@ const About = () => {
                   <CheckCircle className="w-6 h-6 text-amber-600 mt-1" />
                   <p className="text-lg text-gray-700 leading-relaxed">
                     <strong className="text-burgundy-900">TRUSTED & RELIABLE —</strong> 
-                    We work with only vetted partners & licensed guides. We provide WhatsApp check-ins, clear meeting points, and practical tips. We remove the small frictions that make or break a trip.
+                    Vetted partners, licensed guides, WhatsApp check-ins, clear meeting points, and practical tips to smooth out the little frictions that make or break a trip.
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -61,8 +61,8 @@ const About = () => {
                   <p className="text-lg text-gray-700 leading-relaxed">
                     <strong className="text-burgundy-900">CURATED 3 ON 3 ITINERARY —</strong> 
                <br /> 
-                    3 Adventures (e.g. desert safari, waterfalls, Atlas mountains, souk visits). <br />
-                   3 Slow moments (e.g. Berber village visit, sunset walks, hammam, sea days).
+                    3 Adventures (e.g. desert safari, waterfalls, Atlas mountains). <br />
+                   3 Slow moments (e.g. Berber village visit, sunset walks, hammam).
                   </p>
                 </div>
               </div>

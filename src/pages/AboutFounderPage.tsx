@@ -34,7 +34,7 @@ const AboutFounderPage = () => {
   }, []);
 
   return (
-    <main className="py-20 bg-gray-50">
+    <main className="py-20 bg-gray-50 overflow-x-hidden">
       <div className="max-w-4xl mx-auto px-6">
         {/* Page Title */}
         <h1 className="text-4xl font-bold mb-12 text-center text-burgundy-900">
@@ -96,7 +96,7 @@ const AboutFounderPage = () => {
           </h2>
 
           {/* Horizontal Swiper Slider */}
-          <div className="swiper-container rounded-2xl shadow-lg">
+          <div className="swiper-container rounded-2xl shadow-lg touch-pan-y overscroll-contain">
             <div className="swiper-wrapper flex">
               {travelImages.map((img, idx) => (
                 <div

@@ -127,7 +127,7 @@ const Packages = () => {
           </a>
 
         <a
-            href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
+            href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mb-8"

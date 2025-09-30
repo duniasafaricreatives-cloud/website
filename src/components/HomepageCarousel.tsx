@@ -86,7 +86,7 @@ const HomepageCarousel = () => {
 
             {/* Optional - Direct Download */}
             <a 
-              href="https://wa.me/233538087709" 
+              href="https://whatsapp.com/channel/0029VbBVevv1SWsrGM6oC62B" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-white text-gray-900 hover:bg-gray-200 
@@ -95,7 +95,7 @@ const HomepageCarousel = () => {
                          text-sm sm:text-lg 
                          transition-all duration-300 transform hover:scale-105 shadow-lg"
             > 
-              Chat with Us on WhatsApp
+              Join Our WhatsApp Community for updates
             </a>
           </div>
         </div>

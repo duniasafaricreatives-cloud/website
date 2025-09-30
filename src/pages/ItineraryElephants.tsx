@@ -76,6 +76,9 @@ const ItineraryElephants = () => {
       <h2 className="text-2xl font-bold text-center mb-6 mt-8">
         Elephants Itinerary Packages
       </h2>
+      <p className="text-xl text-gray-600 text-center mb-10">
+  Celebrate XMas in Morocco (22- 28 Dec 2025)
+</p>
 
       {/* ==================== MAIN ITINERARY ==================== */}
       {/* Desktop Table View */}

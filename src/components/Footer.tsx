@@ -1,6 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
-import { FaTiktok } from 'react-icons/fa';
+import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -35,6 +35,16 @@ export default function Footer() {
                 className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
               >
                 <Instagram className="w-6 h-6" />
+              </a>
+
+              {/* X (Twitter) */}
+              <a 
+                href="https://x.com/duniasafarigh" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+              >
+                <FaXTwitter className="w-6 h-6" />
               </a>
 
               {/* Facebook */}

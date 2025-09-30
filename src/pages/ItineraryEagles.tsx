@@ -152,9 +152,9 @@ const ItineraryEagles = () => {
                 {packages.map((pkg) => (
                   <td key={pkg.name} className="text-center p-4">
                     {feature.availability[pkg.name] ? (
-                      <Check className="text-green-500 inline" w-6 h-6 />
+                      <Check className="text-green-500 inline w-6 h-6"/>
                     ) : (
-                      <X className="text-red-500 inline" w-6 h-6 />
+                      <X className="text-red-500 inline w-6 h-6"/>
                     )}
                   </td>
                 ))}

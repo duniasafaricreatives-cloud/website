@@ -15,9 +15,9 @@ const FAQ = () => {
         <p><strong>Book early</strong> — Christmas/New Year has high demand and higher rates.</p>
         <p><strong>Steps:</strong></p>
         <ol>
-          <li>1. Select your package on the website & pay 40% deposit.</li>
+          <li>1. Select your package on the website.</li>
           <li>2. A travel agent will contact you via WhatsApp within 24 hours for flights, insurance & visa support.</li>
-          <li>3. Pay the remaining 60% before the deadline to receive flight, hotel & stadium ticket confirmations.</li>
+          <li>3. Pay before the deadline to receive flight, hotel & stadium ticket confirmations.</li>
           <li>4. Be added to our WhatsApp broadcast group for updates.</li>
         </ol>
       `

@@ -175,23 +175,27 @@ const ItineraryElephants = () => {
             {openPackage === pkg.name && (
               <div className="p-4 bg-white space-y-3">
                 {features.map((feature, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between items-center text-sm">
-                      <span>{feature.name}</span>
+                  // >>> changed block: keep icon aligned at right
+                  <div key={idx} className="py-2">
+                    <div className="flex items-start gap-3">
+                      <span className="flex-1 text-sm leading-snug">
+                        {feature.name}
+                      </span>
                       {feature.availability[pkg.name] ? (
-                        <Check className="text-green-500" size={20} />
+                        <Check className="text-green-500 shrink-0 mt-0.5" size={20} />
                       ) : (
-                        <X className="text-red-500" size={20} />
+                        <X className="text-red-500 shrink-0 mt-0.5" size={20} />
                       )}
                     </div>
                     {feature.notes && (
-                      <ul className="list-disc list-inside mt-1 text-gray-500 text-xs">
+                      <ul className="list-disc pl-5 mt-1 text-gray-500 text-xs">
                         {feature.notes.map((note, nIdx) => (
                           <li key={nIdx}>{note}</li>
                         ))}
                       </ul>
                     )}
                   </div>
+                  // <<< end changed block
                 ))}
                 <a 
                   href="https://forms.gle/vWe8gVGGWxBR8nc8A" 
@@ -256,10 +260,16 @@ const ItineraryElephants = () => {
             {openPackage === `sub-${pkg.name}` && (
               <div className="p-4 bg-white space-y-3">
                 {subFeatures.map((feature, idx) => (
-                  <div key={idx} className="flex justify-between items-center text-sm">
-                    <span>{feature.name}</span>
-                    <span>—</span>
+                  // >>> changed block: lock dash to right
+                  <div key={idx} className="py-2">
+                    <div className="flex items-start gap-3">
+                      <span className="flex-1 text-sm leading-snug">
+                        {feature.name}
+                      </span>
+                      <span className="text-gray-500 shrink-0 mt-0.5">—</span>
+                    </div>
                   </div>
+                  // <<< end changed block
                 ))}
               </div>
             )}

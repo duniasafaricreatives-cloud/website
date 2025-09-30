@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import HomepageCarousel from "./components/HomepageCarousel";
 import Packages from "./components/Packages";
 import GroupPerks from "./components/GroupPerks";
 import Testimonials from "./components/Testimonials";
@@ -49,6 +50,7 @@ function App() {
               <>
                 <Hero />
                 <About />
+                <HomepageCarousel />
                 <GroupPerks />
                 <Testimonials />
                 <FAQ />

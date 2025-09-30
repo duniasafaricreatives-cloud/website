@@ -121,7 +121,7 @@ const Packages = () => {
             href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mr-4 mb-8"
+            className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mr-6 mb-8"
           >
             Download Itinerary in EN
           </a>
@@ -145,7 +145,7 @@ const Packages = () => {
             href="https://forms.gle/5eCVqkXjoKoorqBQ9"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 mr-4"
+            className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 mr-6"
           >
             Custom Package Inquiry in EN
           </a>

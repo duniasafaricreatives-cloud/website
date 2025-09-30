@@ -7,7 +7,7 @@ const AboutFounderPage = () => {
     { src: "/Chefchaoun.jpg", caption: "Chefchaoun" },
     { src: "/Meknes.jpg", caption: "Meknes" },
     { src: "/Mr Zalagh_Fes.jpg", caption: "Mt Zalagh, Fes" },
-    { src: "/Mt. Toubal.jpg", caption: "Mt. Toubal Trek" },
+    { src: "/Mt. Toubal.jpg", caption: "Mt. Toubkal Trek" },
     { src: "/Mt. Toubkal summit.jpg", caption: "Mt. Toubkal Summit" },
     { src: "/Oujoud waterfalls.jpg", caption: "Oujoud Waterfalls" },
     { src: "/Ourika.jpg", caption: "Ourika" },

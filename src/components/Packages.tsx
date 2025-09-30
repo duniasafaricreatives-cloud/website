@@ -164,3 +164,4 @@ const Packages = () => {
 };
 
 export default Packages;
+export default Packages;

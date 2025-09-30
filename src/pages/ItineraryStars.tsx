@@ -179,9 +179,9 @@ const ItineraryStars = () => {
                     <div className="flex justify-between items-center text-sm">
                       <span>{feature.name}</span>
                       {feature.availability[pkg.name] ? (
-                        <Check className="text-green-500" size={16} />
+                        <Check className="text-green-500" size={20} />
                       ) : (
-                        <X className="text-red-500" size={16} />
+                        <X className="text-red-500" size={20} />
                       )}
                     </div>
                     {feature.notes && (

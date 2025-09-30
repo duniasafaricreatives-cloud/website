@@ -21,7 +21,7 @@ const About = () => {
                 From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                We deliver our DESTINATION’s heartbeat, authentic moments, immersive culture, and memories no generic package can match.
+                We deliver our <em>DESTINATION’s</em> heartbeat, authentic moments, immersive culture, and memories no generic package can match.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 

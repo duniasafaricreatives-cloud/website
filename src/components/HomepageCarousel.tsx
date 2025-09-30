@@ -82,18 +82,7 @@ const HomepageCarousel = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             {/* Primary CTA - View Itinerary */}
-            <a 
-              href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-amber-600 hover:bg-amber-700 text-white 
-                         px-4 py-2 sm:px-6 sm:py-3 
-                         rounded-full font-semibold 
-                         text-sm sm:text-lg 
-                         transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              View Itinerary
-            </a>
+            
 
             {/* Optional - Direct Download */}
             <a 

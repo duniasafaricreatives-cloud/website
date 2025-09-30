@@ -213,7 +213,8 @@ const ItineraryStars = () => {
 
       {/* ===== SUB ITINERARY SECTION ===== */}
       <h2 className="text-2xl font-bold text-center mt-16 mb-8">
-        12 Days, 11 Nights (3 Games&nbsp;Itinerary) <em>(Contact Travel Agent)</em>
+        Celebrate XMas in Morocco (22- 28 Dec 2025)
+<br />Welcome 2026 in Morocco (22 Dec - 2 Jan)
       </h2>
 
       {/* Desktop Table View */}

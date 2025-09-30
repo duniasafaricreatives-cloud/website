@@ -152,9 +152,9 @@ const ItineraryEagles = () => {
                 {packages.map((pkg) => (
                   <td key={pkg.name} className="text-center p-4">
                     {feature.availability[pkg.name] ? (
-                      <Check className="text-green-500 inline w-6 h-6"/>
+                      <Check className="text-green-500 inline w-6 h-6" />
                     ) : (
-                      <X className="text-red-500 inline w-6 h-6"/>
+                      <X className="text-red-500 inline w-6 h-6" />
                     )}
                   </td>
                 ))}
@@ -166,9 +166,9 @@ const ItineraryEagles = () => {
               <td></td>
               {packages.map((pkg) => (
                 <td key={pkg.name} className="p-4 text-center">
-                  <a 
-                    href="https://forms.gle/vWe8gVGGWxBR8nc8A" 
-                    target="_blank" 
+                  <a
+                    href="https://forms.gle/vWe8gVGGWxBR8nc8A"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                   >
@@ -205,27 +205,31 @@ const ItineraryEagles = () => {
             {openPackage === pkg.name && (
               <div className="p-4 bg-white space-y-3">
                 {features.map((feature, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between items-center text-sm">
-                      <span>{feature.name}</span>
+                  // >>> Changed block: keep icon aligned on the right
+                  <div key={idx} className="py-2">
+                    <div className="flex items-start gap-3">
+                      <span className="flex-1 text-sm leading-snug">
+                        {feature.name}
+                      </span>
                       {feature.availability[pkg.name] ? (
-                        <Check className="text-green-500 w-6 h-6"/>
+                        <Check className="text-green-500 w-6 h-6 shrink-0 mt-0.5" />
                       ) : (
-                        <X className="text-red-500 w-6 h-6"/>
+                        <X className="text-red-500 w-6 h-6 shrink-0 mt-0.5" />
                       )}
                     </div>
                     {feature.notes && (
-                      <ul className="list-disc list-inside mt-1 text-gray-500 text-xs">
+                      <ul className="list-disc pl-5 mt-1 text-gray-500 text-xs">
                         {feature.notes.map((note, nIdx) => (
                           <li key={nIdx}>{note}</li>
                         ))}
                       </ul>
                     )}
                   </div>
+                  // <<< end changed block
                 ))}
-                <a 
-                  href="https://forms.gle/vWe8gVGGWxBR8nc8A" 
-                  target="_blank" 
+                <a
+                  href="https://forms.gle/vWe8gVGGWxBR8nc8A"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center"
                 >
@@ -239,8 +243,8 @@ const ItineraryEagles = () => {
 
       {/* ===== SUB ITINERARY ===== */}
       <h2 className="text-2xl font-bold text-center mt-16 mb-6">
-7 Days, 6 Nights (2 Games Itinerary)
-12 Days, 11 Nights (3 Games Itinerary) <em>(Contact Travel Agent)</em>
+        7 Days, 6 Nights (2 Games Itinerary)
+        12 Days, 11 Nights (3 Games&nbsp;Itinerary) <em>(Contact Travel Agent)</em>
       </h2>
 
       {/* Desktop Table */}
@@ -290,13 +294,16 @@ const ItineraryEagles = () => {
             {openSubPackage === pkg.name && (
               <div className="p-4 space-y-3">
                 {subFeatures.map((feature, idx) => (
-                  <div
-                    key={idx}
-                    className="flex justify-between items-center text-sm"
-                  >
-                    <span>{feature.name}</span>
-                    <span className="text-gray-500">—</span>
+                  // >>> Changed block for sub-itinerary rows
+                  <div key={idx} className="py-2">
+                    <div className="flex items-start gap-3">
+                      <span className="flex-1 text-sm leading-snug">
+                        {feature.name}
+                      </span>
+                      <span className="text-gray-500 shrink-0 mt-0.5">—</span>
+                    </div>
                   </div>
+                  // <<< end changed block
                 ))}
               </div>
             )}
@@ -306,17 +313,17 @@ const ItineraryEagles = () => {
 
       {/* Download Itinerary Button */}
       <div className="mt-6 text-center">
-        <a 
+        <a
           href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 mb-4 md:mb-0 md:mr-6"
         >
-          Download Full Itinerary In EN 
+          Download Full Itinerary In EN
         </a>
-        <a 
+        <a
           href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
         >

@@ -3,7 +3,7 @@ import { Instagram, Facebook } from 'lucide-react';
 import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
-export default function Footer() {
+const Footer = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {

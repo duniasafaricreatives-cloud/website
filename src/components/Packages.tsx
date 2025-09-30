@@ -147,7 +147,15 @@ const Packages = () => {
             rel="noopener noreferrer"
             className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
           >
-            Custom Package Inquiry
+            Custom Package Inquiry in EN
+          </a>
+          <a
+            href="https://forms.gle/2d1RBwgdJxZzhG6q7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
+          >
+            Custom Package Inquiry in FN
           </a>
         </div>
       </div>

@@ -309,7 +309,7 @@ const ItineraryEagles = () => {
           href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 mr-6"
+          className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 mb-4 md:mb-0 md:mr-6"
         >
           Download Full Itinerary In EN 
         </a>
@@ -317,7 +317,7 @@ const ItineraryEagles = () => {
           href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 mr-6"
+          className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
         >
           Download Full Itinerary In FN
         </a>

@@ -216,7 +216,7 @@ const ItineraryElephants = () => {
       {/* ==================== SUB-ITINERARY ==================== */}
       <h3 className="text-xl font-bold text-center mt-12 mb-6">
         Celebrate XMas in Morocco (22- 28 Dec 2025)
-Welcome 2026 in Morocco (22 Dec - 2 Jan)
+<br />Welcome 2026 in Morocco (22 Dec - 2 Jan)
       </h3>
 
       {/* Desktop Table View */}

@@ -209,9 +209,9 @@ const ItineraryEagles = () => {
                     <div className="flex justify-between items-center text-sm">
                       <span>{feature.name}</span>
                       {feature.availability[pkg.name] ? (
-                        <Check className="text-green-500" w-6 h-6 />
+                        <Check className="text-green-500 w-6 h-6"/>
                       ) : (
-                        <X className="text-red-500" w-6 h-6 />
+                        <X className="text-red-500 w-6 h-6"/>
                       )}
                     </div>
                     {feature.notes && (

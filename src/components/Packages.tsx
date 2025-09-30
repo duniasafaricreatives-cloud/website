@@ -125,7 +125,7 @@ const Packages = () => {
           >
             Download Itinerary in EN
           </a>
-        </div>
+          </p>
         <a
             href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
             target="_blank"

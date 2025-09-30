@@ -6,7 +6,10 @@ const HomepageCarousel = () => {
   
   const slides = [
     {
-      
+      id: 1,
+      title: "Experience Morocco Beyond Football",
+      subtitle: "From Sahara dunes to Atlas peaks, adventure meets culture.",
+      image: "https://images.pexels.com/photos/31653067/pexels-photo-31653067.jpeg" // desert sunset
     },
     {
       id: 2,

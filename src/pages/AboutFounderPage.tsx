@@ -153,7 +153,7 @@ const AboutFounderPage = () => {
         </div>
 
         {/* Story Section */}
-        <section className="mb-12">
+        <section className="mb-6">
           <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
             Travel Africa, Transform Africa
           </h2>

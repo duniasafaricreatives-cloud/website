@@ -120,9 +120,9 @@ const ItineraryElephants = () => {
                 {packages.map((pkg) => (
                   <td key={pkg.name} className="text-center p-4">
                     {feature.availability[pkg.name] ? (
-                      <Check className="text-green-500 inline" />
+                      <Check className="text-green-500 inline" size={20} />
                     ) : (
-                      <X className="text-red-500 inline" />
+                      <X className="text-red-500 inline" size={20} />
                     )}
                   </td>
                 ))}
@@ -179,9 +179,9 @@ const ItineraryElephants = () => {
                     <div className="flex justify-between items-center text-sm">
                       <span>{feature.name}</span>
                       {feature.availability[pkg.name] ? (
-                        <Check className="text-green-500" size={16} />
+                        <Check className="text-green-500" size={20} />
                       ) : (
-                        <X className="text-red-500" size={16} />
+                        <X className="text-red-500" size={20} />
                       )}
                     </div>
                     {feature.notes && (

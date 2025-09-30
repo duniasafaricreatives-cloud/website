@@ -120,9 +120,9 @@ const ItineraryStars = () => {
                 {packages.map((pkg) => (
                   <td key={pkg.name} className="text-center p-4">
                     {feature.availability[pkg.name] ? (
-                      <Check className="text-green-500 inline" />
+                      <Check className="text-green-500 inline" size={20} />
                     ) : (
-                      <X className="text-red-500 inline" />
+                      <X className="text-red-500 inline" size={20} />
                     )}
                   </td>
                 ))}

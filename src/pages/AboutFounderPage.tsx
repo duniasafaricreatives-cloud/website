@@ -163,7 +163,7 @@ const AboutFounderPage = () => {
         </section>
 
                 {/* Vision Section */}
-        <section className="mb-12"> {/* Added a section wrapper for clarity */}
+        <section className="mb-6"> {/* Added a section wrapper for clarity */}
           <p className="text-gray-700 leading-relaxed">
             Mimi invites collaborations, partnerships, and sponsorships to help
             realize this dream within her lifetime.

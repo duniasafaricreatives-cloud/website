@@ -245,7 +245,7 @@ const ItineraryEagles = () => {
 
       {/* ===== SUB ITINERARY ===== */}
       <h2 className="text-2xl font-bold text-center mt-16 mb-6">
-        12 Days, 11 Nights (3 Games&nbsp;Itinerary) <em>(Contact Travel Agent)</em>
+        Extended 12 days Itimerary<em>(Contact Travel Agent)</em>
       </h2>
 
       {/* Desktop Table */}

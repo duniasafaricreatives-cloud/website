@@ -46,7 +46,7 @@ answer: `
   <p><strong>Q:</strong> —How are exchange rates handled?</p>
   <p><strong>A:</strong> — For cross-currency payments, we use the prevailing market rate at the time of invoicing/checkout. Your bank or provider may apply a small FX margin.</p>
   <p><strong>Q:</strong> — Will I receive a receipt?</p>
-  <p><strong>A:</strong> — Yes. Reciept are issued within 24hours after each payment, and a final confirmation pack (flights/rooms/match tickets) is sent once the balance is paid.</p>
+  <p><strong>A:</strong> — Yes. Reciept are issued within 24hours after each payment.</p>
 `
     },
     {

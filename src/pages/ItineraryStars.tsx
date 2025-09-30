@@ -175,7 +175,6 @@ const ItineraryStars = () => {
             {openPackage === pkg.name && (
               <div className="p-4 bg-white space-y-3">
                 {features.map((feature, idx) => (
-                  {/* >>> changed block: keep icon on right, text wraps */}
                   <div key={idx} className="py-2">
                     <div className="flex items-start gap-3">
                       <span className="flex-1 text-sm leading-snug">
@@ -195,7 +194,6 @@ const ItineraryStars = () => {
                       </ul>
                     )}
                   </div>
-                  {/* <<< end changed block */}
                 ))}
                 <a 
                   href="https://forms.gle/vWe8gVGGWxBR8nc8A" 
@@ -256,7 +254,6 @@ const ItineraryStars = () => {
             {openSubPackage === pkg.name && (
               <div className="p-4 bg-white space-y-3">
                 {subFeatures.map((feature, idx) => (
-                  {/* >>> changed block: lock dash at right */}
                   <div key={idx} className="py-2">
                     <div className="flex items-start gap-3">
                       <span className="flex-1 text-sm leading-snug">
@@ -265,7 +262,6 @@ const ItineraryStars = () => {
                       <span className="text-gray-500 shrink-0 mt-0.5">—</span>
                     </div>
                   </div>
-                  {/* <<< end changed block */}
                 ))}
               </div>
             )}

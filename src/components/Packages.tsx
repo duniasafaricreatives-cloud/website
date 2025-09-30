@@ -61,7 +61,7 @@ const Packages = () => {
             Choose your perfect Morocco AFCON experience
           </p>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Offer ends 31st October 2025
+            <em>Offer ends 31st October 2025</em>
           </p>
         </div>
 

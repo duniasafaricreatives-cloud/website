@@ -275,7 +275,7 @@ const ItineraryElephants = () => {
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 mr-6"
         >
-          Download Full Itinerary
+          Download Full Itinerary In EN
         </a>
         <a 
           href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"

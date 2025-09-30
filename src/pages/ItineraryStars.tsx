@@ -135,7 +135,7 @@ const ItineraryStars = () => {
               {packages.map((pkg) => (
                 <td key={pkg.name} className="p-4 text-center">
                   <a 
-                    href="https://wa.me/233538087709" 
+                    href="https://forms.gle/vWe8gVGGWxBR8nc8A" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"

@@ -115,7 +115,9 @@ const ItineraryEagles = () => {
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
           <thead>
             <tr>
-              <th className="bg-gray-100 p-4 text-left">7 Days, 6 Nights (2 Games Itinerary) Features</th>
+              <th className="bg-gray-100 p-4 text-left">
+  7 Days, 6 Nights (2 Games Itinerary)<br />Features
+</th>
               {packages.map((pkg) => (
                 <th
                   key={pkg.name}

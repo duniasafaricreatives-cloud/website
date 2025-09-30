@@ -26,7 +26,7 @@ const Packages = () => {
       description: 'This package excludes return flights',
       features: [
         'Bed and Breakfast',
-        'Official match tickets to see three games in three different cities',
+        'Official match tickets and transfers to cheer on the Elephants of Ivory Coast',
         'Tour activities and transfers in Casablanca, Fes and Marrakech'
       ],
       color: 'from-orange-500 to-orange-600', // Ivory Coast orange

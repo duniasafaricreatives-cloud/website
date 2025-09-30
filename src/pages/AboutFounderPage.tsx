@@ -164,7 +164,6 @@ const AboutFounderPage = () => {
 
         {/* Vision Section */}
          
-          </h2>
           <p className="text-gray-700 leading-relaxed">
             Mimi invites collaborations, partnerships, and sponsorships to help
             realize this dream within her lifetime.

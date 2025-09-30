@@ -241,7 +241,7 @@ const ItineraryEagles = () => {
       <h2 className="text-2xl font-bold text-center mt-16 mb-6">
         For Super Eagles Fans
 7 Days, 6 Nights (2 Games Itinerary)
-12 Days, 11 Nights (3 Games Itinerary) (Contact Travel Agent)
+12 Days, 11 Nights (3 Games Itinerary) <em>(Contact Travel Agent)</em>
       </h2>
 
       {/* Desktop Table */}

@@ -73,9 +73,12 @@ const ItineraryStars = () => {
   return (
     <div className="p-6">
       {/* Page Heading */}
-      <h1 className="text-3xl font-bold text-center mt-16 mb-10">
-        Stars Itinerary Packages<br />Celebrate XMas in Morocco (22- 28 Dec 2025)
-      </h1>
+      <h1 className="text-3xl font-bold text-center mt-16">
+  Stars Itinerary Packages
+</h1>
+<p className="text-xl text-gray-600 text-center mb-10">
+  Celebrate XMas in Morocco (22- 28 Dec 2025)
+</p>
 
       {/* ===== MAIN ITINERARY (unchanged) ===== */}
       {/* Desktop Table View */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
 import { FaTiktok } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const scrollToSection = (href: string) => {
@@ -71,12 +72,12 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => scrollToSection('#packages')}
+                <Link 
+                  to="/packages"
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
                   Packages
-                </button>
+                </Link>
               </li>
               <li>
                 <button 

@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import BlogListingPage from "./pages/BlogListingPage"; 
 import BlogPostPage from "./pages/BlogPostPage";       
 import AboutFounderPage from "./pages/AboutFounderPage";
+import PackagesPage from "./pages/PackagesPage";
 
 // ✅ Import separate itineraries
 import ItineraryEagles from "./pages/ItineraryEagles";
@@ -48,7 +49,6 @@ function App() {
               <>
                 <Hero />
                 <About />
-                <Packages />
                 <GroupPerks />
                 <Testimonials />
                 <FAQ />
@@ -60,6 +60,9 @@ function App() {
 
           {/* Blog Listing Page */}
           <Route path="/blog" element={<BlogListingPage />} />
+
+          {/* Packages Page */}
+          <Route path="/packages" element={<PackagesPage />} />
 
           {/* About Founder Page */}
           <Route path="/about-founder" element={<AboutFounderPage />} />

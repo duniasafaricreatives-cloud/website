@@ -18,7 +18,7 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "Packages", href: "#packages" },
+    { name: "Packages", href: "/packages", isPage: true },
     { name: "About", href: "#about" },
     { name: "FAQ", href: "#faq" },
     { name: "Blog", href: "/blog", isPage: true }, // ✅ Blog is a separate page

@@ -164,7 +164,6 @@ const AboutFounderPage = () => {
 
         {/* Vision Section */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
          
           </h2>
           <p className="text-gray-700 leading-relaxed">

@@ -146,7 +146,7 @@ export default function Footer() {
                 Phone: +233 53 808 7709
               </p>
               <p className="text-gray-300">
-                Email: info@duniasafari.com
+                Email: travelduniasafari@gmail.com
               </p>
             </div>
           </div>

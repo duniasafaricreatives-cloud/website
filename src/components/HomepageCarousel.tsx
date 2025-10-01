@@ -1,32 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const HomepageCarousel = () => {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   
   const slides = [
     {
       id: 1,
-      title: "Experience Morocco With Your Squad",
-      subtitle: "Travel, celebrate, and make memories that last a lifetime.",
+      title: t("carousel.slide1Title"),
+      subtitle: t("carousel.slide1Subtitle"),
       image: "/friendscheering.jpg" // desert sunset
     },
     {
       id: 2,
-      title: "Experience Morocco Beyond Football",
-      subtitle: "From Sahara dunes to Atlas peaks, adventure meets culture.",
+      title: t("carousel.slide2Title"),
+      subtitle: t("carousel.slide2Subtitle"),
       image: "https://images.pexels.com/photos/31653067/pexels-photo-31653067.jpeg" // desert sunset
     },
     {
       id: 3,
-      title: "Dive Into Moroccan Culture",
-      subtitle: "Souks, lanterns, and flavors you'll never forget.",
+      title: t("carousel.slide3Title"),
+      subtitle: t("carousel.slide3Subtitle"),
       image: "https://images.pexels.com/photos/15157857/pexels-photo-15157857.jpeg" // Marrakech souk
     },
     {
       id: 4,
-      title: "Nature Awaits You",
-      subtitle: "Hike the Atlas mountains and explore Morocco's beauty.",
+      title: t("carousel.slide4Title"),
+      subtitle: t("carousel.slide4Subtitle"),
       image: "https://images.unsplash.com/photo-1676475013461-79b08ac45f57?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Atlas peaks
     }
   ];
@@ -95,7 +97,7 @@ const HomepageCarousel = () => {
                          text-sm sm:text-lg 
                          transition-all duration-300 transform hover:scale-105 shadow-lg"
             > 
-              Join Our WhatsApp Community for updates
+              {t("carousel.joinWhatsApp")}
             </a>
           </div>
         </div>

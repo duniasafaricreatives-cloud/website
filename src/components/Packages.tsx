@@ -1,47 +1,50 @@
 import React from 'react';
 import { Check, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Packages = () => {
+  const { t } = useTranslation();
+
   const packages = [
     {
       id: 'eagles-over-the-atlas', // ✅ slug for itinerary
-      name: 'Eagles over the Atlas',
+      name: t('packages.eaglesTitle'),
       popular: false,
-      price: 'Starting from $796',
-      description: 'This package excludes return flights',
+      price: `${t('packages.startingFrom')} $796`,
+      description: t('packages.excludesFlights'),
       features: [
-        'Bed and Breakfast',
-        'Official match tickets and transfers to cheer on the Super Eagles of Nigeria',
-        'Tour activities and transfers in FES, Morocco'
+        t('packages.bedBreakfast'),
+        t('packages.eaglesTickets'),
+        t('packages.eaglesTour')
       ],
       color: 'from-green-600 to-green-700', // Nigeria green
       bgColor: 'bg-white'
     },
     {
       id: 'elephants-in-the-atlas',
-      name: 'Elephants in the Atlas',
+      name: t('packages.elephantsTitle'),
       popular: true,
-      price: 'Starting from $855',
-      description: 'This package excludes return flights',
+      price: `${t('packages.startingFrom')} $855`,
+      description: t('packages.excludesFlights'),
       features: [
-        'Bed and Breakfast',
-        'Official match tickets and transfers to cheer on the Elephants of Ivory Coast',
-        'Tour activities and transfers in Casablanca, Fes and Marrakech'
+        t('packages.bedBreakfast'),
+        t('packages.elephantsTickets'),
+        t('packages.elephantsTour')
       ],
       color: 'from-orange-500 to-orange-600', // Ivory Coast orange
       bgColor: 'bg-gray-50'
     },
     {
       id: 'stars-in-the-atlas',
-      name: 'Stars in the Atlas',
+      name: t('packages.starsTitle'),
       popular: false,
-      price: 'Starting from $809',
-      description: 'This package excludes return flights',
+      price: `${t('packages.startingFrom')} $809`,
+      description: t('packages.excludesFlights'),
       features: [
-        'Bed and Breakfast',
-        'Official match tickets and transfers to cheer on the Taifa stars of Tanzania',
-        'Tour activities and transfers in Fes and Casablanca'
+        t('packages.bedBreakfast'),
+        t('packages.starsTickets'),
+        t('packages.starsTour')
       ],
       color: 'from-blue-400 to-blue-600',  // Tanzania blue
       bgColor: 'bg-white'
@@ -54,14 +57,14 @@ const Packages = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            AFCON 2025 Packages
+            {t('packages.title')}
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Choose your perfect Morocco AFCON experience
+            {t('packages.subtitle')}
           </p>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            <em>Offer ends 31st October 2025</em>
+            <em>{t('packages.offerEnds')}</em>
           </p>
         </div>
 
@@ -78,7 +81,7 @@ const Packages = () => {
               {pkg.popular && (
                 <div className="absolute top-0 right-0 bg-amber-500 text-white px-4 py-1 rounded-bl-lg font-semibold text-sm flex items-center gap-1">
                   <Star className="w-4 h-4" />
-                  Most Popular
+                  {t('packages.mostPopular')}
                 </div>
               )}
 
@@ -107,7 +110,7 @@ const Packages = () => {
   to={`/itinerary/${pkg.id}`}
   className={`block text-center bg-gradient-to-r ${pkg.color} text-white py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:shadow-lg transform hover:scale-105`}
 >
-  See Packages
+  {t('packages.seePackages')}
 </Link>
 
               </div>
@@ -118,7 +121,7 @@ const Packages = () => {
         {/* New Download Itinerary CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-100 text-lg mb-4">
-            Still undecided? Download the AFCON 2025 itinerary and share with your squad.
+            {t('packages.downloadItinerary')}
           </p>
           <a
             href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
@@ -126,7 +129,7 @@ const Packages = () => {
             rel="noopener noreferrer"
             className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mb-4 md:mb-0 md:mr-6"
           >
-            Download Itinerary in EN
+            {t('packages.downloadEN')}
           </a>
 
         <a
@@ -135,14 +138,14 @@ const Packages = () => {
             rel="noopener noreferrer"
             className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300"
           >
-            Download Itinerary in FN
+            {t('packages.downloadFR')}
           </a>
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-8">
           <p className="text-gray-300 mb-6">
-            Prefer to skip AFCON but still want to experience Morocco?
+            {t('packages.customPackage')}
           </p>
           <a
             href="https://forms.gle/5eCVqkXjoKoorqBQ9"
@@ -150,7 +153,7 @@ const Packages = () => {
             rel="noopener noreferrer"
             className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 mb-4 md:mb-0 md:mr-6"
           >
-            Custom Package Inquiry in EN
+            {t('packages.customInquiryEN')}
           </a>
           <a
             href="https://forms.gle/2d1RBwgdJxZzhG6q7"
@@ -158,7 +161,7 @@ const Packages = () => {
             rel="noopener noreferrer"
             className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
           >
-            Custom Package Inquiry in FN
+            {t('packages.customInquiryFR')}
           </a>
         </div>
       </div>

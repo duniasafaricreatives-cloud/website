@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -17,13 +19,13 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Packages", href: "/packages", isPage: true },
-    { name: "About", href: "#about" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Blog", href: "/blog", isPage: true }, // ✅ Blog is a separate page
-    { name: "About Founder", href: "/about-founder", isPage: true },
-    { name: "Contact", href: "#contact" },
+    { name: t("header.home"), href: "#home" },
+    { name: t("header.packages"), href: "/packages", isPage: true },
+    { name: t("header.about"), href: "#about" },
+    { name: t("header.faq"), href: "#faq" },
+    { name: t("header.blog"), href: "/blog", isPage: true },
+    { name: t("header.aboutFounder"), href: "/about-founder", isPage: true },
+    { name: t("header.contact"), href: "#contact" },
   ];
 
   const handleNavClick = (href: string) => {
@@ -47,6 +49,10 @@ const Header = () => {
     }
   };
 
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedLanguage = event.target.value;
+    i18n.changeLanguage(selectedLanguage);
+  };
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -104,7 +110,9 @@ const Header = () => {
                 }`}
               />
               <select
-                className={`bg-transparent border-none text-sm font-medium cursor-pointer ${
+                value={i18n.language}
+                onChange={handleLanguageChange}
+                className={`bg-transparent border-none text-sm font-medium cursor-pointer outline-none ${
                   isScrolled ? "text-gray-900" : "text-white"
                 }`}
               >

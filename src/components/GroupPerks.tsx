@@ -1,22 +1,25 @@
 import React from 'react';
 import { Users, BadgePercent, FileText, Shield } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const GroupPerks = () => {
+  const { t } = useTranslation();
+
   const perks = [
     {
       icon: Users,
-      title: 'Shared Experiences',
-      description: 'Traveling as a group makes every moment richer — from cheering together at AFCON stadiums to bonding over desert sunsets and city adventures.'
+      title: t('groupPerks.sharedExperiences'),
+      description: t('groupPerks.sharedDescription')
     },
     {
       icon: BadgePercent,
-      title: 'Exclusive Discounts',
-      description: ' Enjoy lower rates on flights, hotels, and experiences when you travel as part of a group.'
+      title: t('groupPerks.exclusiveDiscounts'),
+      description: t('groupPerks.discountsDescription')
     },
     {
       icon: FileText,
-      title: 'Hassle-Free Planning',
-      description: 'We handle the logistics (flights, transfers, tours, tickets), so your group can simply relax and enjoy'
+      title: t('groupPerks.hassleFree'),
+      description: t('groupPerks.hassleFreeDescription')
     },
   ];
 
@@ -26,11 +29,11 @@ const GroupPerks = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-burgundy-900 mb-4">
-            Group Travel Perks
+            {t('groupPerks.title')}
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Why traveling with Dunia Safari groups enhances your experience
+            {t('groupPerks.subtitle')}
           </p>
         </div>
 

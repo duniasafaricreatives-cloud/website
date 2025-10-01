@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="py-16 md:py-24 bg-cream-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,17 +14,17 @@ const About = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-burgundy-900 mb-4">
-                Dunia Safari Tours
+                {t("about.title")}
               </h2>
               <div className="w-24 h-1 bg-amber-600 mb-6"></div>
             </div>
             
             <div className="space-y-4">
               <p className="text-lg text-gray-700 leading-relaxed">
-                From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa’s biggest sporting events and Morocco’s timeless beauty.
+                {t("about.description1")}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
-                We deliver our <em>DESTINATION’s</em> heartbeat, authentic moments, immersive culture, and memories no generic package can match.
+                {t("about.description2")}
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
                 
@@ -36,7 +39,7 @@ const About = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-burgundy-900 mb-4">
-                What Makes Us Unique
+                {t("about.uniqueTitle")}
               </h2>
               <div className="w-24 h-1 bg-amber-600 mb-6"></div>
             </div>
@@ -45,24 +48,23 @@ const About = () => {
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-amber-600 mt-1" />
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    <strong className="text-burgundy-900">TRUSTED & RELIABLE —</strong> 
-                    Vetted partners, licensed guides, WhatsApp check-ins, clear meeting points, and practical tips to smooth out the little frictions that make or break a trip.
+                    <strong className="text-burgundy-900">{t("about.trustedReliable")} —</strong> 
+                    {t("about.trustedDescription")}
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-amber-600 mt-1" />
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    <strong className="text-burgundy-900">BUDGET-SMART BESPOKE —</strong> 
-                    We design custom itineraries that feel premium without the price tag. You see the total cost upfront, <em>no fluff!</em>
+                    <strong className="text-burgundy-900">{t("about.budgetSmart")} —</strong> 
+                    {t("about.budgetDescription")}
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-6 h-6 text-amber-600 mt-1" />
                   <p className="text-lg text-gray-700 leading-relaxed">
-                    <strong className="text-burgundy-900">CURATED 3 ON 3 ITINERARY —</strong> 
-               <br /> 
-                    3 Adventures (e.g. desert safari, waterfalls, Atlas mountains). <br />
-                   3 Slow moments (e.g. Berber village visit, sunset walks, hammam).
+                    <strong className="text-burgundy-900">{t("about.curatedItinerary")} —</strong> 
+                    <br /> 
+                    {t("about.curatedDescription")}
                   </p>
                 </div>
               </div>

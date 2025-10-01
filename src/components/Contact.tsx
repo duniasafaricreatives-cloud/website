@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { Phone, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="py-16 md:py-24 bg-cream-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-burgundy-900 mb-4">
-            Get In Touch
+            {t('contact.title')}
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Ready to start your AFCON 2025 Morocco adventure? Contact us today
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -20,7 +23,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <h3 className="text-2xl font-bold text-burgundy-900 mb-8">
-              Contact Us
+              {t('contact.contactUs')}
             </h3>
 
             <div className="space-y-6">
@@ -30,7 +33,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                    Call Us
+                    {t('contact.callUs')}
                   </h4>
                   <p className="text-gray-600">+233 53 808 7709</p>
                 </div>
@@ -42,7 +45,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                    Send us a Mail
+                    {t('contact.sendMail')}
                   </h4>
                   <p className="text-gray-600">travelduniasafari@gmail.com</p>
                 </div>

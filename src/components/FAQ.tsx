@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const FAQ = () => {
+  const { t } = useTranslation();
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
 
   const faqs = [
@@ -73,11 +75,11 @@ answer: `
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-burgundy-900 mb-4">
-            Frequently Asked Questions
+            {t('faq.title')}
           </h2>
           <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Find answers to common questions about AFCON 2025 travel packages
+            {t('faq.subtitle')}
           </p>
         </div>
 
@@ -121,14 +123,14 @@ answer: `
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">
-            Still have questions? We're here to help!
+            {t('faq.stillHaveQuestions')}
           </p>
           <button className="bg-burgundy-900 hover:bg-burgundy-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
           <a
   href="tel:+233538087709"
   className="bg-burgundy-900 hover:bg-burgundy-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
 >
-  Contact Support
+  {t('faq.contactSupport')}
 </a>
           </button>
         </div>

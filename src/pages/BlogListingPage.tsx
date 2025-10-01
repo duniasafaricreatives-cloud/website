@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { blogPosts } from "../data/blogPosts";
+import { useTranslation } from "react-i18next";
 
 const BlogListingPage = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-6xl mx-auto px-6">
         <h1 className="text-4xl font-bold mb-12 text-center text-burgundy-900">
-          The Safari Journal
+          {t('blog.title')}
         </h1>
         <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
         <div className="grid md:grid-cols-3 gap-8">
@@ -35,7 +38,7 @@ const BlogListingPage = () => {
                   to={`/blog/${post.id}`}
                   className="text-amber-600 font-semibold hover:underline"
                 >
-                  Read More →
+                  {t('blog.readMore')} →
                 </Link>
               </div>
             </div>

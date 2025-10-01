@@ -2,8 +2,11 @@ import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
 import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -24,7 +27,7 @@ const Footer = () => {
               className="h-16 w-auto mb-6"
             />
             <p className="text-gray-300 leading-relaxed mb-6">
-              Authentic travels, for less. Creating unforgettable AFCON 2025 experiences in Morocco
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               {/* Instagram */}
@@ -71,14 +74,14 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-6">{t('footer.quickLinks')}</h3>
             <ul className="space-y-3">
               <li>
                 <button 
                   onClick={() => scrollToSection('#home')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  Home
+                  {t('header.home')}
                 </button>
               </li>
               <li>
@@ -86,7 +89,7 @@ const Footer = () => {
                   to="/packages"
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  Packages
+                  {t('header.packages')}
                 </Link>
               </li>
               <li>
@@ -94,7 +97,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('#about')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  About
+                  {t('header.about')}
                 </button>
               </li>
               <li>
@@ -102,7 +105,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('#faq')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  FAQ
+                  {t('header.faq')}
                 </button>
               </li>
               <li>
@@ -110,7 +113,7 @@ const Footer = () => {
                   onClick={() => scrollToSection('#contact')}
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
                 >
-                  Contact
+                  {t('header.contact')}
                 </button>
               </li>
             </ul>
@@ -118,31 +121,31 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Services</h3>
+            <h3 className="text-xl font-bold mb-6">{t('footer.services')}</h3>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  AFCON 2025 Packages
+                  {t('footer.afconPackages')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  Morocco Travel
+                  {t('footer.moroccoTravel')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  Group Tours
+                  {t('footer.groupTours')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  Visa Support
+                  {t('footer.visaSupport')}
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                  Custom Packages
+                  {t('footer.customPackages')}
                 </a>
               </li>
             </ul>
@@ -150,13 +153,13 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Contact Info</h3>
+            <h3 className="text-xl font-bold mb-6">{t('footer.contactInfo')}</h3>
             <div className="space-y-3">
               <p className="text-gray-300">
-                Phone: +233 53 808 7709
+                {t('footer.phone')}: +233 53 808 7709
               </p>
               <p className="text-gray-300">
-                Email: travelduniasafari@gmail.com
+                {t('footer.email')}: travelduniasafari@gmail.com
               </p>
             </div>
           </div>
@@ -167,18 +170,18 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-gray-300 text-sm">
-                © 2025 Dunia Safari Tours. All rights reserved.
+                {t('footer.copyright')}
               </p>
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                Terms of Service
+                {t('footer.termsOfService')}
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                Cookie Policy
+                {t('footer.cookiePolicy')}
               </a>
             </div>
           </div>

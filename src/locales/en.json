@@ -1,0 +1,126 @@
+{
+  "header": {
+    "home": "Home",
+    "packages": "Packages",
+    "about": "About",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "aboutFounder": "About Founder",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Which team are you cheering for at AFCON 2025 in Morocco",
+    "subtitle": "Choose your team, Choose your package.",
+    "superEagles": "The Super Eagles",
+    "elephants": "The Elephants",
+    "taifaStars": "The Taifa Stars"
+  },
+  "about": {
+    "title": "Dunia Safari Tours",
+    "description1": "From stadium roars to desert stars, we specialize in curated experiences that celebrate both Africa's biggest sporting events and Morocco's timeless beauty.",
+    "description2": "We deliver our DESTINATION's heartbeat, authentic moments, immersive culture, and memories no generic package can match.",
+    "uniqueTitle": "What Makes Us Unique",
+    "trustedReliable": "TRUSTED & RELIABLE",
+    "trustedDescription": "Vetted partners, licensed guides, WhatsApp check-ins, clear meeting points, and practical tips to smooth out the little frictions that make or break a trip.",
+    "budgetSmart": "BUDGET-SMART BESPOKE",
+    "budgetDescription": "We design custom itineraries that feel premium without the price tag. You see the total cost upfront, no fluff!",
+    "curatedItinerary": "CURATED 3 ON 3 ITINERARY",
+    "curatedDescription": "3 Adventures (e.g. desert safari, waterfalls, Atlas mountains). 3 Slow moments (e.g. Berber village visit, sunset walks, hammam)."
+  },
+  "carousel": {
+    "slide1Title": "Experience Morocco With Your Squad",
+    "slide1Subtitle": "Travel, celebrate, and make memories that last a lifetime.",
+    "slide2Title": "Experience Morocco Beyond Football",
+    "slide2Subtitle": "From Sahara dunes to Atlas peaks, adventure meets culture.",
+    "slide3Title": "Dive Into Moroccan Culture",
+    "slide3Subtitle": "Souks, lanterns, and flavors you'll never forget.",
+    "slide4Title": "Nature Awaits You",
+    "slide4Subtitle": "Hike the Atlas mountains and explore Morocco's beauty.",
+    "joinWhatsApp": "Join Our WhatsApp Community for updates"
+  },
+  "packages": {
+    "title": "AFCON 2025 Packages",
+    "subtitle": "Choose your perfect Morocco AFCON experience",
+    "offerEnds": "Offer ends 31st October 2025",
+    "eaglesTitle": "Eagles over the Atlas",
+    "elephantsTitle": "Elephants in the Atlas",
+    "starsTitle": "Stars in the Atlas",
+    "startingFrom": "Starting from",
+    "excludesFlights": "This package excludes return flights",
+    "bedBreakfast": "Bed and Breakfast",
+    "eaglesTickets": "Official match tickets and transfers to cheer on the Super Eagles of Nigeria",
+    "elephantsTickets": "Official match tickets and transfers to cheer on the Elephants of Ivory Coast",
+    "starsTickets": "Official match tickets and transfers to cheer on the Taifa stars of Tanzania",
+    "eaglesTour": "Tour activities and transfers in FES, Morocco",
+    "elephantsTour": "Tour activities and transfers in Casablanca, Fes and Marrakech",
+    "starsTour": "Tour activities and transfers in Fes and Casablanca",
+    "seePackages": "See Packages",
+    "mostPopular": "Most Popular",
+    "downloadItinerary": "Still undecided? Download the AFCON 2025 itinerary and share with your squad.",
+    "downloadEN": "Download Itinerary in EN",
+    "downloadFR": "Download Itinerary in FN",
+    "customPackage": "Prefer to skip AFCON but still want to experience Morocco?",
+    "customInquiryEN": "Custom Package Inquiry in EN",
+    "customInquiryFR": "Custom Package Inquiry in FN"
+  },
+  "groupPerks": {
+    "title": "Group Travel Perks",
+    "subtitle": "Why traveling with Dunia Safari groups enhances your experience",
+    "sharedExperiences": "Shared Experiences",
+    "sharedDescription": "Traveling as a group makes every moment richer — from cheering together at AFCON stadiums to bonding over desert sunsets and city adventures.",
+    "exclusiveDiscounts": "Exclusive Discounts",
+    "discountsDescription": "Enjoy lower rates on flights, hotels, and experiences when you travel as part of a group.",
+    "hassleFree": "Hassle-Free Planning",
+    "hassleFreeDescription": "We handle the logistics (flights, transfers, tours, tickets), so your group can simply relax and enjoy"
+  },
+  "testimonials": {
+    "title": "Traveler Stories",
+    "subtitle": "What our travelers say about their travel experiences with Mimi Babs"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about AFCON 2025 travel packages",
+    "stillHaveQuestions": "Still have questions? We're here to help!",
+    "contactSupport": "Contact Support"
+  },
+  "newsletter": {
+    "title": "Signup to our Newsletter",
+    "subtitle": "Stay updated with latest AFCON 2025 packages, Morocco travel tips, and exclusive offers",
+    "emailPlaceholder": "Enter your email address",
+    "subscribe": "Subscribe",
+    "privacyNote": "We respect your privacy and will never share your information"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Ready to start your AFCON 2025 Morocco adventure? Contact us today",
+    "contactUs": "Contact Us",
+    "callUs": "Call Us",
+    "sendMail": "Send us a Mail"
+  },
+  "footer": {
+    "description": "Authentic travels, for less. Creating unforgettable AFCON 2025 experiences in Morocco",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contactInfo": "Contact Info",
+    "afconPackages": "AFCON 2025 Packages",
+    "moroccoTravel": "Morocco Travel",
+    "groupTours": "Group Tours",
+    "visaSupport": "Visa Support",
+    "customPackages": "Custom Packages",
+    "phone": "Phone",
+    "email": "Email",
+    "copyright": "© 2025 Dunia Safari Tours. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy"
+  },
+  "blog": {
+    "title": "The Safari Journal",
+    "readMore": "Read More"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try Again"
+  }
+}

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Send } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Newsletter = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -25,10 +27,10 @@ const Newsletter = () => {
             <Mail className="w-8 h-8 text-white" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            Signup to our Newsletter
+            {t('newsletter.title')}
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Stay updated with latest AFCON 2025 packages, Morocco travel tips, and exclusive offers
+            {t('newsletter.subtitle')}
           </p>
         </div>
 
@@ -40,7 +42,7 @@ const Newsletter = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
+                placeholder={t('newsletter.emailPlaceholder')}
                 className="w-full px-6 py-4 rounded-full text-gray-900 placeholder-gray-500 border-2 border-transparent focus:border-amber-500 focus:outline-none transition-all duration-300"
                 required
               />
@@ -55,7 +57,7 @@ const Newsletter = () => {
               ) : (
                 <>
                   <Send className="w-5 h-5" />
-                  Subscribe
+                  {t('newsletter.subscribe')}
                 </>
               )}
             </button>
@@ -64,7 +66,7 @@ const Newsletter = () => {
 
         {/* Privacy Note */}
         <p className="text-sm text-gray-400 mt-6">
-          We respect your privacy and will never share your information
+          {t('newsletter.privacyNote')}
         </p>
 
 

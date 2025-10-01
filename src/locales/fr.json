@@ -1,0 +1,126 @@
+{
+  "header": {
+    "home": "Accueil",
+    "packages": "Forfaits",
+    "about": "À propos",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "aboutFounder": "À propos du fondateur",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Pour quelle équipe encouragez-vous à la CAN 2025 au Maroc",
+    "subtitle": "Choisissez votre équipe, choisissez votre forfait.",
+    "superEagles": "Les Super Eagles",
+    "elephants": "Les Éléphants",
+    "taifaStars": "Les Taifa Stars"
+  },
+  "about": {
+    "title": "Dunia Safari Tours",
+    "description1": "Des rugissements du stade aux étoiles du désert, nous nous spécialisons dans des expériences organisées qui célèbrent à la fois les plus grands événements sportifs d'Afrique et la beauté intemporelle du Maroc.",
+    "description2": "Nous livrons le cœur battant de notre DESTINATION, des moments authentiques, une culture immersive et des souvenirs qu'aucun forfait générique ne peut égaler.",
+    "uniqueTitle": "Ce qui nous rend uniques",
+    "trustedReliable": "FIABLE ET DIGNE DE CONFIANCE",
+    "trustedDescription": "Partenaires vérifiés, guides agréés, check-ins WhatsApp, points de rencontre clairs et conseils pratiques pour éliminer les petites frictions qui font ou défont un voyage.",
+    "budgetSmart": "SUR MESURE INTELLIGENT",
+    "budgetDescription": "Nous concevons des itinéraires personnalisés qui semblent premium sans le prix élevé. Vous voyez le coût total à l'avance, sans superflu !",
+    "curatedItinerary": "ITINÉRAIRE ORGANISÉ 3 SUR 3",
+    "curatedDescription": "3 Aventures (ex. safari dans le désert, cascades, montagnes de l'Atlas). 3 Moments tranquilles (ex. visite de village berbère, promenades au coucher du soleil, hammam)."
+  },
+  "carousel": {
+    "slide1Title": "Découvrez le Maroc avec votre équipe",
+    "slide1Subtitle": "Voyagez, célébrez et créez des souvenirs qui durent toute une vie.",
+    "slide2Title": "Découvrez le Maroc au-delà du football",
+    "slide2Subtitle": "Des dunes du Sahara aux sommets de l'Atlas, l'aventure rencontre la culture.",
+    "slide3Title": "Plongez dans la culture marocaine",
+    "slide3Subtitle": "Souks, lanternes et saveurs que vous n'oublierez jamais.",
+    "slide4Title": "La nature vous attend",
+    "slide4Subtitle": "Randonnez dans les montagnes de l'Atlas et explorez la beauté du Maroc.",
+    "joinWhatsApp": "Rejoignez notre communauté WhatsApp pour les mises à jour"
+  },
+  "packages": {
+    "title": "Forfaits CAN 2025",
+    "subtitle": "Choisissez votre expérience parfaite CAN Maroc",
+    "offerEnds": "L'offre se termine le 31 octobre 2025",
+    "eaglesTitle": "Aigles sur l'Atlas",
+    "elephantsTitle": "Éléphants dans l'Atlas",
+    "starsTitle": "Étoiles dans l'Atlas",
+    "startingFrom": "À partir de",
+    "excludesFlights": "Ce forfait exclut les vols aller-retour",
+    "bedBreakfast": "Lit et petit-déjeuner",
+    "eaglesTickets": "Billets de match officiels et transferts pour encourager les Super Eagles du Nigeria",
+    "elephantsTickets": "Billets de match officiels et transferts pour encourager les Éléphants de Côte d'Ivoire",
+    "starsTickets": "Billets de match officiels et transferts pour encourager les Taifa Stars de Tanzanie",
+    "eaglesTour": "Activités touristiques et transferts à FÈS, Maroc",
+    "elephantsTour": "Activités touristiques et transferts à Casablanca, Fès et Marrakech",
+    "starsTour": "Activités touristiques et transferts à Fès et Casablanca",
+    "seePackages": "Voir les forfaits",
+    "mostPopular": "Le plus populaire",
+    "downloadItinerary": "Encore indécis ? Téléchargez l'itinéraire CAN 2025 et partagez avec votre équipe.",
+    "downloadEN": "Télécharger l'itinéraire en EN",
+    "downloadFR": "Télécharger l'itinéraire en FR",
+    "customPackage": "Préférez-vous éviter la CAN mais voulez quand même découvrir le Maroc ?",
+    "customInquiryEN": "Demande de forfait personnalisé en EN",
+    "customInquiryFR": "Demande de forfait personnalisé en FR"
+  },
+  "groupPerks": {
+    "title": "Avantages du voyage en groupe",
+    "subtitle": "Pourquoi voyager avec les groupes Dunia Safari améliore votre expérience",
+    "sharedExperiences": "Expériences partagées",
+    "sharedDescription": "Voyager en groupe rend chaque moment plus riche — des encouragements ensemble dans les stades de la CAN aux liens créés lors des couchers de soleil dans le désert et des aventures urbaines.",
+    "exclusiveDiscounts": "Réductions exclusives",
+    "discountsDescription": "Profitez de tarifs réduits sur les vols, hôtels et expériences lorsque vous voyagez en groupe.",
+    "hassleFree": "Planification sans tracas",
+    "hassleFreeDescription": "Nous nous occupons de la logistique (vols, transferts, visites, billets), pour que votre groupe puisse simplement se détendre et profiter"
+  },
+  "testimonials": {
+    "title": "Témoignages de voyageurs",
+    "subtitle": "Ce que nos voyageurs disent de leurs expériences de voyage avec Mimi Babs"
+  },
+  "faq": {
+    "title": "Questions fréquemment posées",
+    "subtitle": "Trouvez des réponses aux questions courantes sur les forfaits voyage CAN 2025",
+    "stillHaveQuestions": "Vous avez encore des questions ? Nous sommes là pour vous aider !",
+    "contactSupport": "Contacter le support"
+  },
+  "newsletter": {
+    "title": "Inscrivez-vous à notre newsletter",
+    "subtitle": "Restez informé des derniers forfaits CAN 2025, conseils de voyage au Maroc et offres exclusives",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "subscribe": "S'abonner",
+    "privacyNote": "Nous respectons votre vie privée et ne partagerons jamais vos informations"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à commencer votre aventure CAN 2025 au Maroc ? Contactez-nous aujourd'hui",
+    "contactUs": "Contactez-nous",
+    "callUs": "Appelez-nous",
+    "sendMail": "Envoyez-nous un e-mail"
+  },
+  "footer": {
+    "description": "Voyages authentiques, pour moins cher. Créer des expériences CAN 2025 inoubliables au Maroc",
+    "quickLinks": "Liens rapides",
+    "services": "Services",
+    "contactInfo": "Informations de contact",
+    "afconPackages": "Forfaits CAN 2025",
+    "moroccoTravel": "Voyage au Maroc",
+    "groupTours": "Circuits de groupe",
+    "visaSupport": "Support visa",
+    "customPackages": "Forfaits personnalisés",
+    "phone": "Téléphone",
+    "email": "E-mail",
+    "copyright": "© 2025 Dunia Safari Tours. Tous droits réservés.",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation",
+    "cookiePolicy": "Politique des cookies"
+  },
+  "blog": {
+    "title": "Le journal Safari",
+    "readMore": "Lire la suite"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "tryAgain": "Réessayer"
+  }
+}

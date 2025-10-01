@@ -1,68 +1,71 @@
 import React, { useState } from "react";
 import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ItineraryElephants = () => {
+  const { t } = useTranslation();
+  
   const packages = [
-    { name: "Bronze", price: "$855", popular: false },
-    { name: "Silver", price: "$1,235", popular: false },
-    { name: "Gold", price: "$1,535", popular: true },
+    { name: t('itineraryElephants.bronzePackageName'), price: t('itineraryElephants.bronzePackagePrice'), popular: false },
+    { name: t('itineraryElephants.silverPackageName'), price: t('itineraryElephants.silverPackagePrice'), popular: false },
+    { name: t('itineraryElephants.goldPackageName'), price: t('itineraryElephants.goldPackagePrice'), popular: true },
   ];
 
   const features = [
     {
-      name: "Visa Application (for Ghanaian passport holders only)",
+      name: t('itineraryElephants.features.visaGhana'),
       availability: { Bronze: false, Silver: false, Gold: true },
     },
-    { name: "Return Flights", availability: { Bronze: false, Silver: false, Gold: false } },
+    { name: t('itineraryElephants.features.returnFlights'), availability: { Bronze: false, Silver: false, Gold: false } },
     {
-      name: "Round-trip train connections",
+      name: t('itineraryElephants.features.trainConnections'),
       availability: { Bronze: true, Silver: true, Gold: true },
-      notes: ["Gold: Train Tickets in Premium First Class"],
+      notes: [t('itineraryElephants.features.trainNotesGold')],
     },
-    { name: "Hotel Shuttle Services", availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: "3-course Moroccan Welcome Dinner", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.hotelShuttle'), availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.welcomeDinner'), availability: { Bronze: true, Silver: true, Gold: true } },
     {
-      name: "Bed & Breakfast (7 days and 6 nights)",
+      name: t('itineraryElephants.features.bedBreakfast'),
       availability: { Bronze: true, Silver: true, Gold: true },
       notes: [
-        "Bronze: Shared room in a cozy hostel or traditional riad",
-        "Silver: Private room in a comfortable 2-star hotel",
-        "Gold: Private room in a stylish 3-star hotel",
+        t('itineraryElephants.features.bedBreakfastNotesBronze'),
+        t('itineraryElephants.features.bedBreakfastNotesSilver'),
+        t('itineraryElephants.features.bedBreakfastNotesGold'),
       ],
     },
-    { name: "Covers Mandatory City Taxes", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.cityTax'), availability: { Bronze: true, Silver: true, Gold: true } },
     {
-      name: "2 Official match tickets and transfers for Ivory Coast vs Mozambique & Ivory Coast vs Cameroun games",
+      name: t('itineraryElephants.features.matchTickets'),
       availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      name: "Merzouga desert safari: overnight camping, sandboarding, stargazing (Berber camping + breakfast + dinner)",
+      name: t('itineraryElephants.features.desertSafari'),
       availability: { Bronze: true, Silver: true, Gold: true },
-      notes: ["Gold: Desert Glamping Experience"],
+      notes: [t('itineraryElephants.features.desertSafariNotesGold')],
     },
-    { name: "Saadian Tombs + Bahia Palace visit", availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: "Visit Tinghir & Dades Gorges", availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: "Visit Hollywood studio location (Game of Thrones & Gladiator)", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.saadianTombs'), availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.tinghirDades'), availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.hollywoodStudio'), availability: { Bronze: true, Silver: true, Gold: true } },
     {
-      name: "60 Minutes of Wellness: Hammam Retreat",
+      name: t('itineraryElephants.features.hammamRetreat'),
       availability: { Bronze: false, Silver: true, Gold: true },
-      notes: ["Gold: Hammam + Massage included"],
+      notes: [t('itineraryElephants.features.hammamNotesGold')],
     },
-    { name: "Enjoy cocktails at Marrakech Sunset Lounge", availability: { Bronze: false, Silver: false, Gold: true } },
-    { name: "Day Trip to Essaouira", availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: "Day Trip to Ouzoud Waterfalls", availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: "Exclusive Dunia Safari Memento", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.cocktailsLounge'), availability: { Bronze: false, Silver: false, Gold: true } },
+    { name: t('itineraryElephants.features.essaouiraTrip'), availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.ouzoudWaterfalls'), availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryElephants.features.memento'), availability: { Bronze: true, Silver: true, Gold: true } },
   ];
 
-  // 🔹 Sub-itinerary features (with dashes)
+  // Sub-itinerary features
   const subFeatures = [
-    { name: "Bed and Breakfast (11 Days & 10 Nights)" },
-    { name: "3 Official match tickets and transfers for Ivory Coast vs Mozambique, Ivory Coast vs Cameroun, Ivory Coast vs Gabon games" },
-    { name: "Return Day trip to Ourika + lunch" },
-    { name: "Hot air balloon experience" },
-    { name: "Visit Marjorelle Garden" },
-    { name: "Visit YSL Berber Museum" },
-    { name: "Dinner + New Year Eve Dunia Safari Party, Casablanca" },
+    { name: t('itineraryElephants.subFeatures.bedBreakfastExtended') },
+    { name: t('itineraryElephants.subFeatures.matchTicketsExtended') },
+    { name: t('itineraryElephants.subFeatures.ourikaTrip') },
+    { name: t('itineraryElephants.subFeatures.hotAirBalloon') },
+    { name: t('itineraryElephants.subFeatures.majorelleGarden') },
+    { name: t('itineraryElephants.subFeatures.yslMuseum') },
+    { name: t('itineraryElephants.subFeatures.newYearParty') },
   ];
 
   const [openPackage, setOpenPackage] = useState<string | null>(null);
@@ -74,21 +77,21 @@ const ItineraryElephants = () => {
     <div className="p-6">
       {/* Page Heading */}
       <h2 className="text-2xl font-bold text-center mb-6 mt-8">
-        Elephants Itinerary Packages
+        {t('itineraryElephants.mainTitle')}
       </h2>
       <p className="text-xl text-gray-600 text-center mb-10">
-  Celebrate XMas in Morocco (22- 28 Dec 2025)
-</p>
+        {t('itineraryElephants.xmasSubtitle')}
+      </p>
 
-      {/* ==================== MAIN ITINERARY ==================== */}
+      {/* MAIN ITINERARY */}
       {/* Desktop Table View */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
           <thead>
             <tr>
               <th className="bg-gray-100 p-4 text-left">
-  7 Days, 6 Nights (2 Games Itinerary)<br />Features
-</th>
+                <span dangerouslySetInnerHTML={{ __html: t('itineraryElephants.mainItineraryHeader') }} />
+              </th>
               {packages.map((pkg) => (
                 <th
                   key={pkg.name}
@@ -102,7 +105,7 @@ const ItineraryElephants = () => {
                   <div className="text-sm font-normal">{pkg.price}</div>
                   {pkg.popular && (
                     <div className="mt-2 bg-white text-orange-600 px-2 py-1 text-xs font-bold rounded-full inline-flex items-center">
-                      <Star size={12} className="mr-1" /> Most Popular
+                      <Star size={12} className="mr-1" /> {t('common.mostPopular')}
                     </div>
                   )}
                 </th>
@@ -145,7 +148,7 @@ const ItineraryElephants = () => {
                     rel="noopener noreferrer"
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                   >
-                    Reserve Now
+                    {t('common.reserveNow')}
                   </a>
                 </td>
               ))}
@@ -171,7 +174,7 @@ const ItineraryElephants = () => {
                 <p className="text-sm">{pkg.price}</p>
                 {pkg.popular && (
                   <div className="mt-1 bg-white text-orange-600 px-2 py-1 text-xs font-bold rounded-full inline-flex items-center">
-                    <Star size={12} className="mr-1" /> Most Popular
+                    <Star size={12} className="mr-1" /> {t('common.mostPopular')}
                   </div>
                 )}
               </div>
@@ -208,7 +211,7 @@ const ItineraryElephants = () => {
                   rel="noopener noreferrer"
                   className="block w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center"
                 >
-                  Reserve Now
+                  {t('common.reserveNow')}
                 </a>
               </div>
             )}
@@ -216,9 +219,9 @@ const ItineraryElephants = () => {
         ))}
       </div>
 
-      {/* ==================== SUB-ITINERARY ==================== */}
+      {/* SUB-ITINERARY */}
       <h3 className="text-xl font-bold text-center mt-12 mb-6">
-      Welcome 2026 in Morocco (22 Dec - 2 Jan)
+        {t('itineraryElephants.subItineraryTitle')}
       </h3>
 
       {/* Desktop Table View */}
@@ -226,7 +229,9 @@ const ItineraryElephants = () => {
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
           <thead>
             <tr>
-              <th className="bg-gray-100 p-4 text-left">12 Days, 11 Nights (3 Games Itinerary)<br />Features</th>
+              <th className="bg-gray-100 p-4 text-left">
+                <span dangerouslySetInnerHTML={{ __html: t('itineraryElephants.subItineraryHeader') }} />
+              </th>
               {packages.map((pkg) => (
                 <th key={pkg.name} className="p-4 text-center bg-gray-200">
                   {pkg.name}
@@ -240,7 +245,7 @@ const ItineraryElephants = () => {
                 <td className="p-4 text-sm">{feature.name}</td>
                 {packages.map((pkg) => (
                   <td key={pkg.name} className="text-center p-4">
-                    —{/* Dash for all */}
+                    —
                   </td>
                 ))}
               </tr>
@@ -258,14 +263,13 @@ const ItineraryElephants = () => {
               className="w-full flex justify-between items-center p-4 bg-gray-100"
             >
               <div>
-                <h3 className="text-lg font-semibold">{pkg.name} - Extended</h3>
+                <h3 className="text-lg font-semibold">{pkg.name} - {t('common.extended')}</h3>
               </div>
               {openPackage === `sub-${pkg.name}` ? <ChevronUp /> : <ChevronDown />}
             </button>
             {openPackage === `sub-${pkg.name}` && (
               <div className="p-4 bg-white space-y-3">
                 {subFeatures.map((feature, idx) => (
-                  // >>> changed block: lock dash to right
                   <div key={idx} className="py-2">
                     <div className="flex items-start gap-3">
                       <span className="flex-1 text-sm leading-snug">
@@ -274,7 +278,6 @@ const ItineraryElephants = () => {
                       <span className="text-gray-500 shrink-0 mt-0.5">—</span>
                     </div>
                   </div>
-                  // <<< end changed block
                 ))}
               </div>
             )}
@@ -290,7 +293,7 @@ const ItineraryElephants = () => {
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 mb-4 md:mb-0 md:mr-6"
         >
-          Download Full Itinerary In EN
+          {t('common.downloadItineraryEN')}
         </a>
         <a 
           href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
@@ -298,7 +301,7 @@ const ItineraryElephants = () => {
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
         >
-          Download Full Itinerary In FN
+          {t('common.downloadItineraryFR')}
         </a>
       </div>
     </div>

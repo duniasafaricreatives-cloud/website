@@ -1,67 +1,70 @@
 import React, { useState } from "react";
 import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ItineraryStars = () => {
+  const { t } = useTranslation();
+  
   const packages = [
-    { name: "Bronze", price: "$809", popular: false },
-    { name: "Silver", price: "$1,250", popular: true }, // ✅ Silver is most popular
-    { name: "Gold", price: "$1,575", popular: false },
+    { name: t('itineraryStars.bronzePackageName'), price: t('itineraryStars.bronzePackagePrice'), popular: false },
+    { name: t('itineraryStars.silverPackageName'), price: t('itineraryStars.silverPackagePrice'), popular: true },
+    { name: t('itineraryStars.goldPackageName'), price: t('itineraryStars.goldPackagePrice'), popular: false },
   ];
 
   const features = [
     {
-      name: "Visa Application (for Tanzanian passport holders only)",
+      name: t('itineraryStars.features.visaTanzania'),
       availability: { Bronze: false, Silver: false, Gold: true },
     },
-    { name: "Return Flights", availability: { Bronze: false, Silver: false, Gold: false } },
+    { name: t('itineraryStars.features.returnFlights'), availability: { Bronze: false, Silver: false, Gold: false } },
     {
-      name: "Round-trip train connections",
+      name: t('itineraryStars.features.trainConnections'),
       availability: { Bronze: true, Silver: true, Gold: true },
-      notes: ["Gold: Train Tickets in Premium First Class"],
+      notes: [t('itineraryStars.features.trainNotesGold')],
     },
-    { name: "Hotel Shuttle Services", availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: "3-course Moroccan Welcome Dinner", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryStars.features.hotelShuttle'), availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryStars.features.welcomeDinner'), availability: { Bronze: true, Silver: true, Gold: true } },
     {
-      name: "Bed & Breakfast (7 days and 6 nights)",
+      name: t('itineraryStars.features.bedBreakfast'),
       availability: { Bronze: true, Silver: true, Gold: true },
       notes: [
-        "Bronze: Shared room in a cozy hostel or traditional riad",
-        "Silver: Private room in a comfortable 2-star hotel",
-        "Gold: Private room in a stylish 3-star hotel",
+        t('itineraryStars.features.bedBreakfastNotesBronze'),
+        t('itineraryStars.features.bedBreakfastNotesSilver'),
+        t('itineraryStars.features.bedBreakfastNotesGold'),
       ],
     },
-    { name: "Covers Mandatory City Taxes", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryStars.features.cityTax'), availability: { Bronze: true, Silver: true, Gold: true } },
     {
-      name: "2 Official match tickets and transfers for Tanzania vs Nigeria & Tanzania vs Uganda games",
+      name: t('itineraryStars.features.matchTickets'),
       availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      name: "Merzouga section - overnight desert safari, sandboarding, star gazing (Berber camping + breakfast + dinner)",
+      name: t('itineraryStars.features.desertSafari'),
       availability: { Bronze: true, Silver: true, Gold: true },
-      notes: ["Gold: Desert Glamping Experience"],
+      notes: [t('itineraryStars.features.desertSafariNotesGold')],
     },
-    { name: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idris viewpoint", availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: "Visit Kasbah de Oudayas & discover Hassan, Mohammed V Mausoleum", availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: "Evening Cocktail at a chic ambiance, Rabat", availability: { Bronze: false, Silver: true, Gold: true } },
+    { name: t('itineraryStars.features.meknesVisit'), availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryStars.features.kasbahOudayas'), availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryStars.features.eveningCocktail'), availability: { Bronze: false, Silver: true, Gold: true } },
     {
-      name: "60 Minutes of Wellness: Hammam Retreat",
+      name: t('itineraryStars.features.hammamRetreat'),
       availability: { Bronze: false, Silver: true, Gold: true },
-      notes: ["Gold: + Massage"],
+      notes: [t('itineraryStars.features.hammamNotesGold')],
     },
-    { name: "Exclusive Dunia Safari Memento", availability: { Bronze: true, Silver: true, Gold: true } },
+    { name: t('itineraryStars.features.memento'), availability: { Bronze: true, Silver: true, Gold: true } },
   ];
 
-  // Sub itinerary section
+  // Sub-itinerary features
   const subFeatures = [
-    { name: "Bed and Breakfast (11 Days & 10 Nights)" },
-    { name: "3 Official match tickets and transfers for Tanzania vs Nigeria, Tanzania vs Uganda, Tanzania vs Tunisia games" },
-    { name: "Discover Rabat shopping from local artisans. Visit of Modern Art at Contemporaries" },
-    { name: "Diner at beach restaurant, Rabat" },
-    { name: "Visit Rabat Corniche, photomatons, Chellah historical Roman ruins" },
-    { name: "Diner at gastronomical Moroccan restaurant" },
-    { name: "Discover Sale town, beach, Bab Chaafa and environs" },
-    { name: "Dinner + New Year Eve Dunia Safari Party, Casablanca" },
-    { name: "Hassan II mosque, Corniche Aïn Diab walk, Beach Day, Shopping Day in Casablanca" },
+    { name: t('itineraryStars.subFeatures.bedBreakfastExtended') },
+    { name: t('itineraryStars.subFeatures.matchTicketsExtended') },
+    { name: t('itineraryStars.subFeatures.rabatShopping') },
+    { name: t('itineraryStars.subFeatures.beachRestaurant') },
+    { name: t('itineraryStars.subFeatures.rabatCorniche') },
+    { name: t('itineraryStars.subFeatures.gastronomicalDinner') },
+    { name: t('itineraryStars.subFeatures.saleTown') },
+    { name: t('itineraryStars.subFeatures.newYearParty') },
+    { name: t('itineraryStars.subFeatures.casablancaActivities') },
   ];
 
   const [openPackage, setOpenPackage] = useState<string | null>(null);
@@ -74,21 +77,21 @@ const ItineraryStars = () => {
     <div className="p-6">
       {/* Page Heading */}
       <h1 className="text-3xl font-bold text-center mt-16">
-  Stars Itinerary Packages
-</h1>
-<p className="text-xl text-gray-600 text-center mb-10">
-  Celebrate XMas in Morocco (22- 28 Dec 2025)
-</p>
+        {t('itineraryStars.mainTitle')}
+      </h1>
+      <p className="text-xl text-gray-600 text-center mb-10">
+        {t('itineraryStars.xmasSubtitle')}
+      </p>
 
-      {/* ===== MAIN ITINERARY (unchanged) ===== */}
+      {/* MAIN ITINERARY */}
       {/* Desktop Table View */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
           <thead>
             <tr>
               <th className="bg-gray-100 p-4 text-left">
-  7 Days, 6 Nights (2 Games Itinerary)<br />Features
-</th>
+                <span dangerouslySetInnerHTML={{ __html: t('itineraryStars.mainItineraryHeader') }} />
+              </th>
               {packages.map((pkg) => (
                 <th
                   key={pkg.name}
@@ -102,7 +105,7 @@ const ItineraryStars = () => {
                   <div className="text-sm font-normal">{pkg.price}</div>
                   {pkg.popular && (
                     <div className="mt-2 inline-flex items-center bg-orange-100 text-orange-700 px-3 py-1 text-xs font-semibold rounded-full">
-                      <Star size={12} className="mr-1" /> Most Popular
+                      <Star size={12} className="mr-1" /> {t('common.mostPopular')}
                     </div>
                   )}
                 </th>
@@ -145,7 +148,7 @@ const ItineraryStars = () => {
                     rel="noopener noreferrer"
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                   >
-                    Reserve Now
+                    {t('common.reserveNow')}
                   </a>
                 </td>
               ))}
@@ -171,7 +174,7 @@ const ItineraryStars = () => {
                 <p className="text-sm">{pkg.price}</p>
                 {pkg.popular && (
                   <div className="mt-2 inline-flex items-center bg-orange-100 text-orange-700 px-3 py-1 text-xs font-semibold rounded-full">
-                    <Star size={12} className="mr-1" /> Most Popular
+                    <Star size={12} className="mr-1" /> {t('common.mostPopular')}
                   </div>
                 )}
               </div>
@@ -206,7 +209,7 @@ const ItineraryStars = () => {
                   rel="noopener noreferrer"
                   className="block w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center"
                 >
-                  Reserve Now
+                  {t('common.reserveNow')}
                 </a>
               </div>
             )}
@@ -214,9 +217,9 @@ const ItineraryStars = () => {
         ))}
       </div>
 
-      {/* ===== SUB ITINERARY SECTION ===== */}
+      {/* SUB-ITINERARY */}
       <h2 className="text-2xl font-bold text-center mt-16 mb-8">
-Welcome 2026 in Morocco (22 Dec - 2 Jan)
+        {t('itineraryStars.subItineraryTitle')}
       </h2>
 
       {/* Desktop Table View */}
@@ -224,7 +227,9 @@ Welcome 2026 in Morocco (22 Dec - 2 Jan)
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
           <thead>
             <tr>
-              <th className="bg-gray-100 p-4 text-left">12 Days, 11 Nights (3 Games Itinerary)<br />Features</th>
+              <th className="bg-gray-100 p-4 text-left">
+                <span dangerouslySetInnerHTML={{ __html: t('itineraryStars.subItineraryHeader') }} />
+              </th>
               {packages.map((pkg) => (
                 <th key={pkg.name} className="p-4 text-center bg-gray-200">
                   {pkg.name}
@@ -253,7 +258,7 @@ Welcome 2026 in Morocco (22 Dec - 2 Jan)
               onClick={() => toggleSubAccordion(pkg.name)}
               className="w-full flex justify-between items-center p-4 bg-gray-100"
             >
-              <h3 className="text-lg font-semibold">{pkg.name} (Extended)</h3>
+              <h3 className="text-lg font-semibold">{pkg.name} ({t('common.extended')})</h3>
               {openSubPackage === pkg.name ? <ChevronUp /> : <ChevronDown />}
             </button>
             {openSubPackage === pkg.name && (
@@ -282,7 +287,7 @@ Welcome 2026 in Morocco (22 Dec - 2 Jan)
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 mb-4 md:mb-0 md:mr-6"
         >
-          Download Full Itinerary In EN
+          {t('common.downloadItineraryEN')}
         </a>
         <a 
           href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
@@ -290,7 +295,7 @@ Welcome 2026 in Morocco (22 Dec - 2 Jan)
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
         >
-          Download Full Itinerary In FN
+          {t('common.downloadItineraryFR')}
         </a>
       </div>
     </div>

@@ -9,7 +9,7 @@ const HomepageCarousel = () => {
       id: 1,
       title: "Experience Morocco With Your Squad",
       subtitle: "Travel, celebrate, and make memories that last a lifetime.",
-      image: "/friendscheering.jpg" // desert sunset
+      image: "/cheering.jpg" // desert sunset
     },
     {
       id: 2,

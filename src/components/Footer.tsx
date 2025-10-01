@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xl font-bold mb-6">{t('footer.quickLinks')}</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               <li>
                 <button 
@@ -121,7 +121,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-xl font-bold mb-6">{t('footer.services')}</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.services')}</h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
@@ -153,7 +153,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-xl font-bold mb-6">{t('footer.contactInfo')}</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.contactInfo')}</h3>
             <div className="space-y-2">
               <p className="text-gray-300">
                 {t('footer.phone')}: +233 53 808 7709

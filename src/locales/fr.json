@@ -38,6 +38,37 @@
     "slide4Subtitle": "Randonnez dans les montagnes de l'Atlas et explorez la beauté du Maroc.",
     "joinWhatsApp": "Rejoignez notre communauté WhatsApp pour les mises à jour"
   },
+  "aboutFounderPage": {
+  "title": "Rencontrez la fondatrice : Mimi Babs",
+  "founderName": "Mimi Babs",
+  "socialLinks": {
+    "instagram": "Mimi Babs sur Instagram",
+    "youtube": "Mimi Babs sur YouTube"
+  },
+  "biography": {
+    "paragraph1": "Mimi Babs est une voyageuse passionnée, une conteuse et la visionnaire derrière Dunia Safari. Son parcours a commencé par un amour profond pour l'exploration de diverses cultures et paysages, ce qui l'a finalement conduite à découvrir la beauté enchanteresse du Maroc. Forte de son expérience dans le voyage et l'immersion culturelle, Mimi combine son expertise et son envie de voyager pour créer des expériences de voyage uniques et immersives.",
+    "paragraph2": "En septembre 2025, Mimi a lancé Dunia Safari pour rendre le voyage accessible et inspirer la jeunesse africaine à explorer son propre continent. Elle croit que le progrès commence par la découverte et l'expérience directe de l'Afrique."
+  },
+  "mission": {
+    "title": "Notre mission et vision",
+    "description": "Dunia Safari est plus qu'une simple agence de voyage ; c'est un mouvement pour connecter les Africains à leur riche héritage et à leur avenir dynamique. La mission de Mimi est de briser les barrières au voyage en Afrique, en proposant des itinéraires organisés et économiques qui favorisent l'échange culturel et la croissance personnelle. Elle envisage un avenir où les jeunes Africains exploreront leur continent en toute confiance, construisant des ponts et la compréhension au-delà des frontières.",
+    "collaboration": "Mimi invite les collaborations, les partenariats et les parrainages pour aider à réaliser ce rêve de son vivant."
+  },
+  "travelMemories": {
+    "title": "Souvenirs de voyage de Mimi"
+  },
+  "imageCaptions": {
+    "akchourWaterfalls": "Cascades d'Akchour",
+    "chefchaouen": "Chefchaouen, la Ville Bleue",
+    "meknes": "Meknès historique",
+    "mtZalagh": "Mont Zalagh, Fès",
+    "mtToubkal": "Mont Toubkal",
+    "mtToubkalSummit": "Sommet du Mont Toubkal",
+    "oujoudWaterfalls": "Cascades d'Oujoud",
+    "ourika": "Vallée de l'Ourika",
+    "tinghirGorge": "Gorges de Tinghir",
+    "zizValley": "Vallée du Ziz"
+  },
   "packages": {
     "title": "Forfaits CAN 2025",
     "subtitle": "Choisissez votre expérience parfaite CAN Maroc",

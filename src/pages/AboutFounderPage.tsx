@@ -1,18 +1,21 @@
 import React, { useEffect } from "react";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const AboutFounderPage = () => {
+  const { t } = useTranslation();
+  
   const travelImages = [
-    { src: "/Akchour waterfalls.jpg", caption: "Akchour Waterfalls" },
-    { src: "/Chefchaoun.jpg", caption: "Chefchaoun" },
-    { src: "/Meknes.jpg", caption: "Meknes" },
-    { src: "/Mr Zalagh_Fes.jpg", caption: "Mt Zalagh, Fes" },
-    { src: "/Mt. Toubal.jpg", caption: "Mt. Toubkal Trek" },
-    { src: "/Mt. Toubkal summit.jpg", caption: "Mt. Toubkal Summit" },
-    { src: "/Oujoud waterfalls.jpg", caption: "Oujoud Waterfalls" },
-    { src: "/Ourika.jpg", caption: "Ourika" },
-    { src: "/Tinghir gorge.jpg", caption: "Tinghir Gorge" },
-    { src: "/Ziz valley.jpg", caption: "Ziz Valley" },
+    { src: "/Akchour waterfalls.jpg", captionKey: "akchourWaterfalls" },
+    { src: "/Chefchaoun.jpg", captionKey: "chefchaouen" },
+    { src: "/Meknes.jpg", captionKey: "meknes" },
+    { src: "/Mr Zalagh_Fes.jpg", captionKey: "mtZalagh" },
+    { src: "/Mt. Toubal.jpg", captionKey: "mtToubkal" },
+    { src: "/Mt. Toubkal summit.jpg", captionKey: "mtToubkalSummit" },
+    { src: "/Oujoud waterfalls.jpg", captionKey: "oujoudWaterfalls" },
+    { src: "/Ourika.jpg", captionKey: "ourika" },
+    { src: "/Tinghir gorge.jpg", captionKey: "tinghirGorge" },
+    { src: "/Ziz valley.jpg", captionKey: "zizValley" },
   ];
 
   useEffect(() => {
@@ -98,7 +101,7 @@ const AboutFounderPage = () => {
       <div className="max-w-4xl mx-auto px-6">
         {/* Page Title */}
         <h1 className="text-4xl font-bold mb-12 text-center text-burgundy-900">
-          About the Founder
+          {t('aboutFounderPage.title')}
         </h1>
         <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
 
@@ -106,7 +109,7 @@ const AboutFounderPage = () => {
         <div className="flex flex-col items-center gap-8 mb-12">
           <img
             src="/Mimi-Babs.jpg"
-            alt="Founder of Dunia Safari"
+            alt={t('aboutFounderPage.founderName')}
             className="w-48 h-48 rounded-full object-cover shadow-lg"
           />
 
@@ -117,7 +120,7 @@ const AboutFounderPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-500 hover:text-pink-600 transition-transform transform hover:scale-110"
-              aria-label="Follow on Instagram"
+              aria-label={t('aboutFounderPage.socialLinks.instagram')}
             >
               <i className="fab fa-instagram text-2xl"></i>
             </a>
@@ -127,7 +130,7 @@ const AboutFounderPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-red-600 hover:text-red-700 transition-transform transform hover:scale-110"
-              aria-label="Follow on YouTube"
+              aria-label={t('aboutFounderPage.socialLinks.youtube')}
             >
               <i className="fab fa-youtube text-2xl"></i>
             </a>
@@ -135,19 +138,10 @@ const AboutFounderPage = () => {
 
           <div className="space-y-6">
             <p className="text-gray-700 leading-relaxed">
-              Mimi Babs is an avid solo traveler who has explored over 20
-              countries across the globe, from Dubai to the United States to
-              South Korea. With more than a decade of experience in sales,
-              marketing and business development, she has consistently acted as
-              an intrapreneur, raising hundreds of thousand to multi-million-dollar
-              financing for the organizations she has worked with.
+              {t('aboutFounderPage.biography.paragraph1')}
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Travel is more than a passion for Mimi, it’s a way of life. She
-              has journeyed across nearly every country in West Africa, mostly
-              by road and always on a budget. A lover of nature and outdoor
-              adventure. She often says her only regret is not beginning her
-              adventures in her early twenties.
+              {t('aboutFounderPage.biography.paragraph2')}
             </p>
           </div>
         </div>
@@ -155,25 +149,24 @@ const AboutFounderPage = () => {
         {/* Story Section */}
         <section className="mb-6">
           <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
-            Travel Africa, Transform Africa
+            {t('aboutFounderPage.mission.title')}
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            In September 2025, Mimi launched Dunia Safari to make travel accessible and inspire Africa’s youth to explore their own continent. She believes progress begins with seeing and experiencing Africa firsthand. 
+            {t('aboutFounderPage.mission.description')}
           </p>
         </section>
 
                 {/* Vision Section */}
         <section className="mb-6"> {/* Added a section wrapper for clarity */}
           <p className="text-gray-700 leading-relaxed">
-            Mimi invites collaborations, partnerships, and sponsorships to help
-            realize this dream within her lifetime.
+            {t('aboutFounderPage.mission.collaboration')}
           </p>
         </section>
         
         {/* Travel Memories Slider */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6 text-center text-burgundy-900">
-            Travel Memories
+            {t('aboutFounderPage.travelMemories.title')}
           </h2>
 
           {/* Horizontal Swiper Slider */}
@@ -187,11 +180,11 @@ const AboutFounderPage = () => {
                   <div className="relative">
                     <img
                       src={img.src}
-                      alt={img.caption}
+                      alt={t(`aboutFounderPage.imageCaptions.${img.captionKey}`)}
                       className="w-full h-80 object-cover rounded-2xl"
                     />
                     <p className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-4 py-1 rounded-full text-sm">
-                      {img.caption}
+                      {t(`aboutFounderPage.imageCaptions.${img.captionKey}`)}
                     </p>
                   </div>
                 </div>

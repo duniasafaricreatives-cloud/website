@@ -121,6 +121,52 @@
   "common": {
     "loading": "Chargement...",
     "error": "Une erreur s'est produite",
-    "tryAgain": "Réessayer"
+    "tryAgain": "Réessayer",
+    "mostPopular": "Le plus populaire",
+    "reserveNow": "Réserver maintenant",
+    "downloadItineraryEN": "Télécharger l'itinéraire complet en AN",
+    "downloadItineraryFR": "Télécharger l'itinéraire complet en FR"
+  },
+  "itineraryEagles": {
+    "mainTitle": "Forfaits Itinéraire Aigles",
+    "xmasSubtitle": "Célébrez Noël au Maroc (22 - 28 déc. 2025)",
+    "mainItineraryHeader": "7 jours, 6 nuits (itinéraire 2 matchs)<br />Caractéristiques",
+    "subItineraryTitle": "Bienvenue 2026 au Maroc (22 déc. - 2 janv.)",
+    "subItineraryHeader": "12 jours, 11 nuits (itinéraire 3 matchs)<br />Caractéristiques",
+    "bronzePackageName": "Bronze",
+    "bronzePackagePrice": "796 $",
+    "silverPackageName": "Argent",
+    "silverPackagePrice": "1 146 $",
+    "goldPackageName": "Or",
+    "goldPackagePrice": "1 445 $",
+    "features": {
+      "visaGhana": "Demande de visa (pour les titulaires de passeports ghanéens uniquement)",
+      "trainConnections": "Fès ↔ Casablanca : Connexions ferroviaires aller-retour",
+      "trainNotesGold": "Or : Billets de train en Première Classe Premium",
+      "hotelShuttle": "Services de navette hôtelière",
+      "bedBreakfast": "Chambre et petit-déjeuner (7 jours et 6 nuits)",
+      "bedBreakfastNotesBronze": "Bronze : Chambre partagée dans une auberge confortable ou un riad traditionnel",
+      "bedBreakfastNotesSilver": "Argent : Chambre privée dans un hôtel 2 étoiles confortable",
+      "bedBreakfastNotesGold": "Or : Chambre privée dans un hôtel 3 étoiles élégant",
+      "cityTax": "Couvre les taxes de séjour obligatoires",
+      "welcomeDinner": "Dîner de bienvenue marocain 3 plats",
+      "matchTickets": "Billets de match officiels et transferts pour les matchs Nigeria vs Tanzanie et Nigeria vs Tunisie",
+      "desertSafari": "Safari camping dans le désert avec nuitée + petit-déjeuner et dîner (section Merzouga via Ifrane et forêt de cèdres d'Azrou ; arrêt déjeuner à Midelt ; point de vue de la vallée du Ziz)",
+      "desertSafariNotesGold": "Or : Expérience de glamping dans le désert",
+      "meknesVisit": "Visite de Meknès + ruines de Volubilis (site romain) + point de vue de Moulay Idriss",
+      "hammamRetreat": "60 minutes de bien-être : Retraite Hammam",
+      "hammamNotesGold": "Or : Hammam + Massage inclus",
+      "memento": "Souvenir exclusif Dunia Safari"
+    },
+    "subFeatures": {
+      "bedBreakfastExtended": "Chambre et petit-déjeuner (11 jours et 10 nuits)",
+      "matchTicketsExtended": "3 billets de match officiels et transferts pour les matchs Nigeria vs Tanzanie, Nigeria vs Tunisie et Nigeria vs Ouganda",
+      "chefchaouenTransfer": "Transferts aller-retour à Chefchaouen",
+      "akchourWaterfalls": "Excursion d'une journée complète aux cascades d'Akchour",
+      "hassanIIMosque": "Visite de la Mosquée Hassan II, Casablanca",
+      "cornicheAinDiab": "Visite de la Corniche d'Aïn Diab, Casablanca",
+      "beachDay": "Journée de détente à la plage sur la côte de Casablanca",
+      "shoppingMedina": "Shopping dans la Médina de Casablanca"
+    }
   }
 }

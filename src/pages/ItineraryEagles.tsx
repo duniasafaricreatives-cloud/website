@@ -1,64 +1,67 @@
 import React, { useState } from "react";
 import { Check, X, ChevronDown, ChevronUp, Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ItineraryEagles = () => {
+  const { t } = useTranslation();
+  
   const packages = [
-    { name: "Bronze", price: "$796", popular: false },
-    { name: "Silver", price: "$1,146", popular: true },
-    { name: "Gold", price: "$1,445", popular: false },
+    { name: t('itineraryEagles.bronzePackageName'), price: t('itineraryEagles.bronzePackagePrice'), popular: false },
+    { name: t('itineraryEagles.silverPackageName'), price: t('itineraryEagles.silverPackagePrice'), popular: true },
+    { name: t('itineraryEagles.goldPackageName'), price: t('itineraryEagles.goldPackagePrice'), popular: false },
   ];
 
   const features = [
     {
-      name: "Visa Application (for Ghanaian passport holders only)",
+      name: t('itineraryEagles.features.visaGhana'),
       availability: { Bronze: false, Silver: false, Gold: true },
     },
     {
-      name: "Fès ↔ Casablanca: Round-trip train connections",
+      name: t('itineraryEagles.features.trainConnections'),
       availability: { Bronze: true, Silver: true, Gold: true },
-      notes: ["Gold: Train Tickets in Premium First Class"],
+      notes: [t('itineraryEagles.features.trainNotesGold')],
     },
     {
-      name: "Hotel Shuttle Services",
+      name: t('itineraryEagles.features.hotelShuttle'),
       availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      name: "Bed & Breakfast (7 days and 6 nights)",
+      name: t('itineraryEagles.features.bedBreakfast'),
       availability: { Bronze: true, Silver: true, Gold: true },
       notes: [
-        "Bronze: Shared room in a cozy hostel or traditional riad",
-        "Silver: Private room in a comfortable 2-star hotel",
-        "Gold: Private room in a stylish 3-star hotel",
+        t('itineraryEagles.features.bedBreakfastNotesBronze'),
+        t('itineraryEagles.features.bedBreakfastNotesSilver'),
+        t('itineraryEagles.features.bedBreakfastNotesGold'),
       ],
     },
     {
-      name: "Covers Mandatory City Tax",
+      name: t('itineraryEagles.features.cityTax'),
       availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      name: "3-course Moroccan Welcome Dinner",
+      name: t('itineraryEagles.features.welcomeDinner'),
       availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      name: "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisia games",
+      name: t('itineraryEagles.features.matchTickets'),
       availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      name: "Overnight desert camping safari + breakfast & dinner (Merzouga section via Ifrane & Azrou cedar forest; Midelt lunch stop; Ziz Valley viewpoint)",
+      name: t('itineraryEagles.features.desertSafari'),
       availability: { Bronze: true, Silver: true, Gold: true },
-      notes: ["Gold: Desert Glamping Experience"],
+      notes: [t('itineraryEagles.features.desertSafariNotesGold')],
     },
     {
-      name: "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint",
+      name: t('itineraryEagles.features.meknesVisit'),
       availability: { Bronze: true, Silver: true, Gold: true },
     },
     {
-      name: "60 Minutes of Wellness: Hammam Retreat",
+      name: t('itineraryEagles.features.hammamRetreat'),
       availability: { Bronze: false, Silver: true, Gold: true },
-      notes: ["Gold: Hammam + Massage included"],
+      notes: [t('itineraryEagles.features.hammamNotesGold')],
     },
     {
-      name: "Exclusive Dunia Safari Memento",
+      name: t('itineraryEagles.features.memento'),
       availability: { Bronze: true, Silver: true, Gold: true },
     },
   ];
@@ -66,28 +69,28 @@ const ItineraryEagles = () => {
   // NEW SUB ITINERARY
   const subFeatures = [
     {
-      name: "Bed and Breakfast (11 Days & 10 Nights)",
+      name: t('itineraryEagles.subFeatures.bedBreakfastExtended'),
     },
     {
-      name: "3 Official match tickets and transfers for Nigeria vs Tanzania, Nigeria vs Tunisia & Nigeria vs Uganda games",
+      name: t('itineraryEagles.subFeatures.matchTicketsExtended'),
     },
     {
-      name: "Round-Trip Transfers to Chefchaouen",
+      name: t('itineraryEagles.subFeatures.chefchaouenTransfer'),
     },
     {
-      name: "Full-Day Excursion to Akchour Waterfalls",
+      name: t('itineraryEagles.subFeatures.akchourWaterfalls'),
     },
     {
-      name: "Visit to the Hassan II Mosque, Casablanca",
+      name: t('itineraryEagles.subFeatures.hassanIIMosque'),
     },
     {
-      name: "Visit Corniche d’Aïn Diab, Casablanca",
+      name: t('itineraryEagles.subFeatures.cornicheAinDiab'),
     },
     {
-      name: "Relaxing Beach Day on Casablanca’s Coast",
+      name: t('itineraryEagles.subFeatures.beachDay'),
     },
     {
-      name: "Shopping in Casablanca Medina",
+      name: t('itineraryEagles.subFeatures.shoppingMedina'),
     },
   ];
 
@@ -106,11 +109,11 @@ const ItineraryEagles = () => {
     <div className="p-6">
       {/* Heading */}
       <h1 className="text-3xl font-bold text-center mb-8 mt-12">
-        Eagles Itinerary Packages
+        {t('itineraryEagles.mainTitle')}
       </h1>
       <p className="text-xl text-gray-600 text-center mb-10">
-  Celebrate XMas in Morocco (22- 28 Dec 2025)
-</p>
+        {t('itineraryEagles.xmasSubtitle')}
+      </p>
 
       {/* ===== MAIN ITINERARY (unchanged) ===== */}
       {/* Desktop Table */}
@@ -119,8 +122,8 @@ const ItineraryEagles = () => {
           <thead>
             <tr>
               <th className="bg-gray-100 p-4 text-left">
-  7 Days, 6 Nights (2 Games Itinerary)<br />Features
-</th>
+                <span dangerouslySetInnerHTML={{ __html: t('itineraryEagles.mainItineraryHeader') }} />
+              </th>
               {packages.map((pkg) => (
                 <th
                   key={pkg.name}
@@ -134,7 +137,7 @@ const ItineraryEagles = () => {
                   <div className="text-sm font-normal">{pkg.price}</div>
                   {pkg.popular && (
                     <div className="absolute inset-x-0 -bottom-5 mx-auto w-max bg-white text-orange-600 px-3 py-1 text-xs font-bold rounded-full flex items-center shadow-md">
-                      <Star size={12} className="mr-1" /> Most Popular
+                      <Star size={12} className="mr-1" /> {t('common.mostPopular')}
                     </div>
                   )}
                 </th>
@@ -177,7 +180,7 @@ const ItineraryEagles = () => {
                     rel="noopener noreferrer"
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
                   >
-                    Reserve Now
+                    {t('common.reserveNow')}
                   </a>
                 </td>
               ))}
@@ -238,7 +241,7 @@ const ItineraryEagles = () => {
                   rel="noopener noreferrer"
                   className="block w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center"
                 >
-                  Reserve Now
+                  {t('common.reserveNow')}
                 </a>
               </div>
             )}
@@ -248,7 +251,7 @@ const ItineraryEagles = () => {
 
       {/* ===== SUB ITINERARY ===== */}
       <h2 className="text-2xl font-bold text-center mt-16 mb-6">
-      Welcome 2026 in Morocco (22 Dec - 2 Jan)
+        {t('itineraryEagles.subItineraryTitle')}
       </h2>
 
       {/* Desktop Table */}
@@ -256,7 +259,9 @@ const ItineraryEagles = () => {
         <table className="w-full border-collapse">
           <thead>
             <tr>
-              <th className="bg-gray-200 p-4 text-left"> 12 Days, 11 Nights (3 Games Itinerary)<br />Features</th>
+              <th className="bg-gray-200 p-4 text-left">
+                <span dangerouslySetInnerHTML={{ __html: t('itineraryEagles.subItineraryHeader') }} />
+              </th>
               {packages.map((pkg) => (
                 <th key={pkg.name} className="bg-gray-100 p-4 text-center">
                   {pkg.name}
@@ -323,7 +328,7 @@ const ItineraryEagles = () => {
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 mb-4 md:mb-0 md:mr-6"
         >
-          Download Full Itinerary In EN
+          {t('common.downloadItineraryEN')}
         </a>
         <a
           href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
@@ -331,7 +336,7 @@ const ItineraryEagles = () => {
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700"
         >
-          Download Full Itinerary In FN
+          {t('common.downloadItineraryFR')}
         </a>
       </div>
     </div>

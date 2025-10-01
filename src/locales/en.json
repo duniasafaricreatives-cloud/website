@@ -121,6 +121,52 @@
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
-    "tryAgain": "Try Again"
+    "tryAgain": "Try Again",
+    "mostPopular": "Most Popular",
+    "reserveNow": "Reserve Now",
+    "downloadItineraryEN": "Download Full Itinerary In EN",
+    "downloadItineraryFR": "Download Full Itinerary In FR"
+  },
+  "itineraryEagles": {
+    "mainTitle": "Eagles Itinerary Packages",
+    "xmasSubtitle": "Celebrate XMas in Morocco (22- 28 Dec 2025)",
+    "mainItineraryHeader": "7 Days, 6 Nights (2 Games Itinerary)<br />Features",
+    "subItineraryTitle": "Welcome 2026 in Morocco (22 Dec - 2 Jan)",
+    "subItineraryHeader": "12 Days, 11 Nights (3 Games Itinerary)<br />Features",
+    "bronzePackageName": "Bronze",
+    "bronzePackagePrice": "$796",
+    "silverPackageName": "Silver",
+    "silverPackagePrice": "$1,146",
+    "goldPackageName": "Gold",
+    "goldPackagePrice": "$1,445",
+    "features": {
+      "visaGhana": "Visa Application (for Ghanaian passport holders only)",
+      "trainConnections": "Fès ↔ Casablanca: Round-trip train connections",
+      "trainNotesGold": "Gold: Train Tickets in Premium First Class",
+      "hotelShuttle": "Hotel Shuttle Services",
+      "bedBreakfast": "Bed & Breakfast (7 days and 6 nights)",
+      "bedBreakfastNotesBronze": "Bronze: Shared room in a cozy hostel or traditional riad",
+      "bedBreakfastNotesSilver": "Silver: Private room in a comfortable 2-star hotel",
+      "bedBreakfastNotesGold": "Gold: Private room in a stylish 3-star hotel",
+      "cityTax": "Covers Mandatory City Tax",
+      "welcomeDinner": "3-course Moroccan Welcome Dinner",
+      "matchTickets": "Official match tickets and transfers for Nigeria vs Tanzania and Nigeria vs Tunisia games",
+      "desertSafari": "Overnight desert camping safari + breakfast & dinner (Merzouga section via Ifrane & Azrou cedar forest; Midelt lunch stop; Ziz Valley viewpoint)",
+      "desertSafariNotesGold": "Gold: Desert Glamping Experience",
+      "meknesVisit": "Meknes visit + Volubilis ruins (Roman site) + Moulay Idriss viewpoint",
+      "hammamRetreat": "60 Minutes of Wellness: Hammam Retreat",
+      "hammamNotesGold": "Gold: Hammam + Massage included",
+      "memento": "Exclusive Dunia Safari Memento"
+    },
+    "subFeatures": {
+      "bedBreakfastExtended": "Bed and Breakfast (11 Days & 10 Nights)",
+      "matchTicketsExtended": "3 Official match tickets and transfers for Nigeria vs Tanzania, Nigeria vs Tunisia & Nigeria vs Uganda games",
+      "chefchaouenTransfer": "Round-Trip Transfers to Chefchaouen",
+      "akchourWaterfalls": "Full-Day Excursion to Akchour Waterfalls",
+      "hassanIIMosque": "Visit to the Hassan II Mosque, Casablanca",
+      "cornicheAinDiab": "Visit Corniche d'Aïn Diab, Casablanca",
+      "beachDay": "Relaxing Beach Day on Casablanca's Coast",
+      "shoppingMedina": "Shopping in Casablanca Medina"
+    }
   }
 }

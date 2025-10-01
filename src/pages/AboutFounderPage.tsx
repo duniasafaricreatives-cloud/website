@@ -115,26 +115,26 @@ const AboutFounderPage = () => {
 
           {/* Social Links */}
           <div className="flex gap-6 mt-4">
-  <a
-    href="https://www.instagram.com/mimi_babs?igsh=OWwwbmY1ZHh0Y2hi"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-pink-500 hover:text-pink-600 transition-transform transform hover:scale-110"
-    aria-label={t('aboutFounderPage.socialLinks.instagram')}
-  >
-    <FaInstagram className="text-2xl" />
-  </a>
+            <a
+              href="https://www.instagram.com/mimi_babs?igsh=OWwwbmY1ZHh0Y2hi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-500 hover:text-pink-600 transition-transform transform hover:scale-110"
+              aria-label={t('aboutFounderPage.socialLinks.instagram')}
+            >
+              <i className="fab fa-instagram text-2xl"></i>
+            </a>
 
-  <a
-    href="https://www.youtube.com/@mimi_babs"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-red-600 hover:text-red-700 transition-transform transform hover:scale-110"
-    aria-label={t('aboutFounderPage.socialLinks.youtube')}
-  >
-    <FaYoutube className="text-2xl" />
-  </a>
-</div>
+            <a
+              href="https://www.youtube.com/@mimi_babs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-600 hover:text-red-700 transition-transform transform hover:scale-110"
+              aria-label={t('aboutFounderPage.socialLinks.youtube')}
+            >
+              <i className="fab fa-youtube text-2xl"></i>
+            </a>
+          </div>
 
           <div className="space-y-6">
             <p className="text-gray-700 leading-relaxed">

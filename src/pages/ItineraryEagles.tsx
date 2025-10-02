@@ -173,7 +173,7 @@ const ItineraryEagles = () => {
             <tr>
               <td></td>
               {packages.map((pkg) => (
-                <td key={pkg.name} className="p-4 text-center mr-6">
+                <td key={pkg.name} className="p-4 text-center">
                   <a
                     href="https://forms.gle/vWe8gVGGWxBR8nc8A"
                     target="_blank"

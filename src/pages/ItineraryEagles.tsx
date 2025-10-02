@@ -170,29 +170,31 @@ const ItineraryEagles = () => {
             ))}
           </tbody>
           <tfoot>
-            <tr>
-              <td></td>
-              {packages.map((pkg) => (
-                <td key={pkg.name} className="p-4 text-center mr-2">
-                  <a
-                    href="https://forms.gle/vWe8gVGGWxBR8nc8A"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-                  >
-                    {t('common.reserveNow')} EN
-                  </a>
-                  <a
-                    href="https://forms.gle/yUyxWxyoqGSbz3u99"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-                  >
-                    {t('common.reserveNow')} FN
-                  </a>
-                </td>
-              ))}
-            </tr>
+  <tr>
+    <td></td>
+    {packages.map((pkg) => (
+      <td key={pkg.name} className="p-4 text-center">
+        <div className="flex flex-col gap-3 items-center">
+          <a
+            href="https://forms.gle/vWe8gVGGWxBR8nc8A"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"
+          >
+            {t('common.reserveNow')} EN
+          </a>
+          <a
+            href="https://forms.gle/yUyxWxyoqGSbz3u99"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"
+          >
+            {t('common.reserveNow')} FN
+          </a>
+        </div>
+      </td>
+    ))}
+  </tr>
           </tfoot>
         </table>
       </div>
@@ -252,7 +254,7 @@ const ItineraryEagles = () => {
                   {t('common.reserveNow')} EN
                 </a>
                 <a
-                  href="https://forms.gle/yUyxWxyoqGSbz3u99"
+                  href="https://forms.gle/s7JjEsd1H63jWRw3A"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center"

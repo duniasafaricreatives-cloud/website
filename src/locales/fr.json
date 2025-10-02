@@ -75,7 +75,24 @@
   },
   "testimonials": {
     "title": "Témoignages de voyageurs",
-    "subtitle": "Ce que nos voyageurs disent de leurs expériences de voyage avec Mimi Babs"
+    "subtitle": "Ce que nos voyageurs disent de leurs expériences de voyage avec Mimi Babs",
+    "items": {
+      "testimonial1": {
+        "name": "[Rudy de Belgique]",
+        "text": "Voyager avec Mimi Babs, c'était comme être choyé. De Marrakech à Ourika et Essaouira, elle s'est occupée de chaque détail. Du transport, des activités, et ces joyaux cachés que vous ne trouveriez pas par vous-même. Tout ce que j'avais à faire était de profiter du voyage. Je suis si fier de ce qu'elle construit avec Dunia Safari et excité de voir plus de gens vivre le voyage de cette façon.",
+        "location": ""
+      },
+      "testimonial2": {
+        "name": "[Sarah du Canada]",
+        "text": "J'ai eu le plaisir de rencontrer Mimi par l'intermédiaire d'un ami commun Couchsurfing en voyageant en Sierra Leone, et elle est rapidement devenue une partie indispensable de mon voyage. Mimi est un vrai cœur, décontractée, aventureuse, intelligente et adaptable à toutes les situations. Nos conversations coulaient sans effort, et elle a une capacité remarquable à mettre à l'aise ceux qui l'entourent. Nous nous sommes si bien entendues que nous avons décidé de continuer nos voyages ensemble en Guinée. Je n'aurais pas pu demander une meilleure compagne de voyage ; notre temps ensemble était absolument fantastique. Je recommande chaleureusement Mimi à quiconque envisage de l'héberger ou de voyager avec elle.",
+        "location": ""
+      },
+      "testimonial3": {
+        "name": "[Adolfo d'Équateur]",
+        "text": "Mimi et moi nous sommes rencontrés au Maroc et avons passé quelques jours glorieux ensemble à faire de la randonnée et à explorer d'anciennes kasbahs. Nous nous sommes retrouvés plus tard à Essaouira, où nous avons partagé un merveilleux après-midi à déguster des fruits de mer frais au bord de la mer. Elle dégage de pures bonnes vibrations, le genre de compagne de voyage qui rend chaque expérience mémorable",
+        "location": ""
+      }
+    }
   },
   "faq": {
     "title": "Questions fréquemment posées",

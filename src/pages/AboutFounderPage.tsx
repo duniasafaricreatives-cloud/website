@@ -120,9 +120,9 @@ const AboutFounderPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-500 hover:text-pink-600 transition-transform transform hover:scale-110"
-              aria-label={t('aboutFounderPage.socialLinks.instagram')}
+              aria-label="Follow on Instagram"
             >
-              <i className="fab fa-instagram text-2xl"></i>
+              <FaInstagram size={28} />
             </a>
 
             <a
@@ -130,46 +130,59 @@ const AboutFounderPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-red-600 hover:text-red-700 transition-transform transform hover:scale-110"
-              aria-label={t('aboutFounderPage.socialLinks.youtube')}
+              aria-label="Follow on YouTube"
             >
-              <i className="fab fa-youtube text-2xl"></i>
+              <FaYoutube size={28} />
             </a>
           </div>
 
           <div className="space-y-6">
             <p className="text-gray-700 leading-relaxed">
-              {t('aboutFounderPage.biography.paragraph1')}
+              Mimi Babs is an avid solo traveler who has explored over 20
+              countries across the globe, from Dubai to the United States to
+              South Korea. With more than a decade of experience in sales,
+              marketing and business development, she has consistently acted as
+              an intrapreneur, raising hundreds of thousand to multi-million-dollar
+              financing for the organizations she has worked with.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              {t('aboutFounderPage.biography.paragraph2')}
+              Travel is more than a passion for Mimi, it’s a way of life. She
+              has journeyed across nearly every country in West Africa, mostly
+              by road and always on a budget. A lover of nature and outdoor
+              adventure. She often says her only regret is not beginning her
+              adventures in her early twenties.
             </p>
           </div>
         </div>
 
         {/* Story Section */}
-        <section className="mb-6">
+        <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
-            {t('aboutFounderPage.mission.title')}
+            Travel Africa, Transform Africa
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            {t('aboutFounderPage.mission.description')}
+            In September 2025, Mimi launched Dunia Safari to make travel accessible and inspire Africa’s youth to explore their own continent. She believes progress begins with seeing and experiencing Africa firsthand. 
           </p>
         </section>
 
-                {/* Vision Section */}
-        <section className="mb-6"> {/* Added a section wrapper for clarity */}
+        {/* Vision Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
+         
+          </h2>
           <p className="text-gray-700 leading-relaxed">
-            {t('aboutFounderPage.mission.collaboration')}
+            Mimi invites collaborations, partnerships, and sponsorships to help
+            realize this dream within her lifetime.
           </p>
         </section>
         
         {/* Travel Memories Slider */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6 text-center text-burgundy-900">
-            {t('aboutFounderPage.travelMemories.title')}
+            Travel Memories
           </h2>
 
-          {/* Horizontal Swiper Slider */}
+        {/* Horizontal Swiper Slider */}
           <div className="swiper-container rounded-2xl shadow-lg touch-pan-y overscroll-contain">
             <div className="swiper-wrapper flex">
               {travelImages.map((img, idx) => (
@@ -180,11 +193,11 @@ const AboutFounderPage = () => {
                   <div className="relative">
                     <img
                       src={img.src}
-                      alt={t(`aboutFounderPage.imageCaptions.${img.captionKey}`)}
+                      alt={img.caption}
                       className="w-full h-80 object-cover rounded-2xl"
                     />
                     <p className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-4 py-1 rounded-full text-sm">
-                      {t(`aboutFounderPage.imageCaptions.${img.captionKey}`)}
+                      {img.caption}
                     </p>
                   </div>
                 </div>

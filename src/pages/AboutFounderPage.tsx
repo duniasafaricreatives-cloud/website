@@ -185,23 +185,28 @@ const AboutFounderPage = () => {
         {/* Horizontal Swiper Slider */}
           <div className="swiper-container rounded-2xl shadow-lg touch-pan-y overscroll-contain">
             <div className="swiper-wrapper flex">
-              {travelImages.map((img, idx) => (
-                <div
-                  className="swiper-slide flex-shrink-0 w-[calc(100%/1.05)] md:w-[calc(50%-10px)] lg:w-[calc(33.33%-15px)] mx-2"
-                  key={idx}
-                >
-                  <div className="relative">
-                    <img
-                      src={img.src}
-                      alt={img.caption}
-                      className="w-full h-80 object-cover rounded-2xl"
-                    />
-                    <p className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-4 py-1 rounded-full text-sm">
-                      {img.caption}
-                    </p>
+              {travelImages.map((img, idx) => {
+                const captionText = t(`aboutFounderPage.captions.${img.captionKey}`, {
+                  defaultValue: img.captionKey,
+                });
+                return (
+                  <div
+                    className="swiper-slide flex-shrink-0 w-[calc(100%/1.05)] md:w-[calc(50%-10px)] lg:w-[calc(33.33%-15px)] mx-2"
+                    key={idx}
+                  >
+                    <div className="relative">
+                      <img
+                        src={img.src}
+                        alt={captionText}
+                        className="w-full h-80 object-cover rounded-2xl"
+                      />
+                      <p className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-4 py-1 rounded-full text-sm">
+                        {captionText}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>

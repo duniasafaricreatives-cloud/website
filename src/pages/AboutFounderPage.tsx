@@ -101,7 +101,7 @@ const AboutFounderPage = () => {
       <div className="max-w-4xl mx-auto px-6">
         {/* Page Title */}
         <h1 className="text-4xl font-bold mb-12 text-center text-burgundy-900">
-          {t('About Founder ')}
+          {t('aboutFounderPage.title')}
         </h1>
         <div className="w-24 h-1 bg-amber-600 mx-auto mb-6"></div>
 
@@ -120,7 +120,7 @@ const AboutFounderPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-pink-500 hover:text-pink-600 transition-transform transform hover:scale-110"
-              aria-label="Follow on Instagram"
+              aria-label={t('aboutFounderPage.socialLinks.instagram')}
             >
               <FaInstagram size={28} />
             </a>
@@ -130,7 +130,7 @@ const AboutFounderPage = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-red-600 hover:text-red-700 transition-transform transform hover:scale-110"
-              aria-label="Follow on YouTube"
+              aria-label={t('aboutFounderPage.socialLinks.youtube')}
             >
               <FaYoutube size={28} />
             </a>
@@ -138,57 +138,42 @@ const AboutFounderPage = () => {
 
           <div className="space-y-6">
             <p className="text-gray-700 leading-relaxed">
-              Mimi Babs is an avid solo traveler who has explored over 20
-              countries across the globe, from Dubai to the United States to
-              South Korea. With more than a decade of experience in sales,
-              marketing and business development, she has consistently acted as
-              an intrapreneur, raising hundreds of thousand to multi-million-dollar
-              financing for the organizations she has worked with.
+              {t('aboutFounderPage.biography.paragraph1')}
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Travel is more than a passion for Mimi, it’s a way of life. She
-              has journeyed across nearly every country in West Africa, mostly
-              by road and always on a budget. A lover of nature and outdoor
-              adventure. She often says her only regret is not beginning her
-              adventures in her early twenties.
+              {t('aboutFounderPage.biography.paragraph2')}
             </p>
           </div>
         </div>
 
         {/* Story Section */}
-        <section className="mb-8">
+        <section className="mb-6">
           <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
-            Travel Africa, Transform Africa
+            {t('aboutFounderPage.mission.title')}
           </h2>
           <p className="text-gray-700 leading-relaxed">
-            In September 2025, Mimi launched Dunia Safari to make travel accessible and inspire Africa’s youth to explore their own continent. She believes progress begins with seeing and experiencing Africa firsthand. 
+            {t('aboutFounderPage.mission.description')}
           </p>
         </section>
 
         {/* Vision Section */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-burgundy-900">
-         
-          </h2>
+        <section className="mb-6">
           <p className="text-gray-700 leading-relaxed">
-            Mimi invites collaborations, partnerships, and sponsorships to help
-            realize this dream within her lifetime.
+            {t('aboutFounderPage.mission.collaboration')}
           </p>
         </section>
         
         {/* Travel Memories Slider */}
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-6 text-center text-burgundy-900">
-            Travel Memories
+            {t('aboutFounderPage.travelMemories.title')}
           </h2>
 
         {/* Horizontal Swiper Slider */}
           <div className="swiper-container rounded-2xl shadow-lg touch-pan-y overscroll-contain">
             <div className="swiper-wrapper flex">
               {travelImages.map((img, idx) => {
-                const captionText = t(`aboutFounderPage.captions.${img.captionKey}`, {
-                  defaultValue: img.captionKey,
-                });
+                const captionText = t(`aboutFounderPage.imageCaptions.${img.captionKey}`);
                 return (
                   <div
                     className="swiper-slide flex-shrink-0 w-[calc(100%/1.05)] md:w-[calc(50%-10px)] lg:w-[calc(33.33%-15px)] mx-2"

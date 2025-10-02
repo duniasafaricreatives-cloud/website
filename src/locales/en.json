@@ -55,6 +55,38 @@
     "elephantsTour": "Tour activities and transfers in Casablanca, Fes and Marrakech",
     "starsTour": "Tour activities and transfers in Fes and Casablanca",
     "seePackages": "See Packages",
+  },
+  "aboutFounderPage": {
+    "title": "About Founder",
+    "founderName": "Mimi Babs",
+    "socialLinks": {
+      "instagram": "Follow on Instagram",
+      "youtube": "Follow on YouTube"
+    },
+    "biography": {
+      "paragraph1": "Mimi Babs is an avid solo traveler who has explored over 20 countries across the globe, from Dubai to the United States to South Korea. With more than a decade of experience in sales, marketing and business development, she has consistently acted as an intrapreneur, raising hundreds of thousand to multi-million-dollar financing for the organizations she has worked with.",
+      "paragraph2": "Travel is more than a passion for Mimi, it's a way of life. She has journeyed across nearly every country in West Africa, mostly by road and always on a budget. A lover of nature and outdoor adventure. She often says her only regret is not beginning her adventures in her early twenties."
+    },
+    "mission": {
+      "title": "Travel Africa, Transform Africa",
+      "description": "In September 2025, Mimi launched Dunia Safari to make travel accessible and inspire Africa's youth to explore their own continent. She believes progress begins with seeing and experiencing Africa firsthand.",
+      "collaboration": "Mimi invites collaborations, partnerships, and sponsorships to help realize this dream within her lifetime."
+    },
+    "travelMemories": {
+      "title": "Travel Memories"
+    },
+    "imageCaptions": {
+      "akchourWaterfalls": "Akchour Waterfalls",
+      "chefchaouen": "Chefchaouen",
+      "meknes": "Meknes",
+      "mtZalagh": "Mount Zalagh, Fes",
+      "mtToubkal": "Mount Toubkal",
+      "mtToubkalSummit": "Mount Toubkal Summit",
+      "oujoudWaterfalls": "Ouzoud Waterfalls",
+      "ourika": "Ourika Valley",
+      "tinghirGorge": "Tinghir Gorge",
+      "zizValley": "Ziz Valley"
+    }
     "mostPopular": "Most Popular",
     "downloadItinerary": "Still undecided? Download the AFCON 2025 itinerary and share with your squad.",
     "downloadEN": "Download Itinerary in EN",

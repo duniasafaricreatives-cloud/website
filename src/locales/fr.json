@@ -293,5 +293,37 @@
       "newYearParty": "Dîner + Fête du Nouvel An Dunia Safari, Casablanca",
       "casablancaActivities": "Mosquée Hassan II, promenade Corniche Aïn Diab, journée plage, journée shopping à Casablanca"
     }
+  },
+  "aboutFounderPage": {
+    "title": "À propos du fondateur",
+    "founderName": "Mimi Babs",
+    "socialLinks": {
+      "instagram": "Suivre sur Instagram",
+      "youtube": "Suivre sur YouTube"
+    },
+    "biography": {
+      "paragraph1": "Mimi Babs est une voyageuse solo passionnée qui a exploré plus de 20 pays à travers le monde, de Dubaï aux États-Unis en passant par la Corée du Sud. Avec plus d'une décennie d'expérience dans la vente, le marketing et le développement commercial, elle a constamment agi en tant qu'intrapreneure, levant des centaines de milliers à des millions de dollars de financement pour les organisations avec lesquelles elle a travaillé.",
+      "paragraph2": "Voyager est plus qu'une passion pour Mimi, c'est un mode de vie. Elle a parcouru presque tous les pays d'Afrique de l'Ouest, principalement par la route et toujours avec un budget limité. Amoureuse de la nature et de l'aventure en plein air. Elle dit souvent que son seul regret est de ne pas avoir commencé ses aventures au début de la vingtaine."
+    },
+    "mission": {
+      "title": "Voyager en Afrique, transformer l'Afrique",
+      "description": "En septembre 2025, Mimi a lancé Dunia Safari pour rendre le voyage accessible et inspirer la jeunesse africaine à explorer son propre continent. Elle croit que le progrès commence par la découverte et l'expérience directe de l'Afrique.",
+      "collaboration": "Mimi invite les collaborations, les partenariats et les parrainages pour aider à réaliser ce rêve de son vivant."
+    },
+    "travelMemories": {
+      "title": "Souvenirs de voyage"
+    },
+    "imageCaptions": {
+      "akchourWaterfalls": "Cascades d'Akchour",
+      "chefchaouen": "Chefchaouen",
+      "meknes": "Meknès",
+      "mtZalagh": "Mont Zalagh, Fès",
+      "mtToubkal": "Mont Toubkal",
+      "mtToubkalSummit": "Sommet du Mont Toubkal",
+      "oujoudWaterfalls": "Cascades d'Ouzoud",
+      "ourika": "Vallée de l'Ourika",
+      "tinghirGorge": "Gorges de Tinghir",
+      "zizValley": "Vallée du Ziz"
+    }
   }
 }

@@ -120,26 +120,28 @@ const Packages = () => {
 
         {/* New Download Itinerary CTA */}
         <div className="text-center mt-12">
-          <p className="text-gray-100 text-lg mb-4">
-  Download Itinerary:
-</p>
-<a
-  href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mb-4 md:mb-0 md:mr-6"
->
-  Download EN
-</a>
+  <p className="text-gray-100 text-lg mb-4">
+    Download Itinerary:
+  </p>
+  
+  <div className="flex flex-col md:flex-row justify-center gap-4">
+    <a
+      href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300"
+    >
+      Download EN
+    </a>
 
-<a
-  href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300"
->
-  Download FN
-</a>
+    <a
+      href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300"
+    >
+      Download FR
+    </a>
         </div>
 
         {/* Bottom CTA */}

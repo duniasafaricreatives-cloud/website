@@ -63,7 +63,7 @@ const Packages = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {t('packages.subtitle')}
           </p>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-sm text-gray-400 max-w-3xl mx-auto mt-2">
             <em>{t('packages.offerEnds')}</em>
           </p>
         </div>
@@ -121,48 +121,48 @@ const Packages = () => {
         {/* New Download Itinerary CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-100 text-lg mb-4">
-            {t('packages.downloadItinerary')}
-          </p>
-          <a
-            href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mb-4 md:mb-0 md:mr-6"
-          >
-            {t('packages.downloadEN')}
-          </a>
+  Download Itinerary:
+</p>
+<a
+  href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300 mb-4 md:mb-0 md:mr-6"
+>
+  Download EN
+</a>
 
-        <a
-            href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300"
-          >
-            {t('packages.downloadFR')}
-          </a>
+<a
+  href="https://drive.google.com/file/d/1qeRx-3QbbOdta9Capv5XNKjMAfwY6k3e/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-amber-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-amber-700 transition-all duration-300"
+>
+  Download FN
+</a>
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-8">
           <p className="text-gray-300 mb-6">
-            {t('packages.customPackage')}
-          </p>
-          <a
-            href="https://forms.gle/5eCVqkXjoKoorqBQ9"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 mb-4 md:mb-0 md:mr-6"
-          >
-            {t('packages.customInquiryEN')}
-          </a>
-          <a
-            href="https://forms.gle/2d1RBwgdJxZzhG6q7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
-          >
-            {t('packages.customInquiryFR')}
-          </a>
+  Custom Package
+</p>
+<a
+  href="https://forms.gle/5eCVqkXjoKoorqBQ9"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 mb-4 md:mb-0 md:mr-6"
+>
+  Custom Inquiry EN
+</a>
+<a
+  href="https://forms.gle/2d1RBwgdJxZzhG6q7"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block bg-white text-burgundy-900 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
+>
+  Custom Inquiry FN
+</a>
         </div>
       </div>
     </section>

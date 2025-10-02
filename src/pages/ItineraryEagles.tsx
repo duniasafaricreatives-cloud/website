@@ -17,6 +17,10 @@ const ItineraryEagles = () => {
       availability: { Bronze: false, Silver: false, Gold: true },
     },
     {
+      name: t('itineraryEagles.features.visaGhana'),
+      availability: { Bronze: false, Silver: false, Gold: true },
+    },
+    {
       name: t('itineraryEagles.features.trainConnections'),
       availability: { Bronze: true, Silver: true, Gold: true },
       notes: [t('itineraryEagles.features.trainNotesGold')],

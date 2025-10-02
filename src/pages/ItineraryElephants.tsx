@@ -151,7 +151,7 @@ const ItineraryElephants = () => {
                     {t('common.reserveNow')} EN
                   </a>
                   <a
-                    href="https://forms.gle/vWe8gVGGWxBR8nc8A"
+                    href="https://forms.gle/yUyxWxyoqGSbz3u99"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
@@ -222,7 +222,7 @@ const ItineraryElephants = () => {
                   {t('common.reserveNow')} EN
                 </a>
                 <a
-                    href="https://forms.gle/vWe8gVGGWxBR8nc8A"
+                    href="https://forms.gle/yUyxWxyoqGSbz3u99"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"

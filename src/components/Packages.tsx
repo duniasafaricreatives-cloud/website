@@ -120,7 +120,7 @@ const Packages = () => {
 
         {/* New Download Itinerary CTA */}
         <div className="text-center mt-12">
-          <p className="text-gray-100 text-lg mb-4">
+          <p className="text-gray-100 text-lg mb-4 gap-4">
   Download Itinerary:
 </p>
 <a

@@ -219,8 +219,16 @@ const ItineraryElephants = () => {
                   rel="noopener noreferrer"
                   className="block w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center"
                 >
-                  {t('common.reserveNow')}
+                  {t('common.reserveNow')} EN
                 </a>
+                <a
+                    href="https://forms.gle/vWe8gVGGWxBR8nc8A"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+                  >
+                    {t('common.reserveNow')} FN
+                  </a>
               </div>
             )}
           </div>

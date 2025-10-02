@@ -4,7 +4,7 @@ import { blogPosts } from "../data/blogPosts";
 import { useTranslation } from "react-i18next";
 
 const BlogListingPage = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <section className="py-20 bg-gray-50">
@@ -31,7 +31,7 @@ const BlogListingPage = () => {
                 <div className="flex items-center text-sm text-gray-500 mb-2">
                   <span>{post.author}</span>
                   <span className="mx-2">•</span>
-                  <span>{new Date(post.publishDate).toLocaleDateString()}</span>
+                  <span>{new Date(post.publishDate).toLocaleDateString(i18n.language)}</span>
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>

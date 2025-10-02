@@ -222,7 +222,7 @@ const ItineraryElephants = () => {
                   {t('common.reserveNow')} EN
                 </a>
                 <a 
-                  href="https://forms.gle/vWe8gVGGWxBR8nc8A" 
+                  href="https://forms.gle/E7ShkjZQhTiLuAXBA" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="block w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center"

@@ -184,7 +184,7 @@ const ItineraryEagles = () => {
             {t('common.reserveNow')} EN
           </a>
           <a
-            href="https://forms.gle/yUyxWxyoqGSbz3u99"
+            href="https://forms.gle/s7JjEsd1H63jWRw3A"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"

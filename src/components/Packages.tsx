@@ -121,7 +121,7 @@ const Packages = () => {
         {/* New Download Itinerary CTA */}
         <div className="text-center mt-12">
           <p className="text-gray-100 text-lg mb-4 gap-4">
-  Download Itinerary:
+  Download Itinerary
 </p>
 <a
   href="https://drive.google.com/file/d/1mm3DicExO7H_G9wrsyKwH74W975tBgYD/view?usp=sharing"

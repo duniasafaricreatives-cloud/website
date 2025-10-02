@@ -63,7 +63,7 @@ const Packages = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {t('packages.subtitle')}
           </p>
-          <p className="text-sm text-gray-400 max-w-3xl mx-auto mt-2">
+          <p className="text-lg text-amber-800 max-w-3xl mx-auto mt-2 font-medium">
             <em>{t('packages.offerEnds')}</em>
           </p>
         </div>

@@ -179,7 +179,13 @@
   },
   "blog": {
     "title": "The Safari Journal",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "postNotFoundTitle": "Blog Post Not Found",
+    "postNotFoundMessage": "Sorry, the blog post you're looking for doesn't exist.",
+    "backToBlog": "Back to Blog",
+    "readyForAdventureTitle": "Ready for Your Morocco Adventure?",
+    "readyForAdventureMessage": "Join us for AFCON 2025 and experience everything Morocco has to offer.",
+    "viewPackages": "View Our Packages"
   },
   "common": {
     "loading": "Loading...",

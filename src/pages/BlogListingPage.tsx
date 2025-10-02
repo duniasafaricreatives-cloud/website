@@ -21,11 +21,13 @@ const BlogListingPage = () => {
             >
               <img
                 src={post.image}
-                alt={post.title}
+                alt={i18n.language === 'fr' && post.title_fr ? post.title_fr : post.title}
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3">{post.title}</h3>
+                <h3 className="text-xl font-semibold mb-3">
+                  {i18n.language === 'fr' && post.title_fr ? post.title_fr : post.title}
+                </h3>
                 <div className="flex items-center text-sm text-gray-500 mb-2">
                   <span>{post.author}</span>
                   <span className="mx-2">•</span>
@@ -33,7 +35,9 @@ const BlogListingPage = () => {
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                <p className="text-gray-600 mb-4">
+                  {i18n.language === 'fr' && post.excerpt_fr ? post.excerpt_fr : post.excerpt}
+                </p>
                 <Link
                   to={`/blog/${post.id}`}
                   className="text-amber-600 font-semibold hover:underline"

@@ -147,7 +147,13 @@
   },
   "blog": {
     "title": "Le journal Safari",
-    "readMore": "Lire la suite"
+    "readMore": "Lire la suite",
+    "postNotFoundTitle": "Article de blog introuvable",
+    "postNotFoundMessage": "Désolé, l'article de blog que vous recherchez n'existe pas.",
+    "backToBlog": "Retour au blog",
+    "readyForAdventureTitle": "Prêt pour votre aventure au Maroc ?",
+    "readyForAdventureMessage": "Rejoignez-nous pour la CAN 2025 et découvrez tout ce que le Maroc a à offrir.",
+    "viewPackages": "Voir nos forfaits"
   },
   "common": {
     "loading": "Chargement...",

@@ -6,9 +6,9 @@ const ItineraryEagles = () => {
   const { t } = useTranslation();
   
   const packages = [
-    { name: t('itineraryEagles.bronzePackageName'), price: t('itineraryEagles.bronzePackagePrice'), popular: false },
-    { name: t('itineraryEagles.silverPackageName'), price: t('itineraryEagles.silverPackagePrice'), popular: true },
-    { name: t('itineraryEagles.goldPackageName'), price: t('itineraryEagles.goldPackagePrice'), popular: false },
+    { id: "Bronze", name: t('itineraryEagles.bronzePackageName'), price: t('itineraryEagles.bronzePackagePrice'), popular: false },
+    { id: "Silver", name: t('itineraryEagles.silverPackageName'), price: t('itineraryEagles.silverPackagePrice'), popular: true },
+    { id: "Gold",   name: t('itineraryEagles.goldPackageName'),   price: t('itineraryEagles.goldPackagePrice'),   popular: false },
   ];
 
   const features = [
@@ -116,7 +116,7 @@ const ItineraryEagles = () => {
         {t('itineraryEagles.xmasSubtitle')}
       </p>
 
-      {/* ===== MAIN ITINERARY (unchanged) ===== */}
+      {/* ===== MAIN ITINERARY (unchanged structure) ===== */}
       {/* Desktop Table */}
       <div className="hidden md:block overflow-x-auto">
         <table className="w-full border-collapse shadow-lg rounded-lg overflow-hidden">
@@ -160,7 +160,7 @@ const ItineraryEagles = () => {
                 </td>
                 {packages.map((pkg) => (
                   <td key={pkg.name} className="text-center p-4">
-                    {feature.availability[pkg.name] ? (
+                    {feature.availability[pkg.id] ? (
                       <Check className="text-green-500 inline w-6 h-6" />
                     ) : (
                       <X className="text-red-500 inline w-6 h-6" />
@@ -171,31 +171,31 @@ const ItineraryEagles = () => {
             ))}
           </tbody>
           <tfoot>
-  <tr>
-    <td></td>
-    {packages.map((pkg) => (
-      <td key={pkg.name} className="p-4 text-center">
-        <div className="flex flex-col gap-3 items-center">
-          <a
-            href="https://forms.gle/vWe8gVGGWxBR8nc8A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"
-          >
-            {t('common.reserveNow')} EN
-          </a>
-          <a
-            href="https://forms.gle/s7JjEsd1H63jWRw3A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"
-          >
-            {t('common.reserveNow')} FN
-          </a>
-        </div>
-      </td>
-    ))}
-  </tr>
+            <tr>
+              <td></td>
+              {packages.map((pkg) => (
+                <td key={pkg.name} className="p-4 text-center">
+                  <div className="flex flex-col gap-3 items-center">
+                    <a
+                      href="https://forms.gle/vWe8gVGGWxBR8nc8A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"
+                    >
+                      {t('common.reserveNow')} EN
+                    </a>
+                    <a
+                      href="https://forms.gle/s7JjEsd1H63jWRw3A"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full"
+                    >
+                      {t('common.reserveNow')} FN
+                    </a>
+                  </div>
+                </td>
+              ))}
+            </tr>
           </tfoot>
         </table>
       </div>
@@ -224,13 +224,12 @@ const ItineraryEagles = () => {
             {openPackage === pkg.name && (
               <div className="p-4 bg-white space-y-3">
                 {features.map((feature, idx) => (
-                  // >>> Changed block: keep icon aligned on the right
                   <div key={idx} className="py-2">
                     <div className="flex items-start gap-3">
                       <span className="flex-1 text-sm leading-snug">
                         {feature.name}
                       </span>
-                      {feature.availability[pkg.name] ? (
+                      {feature.availability[pkg.id] ? (
                         <Check className="text-green-500 w-6 h-6 shrink-0 mt-0.5" />
                       ) : (
                         <X className="text-red-500 w-6 h-6 shrink-0 mt-0.5" />
@@ -244,7 +243,6 @@ const ItineraryEagles = () => {
                       </ul>
                     )}
                   </div>
-                  // <<< end changed block
                 ))}
                 <a
                   href="https://forms.gle/vWe8gVGGWxBR8nc8A"
@@ -261,7 +259,7 @@ const ItineraryEagles = () => {
                   className="block w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-center"
                 >
                   {t('common.reserveNow')} FN
-                  </a>
+                </a>
               </div>
             )}
           </div>
@@ -322,7 +320,6 @@ const ItineraryEagles = () => {
             {openSubPackage === pkg.name && (
               <div className="p-4 space-y-3">
                 {subFeatures.map((feature, idx) => (
-                  // >>> Changed block for sub-itinerary rows
                   <div key={idx} className="py-2">
                     <div className="flex items-start gap-3">
                       <span className="flex-1 text-sm leading-snug">
@@ -331,7 +328,6 @@ const ItineraryEagles = () => {
                       <span className="text-gray-500 shrink-0 mt-0.5">—</span>
                     </div>
                   </div>
-                  // <<< end changed block
                 ))}
               </div>
             )}

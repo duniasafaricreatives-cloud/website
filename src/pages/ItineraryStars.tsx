@@ -5,10 +5,11 @@ import { useTranslation } from "react-i18next";
 const ItineraryStars = () => {
   const { t } = useTranslation();
   
+  // ✅ Stable, language-agnostic ids + translated display names
   const packages = [
-    { name: t('itineraryStars.bronzePackageName'), price: t('itineraryStars.bronzePackagePrice'), popular: false },
-    { name: t('itineraryStars.silverPackageName'), price: t('itineraryStars.silverPackagePrice'), popular: true },
-    { name: t('itineraryStars.goldPackageName'), price: t('itineraryStars.goldPackagePrice'), popular: false },
+    { id: "Bronze", name: t('itineraryStars.bronzePackageName'), price: t('itineraryStars.bronzePackagePrice'), popular: false },
+    { id: "Silver", name: t('itineraryStars.silverPackageName'), price: t('itineraryStars.silverPackagePrice'), popular: true },
+    { id: "Gold",   name: t('itineraryStars.goldPackageName'),   price: t('itineraryStars.goldPackagePrice'),   popular: false },
   ];
 
   const features = [
@@ -70,8 +71,10 @@ const ItineraryStars = () => {
   const [openPackage, setOpenPackage] = useState<string | null>(null);
   const [openSubPackage, setOpenSubPackage] = useState<string | null>(null);
 
-  const toggleAccordion = (pkg: string) => setOpenPackage(openPackage === pkg ? null : pkg);
-  const toggleSubAccordion = (pkg: string) => setOpenSubPackage(openSubPackage === pkg ? null : pkg);
+  const toggleAccordion = (pkgId: string) =>
+    setOpenPackage(openPackage === pkgId ? null : pkgId);
+  const toggleSubAccordion = (pkgId: string) =>
+    setOpenSubPackage(openSubPackage === pkgId ? null : pkgId);
 
   return (
     <div className="p-6">
@@ -94,7 +97,7 @@ const ItineraryStars = () => {
               </th>
               {packages.map((pkg) => (
                 <th
-                  key={pkg.name}
+                  key={pkg.id}
                   className={`p-4 text-center ${
                     pkg.popular
                       ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
@@ -126,8 +129,8 @@ const ItineraryStars = () => {
                   )}
                 </td>
                 {packages.map((pkg) => (
-                  <td key={pkg.name} className="text-center p-4">
-                    {feature.availability[pkg.name] ? (
+                  <td key={pkg.id} className="text-center p-4">
+                    {feature.availability[pkg.id] ? (
                       <Check className="text-green-500 inline" size={20} />
                     ) : (
                       <X className="text-red-500 inline" size={20} />
@@ -141,7 +144,7 @@ const ItineraryStars = () => {
             <tr>
               <td></td>
               {packages.map((pkg) => (
-                <td key={pkg.name} className="p-4 text-center mr-2">
+                <td key={pkg.id} className="p-4 text-center mr-2">
                   <a 
                     href="https://forms.gle/vWe8gVGGWxBR8nc8A" 
                     target="_blank" 
@@ -168,9 +171,9 @@ const ItineraryStars = () => {
       {/* Mobile Accordion View */}
       <div className="md:hidden space-y-4">
         {packages.map((pkg) => (
-          <div key={pkg.name} className="border rounded-lg shadow-md overflow-hidden">
+          <div key={pkg.id} className="border rounded-lg shadow-md overflow-hidden">
             <button
-              onClick={() => toggleAccordion(pkg.name)}
+              onClick={() => toggleAccordion(pkg.id)}
               className={`w-full flex justify-between items-center p-4 ${
                 pkg.popular
                   ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-white"
@@ -186,9 +189,9 @@ const ItineraryStars = () => {
                   </div>
                 )}
               </div>
-              {openPackage === pkg.name ? <ChevronUp /> : <ChevronDown />}
+              {openPackage === pkg.id ? <ChevronUp /> : <ChevronDown />}
             </button>
-            {openPackage === pkg.name && (
+            {openPackage === pkg.id && (
               <div className="p-4 bg-white space-y-3">
                 {features.map((feature, idx) => (
                   <div key={idx} className="py-2">
@@ -196,7 +199,7 @@ const ItineraryStars = () => {
                       <span className="flex-1 text-sm leading-snug">
                         {feature.name}
                       </span>
-                      {feature.availability[pkg.name] ? (
+                      {feature.availability[pkg.id] ? (
                         <Check className="text-green-500 shrink-0 mt-0.5" size={20} />
                       ) : (
                         <X className="text-red-500 shrink-0 mt-0.5" size={20} />
@@ -247,7 +250,7 @@ const ItineraryStars = () => {
                 <span dangerouslySetInnerHTML={{ __html: t('itineraryStars.subItineraryHeader') }} />
               </th>
               {packages.map((pkg) => (
-                <th key={pkg.name} className="p-4 text-center bg-gray-200">
+                <th key={pkg.id} className="p-4 text-center bg-gray-200">
                   {pkg.name}
                 </th>
               ))}
@@ -258,7 +261,7 @@ const ItineraryStars = () => {
               <tr key={idx} className="border-b">
                 <td className="p-4 text-sm">{feature.name}</td>
                 {packages.map((pkg) => (
-                  <td key={pkg.name} className="text-center p-4">—</td>
+                  <td key={pkg.id} className="text-center p-4">—</td>
                 ))}
               </tr>
             ))}
@@ -269,15 +272,17 @@ const ItineraryStars = () => {
       {/* Mobile Accordion View */}
       <div className="md:hidden space-y-4 mt-6">
         {packages.map((pkg) => (
-          <div key={pkg.name} className="border rounded-lg shadow-md overflow-hidden">
+          <div key={pkg.id} className="border rounded-lg shadow-md overflow-hidden">
             <button
-              onClick={() => toggleSubAccordion(pkg.name)}
+              onClick={() => toggleSubAccordion(pkg.id)}
               className="w-full flex justify-between items-center p-4 bg-gray-100"
             >
-              <h3 className="text-lg font-semibold">{pkg.name} ({t('common.extended')})</h3>
-              {openSubPackage === pkg.name ? <ChevronUp /> : <ChevronDown />}
+              <h3 className="text-lg font-semibold">
+                {pkg.name} ({t('common.extended')})
+              </h3>
+              {openSubPackage === pkg.id ? <ChevronUp /> : <ChevronDown />}
             </button>
-            {openSubPackage === pkg.name && (
+            {openSubPackage === pkg.id && (
               <div className="p-4 bg-white space-y-3">
                 {subFeatures.map((feature, idx) => (
                   <div key={idx} className="py-2">

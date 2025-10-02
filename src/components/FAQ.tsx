@@ -8,60 +8,32 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'What games do the AFCON packages cover?',
-      answer: 'Our packages include 2 games in Fes, Rabat & Marrakech for Nigerian, Tanzanian and Ivorian fans respectively, blending football with culture and exploration. Want 3 games plus New Year in Morocco? Contact our travel agent for the extended itinerary.'
+      question: t('faq.question0'),
+      answer: t('faq.answer0')
     },
     {
-      question: 'About booking process',
-      answer: `
-        <p><strong>Book early</strong> — Christmas/New Year has high demand and higher rates.</p>
-        <p><strong>Steps:</strong></p>
-        <ol>
-          <li>1. Select your package on the website.</li>
-          <li>2. A travel agent will contact you via WhatsApp within 24 hours for flights, insurance & visa support.</li>
-          <li>3. Pay before the deadline to receive flight, hotel & stadium ticket confirmations.</li>
-          <li>4. Be added to our WhatsApp broadcast group for updates.</li>
-        </ol>
-      `
+      question: t('faq.question1'),
+      answer: t('faq.answer1')
     },
     {
-      question: 'Visa Requirements (Ghana, Côte d’Ivoire, Nigeria)',
-answer: `
-  <p><strong>Q:</strong> — For Ghanaian passport holders.</p>
-  <p><strong>A:</strong> — No visa required. You must complete Morocco’s Electronic Travel Authorization 
-  (<a href="https://rabat.ghanagovernmentmission.com/portal/" target="_blank" rel="noopener noreferrer">
-  Accès Maroc</a>) online before travel (typically processed within ~24 hours).</p>
-
-  <p><strong>Q:</strong> — For Ivorian & Nigerian passport holders.</p>
-  <p><strong>A:</strong> — Yes, Visa required. If you hold a valid Schengen/US/UK/Canada visa or residence permit, you can 
-  usually apply online for a Morocco eVisa.</p>
-
-  <p>Otherwise, apply at the Moroccan consulate in Abidjan & Abuja</p>
-  <p>Typical Visa processing is around 10 business days, but you need to secure your visa appointment 
-  at least 3 weeks in advance</p>
-`    
+      question: t('faq.question2'),
+      answer: t('faq.answer2')
     },
     {
-      question: 'What payment methods do you accept?',
-      answer:`
-  <p><strong>A:</strong> — We accept debit/credit cards (Visa/Mastercard), bank transfer, and mobile money (for Ghana only). If your preferred method isn’t listed, contact our travel agent for alternatives.</p>
-  <p><strong>Q:</strong> —How are exchange rates handled?</p>
-  <p><strong>A:</strong> — For cross-currency payments, we use the prevailing market rate at the time of invoicing/checkout. Your bank or provider may apply a small FX margin.</p>
-  <p><strong>Q:</strong> — Will I receive a receipt?</p>
-  <p><strong>A:</strong> — Yes. Reciept are issued within 24hours after each payment.</p>
-`
+      question: t('faq.question3'),
+      answer: t('faq.answer3')
     },
     {
-      question: 'What is the difference between the Bronze, Silver, and Gold packages?',
-      answer: 'The Bronze Package offers room sharing in a riad or hostel and the essential AFCON travel experience. The Silver and Gold Packages upgrade you to private rooms in 2-star and 3-star hotels, respectively, and include added experiences such as a hammam spa and visa application support. For full details, please refer to the individual package descriptions.'
+      question: t('faq.question4'),
+      answer: t('faq.answer4')
     },
     {
-      question: 'Do you only operate in Morocco?',
-      answer: 'Our launch focus is Morocco. Especially trips aligned with AFCON 2025 and holiday packages, but our long-term vision includes Egypt, Cape Verde, Turkey, and other exciting destinations across the world'
+      question: t('faq.question5'),
+      answer: t('faq.answer5')
     },
     {
-      question: 'What is Dunia Safari’s refund policy?',
-      answer: 'Deposits are generally non-refundable, as they secure your flight, hotel, and match tickets. Depending on the situation, Dunia Safari may reschedule your booking to a later date or allow you to transfer your package to another traveler if you are unable to travel yourself. Terms & conditions apply.'
+      question: t('faq.question6'),
+      answer: t('faq.answer6')
     }
   ];
 

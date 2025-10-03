@@ -124,7 +124,7 @@ const AffiliatesPage = () => {
              
             </h1>
             <p className="text-xl md:text-2xl opacity-90">
-             
+              
             </p>
           </div>
         </div>

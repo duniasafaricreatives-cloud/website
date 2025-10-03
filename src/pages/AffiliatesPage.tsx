@@ -4,6 +4,10 @@ import { CheckCircle, Users, DollarSign } from 'lucide-react';
 
 const AffiliatesPage = () => {
   const { t } = useTranslation();
+
+  // ✅ Google Sheet Web App endpoint
+  const SHEET_ENDPOINT =
+    'https://script.google.com/macros/s/AKfycbzKKH_GuRgs6UFZH9xSo_0gSLra5DWBAMi2-BcDewX4Q1_j1Z1Tz2BPcxl3EbcLe_5b/exec';
   
   // Form state
   const [formData, setFormData] = useState({
@@ -52,19 +56,27 @@ const AffiliatesPage = () => {
     setIsSubmitting(true);
     setSubmitMessage('');
 
+    // ✅ Flatten arrays so each becomes a clean single-cell string in Sheets
+    const payload = {
+      ...formData,
+      contentTypes: Array.isArray(formData.contentTypes) ? formData.contentTypes.join(', ') : formData.contentTypes,
+      supportNeeded: Array.isArray(formData.supportNeeded) ? formData.supportNeeded.join(', ') : formData.supportNeeded,
+    };
+
     try {
-      const response = await fetch('YOUR_GOOGLE_SCRIPT_URL', {
+      const response = await fetch(SHEET_ENDPOINT, {
         method: 'POST',
+        // ✅ text/plain avoids a CORS preflight; Apps Script will parse JSON string
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain;charset=utf-8',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       if (response.ok) {
         setSubmitSuccess(true);
         setSubmitMessage(t('affiliates.form.successMessage'));
-        // Reset form (includes new fields)
+        // ✅ Reset form (shape matches initial state)
         setFormData({
           fullName: '',
           email: '',
@@ -77,8 +89,6 @@ const AffiliatesPage = () => {
           previousExperience: '',
           previousExperienceOther: '',
           whyJoin: '',
-          payoutMethod: '',
-          payoutMethodOther: '',
           additionalInfo: '',
           supportNeeded: [],
           supportNeededOther: '',

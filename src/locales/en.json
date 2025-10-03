@@ -234,7 +234,10 @@
         "previousExperience": "Do you have previous affiliate marketing experience?",
         "whyJoin": "Why do you want to join the Dunia Safari affiliate program?",
         "payoutMethod": "Preferred payout method",
-        "additionalInfo": "Additional Information"
+        "additionalInfo": "Additional Information",
+        "supportNeeded": "What support do you need to promote effectively?",
+        "supportNeededOther": "Other support (please specify)",
+        "commissionAcknowledgement": "Do you acknowledge that only fully paid packages count towards commissions and rewards?"
       },
       "placeholders": {
         "fullName": "Enter your full name",
@@ -247,7 +250,8 @@
         "previousExperienceOther": "Please specify your experience",
         "whyJoin": "Share your motivation and how you plan to promote our AFCON packages",
         "payoutMethodOther": "Please specify your preferred method",
-        "additionalInfo": "Any additional information you'd like to share"
+        "additionalInfo": "Any additional information you'd like to share",
+        "supportNeededOther": "Please specify other support you need"
       },
       "options": {
         "followerCount": {

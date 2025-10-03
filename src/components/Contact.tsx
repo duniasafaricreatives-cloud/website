@@ -38,8 +38,7 @@ const Contact = () => {
                   <p className="text-gray-600">+233 53 808 7709</p>
                   {/* Added the new number here */}
               <p className="text-gray-600">
-                {t('footer.phone')}: +225 05 75 42 97 72
-              </p>
+                +225 057 542 9772</p>
                 </div>
               </div>
 

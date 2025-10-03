@@ -36,6 +36,10 @@ const Contact = () => {
                     {t('contact.callUs')}
                   </h4>
                   <p className="text-gray-600">+233 53 808 7709</p>
+                  {/* Added the new number here */}
+              <p className="text-gray-300">
+                {t('footer.phone')}: +225 05 75 42 97 72
+              </p>
                 </div>
               </div>
 

@@ -10,11 +10,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Quelle équipe encouragez-vous à la CAN 2025 au Maroc",
-    "subtitle": "Choisissez votre équipe, choisissez votre forfait.",
-    "superEagles": "Les Super Eagles",
-    "elephants": "Les Éléphants",
-    "taifaStars": "Les Taifa Stars"
+  "title": "Quelle équipe encouragez-vous à la CAN 2025 au Maroc",
+  "titleFirst": "Quelle équipe encouragez-vous",
+  "titleSecond": "à la CAN 2025 au Maroc",
+  "subtitle": "Choisissez votre équipe, choisissez votre forfait.",
+  "superEagles": "Les Super Eagles",
+  "elephants": "Les Éléphants",
+  "taifaStars": "Les Taifa Stars"
   },
   "about": {
     "title": "Dunia Safari Tours",

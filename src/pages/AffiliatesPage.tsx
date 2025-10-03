@@ -114,7 +114,7 @@ const AffiliatesPage = () => {
       <section 
         className="relative h-[60vh] bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg')"
+          backgroundImage: "url('/my-affiliate-hero.jpg')"
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>

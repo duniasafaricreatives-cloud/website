@@ -197,6 +197,98 @@
     "downloadItineraryFR": "Download Full Itinerary In FR",
     "extended": "Extended"
   },
+  "affiliates": {
+    "hero": {
+      "title": "Join the Dunia Safari AFCON Affiliate Program",
+      "subtitle": "Turn your influence into rewards and unforgettable AFCON 2025 experiences."
+    },
+    "process": {
+      "title": "How It Works"
+    },
+    "steps": {
+      "step1": {
+        "title": "Apply",
+        "description": "Fill out our application form and tell us about your audience and content."
+      },
+      "step2": {
+        "title": "Get Approved",
+        "description": "Our team will review your application and get in touch with approval details."
+      },
+      "step3": {
+        "title": "Share and Earn",
+        "description": "Start promoting AFCON 2025 packages and earn commissions on every booking."
+      }
+    },
+    "form": {
+      "title": "Affiliate Application Form",
+      "subtitle": "Tell us about yourself and your audience to join our program.",
+      "fields": {
+        "fullName": "Full Name",
+        "email": "Email Address",
+        "phoneNumber": "Phone/WhatsApp Number",
+        "socialMediaHandles": "Social Media Handles",
+        "followerCount": "Total Follower Count (across all platforms)",
+        "contentTypes": "What type of content do you create?",
+        "audienceDescription": "Describe your audience",
+        "previousExperience": "Do you have previous affiliate marketing experience?",
+        "whyJoin": "Why do you want to join the Dunia Safari affiliate program?",
+        "payoutMethod": "Preferred payout method",
+        "additionalInfo": "Additional Information"
+      },
+      "placeholders": {
+        "fullName": "Enter your full name",
+        "email": "Enter your email address",
+        "phoneNumber": "Enter your phone/WhatsApp number",
+        "socialMediaHandles": "List your Instagram, TikTok, YouTube, etc. handles",
+        "followerCount": "Select your follower range",
+        "contentTypesOther": "Please specify other content types",
+        "audienceDescription": "Tell us about your followers - demographics, interests, engagement levels",
+        "previousExperienceOther": "Please specify your experience",
+        "whyJoin": "Share your motivation and how you plan to promote our AFCON packages",
+        "payoutMethodOther": "Please specify your preferred method",
+        "additionalInfo": "Any additional information you'd like to share"
+      },
+      "options": {
+        "followerCount": {
+          "under1k": "Under 1,000",
+          "1k5k": "1,000 - 5,000",
+          "5k10k": "5,000 - 10,000",
+          "10k50k": "10,000 - 50,000",
+          "50k100k": "50,000 - 100,000",
+          "100k500k": "100,000 - 500,000",
+          "500k1m": "500,000 - 1,000,000",
+          "over1m": "Over 1,000,000"
+        },
+        "contentTypes": {
+          "travel-vlogs": "Travel vlogs/videos",
+          "instagram-posts": "Instagram posts/stories",
+          "tiktok-videos": "TikTok videos",
+          "youtube-content": "YouTube content",
+          "blog-articles": "Blog articles/website content",
+          "podcast-episodes": "Podcast episodes",
+          "live-streaming": "Live streaming",
+          "other": "Other (please specify)"
+        },
+        "previousExperience": {
+          "yes-travel": "Yes, with travel/tourism brands",
+          "yes-other": "Yes, with other industries",
+          "no": "No, this would be my first affiliate program",
+          "other": "Other (please specify)"
+        },
+        "payoutMethod": {
+          "bank-transfer": "Bank transfer",
+          "paypal": "PayPal",
+          "mobile-money": "Mobile money",
+          "crypto": "Cryptocurrency",
+          "other": "Other (please specify)"
+        }
+      },
+      "submit": "Submit Application",
+      "submitting": "Submitting Application...",
+      "successMessage": "Thank you for applying! Our team will review your application and get in touch with you shortly.",
+      "errorMessage": "There was a problem submitting your application. Please try again."
+    }
+  },
   "itineraryEagles": {
     "mainTitle": "Eagles Itinerary Packages",
     "xmasSubtitle": "Celebrate XMas in Morocco (22- 28 Dec 2025)",

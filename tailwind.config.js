@@ -30,6 +30,8 @@ export default {
           100: '#EDE5D3',
           200: '#DDD0B0',
         },
+        'royal-green': '#006400',
+        'warm-yellow': '#FFD700',
       },
       spacing: {
         '18': '4.5rem',

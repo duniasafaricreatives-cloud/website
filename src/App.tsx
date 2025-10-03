@@ -17,6 +17,7 @@ import BlogListingPage from "./pages/BlogListingPage";
 import BlogPostPage from "./pages/BlogPostPage";       
 import AboutFounderPage from "./pages/AboutFounderPage";
 import PackagesPage from "./pages/PackagesPage";
+import AffiliatesPage from "./pages/AffiliatesPage";
 
 // ✅ Import separate itineraries
 import ItineraryEagles from "./pages/ItineraryEagles";
@@ -68,6 +69,9 @@ function App() {
 
           {/* About Founder Page */}
           <Route path="/about-founder" element={<AboutFounderPage />} />
+
+          {/* Affiliates Page */}
+          <Route path="/affiliates" element={<AffiliatesPage />} />
 
           {/* Individual Blog Post Page */}
           <Route path="/blog/:id" element={<BlogPostPage />} />

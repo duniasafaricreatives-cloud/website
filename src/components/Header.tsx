@@ -137,7 +137,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-4 pt-2 pb-3 space-y-1">
               {navItems.map((item) =>
                 item.isPage ? (
                   <Link

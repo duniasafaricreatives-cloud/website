@@ -1,6 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
-import { FaTiktok, FaXTwitter, FaWhatsapp } from 'react-icons/fa6'; // (kept from earlier change)
+import { FaTiktok, FaXTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa6'; // ✅ Added YouTube
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -30,12 +30,12 @@ const Footer = () => {
               {t('footer.description')}
             </p>
 
-            {/* WhatsApp Community Button — previously added */}
+            {/* WhatsApp Community Button */}
             <a
               href="https://www.whatsapp.com/channel/0029VbBVevv1SWsrGM6oC62B"
               target="_blank"
               rel="noopener noreferrer"
-             className="inline-flex items-center gap-2 bg-white text-burgundy-900 hover:bg-gray-200 px-4 py-2 rounded-full font-semibold transition-colors duration-300 mb-6"
+              className="inline-flex items-center gap-2 bg-white text-burgundy-900 hover:bg-gray-200 px-4 py-2 rounded-full font-semibold transition-colors duration-300 mb-6"
             >
               <FaWhatsapp className="w-5 h-5" />
               Join our WhatsApp Community
@@ -80,6 +80,16 @@ const Footer = () => {
                 className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
               >
                 <FaTiktok className="w-6 h-6" />
+              </a>
+
+              {/* ✅ YouTube (placeholder link) */}
+              <a 
+                href="https://www.youtube.com/@YourChannelPlaceholder" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+              >
+                <FaYoutube className="w-6 h-6" />
               </a>
             </div>
           </div>
@@ -136,7 +146,6 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">{t('footer.services')}</h3>
             <ul className="space-y-1">
               <li>
-                {/* Go to packages page */}
                 <Link 
                   to="/packages"
                   className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
@@ -145,7 +154,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                {/* Scroll to About section */}
                 <button
                   onClick={() => scrollToSection('#about')}
                   className="text-left text-gray-300 hover:text-amber-500 transition-colors duration-300"
@@ -154,7 +162,6 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                {/* Scroll to a likely group section id (same behavior pattern as other buttons) */}
                 <button
                   onClick={() => scrollToSection('#group-perks')}
                   className="text-left text-gray-300 hover:text-amber-500 transition-colors duration-300"
@@ -163,7 +170,6 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                {/* Scroll to FAQ for visa info */}
                 <button
                   onClick={() => scrollToSection('#faq')}
                   className="text-left text-gray-300 hover:text-amber-500 transition-colors duration-300"
@@ -172,7 +178,6 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                {/* Scroll to Contact for custom packages */}
                 <button
                   onClick={() => scrollToSection('#contact')}
                   className="text-left text-gray-300 hover:text-amber-500 transition-colors duration-300"
@@ -190,7 +195,6 @@ const Footer = () => {
               <p className="text-gray-300">
                 {t('footer.phone')}: +233 53 808 7709
               </p>
-              {/* Added the new number here */}
               <p className="text-gray-300">
                 {t('footer.phone')}: +225 05 75 42 97 72
               </p>

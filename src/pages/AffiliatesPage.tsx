@@ -150,7 +150,7 @@ const AffiliatesPage = () => {
           [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]
         "
       >
-        {t('affiliates.hero.title')}
+        
       </h1>
       <p
         className="
@@ -159,7 +159,7 @@ const AffiliatesPage = () => {
           [text-shadow:0_1px_4px_rgba(0,0,0,0.55)]
         "
       >
-        {t('affiliates.hero.subtitle')}
+        
       </p>
     </div>
         </div>

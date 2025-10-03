@@ -121,10 +121,10 @@ const AffiliatesPage = () => {
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white px-4 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              {t('affiliates.hero.title')}
+             
             </h1>
             <p className="text-xl md:text-2xl opacity-90">
-              {t('affiliates.hero.subtitle')}
+             
             </p>
           </div>
         </div>

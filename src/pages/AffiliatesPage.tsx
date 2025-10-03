@@ -408,43 +408,6 @@ const AffiliatesPage = () => {
               />
             </div>
 
-            {/* Payout Method */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-4">
-                {t('affiliates.form.fields.payoutMethod')} *
-              </label>
-              <div className="space-y-3">
-                {['bank-transfer','paypal','mobile-money','crypto','other'].map((method) => (
-                  <label key={method} className="flex items-center">
-                    <input
-                      type="radio"
-                      name="payoutMethod"
-                      value={method}
-                      checked={formData.payoutMethod === method}
-                      onChange={handleInputChange}
-                      required
-                      className="w-4 h-4 text-royal-green border-gray-300 focus:ring-royal-green"
-                    />
-                    <span className="ml-3 text-gray-700">
-                      {t(`affiliates.form.options.payoutMethod.${method}`)}
-                    </span>
-                  </label>
-                ))}
-              </div>
-              {formData.payoutMethod === 'other' && (
-                <div className="mt-4">
-                  <input
-                    type="text"
-                    name="payoutMethodOther"
-                    value={formData.payoutMethodOther}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-green focus:border-transparent"
-                    placeholder={t('affiliates.form.placeholders.payoutMethodOther')}
-                  />
-                </div>
-              )}
-            </div>
-
             {/* ✅ Support Needed (new) */}
             <div>
               <label className="block text-sm font-semibold text-gray-900 mb-4">

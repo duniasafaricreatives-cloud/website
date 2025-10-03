@@ -35,7 +35,7 @@ const Footer = () => {
               href="https://www.whatsapp.com/channel/0029VbBVevv1SWsrGM6oC62B"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white-text-burgundy-900 hover:bg-amber-400 px-4 py-2 rounded-full font-semibold transition-colors duration-300 mb-6"
+             className="inline-flex items-center gap-2 bg-white text-burgundy-900 hover:bg-gray-200 px-4 py-2 rounded-full font-semibold transition-colors duration-300 mb-6"
             >
               <FaWhatsapp className="w-5 h-5" />
               Join our WhatsApp Community

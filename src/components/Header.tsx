@@ -25,6 +25,7 @@ const Header = () => {
     { name: t("header.faq"), href: "#faq" },
     { name: t("header.blog"), href: "/blog", isPage: true },
     { name: t("header.aboutFounder"), href: "/about-founder", isPage: true },
+    { name: t("header.becomeAffiliate"), href: "/affiliates", isPage: true },
     { name: t("header.contact"), href: "#contact" },
   ];
 

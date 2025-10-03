@@ -18,11 +18,13 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
-        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-          {t("hero.titleFirst")}
-          {" "}
-          <br className="hidden md:block" />
-          {t("hero.titleSecond")}
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight max-w-3xl mx-auto">
+          {/* mobile: whole sentence, desktop: force line break */}
+          <span className="block md:hidden">{t("hero.title")}</span>
+          <span className="hidden md:block">
+            Which team are you cheering <br />
+            for at AFCON 2025 in Morocco
+          </span>
         </h1>
 
         {/* Subtitle */}

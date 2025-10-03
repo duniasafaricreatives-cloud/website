@@ -1,6 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
-import { FaTiktok, FaXTwitter } from 'react-icons/fa6';
+import { FaTiktok, FaXTwitter, FaWhatsapp } from 'react-icons/fa6'; // ← added
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -29,6 +29,18 @@ const Footer = () => {
             <p className="text-gray-300 leading-relaxed mb-6">
               {t('footer.description')}
             </p>
+
+            {/* WhatsApp Community Button — added */}
+            <a
+              href="https://www.whatsapp.com/channel/0029VbBVevv1SWsrGM6oC62B"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-warm-yellow text-burgundy-900 hover:bg-amber-400 px-4 py-2 rounded-full font-semibold transition-colors duration-300 mb-6"
+            >
+              <FaWhatsapp className="w-5 h-5" />
+              Join our WhatsApp Community
+            </a>
+
             <div className="flex space-x-4">
               {/* Instagram */}
               <a 

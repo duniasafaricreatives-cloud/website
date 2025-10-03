@@ -84,7 +84,7 @@ const Footer = () => {
 
               {/* ✅ YouTube (placeholder link) */}
               <a 
-                href="https://www.youtube.com/@YourChannelPlaceholder" 
+                href="https://www.youtube.com/@DuniaSafariTravel" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-amber-500 transition-colors duration-300"

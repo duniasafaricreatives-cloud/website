@@ -19,7 +19,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-          Which team are you cheering
+          Which team are you cheering 
           <br className="hidden md:block" />
           for at AFCON 2025 in Morocco
         </h1>

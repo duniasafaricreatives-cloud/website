@@ -10,11 +10,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Which team are you cheering for at AFCON 2025 in Morocco",
-    "subtitle": "Choose your team, Choose your package.",
-    "superEagles": "The Super Eagles",
-    "elephants": "The Elephants",
-    "taifaStars": "The Taifa Stars"
+  "title": "Which team are you cheering for at AFCON 2025 in Morocco",
+  "titleFirst": "Which team are you cheering",
+  "titleSecond": "for at AFCON 2025 in Morocco",
+  "subtitle": "Choose your team, Choose your package.",
+  "superEagles": "The Super Eagles",
+  "elephants": "The Elephants",
+  "taifaStars": "The Taifa Stars"
   },
   "about": {
     "title": "Dunia Safari Tours",

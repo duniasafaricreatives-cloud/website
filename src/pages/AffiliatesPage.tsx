@@ -362,42 +362,6 @@ const AffiliatesPage = () => {
               />
             </div>
 
-            {/* Previous Experience */}
-            <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-4">
-                {t('affiliates.form.fields.previousExperience')} *
-              </label>
-              <div className="space-y-3">
-                {['yes-travel','yes-other','no','other'].map((option) => (
-                  <label key={option} className="flex items-center">
-                    <input
-                      type="radio"
-                      name="previousExperience"
-                      value={option}
-                      checked={formData.previousExperience === option}
-                      onChange={handleInputChange}
-                      required
-                      className="w-4 h-4 text-royal-green border-gray-300 focus:ring-royal-green"
-                    />
-                    <span className="ml-3 text-gray-700">
-                      {t(`affiliates.form.options.previousExperience.${option}`)}
-                    </span>
-                  </label>
-                ))}
-              </div>
-              {formData.previousExperience === 'other' && (
-                <div className="mt-4">
-                  <input
-                    type="text"
-                    name="previousExperienceOther"
-                    value={formData.previousExperienceOther}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-green focus:border-transparent"
-                    placeholder={t('affiliates.form.placeholders.previousExperienceOther')}
-                  />
-                </div>
-              )}
-            </div>
 
             {/* Why Join */}
             <div>

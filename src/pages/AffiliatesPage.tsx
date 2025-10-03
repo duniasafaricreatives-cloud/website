@@ -419,20 +419,20 @@ const AffiliatesPage = () => {
             {/* ✅ Support Needed (new) */}
             <div>
               <label className="block text-sm font-semibold text-gray-900 mb-4">
-                What type of support do you need from Dunia Safari to promote effectively? *
+                {t('affiliates.form.fields.supportNeeded')} *
               </label>
               <div className="space-y-3">
                 {[
-                  'Marketing materials (flyers, posters, graphics)',
-                  'Affiliate code / unique tracking link',
-                  'Training / Orientation session',
-                  'Others'
-                ].map((option) => (
-                  <label key={option} className="flex items-center">
+                  'marketingMaterials',
+                  'affiliateCode',
+                  'training',
+                  'others'
+                ].map((optionKey) => (
+                  <label key={optionKey} className="flex items-center">
                     <input
                       type="checkbox"
-                      value={option}
-                      checked={formData.supportNeeded.includes(option)}
+                      value={t(`affiliates.form.options.supportNeeded.${optionKey}`)}
+                      checked={formData.supportNeeded.includes(t(`affiliates.form.options.supportNeeded.${optionKey}`))}
                       onChange={(e) => {
                         const { value, checked } = e.target;
                         setFormData(prev => ({
@@ -444,13 +444,13 @@ const AffiliatesPage = () => {
                       }}
                       className="w-4 h-4 text-royal-green border-gray-300 rounded focus:ring-royal-green"
                     />
-                    <span className="ml-3 text-gray-700">{option}</span>
+                    <span className="ml-3 text-gray-700">{t(`affiliates.form.options.supportNeeded.${optionKey}`)}</span>
                   </label>
                 ))}
               </div>
 
               {/* ✅ Support Needed → Others text field */}
-              {formData.supportNeeded.includes('Others') && (
+              {formData.supportNeeded.includes(t('affiliates.form.options.supportNeeded.others')) && (
                 <div className="mt-4">
                   <input
                     type="text"
@@ -458,7 +458,7 @@ const AffiliatesPage = () => {
                     value={formData.supportNeededOther}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-green focus:border-transparent"
-                    placeholder="Please specify other support you need"
+                    placeholder={t('affiliates.form.placeholders.supportNeededOther')}
                   />
                 </div>
               )}
@@ -467,21 +467,21 @@ const AffiliatesPage = () => {
             {/* ✅ Commission Acknowledgement (new) */}
             <div>
               <label className="block text-sm font-semibold text-gray-900 mb-4">
-                Do you acknowledge that only fully paid packages count towards commissions and rewards? *
+                {t('affiliates.form.fields.commissionAcknowledgement')} *
               </label>
               <div className="space-y-3">
-                {['Yes', 'No'].map((option) => (
-                  <label key={option} className="flex items-center">
+                {['yes', 'no'].map((optionKey) => (
+                  <label key={optionKey} className="flex items-center">
                     <input
                       type="radio"
                       name="commissionAcknowledgement"
-                      value={option}
-                      checked={formData.commissionAcknowledgement === option}
+                      value={t(`affiliates.form.options.commissionAcknowledgement.${optionKey}`)}
+                      checked={formData.commissionAcknowledgement === t(`affiliates.form.options.commissionAcknowledgement.${optionKey}`)}
                       onChange={handleInputChange}
                       required
                       className="w-4 h-4 text-royal-green border-gray-300 focus:ring-royal-green"
                     />
-                    <span className="ml-3 text-gray-700">{option}</span>
+                    <span className="ml-3 text-gray-700">{t(`affiliates.form.options.commissionAcknowledgement.${optionKey}`)}</span>
                   </label>
                 ))}
               </div>

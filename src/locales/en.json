@@ -286,6 +286,16 @@
           "mobile-money": "Mobile money",
           "crypto": "Cryptocurrency",
           "other": "Other (please specify)"
+        },
+        "supportNeeded": {
+          "marketingMaterials": "Marketing materials (flyers, posters, graphics)",
+          "affiliateCode": "Affiliate code / unique tracking link",
+          "training": "Training / Orientation session",
+          "others": "Others"
+        },
+        "commissionAcknowledgement": {
+          "yes": "Yes",
+          "no": "No"
         }
       },
       "submit": "Submit Application",

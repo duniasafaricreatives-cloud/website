@@ -202,7 +202,10 @@
         "previousExperience": "Avez-vous une expérience préalable en marketing d'affiliation ?",
         "whyJoin": "Pourquoi voulez-vous rejoindre le programme d'affiliation Dunia Safari ?",
         "payoutMethod": "Méthode de paiement préférée",
-        "additionalInfo": "Informations supplémentaires"
+        "additionalInfo": "Informations supplémentaires",
+        "supportNeeded": "De quel type de support avez-vous besoin de Dunia Safari pour promouvoir efficacement ?",
+        "supportNeededOther": "Autre support (veuillez préciser)",
+        "commissionAcknowledgement": "Reconnaissez-vous que seuls les forfaits entièrement payés comptent pour les commissions et récompenses ?"
       },
       "placeholders": {
         "fullName": "Entrez votre nom complet",
@@ -215,7 +218,8 @@
         "previousExperienceOther": "Veuillez spécifier votre expérience",
         "whyJoin": "Partagez votre motivation et comment vous prévoyez promouvoir nos forfaits AFCON",
         "payoutMethodOther": "Veuillez spécifier votre méthode préférée",
-        "additionalInfo": "Toute information supplémentaire que vous aimeriez partager"
+        "additionalInfo": "Toute information supplémentaire que vous aimeriez partager",
+        "supportNeededOther": "Veuillez spécifier l'autre support dont vous avez besoin"
       },
       "options": {
         "followerCount": {
@@ -250,6 +254,16 @@
           "mobile-money": "Argent mobile",
           "crypto": "Cryptomonnaie",
           "other": "Autre (veuillez spécifier)"
+        },
+        "supportNeeded": {
+          "marketingMaterials": "Matériel marketing (dépliants, affiches, graphiques)",
+          "affiliateCode": "Code d'affilié / lien de suivi unique",
+          "training": "Formation / Session d'orientation",
+          "others": "Autres"
+        },
+        "commissionAcknowledgement": {
+          "yes": "Oui",
+          "no": "Non"
         }
       },
       "submit": "Soumettre la candidature",

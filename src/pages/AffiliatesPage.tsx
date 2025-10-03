@@ -125,43 +125,44 @@ const AffiliatesPage = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-<section className="relative mt-16">
-  {/* Background image block with responsive banner heights */}
-  <div
-    className="
-      w-full
-      h-[40vh]        /* mobile banner height */
-      sm:h-[52vh]     /* tablets */
-      md:h-[65vh]     /* desktops */
-      bg-no-repeat bg-cover bg-center
-       /* nudge focal point slightly up */
-    "
-    style={{ backgroundImage: "url('/my-affiliate-hero.jpg')" }}
-  />
-  {/* Centered text overlay (no dark overlay) */}
-  <div className="absolute inset-0 flex items-center justify-center px-4">
-    <div className="max-w-4xl text-center">
-      <h1
-        className="
-          text-white font-bold leading-tight
-          text-3xl sm:text-4xl md:text-6xl
-          mb-4 md:mb-6
-          [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]
-        "
-      >
-        
-      </h1>
-      <p
-        className="
-          text-white/95
-          text-lg sm:text-xl md:text-2xl
-          [text-shadow:0_1px_4px_rgba(0,0,0,0.55)]
-        "
-      >
-        
-      </p>
-    </div>
+  {/* Hero Section */}
+  <section className="relative mt-16">
+    {/* Background image block with responsive banner heights */}
+    <div
+      className="
+        w-full
+        h-[40vh]        /* mobile banner height */
+        sm:h-[52vh]     /* tablets */
+        md:h-[65vh]     /* desktops */
+        bg-no-repeat
+        bg-contain md:bg-cover
+        bg-center
+      "
+      style={{ backgroundImage: "url('/my-affiliate-hero.jpg')" }}
+    />
+    {/* Centered text overlay (no dark overlay) */}
+    <div className="absolute inset-0 flex items-center justify-center px-4">
+      <div className="max-w-4xl text-center">
+        <h1
+          className="
+            text-white font-bold leading-tight
+            text-3xl sm:text-4xl md:text-6xl
+            mb-4 md:mb-6
+            [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]
+          "
+        >
+          {/* Add heading text here */}
+        </h1>
+        <p
+          className="
+            text-white/95
+            text-lg sm:text-xl md:text-2xl
+            [text-shadow:0_1px_4px_rgba(0,0,0,0.55)]
+          "
+        >
+          {/* Add subheading text here */}
+        </p>
+      </div>
         </div>
       </section>
 

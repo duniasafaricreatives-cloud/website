@@ -19,9 +19,9 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-          Which team are you cheering 
+          {t("hero.titleFirst")}
           <br className="hidden md:block" />
-          for at AFCON 2025 in Morocco
+          {t("hero.titleSecond")}
         </h1>
 
         {/* Subtitle */}

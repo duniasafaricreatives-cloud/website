@@ -10,7 +10,7 @@ const Hero = () => {
       className="relative h-screen bg-cover bg-center"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1648179587771-b31e9eb33ecf?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", // 🔹 Replace with your actual image
+          "url('https://images.unsplash.com/photo-1648179587771-b31e9eb33ecf?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
       }}
     >
       {/* Overlay for contrast */}
@@ -18,8 +18,10 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
-        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-          {t("hero.title")}
+        <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+          Which team are you cheering
+          <br className="hidden md:block" />
+          for at AFCON 2025 in Morocco
         </h1>
 
         {/* Subtitle */}

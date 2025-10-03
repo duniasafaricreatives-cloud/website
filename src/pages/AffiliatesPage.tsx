@@ -135,7 +135,7 @@ const AffiliatesPage = () => {
       sm:h-[52vh]     /* tablets */
       md:h-[65vh]     /* desktops */
       bg-no-repeat bg-cover bg-center
-      [background-position:50%_35%]   /* nudge focal point slightly up */
+      [background-position:50%_55%]   /* nudge focal point slightly up */
     "
     style={{ backgroundImage: "url('/my-affiliate-hero.jpg')" }}
   />

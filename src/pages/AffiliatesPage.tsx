@@ -130,7 +130,7 @@ const AffiliatesPage = () => {
   {/* Background image block with responsive banner heights */}
   <div
     className="
-      w-full
+      w-[20w]
       h-[40vh]        /* mobile banner height */
       sm:h-[52vh]     /* tablets */
       md:h-[65vh]     /* desktops */

@@ -18,8 +18,6 @@ const AffiliatesPage = () => {
     previousExperience: '',
     previousExperienceOther: '',
     whyJoin: '',
-    payoutMethod: '',
-    payoutMethodOther: '',
     additionalInfo: '',
     // ✅ New fields
     supportNeeded: [] as string[],

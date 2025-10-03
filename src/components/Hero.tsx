@@ -20,6 +20,7 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-4">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
           {t("hero.titleFirst")}
+          {" "}
           <br className="hidden md:block" />
           {t("hero.titleSecond")}
         </h1>

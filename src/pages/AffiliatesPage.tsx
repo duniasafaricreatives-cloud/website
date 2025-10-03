@@ -18,9 +18,10 @@ const AffiliatesPage = () => {
     previousExperience: '',
     previousExperienceOther: '',
     whyJoin: '',
-    // ❌ payout fields removed
+    payoutMethod: '',
+    payoutMethodOther: '',
     additionalInfo: '',
-    // ✅ New fields (translated)
+    // ✅ New fields
     supportNeeded: [] as string[],
     supportNeededOther: '',
     commissionAcknowledgement: ''
@@ -65,7 +66,7 @@ const AffiliatesPage = () => {
       if (response.ok) {
         setSubmitSuccess(true);
         setSubmitMessage(t('affiliates.form.successMessage'));
-        // Reset form (keeps only current fields)
+        // Reset form (includes new fields)
         setFormData({
           fullName: '',
           email: '',
@@ -78,6 +79,8 @@ const AffiliatesPage = () => {
           previousExperience: '',
           previousExperienceOther: '',
           whyJoin: '',
+          payoutMethod: '',
+          payoutMethodOther: '',
           additionalInfo: '',
           supportNeeded: [],
           supportNeededOther: '',
@@ -112,32 +115,45 @@ const AffiliatesPage = () => {
     }
   ];
 
-  // ids for the new, translated options
-  const supportOptions = [
-    'marketing-materials',
-    'affiliate-code',
-    'training',
-    'other'
-  ] as const;
-
-  const ackOptions = ['yes', 'no'] as const;
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section 
-        className="relative h-[60vh] bg-cover bg-center bg-no-repeat mt-16"
-        style={{ backgroundImage: "url('/my-affiliate-hero.jpg')" }}
+<section className="relative mt-16">
+  {/* Background image block with responsive banner heights */}
+  <div
+    className="
+      w-full
+      h-[40vh]        /* mobile banner height */
+      sm:h-[52vh]     /* tablets */
+      md:h-[65vh]     /* desktops */
+      bg-no-repeat bg-cover bg-center
+      [background-position:50%_35%]   /* nudge focal point slightly up */
+    "
+    style={{ backgroundImage: "url('/my-affiliate-hero.jpg')" }}
+  />
+  {/* Centered text overlay (no dark overlay) */}
+  <div className="absolute inset-0 flex items-center justify-center px-4">
+    <div className="max-w-4xl text-center">
+      <h1
+        className="
+          text-white font-bold leading-tight
+          text-3xl sm:text-4xl md:text-6xl
+          mb-4 md:mb-6
+          [text-shadow:0_2px_8px_rgba(0,0,0,0.6)]
+        "
       >
-        <div className="relative z-10 flex items-center justify-center h-full">
-          <div className="text-center text-white px-4 max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              {t('affiliates.hero.title')}
-            </h1>
-            <p className="text-xl md:text-2xl opacity-90">
-              {t('affiliates.hero.subtitle')}
-            </p>
-          </div>
+        {t('affiliates.hero.title')}
+      </h1>
+      <p
+        className="
+          text-white/95
+          text-lg sm:text-xl md:text-2xl
+          [text-shadow:0_1px_4px_rgba(0,0,0,0.55)]
+        "
+      >
+        {t('affiliates.hero.subtitle')}
+      </p>
+    </div>
         </div>
       </section>
 
@@ -392,20 +408,60 @@ const AffiliatesPage = () => {
               />
             </div>
 
-            {/* ❌ Payout Method section removed */}
-
-            {/* ✅ Support Needed (translated) */}
+            {/* Payout Method */}
             <div>
               <label className="block text-sm font-semibold text-gray-900 mb-4">
-                {t('affiliates.form.fields.supportNeeded')} *
+                {t('affiliates.form.fields.payoutMethod')} *
               </label>
               <div className="space-y-3">
-                {supportOptions.map((opt) => (
-                  <label key={opt} className="flex items-center">
+                {['bank-transfer','paypal','mobile-money','crypto','other'].map((method) => (
+                  <label key={method} className="flex items-center">
+                    <input
+                      type="radio"
+                      name="payoutMethod"
+                      value={method}
+                      checked={formData.payoutMethod === method}
+                      onChange={handleInputChange}
+                      required
+                      className="w-4 h-4 text-royal-green border-gray-300 focus:ring-royal-green"
+                    />
+                    <span className="ml-3 text-gray-700">
+                      {t(`affiliates.form.options.payoutMethod.${method}`)}
+                    </span>
+                  </label>
+                ))}
+              </div>
+              {formData.payoutMethod === 'other' && (
+                <div className="mt-4">
+                  <input
+                    type="text"
+                    name="payoutMethodOther"
+                    value={formData.payoutMethodOther}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-green focus:border-transparent"
+                    placeholder={t('affiliates.form.placeholders.payoutMethodOther')}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* ✅ Support Needed (new) */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-900 mb-4">
+                What type of support do you need from Dunia Safari to promote effectively? *
+              </label>
+              <div className="space-y-3">
+                {[
+                  'Marketing materials (flyers, posters, graphics)',
+                  'Affiliate code / unique tracking link',
+                  'Training / Orientation session',
+                  'Others'
+                ].map((option) => (
+                  <label key={option} className="flex items-center">
                     <input
                       type="checkbox"
-                      value={opt}
-                      checked={formData.supportNeeded.includes(opt)}
+                      value={option}
+                      checked={formData.supportNeeded.includes(option)}
                       onChange={(e) => {
                         const { value, checked } = e.target;
                         setFormData(prev => ({
@@ -417,15 +473,13 @@ const AffiliatesPage = () => {
                       }}
                       className="w-4 h-4 text-royal-green border-gray-300 rounded focus:ring-royal-green"
                     />
-                    <span className="ml-3 text-gray-700">
-                      {t(`affiliates.form.options.supportNeeded.${opt}`)}
-                    </span>
+                    <span className="ml-3 text-gray-700">{option}</span>
                   </label>
                 ))}
               </div>
 
-              {/* Support Needed → Other */}
-              {formData.supportNeeded.includes('other') && (
+              {/* ✅ Support Needed → Others text field */}
+              {formData.supportNeeded.includes('Others') && (
                 <div className="mt-4">
                   <input
                     type="text"
@@ -433,32 +487,30 @@ const AffiliatesPage = () => {
                     value={formData.supportNeededOther}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-green focus:border-transparent"
-                    placeholder={t('affiliates.form.placeholders.supportNeededOther')}
+                    placeholder="Please specify other support you need"
                   />
                 </div>
               )}
             </div>
 
-            {/* ✅ Commission Acknowledgement (translated) */}
+            {/* ✅ Commission Acknowledgement (new) */}
             <div>
               <label className="block text-sm font-semibold text-gray-900 mb-4">
-                {t('affiliates.form.fields.commissionAcknowledgement')} *
+                Do you acknowledge that only fully paid packages count towards commissions and rewards? *
               </label>
               <div className="space-y-3">
-                {ackOptions.map((opt) => (
-                  <label key={opt} className="flex items-center">
+                {['Yes', 'No'].map((option) => (
+                  <label key={option} className="flex items-center">
                     <input
                       type="radio"
                       name="commissionAcknowledgement"
-                      value={opt}
-                      checked={formData.commissionAcknowledgement === opt}
+                      value={option}
+                      checked={formData.commissionAcknowledgement === option}
                       onChange={handleInputChange}
                       required
                       className="w-4 h-4 text-royal-green border-gray-300 focus:ring-royal-green"
                     />
-                    <span className="ml-3 text-gray-700">
-                      {t(`common.${opt}`)}
-                    </span>
+                    <span className="ml-3 text-gray-700">{option}</span>
                   </label>
                 ))}
               </div>
@@ -493,7 +545,9 @@ const AffiliatesPage = () => {
 
             {/* Submit Message */}
             {submitMessage && (
-              <div className={`text-center p-4 rounded-lg ${submitSuccess ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+              <div className={`text-center p-4 rounded-lg ${
+                submitSuccess ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+              }`}>
                 {submitMessage}
               </div>
             )}

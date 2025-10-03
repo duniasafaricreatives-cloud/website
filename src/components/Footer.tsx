@@ -1,6 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook } from 'lucide-react';
-import { FaTiktok, FaXTwitter, FaWhatsapp } from 'react-icons/fa6'; // ← added
+import { FaTiktok, FaXTwitter, FaWhatsapp } from 'react-icons/fa6'; // (kept from earlier change)
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -30,7 +30,7 @@ const Footer = () => {
               {t('footer.description')}
             </p>
 
-            {/* WhatsApp Community Button — added */}
+            {/* WhatsApp Community Button — previously added */}
             <a
               href="https://www.whatsapp.com/channel/0029VbBVevv1SWsrGM6oC62B"
               target="_blank"
@@ -136,29 +136,49 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">{t('footer.services')}</h3>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
+                {/* Go to packages page */}
+                <Link 
+                  to="/packages"
+                  className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                >
                   {t('footer.afconPackages')}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
+                {/* Scroll to About section */}
+                <button
+                  onClick={() => scrollToSection('#about')}
+                  className="text-left text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                >
                   {t('footer.moroccoTravel')}
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
+                {/* Scroll to a likely group section id (same behavior pattern as other buttons) */}
+                <button
+                  onClick={() => scrollToSection('#group-perks')}
+                  className="text-left text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                >
                   {t('footer.groupTours')}
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
+                {/* Scroll to FAQ for visa info */}
+                <button
+                  onClick={() => scrollToSection('#faq')}
+                  className="text-left text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                >
                   {t('footer.visaSupport')}
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
+                {/* Scroll to Contact for custom packages */}
+                <button
+                  onClick={() => scrollToSection('#contact')}
+                  className="text-left text-gray-300 hover:text-amber-500 transition-colors duration-300"
+                >
                   {t('footer.customPackages')}
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -169,6 +189,10 @@ const Footer = () => {
             <div className="space-y-1">
               <p className="text-gray-300">
                 {t('footer.phone')}: +233 53 808 7709
+              </p>
+              {/* Added the new number here */}
+              <p className="text-gray-300">
+                {t('footer.phone')}: +225 05 75 42 97 72
               </p>
               <p className="text-gray-300">
                 {t('footer.email')}: travelduniasafari@gmail.com

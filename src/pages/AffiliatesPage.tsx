@@ -117,7 +117,7 @@ const AffiliatesPage = () => {
           backgroundImage: "url('/my-affiliate-hero.jpg')"
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        </div>
         <div className="relative z-10 flex items-center justify-center h-full">
           <div className="text-center text-white px-4 max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">

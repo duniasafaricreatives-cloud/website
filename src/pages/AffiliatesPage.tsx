@@ -20,7 +20,11 @@ const AffiliatesPage = () => {
     whyJoin: '',
     payoutMethod: '',
     payoutMethodOther: '',
-    additionalInfo: ''
+    additionalInfo: '',
+    // ✅ New fields
+    supportNeeded: [] as string[],
+    supportNeededOther: '',
+    commissionAcknowledgement: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,7 +66,7 @@ const AffiliatesPage = () => {
       if (response.ok) {
         setSubmitSuccess(true);
         setSubmitMessage(t('affiliates.form.successMessage'));
-        // Reset form
+        // Reset form (includes new fields)
         setFormData({
           fullName: '',
           email: '',
@@ -77,7 +81,10 @@ const AffiliatesPage = () => {
           whyJoin: '',
           payoutMethod: '',
           payoutMethodOther: '',
-          additionalInfo: ''
+          additionalInfo: '',
+          supportNeeded: [],
+          supportNeededOther: '',
+          commissionAcknowledgement: ''
         });
       } else {
         throw new Error('Submission failed');
@@ -415,6 +422,77 @@ const AffiliatesPage = () => {
                   />
                 </div>
               )}
+            </div>
+
+            {/* ✅ Support Needed (new) */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-900 mb-4">
+                What type of support do you need from Dunia Safari to promote effectively? *
+              </label>
+              <div className="space-y-3">
+                {[
+                  'Marketing materials (flyers, posters, graphics)',
+                  'Affiliate code / unique tracking link',
+                  'Training / Orientation session',
+                  'Others'
+                ].map((option) => (
+                  <label key={option} className="flex items-center">
+                    <input
+                      type="checkbox"
+                      value={option}
+                      checked={formData.supportNeeded.includes(option)}
+                      onChange={(e) => {
+                        const { value, checked } = e.target;
+                        setFormData(prev => ({
+                          ...prev,
+                          supportNeeded: checked
+                            ? [...prev.supportNeeded, value]
+                            : prev.supportNeeded.filter(item => item !== value)
+                        }));
+                      }}
+                      className="w-4 h-4 text-royal-green border-gray-300 rounded focus:ring-royal-green"
+                    />
+                    <span className="ml-3 text-gray-700">{option}</span>
+                  </label>
+                ))}
+              </div>
+
+              {/* ✅ Support Needed → Others text field */}
+              {formData.supportNeeded.includes('Others') && (
+                <div className="mt-4">
+                  <input
+                    type="text"
+                    name="supportNeededOther"
+                    value={formData.supportNeededOther}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-royal-green focus:border-transparent"
+                    placeholder="Please specify other support you need"
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* ✅ Commission Acknowledgement (new) */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-900 mb-4">
+                Do you acknowledge that only fully paid packages count towards commissions and rewards? *
+              </label>
+              <div className="space-y-3">
+                {['Yes', 'No'].map((option) => (
+                  <label key={option} className="flex items-center">
+                    <input
+                      type="radio"
+                      name="commissionAcknowledgement"
+                      value={option}
+                      checked={formData.commissionAcknowledgement === option}
+                      onChange={handleInputChange}
+                      required
+                      className="w-4 h-4 text-royal-green border-gray-300 focus:ring-royal-green"
+                    />
+                    <span className="ml-3 text-gray-700">{option}</span>
+                  </label>
+                ))}
+              </div>
             </div>
 
             {/* Additional Info */}

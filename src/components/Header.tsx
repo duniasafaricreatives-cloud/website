@@ -27,7 +27,7 @@ const Header = () => {
     { name: t("header.home"), href: "#home" },
     { name: t("header.packages"), href: "/packages", isPage: true },
     { name: t("header.about"), href: "#about" },
-    { name: t("header.faq"), href: "#faq" },
+    // { name: t("header.faq"), href: "#faq" },    // ❌ removed FAQ
     { name: t("header.blog"), href: "/blog", isPage: true },
     { name: t("header.aboutFounder"), href: "/about-founder", isPage: true },
     { name: t("header.becomeAffiliate"), href: "/affiliates", isPage: true },
@@ -52,7 +52,6 @@ const Header = () => {
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
     i18n.changeLanguage(e.target.value);
 
-  // helper to style active page link in the sheet
   const isActive = (href: string) =>
     href.startsWith("/") && location.pathname.startsWith(href);
 
@@ -153,32 +152,20 @@ const Header = () => {
           role="dialog"
           aria-label="Mobile navigation"
         >
-          {/* cover header with safari image + blue tint */}
+          {/* cover header — safari image (no logo, no about text) */}
           <div className="relative h-40 w-full overflow-hidden">
-            {/* replace the URL below with your safari image path */}
             <div
               className="absolute inset-0 bg-center bg-cover"
-              style={{ backgroundImage: "url('/images/safari-cover.jpg')" }}
+              style={{
+                backgroundImage:
+                  "url('https://images.pexels.com/photos/52717/elephant-herd-of-elephants-animals-african-bush-elephant-52717.jpeg')",
+              }}
             />
-            {/* blue/purple tint */}
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/90 to-violet-600/90" />
-            {/* content over cover */}
-            <div className="relative z-10 h-full flex items-end px-5 pb-4 gap-3">
-              {/* avatar: reuse logo */}
-              <img
-                src="/duniasafaritourlogo.png"
-                alt="Dunia Safari Tours"
-                className="h-12 w-12 rounded-full ring-2 ring-white/70 object-contain bg-white"
-              />
-              <div className="text-white">
-                <p className="text-lg font-semibold leading-tight">Dunia Safari Tours</p>
-                <p className="text-xs/5 opacity-90">{t("header.about")}</p>
-              </div>
-            </div>
             {/* close button */}
             <button
+              type="button"
               onClick={() => setIsMenuOpen(false)}
-              className="absolute top-3 right-3 p-2 rounded-full bg-white/20 hover:bg-white/30 text-white"
+              className="absolute top-3 right-3 z-20 p-2 rounded-full bg-white/90 hover:bg-white text-gray-900 shadow"
               aria-label="Close menu"
             >
               <X className="w-5 h-5" />

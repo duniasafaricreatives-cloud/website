@@ -228,6 +228,8 @@ const Footer = () => {
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
                 {t('footer.cookiePolicy')}
               </a>
+              <a 
+  href="https://drive.google.com/file/d/1MBkPTJAYVONrGEmDGBcsqOZZe8SjFq5g/view?usp=sharing"
             </div>
           </div>
         </div>

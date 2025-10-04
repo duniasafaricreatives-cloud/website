@@ -211,7 +211,9 @@ const Footer = () => {
             <div className="mb-4 md:mb-0">
               <p className="text-gray-300 text-sm">
                 {t('footer.copyright')}
-              </p>
+              </a>
+              <a 
+               href="https://drive.google.com/file/d/1MBkPTJAYVONrGEmDGBcsqOZZe8SjFq5g/view?usp=sharing"
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">

@@ -226,7 +226,7 @@ const Footer = () => {
                 {t('footer.termsOfService')}
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
-                {t('footer.cookiePolicy')}
+                
               </a>
             </div>
           </div>

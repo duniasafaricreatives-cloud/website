@@ -217,7 +217,12 @@ const Footer = () => {
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
                 {t('footer.privacyPolicy')}
               </a>
-              <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
+              <a 
+                href="https://drive.google.com/file/d/1MBkPTJAYVONrGEmDGBcsqOZZe8SjFq5g/view?usp=sharing" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-amber-500 transition-colors duration-300"
+              >
                 {t('footer.termsOfService')}
               </a>
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">

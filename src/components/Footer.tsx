@@ -210,7 +210,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <p className="text-gray-300 text-sm">
-                
+                {t('footer.copyright')}
               </p>
             </div>
             <div className="flex space-x-6 text-sm">
@@ -228,8 +228,6 @@ const Footer = () => {
               <a href="#" className="text-gray-300 hover:text-amber-500 transition-colors duration-300">
                 {t('footer.cookiePolicy')}
               </a>
-              <a 
-  href="https://drive.google.com/file/d/1MBkPTJAYVONrGEmDGBcsqOZZe8SjFq5g/view?usp=sharing"
             </div>
           </div>
         </div>

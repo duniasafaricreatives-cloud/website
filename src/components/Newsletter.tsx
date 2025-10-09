@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Send } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -6,11 +6,23 @@ const Newsletter = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false); // ✅ Added state for success message
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const timeoutRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(false);
+    setSuccess(false);
 
     try {
       const res = await fetch(
@@ -24,14 +36,16 @@ const Newsletter = () => {
 
       if (res.ok) {
         setEmail('');
-        setSuccess(true); // ✅ Show success message
-        setTimeout(() => setSuccess(false), 4000); // ✅ Hide after 4 seconds
+        setSuccess(true);
+        timeoutRef.current = window.setTimeout(() => setSuccess(false), 4000);
       } else {
-        alert('⚠️ Something went wrong. Please try again.');
+        setError(true);
+        timeoutRef.current = window.setTimeout(() => setError(false), 4000);
       }
-    } catch (error) {
-      console.error(error);
-      alert('⚠️ Network error. Please try again.');
+    } catch (err) {
+      console.error(err);
+      setError(true);
+      timeoutRef.current = window.setTimeout(() => setError(false), 4000);
     } finally {
       setIsSubmitting(false);
     }
@@ -40,7 +54,6 @@ const Newsletter = () => {
   return (
     <section id="newsletter" className="py-16 md:py-24 bg-gradient-to-r from-burgundy-900 to-burgundy-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Section Header */}
         <div className="mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-full mb-6">
             <Mail className="w-8 h-8 text-white" />
@@ -53,7 +66,6 @@ const Newsletter = () => {
           </p>
         </div>
 
-        {/* Newsletter Form */}
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1">
@@ -82,15 +94,19 @@ const Newsletter = () => {
             </button>
           </div>
 
-          {/* ✅ Success Message */}
           {success && (
-            <p className="text-green-400 mt-4 text-sm">
-              ✅ You’ve subscribed successfully!
+            <p className="text-green-400 mt-4 text-sm font-medium">
+              {t('newsletter.successMessage')}
+            </p>
+          )}
+
+          {error && (
+            <p className="text-red-400 mt-4 text-sm font-medium">
+              {t('newsletter.errorMessage')}
             </p>
           )}
         </form>
 
-        {/* Privacy Note */}
         <p className="text-sm text-gray-400 mt-6">
           {t('newsletter.privacyNote')}
         </p>

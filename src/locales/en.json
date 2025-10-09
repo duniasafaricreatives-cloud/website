@@ -122,7 +122,9 @@
     "subtitle": "Stay updated with the latest AFCON 2025 packages, Morocco travel tips, and exclusive offers",
     "emailPlaceholder": "Enter your email address",
     "subscribe": "Subscribe",
-    "privacyNote": "We respect your privacy and will never share your information"
+    "privacyNote": "We respect your privacy and will never share your information",
+    "successMessage": "You've subscribed successfully!",
+    "errorMessage": "Something went wrong. Please try again."
   },
   "contact": {
     "title": "Contact Us",

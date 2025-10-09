@@ -122,7 +122,9 @@
     "subtitle": "Restez informé des derniers forfaits CAN 2025, conseils de voyage au Maroc et offres exclusives",
     "emailPlaceholder": "Entrez votre adresse e-mail",
     "subscribe": "S'abonner",
-    "privacyNote": "Nous respectons votre vie privée et ne partagerons jamais vos informations"
+    "privacyNote": "Nous respectons votre vie privée et ne partagerons jamais vos informations",
+    "successMessage": "Vous êtes abonné avec succès!",
+    "errorMessage": "Quelque chose s'est mal passé. Veuillez réessayer."
   },
   "contact": {
     "title": "Contactez-nous",

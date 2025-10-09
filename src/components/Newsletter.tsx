@@ -25,8 +25,7 @@ const Newsletter = () => {
     setSuccess(false);
 
     try {
-      const res = await fetch(
-        'https://script.google.com/macros/s/AKfycbw8PHbzDRFDpZEkz0HiAnnrBKdKX2Nir7N98cMXTWDfPRdRHdDQ2952Wx77bsCfbKr0Jw/exec',
+      const res = await fetch('https://script.google.com/macros/s/AKfycbw8PHbzDRFDpZEkz0HiAnnrBKdKX2Nir7N98cMXTWDfPRdRHdDQ2952Wx77bsCfbKr0Jw/exec',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

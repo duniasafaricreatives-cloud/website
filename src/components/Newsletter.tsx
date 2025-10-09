@@ -6,16 +6,35 @@ const Newsletter = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false); // ✅ Added state for success message
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Placeholder for newsletter signup logic
-    setTimeout(() => {
+
+    try {
+      const res = await fetch(
+        'https://script.google.com/macros/s/AKfycbyfBSrEqi8RI3jY-siGEATq16kUlmgidIg0SnDY6lxyHBGsIcVPIlEn1bmgym8JzabX5Q/exec',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      if (res.ok) {
+        setEmail('');
+        setSuccess(true); // ✅ Show success message
+        setTimeout(() => setSuccess(false), 4000); // ✅ Hide after 4 seconds
+      } else {
+        alert('⚠️ Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('⚠️ Network error. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      setEmail('');
-      // Show success message
-    }, 2000);
+    }
   };
 
   return (
@@ -62,14 +81,19 @@ const Newsletter = () => {
               )}
             </button>
           </div>
+
+          {/* ✅ Success Message */}
+          {success && (
+            <p className="text-green-400 mt-4 text-sm">
+              ✅ You’ve subscribed successfully!
+            </p>
+          )}
         </form>
 
         {/* Privacy Note */}
         <p className="text-sm text-gray-400 mt-6">
           {t('newsletter.privacyNote')}
         </p>
-
-
       </div>
     </section>
   );

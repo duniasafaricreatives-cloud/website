@@ -15,7 +15,7 @@ const ItineraryElephants = () => {
   const features = [
     {
       name: t('itineraryElephants.features.visaGhana'),
-      availability: { Bronze: false, Silver: false, Gold: true },
+      availability: { Bronze: false, Silver: false, Gold: false },
     },
     { name: t('itineraryElephants.features.returnFlights'), availability: { Bronze: false, Silver: false, Gold: false } },
     {

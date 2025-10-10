@@ -15,7 +15,7 @@ const ItineraryStars = () => {
   const features = [
     {
       name: t('itineraryStars.features.visaTanzania'),
-      availability: { Bronze: false, Silver: false, Gold: true },
+      availability: { Bronze: false, Silver: false, Gold: false },
     },
     { name: t('itineraryStars.features.returnFlights'), availability: { Bronze: false, Silver: false, Gold: false } },
     {

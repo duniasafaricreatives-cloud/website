@@ -5,13 +5,21 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import HomepageCarousel from "./components/HomepageCarousel";
-import Packages from "./components/Packages";
 import GroupPerks from "./components/GroupPerks";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import Newsletter from "./components/Newsletter";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Apps from "./userDashBorad/Apps";
+import PrivateRoute from "./PrivateRoute";
+
+// ✅ Import Affiliate Dashboard
+import AffiliateDashboard from "./affiliateDashboard/AffiliateDashboard";
+
+// ✅ Import Admin Components
+import AdminLogin from "./adminDashboard/AdminLogin";
+import AdminDashboard from "./adminDashboard/AdminDashboard";
 
 import BlogListingPage from "./pages/BlogListingPage"; 
 import BlogPostPage from "./pages/BlogPostPage";       
@@ -27,6 +35,9 @@ import ItineraryStars from "./pages/ItineraryStars";
 function App() {
   const location = useLocation();
 
+  // ✅ Check if current route is admin route
+  const isAdminRoute = location.pathname.startsWith('/admin');
+
   // Smooth scroll when hash links are clicked
   useEffect(() => {
     if (location.hash) {
@@ -41,7 +52,9 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <Header />
+      {/* ✅ Conditionally render Header only for non-admin routes */}
+      {!isAdminRoute && <Header />}
+      
       <main>
         <Routes>
           {/* Home Page */}
@@ -80,9 +93,26 @@ function App() {
           <Route path="/itinerary/eagles-over-the-atlas" element={<ItineraryEagles />} />
           <Route path="/itinerary/elephants-in-the-atlas" element={<ItineraryElephants />} />
           <Route path="/itinerary/stars-in-the-atlas" element={<ItineraryStars />} />
+
+          {/* ✅ Admin Routes (No Header/Footer) */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          </Route>
+
+          {/* ✅ Protected Routes */}
+          <Route element={<PrivateRoute />}>
+            {/* User Dashboard */}
+            <Route path="/user-dashboard" element={<Apps />} />
+            
+            {/* ✅ Affiliate Dashboard */}
+            <Route path="/affiliate-dashboard" element={<AffiliateDashboard />} />
+          </Route>
         </Routes>
       </main>
-      <Footer />
+      
+      {/* ✅ Conditionally render Footer only for non-admin routes */}
+      {!isAdminRoute && <Footer />}
     </div>
   );
 }

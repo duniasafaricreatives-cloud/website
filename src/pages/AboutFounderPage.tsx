@@ -31,6 +31,17 @@ const AboutFounderPage = () => {
           768: { slidesPerView: 2, spaceBetween: 20 },
           1024: { slidesPerView: 3, spaceBetween: 30 },
         },
+        // ✅ Added: arrows, bullets, keyboard
+        navigation: {
+          nextEl: ".memories-next",
+          prevEl: ".memories-prev",
+        },
+        pagination: {
+          el: ".memories-pagination",
+          clickable: true,
+          dynamicBullets: true,
+        },
+        keyboard: { enabled: true },
       });
     };
 
@@ -169,8 +180,11 @@ const AboutFounderPage = () => {
             {t('aboutFounderPage.travelMemories.title')}
           </h2>
 
-        {/* Horizontal Swiper Slider */}
-          <div className="swiper-container rounded-2xl shadow-lg touch-pan-y overscroll-contain">
+          {/* Horizontal Swiper Slider */}
+          <div
+            className="swiper-container relative rounded-2xl shadow-lg touch-pan-y overscroll-contain group"
+            style={{ ['--swiper-navigation-size' as any]: '28px' }}
+          >
             <div className="swiper-wrapper flex">
               {travelImages.map((img, idx) => {
                 const captionText = t(`aboutFounderPage.imageCaptions.${img.captionKey}`);
@@ -193,6 +207,13 @@ const AboutFounderPage = () => {
                 );
               })}
             </div>
+
+            {/* ✅ Added: Prev / Next buttons (fade in on hover for desktop) */}
+            <div className="memories-prev swiper-button-prev !text-white !left-2 transition-opacity duration-200 opacity-0 group-hover:opacity-100"></div>
+            <div className="memories-next swiper-button-next !text-white !right-2 transition-opacity duration-200 opacity-0 group-hover:opacity-100"></div>
+
+            {/* ✅ Added: Pagination bullets */}
+            <div className="memories-pagination swiper-pagination !bottom-2"></div>
           </div>
         </section>
       </div>

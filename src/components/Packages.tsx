@@ -25,7 +25,7 @@ const Packages = () => {
       id: 'elephants-in-the-atlas',
       name: t('packages.elephantsTitle'),
       popular: true,
-      price: `${t('packages.startingFrom')} $855`,
+      price: `${t('packages.startingFrom')} $1,019`,
       description: t('packages.excludesFlights'),
       features: [
         t('packages.bedBreakfast'),
@@ -39,7 +39,7 @@ const Packages = () => {
       id: 'stars-in-the-atlas',
       name: t('packages.starsTitle'),
       popular: false,
-      price: `${t('packages.startingFrom')} $809`,
+      price: `${t('packages.startingFrom')} $965`,
       description: t('packages.excludesFlights'),
       features: [
         t('packages.bedBreakfast'),

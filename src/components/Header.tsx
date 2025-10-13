@@ -1,33 +1,43 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, User, Users } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "../context/AuthContext";
+import AuthModal from "./AuthModal";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
+  const { user, logout, loading } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // header shadow on scroll
+  // Determine if user is an affiliate based on user object properties
+  const isAffiliate = user?.role === "affiliate" || user?.name || user?.affiliate_code;
+
+  // Header shadow on scroll
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // lock body scroll when menu is open
+  // Disable body scroll when mobile menu open
   useEffect(() => {
     document.body.classList.toggle("overflow-hidden", isMenuOpen);
     return () => document.body.classList.remove("overflow-hidden");
   }, [isMenuOpen]);
 
+  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
+    i18n.changeLanguage(e.target.value);
+
   const navItems = [
     { name: t("header.home"), href: "#home" },
     { name: t("header.packages"), href: "/packages", isPage: true },
     { name: t("header.about"), href: "#about" },
-    // { name: t("header.faq"), href: "#faq" },    // ❌ removed FAQ
     { name: t("header.blog"), href: "/blog", isPage: true },
     { name: t("header.aboutFounder"), href: "/about-founder", isPage: true },
     { name: t("header.becomeAffiliate"), href: "/affiliates", isPage: true },
@@ -49,11 +59,18 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) =>
-    i18n.changeLanguage(e.target.value);
+  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
 
-  const isActive = (href: string) =>
-    href.startsWith("/") && location.pathname.startsWith(href);
+  const handleLogout = () => {
+    logout();
+    setIsDropdownOpen(false);
+    navigate("/");
+  };
+
+  // Get dashboard route based on user type
+  const getDashboardRoute = () => {
+    return isAffiliate ? "/affiliate-dashboard" : "/user-dashboard";
+  };
 
   return (
     <header
@@ -61,21 +78,15 @@ const Header = () => {
         isScrolled ? "bg-white shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link to="/">
-              <img
-                src="/favicon.png"
-                alt="Dunia Safari Tours"
-                className="h-16 md:h-16 w-auto"
-              />
-            </Link>
-          </div>
+          <Link to="/" className="flex-shrink-0">
+            <img src="/favicon.png" alt="Logo" className="w-auto h-16" />
+          </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden space-x-8 md:flex">
             {navItems.map((item) =>
               item.isPage ? (
                 <Link
@@ -101,9 +112,10 @@ const Header = () => {
             )}
           </nav>
 
-          {/* Language (desktop) + Mobile toggle */}
+          {/* Right side (Language + Auth + Mobile menu) */}
           <div className="flex items-center space-x-4">
-            <div className="hidden md:flex items-center space-x-2">
+            {/* Language selector */}
+            <div className="items-center hidden space-x-2 md:flex">
               <Globe className={`w-4 h-4 ${isScrolled ? "text-gray-600" : "text-white"}`} />
               <select
                 value={i18n.language}
@@ -117,9 +129,91 @@ const Header = () => {
               </select>
             </div>
 
+            {/* Auth section */}
+            {!loading && (
+              <>
+                {!user ? (
+                  <button
+                    onClick={() => setIsAuthModalOpen(true)}
+                    className={`px-4 py-2 rounded-lg font-medium transition ${
+                      isScrolled
+                        ? "bg-amber-600 text-white hover:bg-amber-700"
+                        : "bg-white text-amber-600 hover:bg-gray-100"
+                    }`}
+                  >
+                    Login
+                  </button>
+                ) : (
+                  <div className="relative">
+                    <button
+                      onClick={toggleDropdown}
+                      className={`flex items-center gap-2 font-medium transition-colors ${
+                        isScrolled ? "text-gray-900" : "text-white"
+                      }`}
+                    >
+                      {isAffiliate ? (
+                        <Users className="w-5 h-5" />
+                      ) : (
+                        <User className="w-5 h-5" />
+                      )}
+                      <span className="hidden sm:inline">{user.name}</span>
+                      {isAffiliate && (
+                        <span className="hidden px-2 py-0.5 text-xs font-semibold text-amber-700 bg-amber-100 rounded-full sm:inline">
+                          Affiliate
+                        </span>
+                      )}
+                    </button>
+
+                    {isDropdownOpen && (
+                      <div className="absolute right-0 z-50 min-w-[200px] py-2 mt-2 bg-white border rounded-lg shadow-lg">
+                        {/* User Info */}
+                        <div className="px-4 py-2 border-b">
+                          <p className="text-sm font-semibold text-gray-900">{user.name}</p>
+                          <p className="text-xs text-gray-500">{user.email}</p>
+                          {isAffiliate && (
+                            <span className="inline-block px-2 py-0.5 mt-1 text-xs font-semibold text-amber-700 bg-amber-100 rounded-full">
+                              Affiliate Partner
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Dashboard Link */}
+                        <Link
+                          to={getDashboardRoute()}
+                          onClick={() => setIsDropdownOpen(false)}
+                          className="flex items-center gap-2 px-4 py-2 text-gray-700 transition-colors hover:bg-gray-100"
+                        >
+                          {isAffiliate ? (
+                            <>
+                              <Users className="w-4 h-4" />
+                              <span>Affiliate Dashboard</span>
+                            </>
+                          ) : (
+                            <>
+                              <User className="w-4 h-4" />
+                              <span>Dashboard</span>
+                            </>
+                          )}
+                        </Link>
+
+                        {/* Logout */}
+                        <button
+                          onClick={handleLogout}
+                          className="flex items-center w-full gap-2 px-4 py-2 text-left text-red-600 transition-colors hover:bg-red-50"
+                        >
+                          <X className="w-4 h-4" />
+                          <span>Logout</span>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </>
+            )}
+
+            {/* Mobile Menu Toggle */}
             <button
               aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen((v) => !v)}
               className={`md:hidden p-2 ${isScrolled ? "text-gray-900" : "text-white"}`}
             >
@@ -129,103 +223,75 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Sheet (right) */}
-      <div
-        className={`md:hidden fixed inset-0 z-[60] transition ${
-          isMenuOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-        aria-hidden={!isMenuOpen}
-      >
-        {/* dim backdrop */}
-        <div
-          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
-            isMenuOpen ? "opacity-100" : "opacity-0"
-          }`}
-          onClick={() => setIsMenuOpen(false)}
-        />
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="bg-white border-t shadow-lg md:hidden">
+          <nav className="px-4 py-4 space-y-2">
+            {navItems.map((item) =>
+              item.isPage ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-3 py-2 text-gray-900 transition-colors rounded-lg hover:bg-gray-100"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className="block w-full px-3 py-2 text-left text-gray-900 transition-colors rounded-lg hover:bg-gray-100"
+                >
+                  {item.name}
+                </button>
+              )
+            )}
 
-        {/* sliding panel */}
-        <aside
-          className={`absolute right-0 top-0 h-full w-[86%] max-w-sm bg-white shadow-xl
-                      transition-transform duration-300 ease-out
-                      ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
-          role="dialog"
-          aria-label="Mobile navigation"
-        >
-          {/* cover header — safari image (no logo, no about text) */}
-          <div className="relative h-40 w-full overflow-hidden">
-            <div
-              className="absolute inset-0 bg-center bg-cover"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D.jpeg')",
-              }}
-            />
-            {/* close button */}
-            <button
-              type="button"
-              onClick={() => setIsMenuOpen(false)}
-              className="absolute top-3 right-3 z-20 p-2 rounded-full bg-white/90 hover:bg-white text-gray-900 shadow"
-              aria-label="Close menu"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* language selector (mobile) */}
-          <div className="px-5 py-3 border-b border-gray-200 flex items-center gap-2">
-            <Globe className="w-4 h-4 text-gray-600" />
-            <select
-              value={i18n.language}
-              onChange={handleLanguageChange}
-              className="bg-transparent border-none text-sm font-medium text-gray-900 outline-none"
-            >
-              <option value="en">EN</option>
-              <option value="fr">FR</option>
-            </select>
-          </div>
-
-          {/* menu items */}
-          <nav className="h-[calc(100vh-160px-56px)] overflow-y-auto">
-            <ul className="px-3 py-2 space-y-1">
-              {navItems.map((item) => {
-                const active = isActive(item.href);
-                const common =
-                  "block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition";
-                const activeCls = active
-                  ? "bg-violet-100 text-violet-700"
-                  : "text-gray-900 hover:bg-gray-50";
-                return item.isPage ? (
-                  <li key={item.name}>
-                    <Link
-                      to={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className={`${common} ${activeCls}`}
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ) : (
-                  <li key={item.name}>
-                    <button
-                      onClick={() => handleNavClick(item.href)}
-                      className={`${common} text-gray-900 hover:bg-gray-50`}
-                    >
-                      {item.name}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-
-            {/* bottom meta */}
-            <div className="mt-2 pt-3 border-t border-gray-200 px-5 pb-6 text-sm text-gray-500">
-              <p>© {new Date().getFullYear()} Dunia Safari Tours</p>
-              <p className="mt-1">All rights reserved.</p>
+            {/* Language selector in mobile menu */}
+            <div className="flex items-center gap-2 px-3 py-2">
+              <Globe className="w-4 h-4 text-gray-600" />
+              <select
+                value={i18n.language}
+                onChange={handleLanguageChange}
+                className="flex-1 text-sm font-medium text-gray-900 bg-transparent border-none outline-none"
+              >
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+              </select>
             </div>
+
+            {/* Auth buttons in mobile menu */}
+            {!loading && user && (
+              <div className="pt-2 mt-2 border-t">
+                <Link
+                  to={getDashboardRoute()}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-2 px-3 py-2 text-gray-900 transition-colors rounded-lg hover:bg-gray-100"
+                >
+                  {isAffiliate ? <Users className="w-4 h-4" /> : <User className="w-4 h-4" />}
+                  <span>{isAffiliate ? "Affiliate Dashboard" : "Dashboard"}</span>
+                </Link>
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex items-center w-full gap-2 px-3 py-2 text-left text-red-600 transition-colors rounded-lg hover:bg-red-50"
+                >
+                  <X className="w-4 h-4" />
+                  <span>Logout</span>
+                </button>
+              </div>
+            )}
           </nav>
-        </aside>
-      </div>
+        </div>
+      )}
+
+      {/* Auth Modal */}
+      {isAuthModalOpen && (
+        <AuthModal isOpen={isAuthModalOpen} setIsOpen={setIsAuthModalOpen} />
+      )}
     </header>
   );
 };

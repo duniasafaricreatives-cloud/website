@@ -28,9 +28,10 @@ import PackagesPage from "./pages/PackagesPage";
 import AffiliatesPage from "./pages/AffiliatesPage";
 
 // ✅ Import separate itineraries
-import ItineraryEagles from "./pages/ItineraryEagles";
-import ItineraryElephants from "./pages/ItineraryElephants";
-import ItineraryStars from "./pages/ItineraryStars";
+import ItineraryDynamic from "./pages/ItineraryDynamic";
+
+// ✅ Import Booking Page
+import BookingPage from "./pages/BookingPage";
 
 function App() {
   const location = useLocation();
@@ -90,9 +91,10 @@ function App() {
           <Route path="/blog/:id" element={<BlogPostPage />} />
 
           {/* ✅ Separate Itinerary Pages */}
-          <Route path="/itinerary/eagles-over-the-atlas" element={<ItineraryEagles />} />
-          <Route path="/itinerary/elephants-in-the-atlas" element={<ItineraryElephants />} />
-          <Route path="/itinerary/stars-in-the-atlas" element={<ItineraryStars />} />
+          <Route path="/ItineraryDynamic/:packageId" element={<ItineraryDynamic />} />
+
+          {/* ✅ Booking Page - We handle auth check inside the component */}
+          <Route path="/booking" element={<BookingPage />} />
 
           {/* ✅ Admin Routes (No Header/Footer) */}
           <Route path="/admin/login" element={<AdminLogin />} />

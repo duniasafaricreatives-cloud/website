@@ -45,8 +45,9 @@ interface AuthContextType {
   AffiliateLogin: (payload: LoginPayload) => Promise<void>;
   affiliateRegister: (payload: RegisterPayload) => Promise<void>;
   AdminLogin: (payload: LoginPayload) => Promise<void>;
+  openAuthModal?: () => void;
 }
-
+import AuthModal from "../components/AuthModal";
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const useAuth = (): AuthContextType => {
@@ -63,8 +64,17 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [userType, setUserType] = useState<"user" | "affiliate" | "admin" | null>(null);
-
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   // Fetch user profile (regular user)
+  const openAuthModal = () => {
+      setIsAuthModalOpen(true);
+    };
+
+    // ✅ Add this function to close the modal
+    const closeAuthModal = () => {
+      setIsAuthModalOpen(false);
+    };
+
   const fetchUser = async () => {
     const token = getToken();
     if (!token) {
@@ -297,9 +307,20 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
         AffiliateLogin,
         affiliateRegister,
         AdminLogin,
+        openAuthModal
       }}
     >
       {children}
+      {isAuthModalOpen && (
+        <AuthModal 
+          isOpen={isAuthModalOpen} 
+          setIsOpen={setIsAuthModalOpen}
+          onSuccess={() => {
+            closeAuthModal();
+            // Optionally redirect or refresh after successful login
+          }}
+        />
+      )}
     </AuthContext.Provider>
   );
 };

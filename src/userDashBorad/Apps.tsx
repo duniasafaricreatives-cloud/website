@@ -69,7 +69,9 @@ const UserDashboard: React.FC = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [payments, setPayments] = useState<Payment[]>([]);
   const [loading, setLoading] = useState(true);
-   const [profile, setProfile] = useState<userProfile | null>(null);
+  const [profile, setProfile] = useState<userProfile | null>(null);
+  const [processingPayment, setProcessingPayment] = useState<number | null>(null);
+
   const fetchBookings = async () => {
     try {
       const data = await authFetchs(`${API_BASE}/users/bookings`);
@@ -91,18 +93,17 @@ const UserDashboard: React.FC = () => {
   };
 
   const fetchProfile = async () => {
-      try {
-        const data = await authFetchs(`${API_BASE}/users/me`);
-        setProfile(data);
-      } catch (err) {
-        console.error('Failed to fetch profile', err);
-      }
-    };
+    try {
+      const data = await authFetchs(`${API_BASE}/users/me`);
+      setProfile(data);
+    } catch (err) {
+      console.error('Failed to fetch profile', err);
+    }
+  };
 
   const fetchAllData = async () => {
     setLoading(true);
-    await Promise.all([fetchBookings(),fetchProfile(),
-       fetchPayments()]);
+    await Promise.all([fetchBookings(), fetchProfile(), fetchPayments()]);
     setLoading(false);
   };
 
@@ -111,6 +112,37 @@ const UserDashboard: React.FC = () => {
       fetchAllData();
     }
   }, [user]);
+
+  const hasSuccessfulPayment = (bookingId: number) => {
+    const booking = bookings.find(b => b.id === bookingId);
+    if (!booking) return false;
+    return payments.some(
+      p => p.package_id === booking.package_id &&
+           p.payment_status.toLowerCase().includes('success')
+    );
+  };
+
+  const handlePayment = async (bookingId: number) => {
+    setProcessingPayment(bookingId);
+    try {
+      const response = await authFetchs(`${API_BASE}/payments/initialize`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ booking_id: bookingId })
+      });
+
+      if (response.authorization_url) {
+        window.location.href = response.authorization_url;
+      } else {
+        alert('Failed to initialize payment. Please try again.');
+      }
+    } catch (err) {
+      console.error('Payment initialization failed', err);
+      alert('Payment initialization failed. Please try again.');
+    } finally {
+      setProcessingPayment(null);
+    }
+  };
 
   const getStatusIcon = (status: string) => {
     const statusLower = status.toLowerCase();
@@ -144,7 +176,6 @@ const UserDashboard: React.FC = () => {
     });
   };
 
-  // Calculate overview statistics
   const stats = {
     totalBookings: bookings.length,
     upcomingTrips: bookings.filter(b => new Date(b.travel_date) > new Date()).length,
@@ -178,7 +209,6 @@ const UserDashboard: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-24 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="mb-8 flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">My Dashboard</h1>
@@ -193,7 +223,6 @@ const UserDashboard: React.FC = () => {
           </button>
         </div>
 
-        {/* Tabs */}
         <div className="mb-8 border-b border-gray-200">
           <nav className="flex space-x-8">
             {['overview', 'bookings', 'payments'].map((tab) => (
@@ -212,10 +241,8 @@ const UserDashboard: React.FC = () => {
           </nav>
         </div>
 
-        {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div>
-            {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
@@ -262,7 +289,6 @@ const UserDashboard: React.FC = () => {
               </div>
             </div>
 
-            {/* Recent Bookings */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden mb-6">
               <div className="px-6 py-4 border-b border-gray-100">
                 <h2 className="text-xl font-bold text-gray-900">Recent Bookings</h2>
@@ -303,7 +329,6 @@ const UserDashboard: React.FC = () => {
               </div>
             </div>
 
-            {/* Recent Payments */}
             <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
               <div className="px-6 py-4 border-b border-gray-100">
                 <h2 className="text-xl font-bold text-gray-900">Recent Payments</h2>
@@ -342,7 +367,6 @@ const UserDashboard: React.FC = () => {
           </div>
         )}
 
-        {/* Bookings Tab */}
         {activeTab === 'bookings' && (
           <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-100">
@@ -359,6 +383,7 @@ const UserDashboard: React.FC = () => {
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Travel Date</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Participants</th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                    <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">Action</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
@@ -397,11 +422,32 @@ const UserDashboard: React.FC = () => {
                             {booking.booking_status}
                           </span>
                         </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-right">
+                          {booking.booking_status.toLowerCase() === 'confirmed' && !hasSuccessfulPayment(booking.id) && (
+                            <button
+                              onClick={() => handlePayment(booking.id)}
+                              disabled={processingPayment === booking.id}
+                              className="inline-flex items-center gap-2 px-4 py-2 bg-amber-600 text-white text-sm font-medium rounded-lg hover:bg-amber-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
+                            >
+                              {processingPayment === booking.id ? (
+                                <>
+                                  <RefreshCw className="w-4 h-4 animate-spin" />
+                                  Processing...
+                                </>
+                              ) : (
+                                <>
+                                  <CreditCard className="w-4 h-4" />
+                                  Pay Now
+                                </>
+                              )}
+                            </button>
+                          )}
+                        </td>
                       </tr>
                     ))
                   ) : (
                     <tr>
-                      <td colSpan={6} className="px-6 py-12 text-center text-gray-500">
+                      <td colSpan={7} className="px-6 py-12 text-center text-gray-500">
                         <PackageIcon className="w-12 h-12 mx-auto mb-3 text-gray-400" />
                         <p className="font-medium">No bookings found</p>
                         <p className="text-sm mt-1">Start exploring our amazing travel packages!</p>
@@ -414,7 +460,6 @@ const UserDashboard: React.FC = () => {
           </div>
         )}
 
-        {/* Payments Tab */}
         {activeTab === 'payments' && (
           <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
             <div className="px-6 py-4 border-b border-gray-100">

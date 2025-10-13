@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { 
   Users, 
-  DollarSign, 
-  TrendingUp, 
+
   Copy, 
   CheckCircle,
-  Calendar,
+
   UserPlus,
-  CreditCard,
-  AlertCircle,
+
   RefreshCw
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
@@ -18,10 +16,7 @@ interface Statistics {
   total_referrals: number;
   active_referrals: number;
   total_bookings: number;
-  total_commission: number;
-  withdrawn_commission: number;
-  pending_commission: number;
-  conversion_rate: number;
+  total_paid_users: number;
 }
 
 interface Referral {
@@ -33,16 +28,6 @@ interface Referral {
   created_at: string;
 }
 
-interface Withdrawal {
-  id: number;
-  affiliator_id: number;
-  amount: number;
-  status: string;
-  bank_name: string;
-  account_number: string;
-  account_name: string;
-  created_at: string;
-}
 
 interface AffiliateProfile {
   id: number;
@@ -57,24 +42,14 @@ interface AffiliateProfile {
 
 const AffiliateDashboard = () => {
   const { user } = useAuth();
-  const [activeTab, setActiveTab] = useState<'overview' | 'referrals' | 'commissions' | 'withdrawals'>('overview');
-  const [loading, setLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState<'overview' | 'referrals' | 'commissions' >('overview');
   const [copiedCode, setCopiedCode] = useState(false);
   
   // State for API data
   const [statistics, setStatistics] = useState<Statistics | null>(null);
   const [referrals, setReferrals] = useState<Referral[]>([]);
-  const [withdrawals, setWithdrawals] = useState<Withdrawal[]>([]);
   const [profile, setProfile] = useState<AffiliateProfile | null>(null);
   
-  // Withdrawal form state
-  const [withdrawalForm, setWithdrawalForm] = useState({
-    amount: '',
-    bank_name: '',
-    account_number: '',
-    account_name: ''
-  });
-  const [showWithdrawalForm, setShowWithdrawalForm] = useState(false);
 
   // Fetch all data on component mount
   useEffect(() => {
@@ -85,7 +60,6 @@ const AffiliateDashboard = () => {
     await Promise.all([
       fetchStatistics(),
       fetchReferrals(),
-      fetchWithdrawals(),
       fetchProfile()
     ]);
   };
@@ -109,51 +83,12 @@ const AffiliateDashboard = () => {
     }
   };
 
-  const fetchWithdrawals = async () => {
-    try {
-      const data = await authFetchs(`${API_BASE}/affiliators/withdrawals`);
-      setWithdrawals(Array.isArray(data) ? data : []);
-    } catch (err) {
-      console.error('Failed to fetch withdrawals', err);
-      setWithdrawals([]);
-    }
-  };
-
   const fetchProfile = async () => {
     try {
       const data = await authFetchs(`${API_BASE}/affiliators/me`);
       setProfile(data);
     } catch (err) {
       console.error('Failed to fetch profile', err);
-    }
-  };
-
-  const handleWithdrawal = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    try {
-      await authFetchs(`${API_BASE}/affiliators/withdrawals`, {
-        method: 'POST',
-        body: JSON.stringify({
-          amount: parseFloat(withdrawalForm.amount),
-          bank_name: withdrawalForm.bank_name,
-          account_number: withdrawalForm.account_number,
-          account_name: withdrawalForm.account_name
-        })
-      });
-
-      alert('Withdrawal request submitted successfully!');
-      setShowWithdrawalForm(false);
-      setWithdrawalForm({ amount: '', bank_name: '', account_number: '', account_name: '' });
-      
-      // Refresh data
-      await fetchAllData();
-    } catch (err: any) {
-      console.error('Failed to submit withdrawal', err);
-      alert(err.message || 'Failed to submit withdrawal request');
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -167,20 +102,6 @@ const AffiliateDashboard = () => {
     ? `${window.location.origin}/ref/${profile.affiliate_code}`
     : '';
 
-  const getStatusColor = (status: string) => {
-    switch (status.toLowerCase()) {
-      case 'paid':
-      case 'completed':
-        return 'bg-green-100 text-green-800';
-      case 'pending':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'failed':
-      case 'rejected':
-        return 'bg-red-100 text-red-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -243,7 +164,7 @@ const AffiliateDashboard = () => {
         {/* Tabs */}
         <div className="mb-8 border-b border-gray-200">
           <nav className="flex space-x-8">
-            {['overview', 'referrals', 'commissions', 'withdrawals'].map((tab) => (
+            {['overview', 'referrals', 'conversions'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab as any)}
@@ -277,57 +198,23 @@ const AffiliateDashboard = () => {
               <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
                   <div className="bg-green-100 p-3 rounded-lg">
-                    <DollarSign className="w-6 h-6 text-green-600" />
+                    <Users className="w-6 h-6 text-green-600" />
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">Total Commission</p>
-                <p className="text-3xl font-bold text-gray-900">${statistics.total_commission.toFixed(2)}</p>
+                <p className="text-gray-600 text-sm">Total conversions</p>
+                <p className="text-3xl font-bold text-gray-900">{statistics.total_bookings}</p>
                 <p className="text-sm text-gray-500 mt-2">All time earnings</p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
+               <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="bg-amber-100 p-3 rounded-lg">
-                    <Calendar className="w-6 h-6 text-amber-600" />
+                  <div className="bg-green-100 p-3 rounded-lg">
+                    <Users className="w-6 h-6 text-green-600" />
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">Pending Commission</p>
-                <p className="text-3xl font-bold text-gray-900">${statistics.pending_commission.toFixed(2)}</p>
-                <p className="text-sm text-gray-500 mt-2">Available soon</p>
-              </div>
-
-              <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="bg-purple-100 p-3 rounded-lg">
-                    <TrendingUp className="w-6 h-6 text-purple-600" />
-                  </div>
-                </div>
-                <p className="text-gray-600 text-sm">Conversion Rate</p>
-                <p className="text-3xl font-bold text-gray-900">{statistics.conversion_rate.toFixed(1)}%</p>
-                <p className="text-sm text-gray-500 mt-2">{statistics.total_bookings} bookings</p>
-              </div>
-            </div>
-
-            {/* Additional Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Financial Overview</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Total Earned</span>
-                    <span className="font-semibold text-gray-900">${statistics.total_commission.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Withdrawn</span>
-                    <span className="font-semibold text-green-600">${statistics.withdrawn_commission.toFixed(2)}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Available Balance</span>
-                    <span className="font-semibold text-amber-600">
-                      ${(statistics.total_commission - statistics.withdrawn_commission - statistics.pending_commission).toFixed(2)}
-                    </span>
-                  </div>
-                </div>
+                <p className="text-gray-600 text-sm">Total conversions paid</p>
+                <p className="text-3xl font-bold text-gray-900">{statistics.total_paid_users}</p>
+                <p className="text-sm text-gray-500 mt-2">All time earnings</p>
               </div>
 
               <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
@@ -340,10 +227,6 @@ const AffiliateDashboard = () => {
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600">Successful Bookings</span>
                     <span className="font-semibold text-green-600">{statistics.total_bookings}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600">Conversion Rate</span>
-                    <span className="font-semibold text-purple-600">{statistics.conversion_rate.toFixed(1)}%</span>
                   </div>
                 </div>
               </div>
@@ -411,191 +294,26 @@ const AffiliateDashboard = () => {
         )}
 
         {/* Commissions Tab */}
-        {activeTab === 'commissions' && (
+        {activeTab === 'conversions' && (
           <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Commission Details</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-4">conversions Details</h2>
             <div className="space-y-4">
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-lg border border-green-200">
                 <div className="flex items-center gap-3 mb-3">
-                  <DollarSign className="w-8 h-8 text-green-600" />
-                  <h3 className="text-lg font-semibold text-gray-900">Total Commission Earned</h3>
+                  <Users className="w-8 h-8 text-green-600" />
+                  <h3 className="text-lg font-semibold text-gray-900">Total conversions</h3>
                 </div>
-                <p className="text-4xl font-bold text-green-600">${profile?.total_commission.toFixed(2) || '0.00'}</p>
+                <p className="text-4xl font-bold text-green-600">{statistics?.total_bookings}</p>
                 <p className="text-sm text-gray-600 mt-2">Lifetime earnings from all referrals</p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-amber-50 p-6 rounded-lg border border-amber-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <AlertCircle className="w-6 h-6 text-amber-600" />
-                    <h3 className="font-semibold text-gray-900">Available for Withdrawal</h3>
-                  </div>
-                  <p className="text-3xl font-bold text-amber-600">
-                    ${((statistics?.total_commission || 0) - (statistics?.withdrawn_commission || 0) - (statistics?.pending_commission || 0)).toFixed(2)}
-                  </p>
-                </div>
 
-                <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
-                  <div className="flex items-center gap-3 mb-3">
-                    <CreditCard className="w-6 h-6 text-blue-600" />
-                    <h3 className="font-semibold text-gray-900">Total Withdrawn</h3>
-                  </div>
-                  <p className="text-3xl font-bold text-blue-600">${profile?.withdrawn_commission.toFixed(2) || '0.00'}</p>
-                </div>
-              </div>
-
-              <div className="mt-6">
-                <button
-                  onClick={() => setShowWithdrawalForm(true)}
-                  className="bg-amber-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-700 transition-colors flex items-center gap-2"
-                >
-                  <DollarSign className="w-5 h-5" />
-                  Request Withdrawal
-                </button>
-              </div>
+             
             </div>
           </div>
         )}
 
-        {/* Withdrawals Tab */}
-        {activeTab === 'withdrawals' && (
-          <div>
-            {showWithdrawalForm && (
-              <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 mb-6">
-                <h2 className="text-xl font-bold text-gray-900 mb-4">New Withdrawal Request</h2>
-                <div onSubmit={handleWithdrawal} className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Amount</label>
-                    <input
-                      type="number"
-                      step="0.01"
-                      value={withdrawalForm.amount}
-                      onChange={(e) => setWithdrawalForm({ ...withdrawalForm, amount: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
-                      placeholder="Enter amount"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Bank Name</label>
-                    <input
-                      type="text"
-                      value={withdrawalForm.bank_name}
-                      onChange={(e) => setWithdrawalForm({ ...withdrawalForm, bank_name: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
-                      placeholder="Enter bank name"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Account Number</label>
-                    <input
-                      type="text"
-                      value={withdrawalForm.account_number}
-                      onChange={(e) => setWithdrawalForm({ ...withdrawalForm, account_number: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
-                      placeholder="Enter account number"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Account Name</label>
-                    <input
-                      type="text"
-                      value={withdrawalForm.account_name}
-                      onChange={(e) => setWithdrawalForm({ ...withdrawalForm, account_name: e.target.value })}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500"
-                      placeholder="Enter account name"
-                      required
-                    />
-                  </div>
-
-                  <div className="flex gap-3">
-                    <button
-                      onClick={handleWithdrawal}
-                      disabled={loading}
-                      className="bg-amber-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-amber-700 transition-colors disabled:opacity-50"
-                    >
-                      {loading ? 'Processing...' : 'Submit Request'}
-                    </button>
-                    <button
-                      onClick={() => setShowWithdrawalForm(false)}
-                      className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg font-medium hover:bg-gray-300 transition-colors"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            <div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
-              <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
-                <div>
-                  <h2 className="text-xl font-bold text-gray-900">Withdrawal History</h2>
-                  <p className="text-sm text-gray-600 mt-1">Track all your withdrawal requests</p>
-                </div>
-                {!showWithdrawalForm && (
-                  <button
-                    onClick={() => setShowWithdrawalForm(true)}
-                    className="bg-amber-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-amber-700 transition-colors text-sm"
-                  >
-                    New Request
-                  </button>
-                )}
-              </div>
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Amount</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Bank Details</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {withdrawals.length > 0 ? (
-                      withdrawals.map((withdrawal) => (
-                        <tr key={withdrawal.id} className="hover:bg-gray-50 transition-colors">
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <span className="text-lg font-semibold text-gray-900">${withdrawal.amount.toFixed(2)}</span>
-                          </td>
-                          <td className="px-6 py-4">
-                            <div className="text-sm">
-                              <p className="font-medium text-gray-900">{withdrawal.bank_name}</p>
-                              <p className="text-gray-600">{withdrawal.account_number}</p>
-                              <p className="text-gray-500 text-xs">{withdrawal.account_name}</p>
-                            </div>
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <span className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(withdrawal.status)}`}>
-                              {withdrawal.status}
-                            </span>
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                            {formatDate(withdrawal.created_at)}
-                          </td>
-                        </tr>
-                      ))
-                    ) : (
-                      <tr>
-                        <td colSpan={4} className="px-6 py-12 text-center text-gray-500">
-                          <CreditCard className="w-12 h-12 mx-auto mb-3 text-gray-400" />
-                          <p className="font-medium">No withdrawals yet</p>
-                          <p className="text-sm mt-1">Request your first withdrawal when you have available balance</p>
-                        </td>
-                      </tr>
-                    )}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        )}
+      
       </div>
     </div>
   );

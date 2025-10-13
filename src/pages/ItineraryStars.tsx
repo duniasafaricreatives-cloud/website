@@ -52,7 +52,6 @@ const ItineraryStars = () => {
       availability: { Bronze: false, Silver: true, Gold: true },
       notes: [t('itineraryStars.features.hammamNotesGold')],
     },
-    { name: t('itineraryStars.features.memento'), availability: { Bronze: true, Silver: true, Gold: true } },
   ];
 
   // Sub-itinerary features

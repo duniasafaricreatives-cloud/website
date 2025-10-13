@@ -55,7 +55,6 @@ const ItineraryElephants = () => {
     { name: t('itineraryElephants.features.cocktailsLounge'), availability: { Bronze: false, Silver: false, Gold: true } },
     { name: t('itineraryElephants.features.essaouiraTrip'), availability: { Bronze: true, Silver: true, Gold: true } },
     { name: t('itineraryElephants.features.ouzoudWaterfalls'), availability: { Bronze: true, Silver: true, Gold: true } },
-    { name: t('itineraryElephants.features.memento'), availability: { Bronze: true, Silver: true, Gold: true } },
   ];
 
   // Sub-itinerary features

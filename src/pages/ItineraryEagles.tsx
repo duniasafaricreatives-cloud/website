@@ -61,10 +61,7 @@ const ItineraryEagles = () => {
       availability: { Bronze: false, Silver: true, Gold: true },
       notes: [t('itineraryEagles.features.hammamNotesGold')],
     },
-    {
-      name: t('itineraryEagles.features.memento'),
-      availability: { Bronze: true, Silver: true, Gold: true },
-    },
+    
   ];
 
   // NEW SUB ITINERARY

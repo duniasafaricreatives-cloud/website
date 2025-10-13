@@ -6,7 +6,7 @@
     "faq": "FAQ",
     "blog": "Blog",
     "aboutFounder": "À propos du fondateur",
-    "becomeAffiliate": "Devenir affilié",
+    "becomeAffiliate": "Devenir un affilié",
     "contact": "Contact"
   },
   "hero": {
@@ -303,8 +303,7 @@
       "desertSafariNotesGold": "Or : Expérience de glamping dans le désert",
       "meknesVisit": "Visite de Meknès + ruines de Volubilis (site romain) + point de vue de Moulay Idriss",
       "hammamRetreat": "60 minutes de bien-être : Retraite Hammam",
-      "hammamNotesGold": "Or : Hammam + Massage inclus",
-      "memento": "Souvenir exclusif Dunia Safari"
+      "hammamNotesGold": "Or : Hammam + Massage inclus"
     },
     "subFeatures": {
       "bedBreakfastExtended": "Chambre et petit-déjeuner (11 jours et 10 nuits)",
@@ -351,8 +350,7 @@
       "hammamNotesGold": "Or : Hammam + Massage inclus",
       "cocktailsLounge": "Profitez de cocktails au Marrakech Sunset Lounge",
       "essaouiraTrip": "Excursion d'une journée à Essaouira",
-      "ouzoudWaterfalls": "Excursion d'une journée aux cascades d'Ouzoud",
-      "memento": "Souvenir exclusif Dunia Safari"
+      "ouzoudWaterfalls": "Excursion d'une journée aux cascades d'Ouzoud"
     },
     "subFeatures": {
       "bedBreakfastExtended": "Chambre et petit-déjeuner (11 jours et 10 nuits)",
@@ -395,8 +393,7 @@
       "kasbahOudayas": "Visite de la Kasbah des Oudayas et découverte de Hassan, Mausolée Mohammed V",
       "eveningCocktail": "Cocktail du soir dans une ambiance chic, Rabat",
       "hammamRetreat": "60 minutes de bien-être : Retraite Hammam",
-      "hammamNotesGold": "Or : + Massage",
-      "memento": "Souvenir exclusif Dunia Safari"
+      "hammamNotesGold": "Or : + Massage"
     },
     "subFeatures": {
       "bedBreakfastExtended": "Chambre et petit-déjeuner (11 jours et 10 nuits)",
